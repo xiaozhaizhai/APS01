@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns="http://www.springframework.org/schema/osgi" xmlns:b="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<b:description>X6Basic.modulename.radion1366790851615 OSGI服务导入导出配置</b:description>
+
+	<reference id="dataSource" interface="javax.sql.DataSource" filter="(dataSourceName=dbcpDataSource)" />
+	<reference id="dbcpDataSource" interface="javax.sql.DataSource" filter="(dataSourceName=dbcpDataSource)" />
+	<reference id="defaultSessionFactoryExtender" interface="com.supcon.orchid.orm.hibernate.SessionFactoryExtender" filter="(sessionFactoryName=defaultSessionFactory)" />
+	
+	<reference id="transactionManager" filter="(qualifier=hibernateTransactionManager)">
+		<interfaces>
+			<b:value>org.springframework.transaction.PlatformTransactionManager</b:value>
+		</interfaces>
+	</reference>
+	
+	<service ref="x6Basic_messageCenterService" interface="com.supcon.orchid.X6Basic.services.MessageCenterService" />
+	<service ref="x6Basic_signetSettingService" interface="com.supcon.orchid.X6Basic.services.SignetSettingService" />
+	<service ref="x6Basic_usedRecordService" interface="com.supcon.orchid.X6Basic.services.UsedRecordService" />
+	<service ref="x6Basic_meetingRoomService" interface="com.supcon.orchid.X6Basic.services.MeetingRoomService" />
+	<service ref="x6Basic_productManageService" interface="com.supcon.orchid.X6Basic.services.ProductManageService" />
+	<service ref="x6Basic_attMachineService" interface="com.supcon.orchid.X6Basic.services.AttMachineService" />
+	
+	<reference id="cacheAdmin" interface="com.supcon.orchid.cacheadmin.CacheAdmin" />
+	<reference id="importService" interface="com.supcon.orchid.foundation.services.ImportService" />
+	<reference id="counterManager" interface="com.supcon.orchid.counter.CounterManager" />
+	<reference id="creatorService" interface="com.supcon.orchid.ec.services.CreatorService" />
+	<reference id="groupService" interface="com.supcon.orchid.foundation.services.GroupService" />
+	<reference id="businessCenterService" interface="com.supcon.orchid.ec.services.BusinessCenterService" />
+	<reference id="modelServiceFoundation" interface="com.supcon.orchid.ec.services.ModelServiceFoundation" />
+	<reference id="viewServiceFoundation" interface="com.supcon.orchid.ec.services.ViewServiceFoundation" />
+	<reference id="scriptService" interface="com.supcon.orchid.script.services.ScriptService" />
+	<reference id="processService" interface="com.supcon.orchid.workflow.engine.services.ProcessService" />
+	<reference id="instanceService" interface="com.supcon.orchid.workflow.engine.services.InstanceService" />
+	<reference id="taskService" interface="com.supcon.orchid.workflow.engine.services.TaskService" />
+	<reference id="systemCodeService" interface="com.supcon.orchid.foundation.services.SystemCodeService" />
+	<reference id="dataPermissionService" interface="com.supcon.orchid.foundation.services.DataPermissionService" />
+	<reference id="conditionService" interface="com.supcon.orchid.ec.services.ConditionService" />
+	<reference id="sqlService" interface="com.supcon.orchid.ec.services.SqlService" />
+	<reference id="documentService" interface="com.supcon.orchid.foundation.services.DocumentService" />
+	<reference id="IUserFieldPermissionService" interface="com.supcon.orchid.services.IUserFieldPermissionService" />
+	<reference id="staffService" interface="com.supcon.orchid.foundation.services.StaffService" />
+	<reference id="departmentService" interface="com.supcon.orchid.foundation.services.DepartmentService" />
+	<reference id="positionService" interface="com.supcon.orchid.foundation.services.PositionService" />
+	<reference id="companyService" interface="com.supcon.orchid.foundation.services.CompanyService" />
+	<reference id="eventService" interface="com.supcon.orchid.ec.services.EventService" />
+	<reference id="menuOperateService" interface="com.supcon.orchid.services.IMenuOperateService"/>
+	<reference id="userPermissionService" interface="com.supcon.orchid.services.IUserPermissionService"/>
+	<reference id="synchronizeInfoService" interface="com.supcon.orchid.foundation.services.SynchronizeInfoService" />
+	<reference id="cxf" interface="org.apache.cxf.Bus"/>
+	<reference id="BAPSearchService" interface="com.supcon.orchid.services.BAPSearchService"/>
+	<!-- CUSTOM CODE START(osgi,service,,X6Basic_1.0) -->
+<!-- 自定义代码 -->
+<reference interface="com.supcon.orchid.notification.NotificationService"
+		id="notificationService" />
+		<reference id="idGenerator"
+		interface="com.supcon.orchid.id.IdGenerator" cardinality="0..1" />
+<!-- CUSTOM CODE END -->
+	
+</b:beans>

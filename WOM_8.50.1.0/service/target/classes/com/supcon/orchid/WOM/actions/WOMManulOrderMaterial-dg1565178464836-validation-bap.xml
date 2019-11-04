@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	
+
+	<field name="needNumber">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1563254572747"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1563254572747", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="materialBatchNum">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1563254620511", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="rsNUM">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1563254148286"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1563254148286", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="rsPOS">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1563254342780"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1563254342780", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="edition">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1563254644099", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+</validators>

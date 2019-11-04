@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MESBasic
+Bundle-SymbolicName: MESBasic
+Bundle-Version: 7.5.0.0
+Bundle-Vendor: ZHEJIANG SUPCON TECHNOLOGY CO.,LTD.

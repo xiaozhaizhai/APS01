@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="clevel">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1470193262662", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="corder">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"MESBasic.propertydisplayName.randon1470193428773"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"MESBasic.propertydisplayName.randon1470193428773", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	<field name="levelMemo">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1470193317753", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+</validators>

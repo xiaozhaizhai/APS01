@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="factoryModel.code">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1419233767027"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1419233767027", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="factoryModel.name">
+		<field-validator type="stringlength">
+			<param name="maxLength">100</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1419232393782", "100"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	<field name="_complex_complex_datagrid_1490059044780">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1490059032286List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1490059032286</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("MESBasic.modelname.randon1490058575739")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

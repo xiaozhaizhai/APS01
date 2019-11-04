@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="resetCyc">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"MESBasic.propertydisplayName.randon1471690864996"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"MESBasic.propertydisplayName.randon1471690864996", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="notifyDays">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"MESBasic.propertydisplayName.randon1471690928381"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"MESBasic.propertydisplayName.randon1471690928381", 10})}</message>
+        </field-validator>
+	</field>
+	
+</validators>

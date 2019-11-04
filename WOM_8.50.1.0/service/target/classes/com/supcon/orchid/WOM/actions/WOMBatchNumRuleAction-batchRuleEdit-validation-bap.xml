@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="batchNumRule.code">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.randon1490409027018"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1490409027018", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="batchNumRule.name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.randon1490409049075"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1490409049075", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="batchNumRule.ruleType.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.randon1509601492783"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="batchNumRule.menu">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1490409085465", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="batchNumRule.ruleDetail">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1490409060229", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

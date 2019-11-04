@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="processType.code">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1487074372323"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1487074372323", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="processType.name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1487074387497"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1487074387497", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="processType.meno">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1487074397335", "256"})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

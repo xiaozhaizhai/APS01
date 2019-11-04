@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="STATUS">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"STATUS"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"STATUS", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="version">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"version"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"version", 10})}</message>
+        </field-validator>
+	</field>
+	
+</validators>

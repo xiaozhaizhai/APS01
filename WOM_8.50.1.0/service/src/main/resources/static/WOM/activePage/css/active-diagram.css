@@ -1,0 +1,68 @@
+svg.railroad-diagram path {
+    stroke-width: 1;
+    stroke: rgb(142, 142, 142);
+    fill: rgba(0,0,0,0);
+}
+.marker {
+    stroke: #62fff7 !important;
+}
+svg.railroad-diagram text {
+    cursor: pointer;
+    text-anchor: middle;
+    font-family: FZLTHJW--GB1-0;
+    font-size: 12px;
+}
+svg.railroad-diagram text.diagram-text {
+    font-size: 12px;
+}
+svg.railroad-diagram text.diagram-arrow {
+    font-size: 16px;
+}
+svg.railroad-diagram text.label {
+    text-anchor: start;
+}
+svg.railroad-diagram text.comment {
+    font: italic 12px monospace;
+}
+svg.railroad-diagram g.non-terminal text {
+    /*font-style: italic;*/
+}
+svg.railroad-diagram rect {
+    /* stroke-width: 1; */
+    /* stroke: black; */
+    /* fill: #c7c3c3; */
+}
+svg.railroad-diagram path.diagram-text {
+    stroke-width: 3;
+    stroke: white;
+    fill: white;
+    cursor: help;
+}
+svg.railroad-diagram g.diagram-text:hover path.diagram-text {
+    fill: #eee;
+}
+rect:after {
+  content: '';
+  display: block;
+  height: 8px;
+  width: 100%;
+  background-image: repeating-linear-gradient(45deg, #666, #666 1px, transparent 2px, transparent 5px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-top: 1px solid #666;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  background-size: 7px 7px;
+}
+rect:hover {
+    background-color: #666;
+    color: #fff;
+    border-color: #000;
+}
+rect:hover:after {
+    background-image: repeating-linear-gradient(45deg, #fff, #fff 1px, transparent 2px, transparent 5px);
+    border-top: 1px solid #000;
+    -webkit-animation: stripe-slide 12s infinite linear forwards;
+    animation: stripe-slide 12s infinite linear forwards;
+}

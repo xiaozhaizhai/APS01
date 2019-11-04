@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="_complex_complex_datagrid_1502700154139">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1502700450695">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1502700757221">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1502700158273List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1502700158273</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("WOM.modelname.randon1502695666438")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+	<field name="dg1502700453811List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1502700453811</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("WOM.modelname.randon1502696273660")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+	<field name="dg1502700759865List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1502700759865</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("WOM.modelname.randon1502698712286")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

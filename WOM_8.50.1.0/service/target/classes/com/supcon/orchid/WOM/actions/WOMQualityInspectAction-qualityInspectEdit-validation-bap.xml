@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="qualityInspect.activeID.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1487295011793"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="qualityInspect.operateStaffID.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.randon1495778802161"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="qualityInspect.inspectBatch">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1541484763214", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="qualityInspect.inspectNum">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1541146874561"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1541146874561", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="qualityInspect.remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1541146864746", "256"})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

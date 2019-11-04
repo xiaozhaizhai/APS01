@@ -1,0 +1,4 @@
+ def taskReportingService=springContext.getBean("wOM_taskReportingService");
+ if(taskReportingService!=null){
+ taskReportingService.createProduceInSingles(id);   
+ }

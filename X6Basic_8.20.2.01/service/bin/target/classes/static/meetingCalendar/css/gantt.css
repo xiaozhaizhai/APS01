@@ -1,0 +1,84 @@
+td.fixedBodyTD {
+	text-align: center;
+	background: #dddddd;
+	border: 1px solid;
+	border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+	position: relative;
+	top: expression(this.parentElement.parentElement.parentElement.parentElement.scrollTop
+		);
+}
+
+SPAN.button {
+	text-decoration: none;
+	cursor: hand;
+	text-decoration: underline
+}
+
+SPAN.button_active {
+	text-decoration: underline;
+	text-underline-position: auto;
+	cursor: hand
+}
+
+.IEfixheader {
+	border: 1 solid black;
+	background-color: #DDDDDD;
+}
+
+.FFfixheader {
+	position: fixed;
+	background-color: #AFC0D7;
+}
+
+.IEfixheaderTD {
+	text-align: center;
+	border: 1px solid;
+	border-color: ButtonHighlight #CCCCCC #CCCCCC ButtonHighlight;
+}
+
+.DIVfixheader {
+	overflow: auto;
+}
+
+.table {
+	border-collapse: collapse;
+	border-width: 0px;
+	border-color: #E1E1E1;
+	border-style: solid;
+	width: 50px;
+	background-color: #FFFFFF;
+	padding: 5% 5% 5% 5%;
+}
+
+.backDiv {
+	margin: 0 0 0 0;
+	border: 1px solid #c9c9c9;
+}
+
+.headSpliteTd {
+	border: 1px solid #FFFFFF;
+	background: #dddddd;
+}
+
+.OwerDiv {
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',
+		startColorstr=#FAFBFF, endColorstr=#CBD8E8 );
+}
+
+.GanttH2 {
+	color: #333366;
+	line-height: 150%;
+	font-size: 16pt;
+	font-weight: bold;
+	vertical-align: middle;
+	margin: 7px
+}
+
+.handTr {
+	height: 20px;
+}
+
+.handTd {
+	border: 1px dotted #c8c8c8;
+	border-right: 0;
+}

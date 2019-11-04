@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns="http://www.springframework.org/schema/osgi" xmlns:b="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<b:description>work order management OSGI服务导入导出配置</b:description>
+
+	<reference id="dataSource" interface="javax.sql.DataSource" filter="(dataSourceName=dbcpDataSource)" />
+	<reference id="dbcpDataSource" interface="javax.sql.DataSource" filter="(dataSourceName=dbcpDataSource)" />
+	<reference id="defaultSessionFactoryExtender" interface="com.supcon.orchid.orm.hibernate.SessionFactoryExtender" filter="(sessionFactoryName=defaultSessionFactory)" />
+	
+	<reference id="transactionManager" filter="(qualifier=hibernateTransactionManager)">
+		<interfaces>
+			<b:value>org.springframework.transaction.PlatformTransactionManager</b:value>
+		</interfaces>
+	</reference>
+	
+	<service ref="wOM_qualityInspectService" interface="com.supcon.orchid.WOM.services.WOMQualityInspectService" />
+	<service ref="wOM_dayBatchPlanInfoService" interface="com.supcon.orchid.WOM.services.WOMDayBatchPlanInfoService" />
+	<service ref="wOM_dayBatchPlanPartsService" interface="com.supcon.orchid.WOM.services.WOMDayBatchPlanPartsService" />
+	<service ref="wOM_checkManageService" interface="com.supcon.orchid.WOM.services.WOMCheckManageService" />
+	<service ref="wOM_inspectService" interface="com.supcon.orchid.WOM.services.WOMInspectService" />
+	<service ref="wOM_produceTaskManageService" interface="com.supcon.orchid.WOM.services.WOMProduceTaskManageService" />
+	<service ref="wOM_putInManageService" interface="com.supcon.orchid.WOM.services.WOMPutInManageService" />
+	<service ref="wOM_taskReportManageService" interface="com.supcon.orchid.WOM.services.WOMTaskReportManageService" />
+	<service ref="wOM_batchChargeService" interface="com.supcon.orchid.WOM.services.WOMBatchChargeService" />
+	<service ref="wOM_craftRecordsService" interface="com.supcon.orchid.WOM.services.WOMCraftRecordsService" />
+	<service ref="wOM_craftStandardsService" interface="com.supcon.orchid.WOM.services.WOMCraftStandardsService" />
+	<service ref="wOM_procFeedbackHeadService" interface="com.supcon.orchid.WOM.services.WOMProcFeedbackHeadService" />
+	<service ref="wOM_standingcropRefService" interface="com.supcon.orchid.WOM.services.WOMStandingcropRefService" />
+	<service ref="wOM_taskReportingService" interface="com.supcon.orchid.WOM.services.WOMTaskReportingService" />
+	<service ref="wOM_taskReportingPartService" interface="com.supcon.orchid.WOM.services.WOMTaskReportingPartService" />
+	<service ref="wOM_materialsOutputService" interface="com.supcon.orchid.WOM.services.WOMMaterialsOutputService" />
+	<service ref="wOM_proActAndBatStateService" interface="com.supcon.orchid.WOM.services.WOMProActAndBatStateService" />
+	<service ref="wOM_batchingMaterialService" interface="com.supcon.orchid.WOM.services.WOMBatchingMaterialService" />
+	<service ref="wOM_batchingMaterialPartService" interface="com.supcon.orchid.WOM.services.WOMBatchingMaterialPartService" />
+	<service ref="wOM_batchingRejectPartsService" interface="com.supcon.orchid.WOM.services.WOMBatchingRejectPartsService" />
+	<service ref="wOM_rejectReasonService" interface="com.supcon.orchid.WOM.services.WOMRejectReasonService" />
+	<service ref="wOM_batchTraceService" interface="com.supcon.orchid.WOM.services.WOMBatchTraceService" />
+	<service ref="wOM_adjustOrTempHeadService" interface="com.supcon.orchid.WOM.services.WOMAdjustOrTempHeadService" />
+	<service ref="wOM_adjustOrTempRecordsService" interface="com.supcon.orchid.WOM.services.WOMAdjustOrTempRecordsService" />
+	<service ref="wOM_batchChargeDetailsService" interface="com.supcon.orchid.WOM.services.WOMBatchChargeDetailsService" />
+	<service ref="wOM_batchPhaseExelogService" interface="com.supcon.orchid.WOM.services.WOMBatchPhaseExelogService" />
+	<service ref="wOM_prodTaskActiExelogService" interface="com.supcon.orchid.WOM.services.WOMProdTaskActiExelogService" />
+	<service ref="wOM_prodTaskProcExelogService" interface="com.supcon.orchid.WOM.services.WOMProdTaskProcExelogService" />
+	<service ref="wOM_produceMaterialSumService" interface="com.supcon.orchid.WOM.services.WOMProduceMaterialSumService" />
+	<service ref="wOM_produceTaskService" interface="com.supcon.orchid.WOM.services.WOMProduceTaskService" />
+	<service ref="wOM_produceTaskActiveService" interface="com.supcon.orchid.WOM.services.WOMProduceTaskActiveService" />
+	<service ref="wOM_produceTaskProcessService" interface="com.supcon.orchid.WOM.services.WOMProduceTaskProcessService" />
+	<service ref="wOM_productNumIndexService" interface="com.supcon.orchid.WOM.services.WOMProductNumIndexService" />
+	<service ref="wOM_waitPutinRecordsService" interface="com.supcon.orchid.WOM.services.WOMWaitPutinRecordsService" />
+	<service ref="wOM_prepareMaterialService" interface="com.supcon.orchid.WOM.services.WOMPrepareMaterialService" />
+	<service ref="wOM_prepareMaterialPartService" interface="com.supcon.orchid.WOM.services.WOMPrepareMaterialPartService" />
+	<service ref="wOM_putMaterialExceptionService" interface="com.supcon.orchid.WOM.services.WOMPutMaterialExceptionService" />
+	<service ref="wOM_batchNumRuleService" interface="com.supcon.orchid.WOM.services.WOMBatchNumRuleService" />
+	<service ref="wOM_batchingMaterialNeedService" interface="com.supcon.orchid.WOM.services.WOMBatchingMaterialNeedService" />
+	<service ref="wOM_makeBatOrderHeadService" interface="com.supcon.orchid.WOM.services.WOMMakeBatOrderHeadService" />
+	<service ref="wOM_makeBatOrderPartService" interface="com.supcon.orchid.WOM.services.WOMMakeBatOrderPartService" />
+	<service ref="wOM_putInMaterialService" interface="com.supcon.orchid.WOM.services.WOMPutInMaterialService" />
+	<service ref="wOM_putInMaterialPartService" interface="com.supcon.orchid.WOM.services.WOMPutInMaterialPartService" />
+	<service ref="wOM_manulOrderMainService" interface="com.supcon.orchid.WOM.services.WOMManulOrderMainService" />
+	<service ref="wOM_manulOrderMaterialService" interface="com.supcon.orchid.WOM.services.WOMManulOrderMaterialService" />
+	<service ref="wOM_activeExelogService" interface="com.supcon.orchid.WOM.services.WOMActiveExelogService" />
+	<service ref="wOM_batchProdTaskPartService" interface="com.supcon.orchid.WOM.services.WOMBatchProdTaskPartService" />
+	<service ref="wOM_batchProduceTaskService" interface="com.supcon.orchid.WOM.services.WOMBatchProduceTaskService" />
+	<service ref="wOM_inventoryDetailService" interface="com.supcon.orchid.WOM.services.WOMInventoryDetailService" />
+	<service ref="wOM_inventoryRecordService" interface="com.supcon.orchid.WOM.services.WOMInventoryRecordService" />
+	<reference id="dataAuditLogService" interface="com.supcon.orchid.audit.service.DataAuditLogService"/>
+	<reference id="pimsHttpService" interface="com.supcon.orchid.services.IPimsHttpService"/>
+	<reference id="cacheAdmin" interface="com.supcon.orchid.cacheadmin.CacheAdmin" />
+	<reference id="importService" interface="com.supcon.orchid.foundation.services.ImportService" />
+	<reference id="counterManager" interface="com.supcon.orchid.counter.CounterManager" />
+	<reference id="creatorService" interface="com.supcon.orchid.ec.services.CreatorService" />
+	<reference id="businessCenterService" interface="com.supcon.orchid.ec.services.BusinessCenterService" />
+	<reference id="modelServiceFoundation" interface="com.supcon.orchid.ec.services.ModelServiceFoundation" />
+	<reference id="viewServiceFoundation" interface="com.supcon.orchid.ec.services.ViewServiceFoundation" />
+	<reference id="iViewServiceFoundation" interface="com.supcon.orchid.services.IViewServiceFoundation" />
+	<reference id="scriptService" interface="com.supcon.orchid.script.services.ScriptService" />
+	<reference id="processService" interface="com.supcon.orchid.workflow.engine.services.ProcessService" />
+	<reference id="instanceService" interface="com.supcon.orchid.workflow.engine.services.InstanceService" />
+	<reference id="taskService" interface="com.supcon.orchid.workflow.engine.services.TaskService" />
+	<reference id="transitionService" interface="com.supcon.orchid.workflow.engine.services.TransitionService" />
+	<reference id="buttonService" interface="com.supcon.orchid.ec.services.ButtonService" />
+	<reference id="reliableMessageSenderService" interface="com.supcon.orchid.foundation.services.ReliableMessageSenderService" />
+	<reference id="foundation_supervisionService" interface="com.supcon.orchid.foundation.services.SupervisionService" />
+	<reference id="systemCodeService" interface="com.supcon.orchid.foundation.services.SystemCodeService" />
+	<reference id="dataPermissionService" interface="com.supcon.orchid.foundation.services.DataPermissionService" />
+	<reference id="conditionService" interface="com.supcon.orchid.ec.services.ConditionService" />
+	<reference id="sqlService" interface="com.supcon.orchid.ec.services.SqlService" />
+	<reference id="printService" interface="com.supcon.orchid.ec.services.PrintService" />
+	<reference id="foundation_documentService" interface="com.supcon.orchid.foundation.services.DocumentService" />
+	<reference id="cookieService" interface="com.supcon.orchid.foundation.services.CookieService" />
+	<reference id="IUserFieldPermissionService" interface="com.supcon.orchid.services.IUserFieldPermissionService" />
+	<reference id="foundation_userService" interface="com.supcon.orchid.foundation.services.UserService"/>
+	<reference id="foundation_roleService" interface="com.supcon.orchid.foundation.services.RoleService"/>
+	<reference id="foundation_staffService" interface="com.supcon.orchid.foundation.services.StaffService" />
+	<reference id="foundation_departmentService" interface="com.supcon.orchid.foundation.services.DepartmentService" />
+	<reference id="foundation_positionService" interface="com.supcon.orchid.foundation.services.PositionService" />
+	<reference id="foundation_companyService" interface="com.supcon.orchid.foundation.services.CompanyService" />
+	<reference id="foundation_systemCalendarService" interface="com.supcon.orchid.foundation.services.SystemCalendarService" />
+	<reference id="eventService" interface="com.supcon.orchid.ec.services.EventService" />
+	<reference id="menuOperateService" interface="com.supcon.orchid.services.IMenuOperateService"/>
+	<reference id="userPermissionService" interface="com.supcon.orchid.services.IUserPermissionService"/>
+	<reference id="synchronizeInfoService" interface="com.supcon.orchid.foundation.services.SynchronizeInfoService" />
+	<reference id="cxf" interface="org.apache.cxf.Bus"/>
+	<reference id="aclPermissionService" interface="com.supcon.orchid.foundation.services.ACLPermissionHandleService"/>
+	<reference id="notificationService" interface="com.supcon.orchid.notification.NotificationService" />
+	<reference id="orchidCxfInInterceptor" interface="org.apache.cxf.phase.PhaseInterceptor"/>
+	<reference id="bapBaseService" interface="com.supcon.orchid.ec.services.IBAPBaseService"/>
+	<reference id="fieldService" interface="com.supcon.orchid.ec.services.FieldService"/>
+	<reference id="ecConfigService" interface="com.supcon.orchid.ec.services.EcConfigService"/> 
+	<reference id="consulService" interface="com.supcon.orchid.services.ConsulService"/> 
+	<reference id="bapPathManageService" interface="com.supcon.orchid.services.BAPPathManageService"/>
+	<reference id="idGenerator"   interface="com.supcon.orchid.id.IdGenerator"/>
+	<reference id="companyStaffService" interface="com.supcon.orchid.foundation.services.CompanyStaffService" />
+	<reference id="importTemplateServiceFoundation" interface="com.supcon.orchid.ec.services.ImportTemplateServiceFoundation" />
+	<reference id="echartsDataService" interface="com.supcon.orchid.ec.services.EchartsDataService" />
+	<service ref="wOM_dayBatchPlanInfoService" interface="com.supcon.orchid.workflow.engine.services.IScriptService" >
+		<service-properties>
+			<b:entry  key="module.code" value="wOM_dayBatchPlanInfoService"></b:entry>
+		</service-properties>
+	</service>
+	<service ref="wOM_taskReportingService" interface="com.supcon.orchid.workflow.engine.services.IScriptService" >
+		<service-properties>
+			<b:entry  key="module.code" value="wOM_taskReportingService"></b:entry>
+		</service-properties>
+	</service>
+	<service ref="wOM_batchingMaterialService" interface="com.supcon.orchid.workflow.engine.services.IScriptService" >
+		<service-properties>
+			<b:entry  key="module.code" value="wOM_batchingMaterialService"></b:entry>
+		</service-properties>
+	</service>
+	<service ref="wOM_produceTaskService" interface="com.supcon.orchid.workflow.engine.services.IScriptService" >
+		<service-properties>
+			<b:entry  key="module.code" value="wOM_produceTaskService"></b:entry>
+		</service-properties>
+	</service>
+	<service ref="wOM_prepareMaterialService" interface="com.supcon.orchid.workflow.engine.services.IScriptService" >
+		<service-properties>
+			<b:entry  key="module.code" value="wOM_prepareMaterialService"></b:entry>
+		</service-properties>
+	</service>
+	<service ref="wOM_putMaterialExceptionService" interface="com.supcon.orchid.workflow.engine.services.IScriptService" >
+		<service-properties>
+			<b:entry  key="module.code" value="wOM_putMaterialExceptionService"></b:entry>
+		</service-properties>
+	</service>
+	<service ref="wOM_putInMaterialService" interface="com.supcon.orchid.workflow.engine.services.IScriptService" >
+		<service-properties>
+			<b:entry  key="module.code" value="wOM_putInMaterialService"></b:entry>
+		</service-properties>
+	</service>
+	<service ref="wOM_activeExelogService" interface="com.supcon.orchid.workflow.engine.services.IScriptService" >
+		<service-properties>
+			<b:entry  key="module.code" value="wOM_activeExelogService"></b:entry>
+		</service-properties>
+	</service>
+	<service ref="wOM_batchProduceTaskService" interface="com.supcon.orchid.workflow.engine.services.IScriptService" >
+		<service-properties>
+			<b:entry  key="module.code" value="wOM_batchProduceTaskService"></b:entry>
+		</service-properties>
+	</service>
+	
+	<reference id="mESBasic_wareService" interface="com.supcon.orchid.MESBasic.services.MESBasicWareService"/>
+	<reference id="publicSet_batchInfoService" interface="com.supcon.orchid.publicSet.services.PublicSetBatchInfoService"/>
+	<reference id="publicSet_actBatStateService" interface="com.supcon.orchid.publicSet.services.PublicSetActBatStateService"/>
+	<reference id="rM_processTypeService" interface="com.supcon.orchid.RM.services.RMProcessTypeService"/>
+	<reference id="mESBasic_factoryModelService" interface="com.supcon.orchid.MESBasic.services.MESBasicFactoryModelService"/>
+	<reference id="rM_standService" interface="com.supcon.orchid.RM.services.RMStandService"/>
+	<reference id="rM_precessStandardsService" interface="com.supcon.orchid.RM.services.RMPrecessStandardsService"/>
+	<reference id="mESBasic_storeSetService" interface="com.supcon.orchid.MESBasic.services.MESBasicStoreSetService"/>
+	<reference id="x6Basic_baseUnitService" interface="com.supcon.orchid.X6Basic.services.X6BasicBaseUnitService"/>
+	<reference id="rM_formulaService" interface="com.supcon.orchid.RM.services.RMFormulaService"/>
+	<reference id="rM_formulaBomService" interface="com.supcon.orchid.RM.services.RMFormulaBomService"/>
+	<reference id="rM_formulaProcessService" interface="com.supcon.orchid.RM.services.RMFormulaProcessService"/>
+	<reference id="mESBasic_productService" interface="com.supcon.orchid.MESBasic.services.MESBasicProductService"/>
+	<reference id="rM_formulaProcessActiveService" interface="com.supcon.orchid.RM.services.RMFormulaProcessActiveService"/>
+	
+	<!-- CUSTOM CODE START(osgi,service,,WOM_7.5.0.0) -->
+<!-- 自定义代码 -->    
+    <reference id="rM_processUnitChoiceService" interface="com.supcon.orchid.RM.services.RMProcessUnitChoiceService" />
+    <reference id="rM_processUnitService" interface="com.supcon.orchid.RM.services.RMProcessUnitService" />
+      <reference id="rM_batchFactoryService" interface="com.supcon.orchid.RM.services.RMBatchFactoryService" />
+    <reference id="publicSet_batchDealService" interface="com.supcon.orchid.publicSet.services.PublicSetBatchDealService" />
+	<reference id="publicSet_batchRelateService" interface="com.supcon.orchid.publicSet.services.PublicSetBatchRelateService" />
+      
+    <reference id="rM_sampleProjService" interface="com.supcon.orchid.RM.services.RMSampleProjService" />
+      
+      
+    <reference id="mESBasic_facWareMaterialService" interface="com.supcon.orchid.MESBasic.services.MESBasicFacWareMaterialService" />
+    <service ref="wom_interfaceService" interface="com.supcon.orchid.publicSet.services.WOMInterfaceService" />
+    <reference id="mESBasic_objWareStoreService" interface="com.supcon.orchid.MESBasic.services.MESBasicObjWareStoreService" />
+	
+	<!-- 工单同步批控 -->
+    <!--<reference id="publicSet_batchDealinfoService" interface="com.supcon.orchid.publicSet.services.PublicSetBatchDealinfoService" />
+	<reference id="publicSet_batchRelationService" interface="com.supcon.orchid.publicSet.services.PublicSetBatchRelationService" />-->
+	<reference id="rM_interfaceSyncLogService" interface="com.supcon.orchid.RM.services.RMInterfaceSyncLogService" />
+    <reference id="rM_mQDealinfoService" interface="com.supcon.orchid.RM.services.RMMQDealinfoService" />
+
+    <service ref="wOM_licenseService" interface="com.supcon.orchid.WOM.services.WOMLicenseService" />
+	<service ref="wom_externalService" interface="com.supcon.orchid.WOM.services.WOMExternalService" />
+      
+    <service ref="wom_eBRService" interface="com.supcon.orchid.WOM.services.WOMEBRService" />
+      
+    <reference id="rM_checkDepartmentSetService" interface="com.supcon.orchid.RM.services.RMCheckDepartmentSetService" />
+    <reference id="rM_pickSiteService" interface="com.supcon.orchid.RM.services.RMPickSiteService" />
+      
+    <reference id="user_detailsService" interface="org.springframework.security.core.userdetails.UserDetailsService" />
+    <service ref="wom_qualityManService" interface="com.supcon.orchid.publicSet.services.WOMQualityManService" />
+    <reference id="publicSet_workflowStateService" interface="com.supcon.orchid.publicSet.services.PublicSetWorkflowStateService"/> 
+      	<reference id="publicSet_WorkStateStaffService" interface="com.supcon.orchid.publicSet.services.PublicSetWorkStateStaffService"/>
+    
+    <reference id="mESBasic_InterfaceLogService" interface="com.supcon.orchid.MESBasic.services.MESBasicInterfaceLogService" />
+<!-- CUSTOM CODE END -->
+</b:beans>

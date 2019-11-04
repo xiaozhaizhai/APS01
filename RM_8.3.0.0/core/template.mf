@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ${bundle.name}
+Bundle-SymbolicName: ${bundle.symbolicName}
+Bundle-Version: ${bundle.version}
+Bundle-Vendor: ZHEJIANG SUPCON TECHNOLOGY CO.,LTD.
+Orchid-EcGenerated: true
+Spring-Context: *;timeout:=3600
+Import-Package: com.supcon.orchid.foundation.entities;version="[3.0,5.0)",
+ com.supcon.orchid.ec.entities;version="[3.0,5.0)",
+ com.supcon.orchid.orm.entities;version="[3.0,5.0)",
+ com.supcon.orchid.foundation.adapter;version="[3.0,5.0)",
+ com.supcon.orchid.tree;version="[3.0,5.0)"
+ ,com.supcon.orchid.MESBasic.entities;version="8.20.2.01"
+ ,com.supcon.orchid.X6Basic.entities;version="8.20.2.01"
+ ,com.supcon.orchid.foundation.ws.adapter;version="[3.0,5.0)",
+ com.supcon.orchid.orm.entities.jaxb;version="[3.0,5.0)",
+ org.aspectj;version="[1.6.0,1.9.0)",
+ org.aspectj.lang;version="[1.6.0,1.9.0)"
+Import-Bundle: com.supcon.orchid.org.hibernate;version="[3.4.0,3.6.0)",
+ com.springsource.javassist;version="[3.9,4.0)",
+ com.supcon.bap.cxf-bundle;version=2.7;resolution:=mandatory
+Excluded-Exports: src.main.*
+Export-Package:
+ com.supcon.orchid.RM.entities;version="8.3.0.0",
+ com.supcon.orchid.RM.services;version="8.3.0.0"
+Excluded-Imports: com.supcon.orchid.testing.*
+Import-Library: org.springframework.spring;version=3.0

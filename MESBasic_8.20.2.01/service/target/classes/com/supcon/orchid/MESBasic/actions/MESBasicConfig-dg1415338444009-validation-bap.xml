@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="name">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1416558524615", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="measurement.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.randon1429853864414"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="formula">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1426644791679", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="testFormula">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1558945038043", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="maxAggValue">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.radion1415338029833"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.radion1415338029833", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+</validators>

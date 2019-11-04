@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+	<!-- Activates a load-time weaver for the context. Any bean within the context 
+		that implements LoadTimeWeaverAware (such as LocalContainerEntityManagerFactoryBean) 
+		will receive a reference to the autodetected load-time weaver. 
+	<context:load-time-weaver aspectj-weaving="on" />
+-->
+
+
+	<!-- Instruct Spring to perform declarative transaction management automatically 
+		on annotated classes. -->
+	<tx:annotation-driven />
+	
+	<bean id="testDataPopulator" class="com.supcon.orchid.container.testing.TestDataPopulator"
+		p:sqlLocations="classpath:/db.sql" p:stopAtFail="true"
+		init-method="populate">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<alias name="dataSource" alias="dbcpDataSource"/>
+	
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+		p:sessionFactory-ref="sessionFactory">
+	</bean>	
+	
+	
+	<bean id="springContextHolder" class="com.supcon.orchid.SpringContextHolder" />
+		<!-- CUSTOM CODE START(context,test,,WOM_7.5.0.0) -->
+<!-- 自定义代码 -->
+<!-- CUSTOM CODE END -->
+</beans>

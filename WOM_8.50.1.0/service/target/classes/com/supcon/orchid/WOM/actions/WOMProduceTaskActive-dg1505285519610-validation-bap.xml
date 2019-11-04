@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	
+
+	
+
+	
+
+	<field name="standardNum">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1489730105405"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1489730105405", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="planNum">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.randon1489730174515"})}</message>
+		</field-validator>
+		<field-validator type="double_plus">
+		<message>${getText("ec.common.validate.double.plus.error", {"WOM.propertydisplayName.randon1489730174515"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="phase">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"WOM.propertydisplayName.randon1503995488887"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"WOM.propertydisplayName.randon1503995488887", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="sequence">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"WOM.propertydisplayName.randon1503995517319"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"WOM.propertydisplayName.randon1503995517319", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	
+
+	<field name="minQuality">
+		<field-validator type="compare">
+		<param name="operator"><![CDATA[<=]]></param>
+		<param name="another"><![CDATA[planNum]]></param>
+		<message>${getText("ec.common.validate.compare.error", {"WOM.propertydisplayName.randon1489729953842", "WOM.propertydisplayName.randon1489730174515", "ec.view.config.validate.littlequal"})}</message>
+		</field-validator>
+		<field-validator type="double_plus">
+		<message>${getText("ec.common.validate.double.plus.error", {"WOM.propertydisplayName.randon1489729953842"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="maxQuality">
+		<field-validator type="compare">
+		<param name="operator"><![CDATA[>=]]></param>
+		<param name="another"><![CDATA[planNum]]></param>
+		<message>${getText("ec.common.validate.compare.error", {"WOM.propertydisplayName.randon1489729974625", "WOM.propertydisplayName.randon1489730174515", "ec.view.config.validate.greatequal"})}</message>
+		</field-validator>
+		<field-validator type="double_plus">
+		<message>${getText("ec.common.validate.double.plus.error", {"WOM.propertydisplayName.randon1489729974625"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="lossRate">
+		<field-validator type="doubleRang">
+		<param name="minInclusive">0</param>
+		<param name="maxInclusive">100</param>
+		<message>
+		${getText("ec.common.validate.range.error1", {"WOM.propertydisplayName.randon1489730189645", "0", "100"})}
+		</message>
+		</field-validator>
+		<field-validator type="double_plus">
+		<message>${getText("ec.common.validate.double.plus.error", {"WOM.propertydisplayName.randon1489730189645"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1489730249805", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</validators>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="area.code">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.randon1524636490190"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1524636490190", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="area.name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.randon15246365213261410"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon15246365213261410", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="area.areaMemo">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1524636475864", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

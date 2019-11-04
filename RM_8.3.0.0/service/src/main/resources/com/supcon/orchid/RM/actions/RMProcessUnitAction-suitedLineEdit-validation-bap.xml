@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="lineFormula.formulaId.code">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1488246312092"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="lineFormula.lineId.name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1419232393782"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<field name="_complex_complex_datagrid_1487990905847">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1487990913600List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1487990913600</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("RM.modelname.randon1487928212842")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="formulaProcessActive.name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1487330156499"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1487330156499", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="formulaProcessActive.activeType.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1487330759313"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="formulaProcessActive.occurTurn.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1487330199423"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="formulaProcessActive.chcekTip">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1556083208452", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="formulaProcessActive.meno">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1487331194516", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="formulaProcessActive.formulaId.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"ec.common.ID"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	<field name="_complex_complex_datagrid_1555572076323">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1555572135834List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1555572135834</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("RM.modelname.randon1555550512268")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

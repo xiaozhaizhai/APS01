@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<code>X6Basic_1.0</code>
+	<ecEnv>product</ecEnv>
+	<name>X6Basic.modulename.radion1366790851615</name>
+	<zhCnValue></zhCnValue>
+	<category>基础管理</category>
+	<artifact>X6Basic</artifact>
+	<projectVersion>8.20.2.01</projectVersion>
+	<orgVersion></orgVersion>
+	<description><![CDATA[]]></description>
+	<isInherentedBase>false</isInherentedBase>
+	<isNewGenerate>false</isNewGenerate>
+	<projFlag></projFlag>
+	<relations></relations>
+	<relationsInternation></relationsInternation>
+	<i10Properties>
+		<package_zh_TW>X6Basic.modulename.radion1366790851615=X6Basic.modulename.radion1366790851615</package_zh_TW>
+		<package_zh_CN>X6Basic.modulename.radion1366790851615=X6基础</package_zh_CN>
+		<package_en_US>X6Basic.modulename.radion1366790851615=X6Basic.modulename.radion1366790851615</package_en_US>
+	</i10Properties>
+</module>

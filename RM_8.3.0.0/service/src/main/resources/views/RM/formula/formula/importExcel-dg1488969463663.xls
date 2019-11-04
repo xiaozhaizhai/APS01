@@ -1,0 +1,283 @@
+
+<#if customPropData??  && (customPropData?size>0) >
+<#assign customProperties = customPropData.properties />
+<#assign customStyleCodes = customPropData.styleCodes />
+<#assign customStyleFormates = customPropData.styleFormats />
+</#if>
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
+<DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+	<Author>datagriImportTemplate</Author>
+	<Created>2015-07-16T18:33:57</Created>
+</DocumentProperties>
+<ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+	<WindowWidth>18800</WindowWidth>
+	<WindowHeight>10540</WindowHeight>
+	<ProtectStructure>False</ProtectStructure>
+	<ProtectWindows>False</ProtectWindows>
+</ExcelWorkbook>
+<Styles>
+	<Style ss:ID="Default" ss:Name="Normal">
+		<Alignment/>
+		<Borders/>
+		<Font ss:FontName="Arial" x:CharSet="134" ss:Size="10"/>
+		<Interior/>
+		<NumberFormat/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s4">
+		<NumberFormat ss:Format="_ * #,##0.00_ ;_ * -#,##0.00_ ;_ * &quot;-&quot;??_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s5">
+		<NumberFormat ss:Format="_ &quot;￥&quot;* #,##0.00_ ;_ &quot;￥&quot;* -#,##0.00_ ;_ &quot;￥&quot;* &quot;-&quot;??_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s2">
+		<NumberFormat ss:Format="0%"/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s1">
+		<NumberFormat ss:Format="_ * #,##0_ ;_ * -#,##0_ ;_ * &quot;-&quot;_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s3">
+		<NumberFormat ss:Format="_ &quot;￥&quot;* #,##0_ ;_ &quot;￥&quot;* -#,##0_ ;_ &quot;￥&quot;* &quot;-&quot;_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s6"/>
+	<Style ss:ID="s7">
+		<NumberFormat ss:Format="yyyy-m-d;-;-;@"/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s8">
+		<NumberFormat ss:Format="yyyy-m-d\ H:mm;-;-;@"/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="unNullable">
+			<Alignment />
+			<Borders />
+			<Font ss:FontName="宋体" x:CharSet="134" ss:Size="10" ss:Color="#FF0000" />
+			<Interior />
+			<NumberFormat />
+			<Protection />
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcess_isFirstProcess">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcess_isLastProcess">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcess_longTime">
+		<NumberFormat ss:Format="0.00_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcess_meno">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcess_name">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcess_persistMode">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcess_processCode">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcess_procSort">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcess_tableInfoId">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcess_transTime">
+		<NumberFormat ss:Format="0.000000_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_processType_ProcessType_id">
+		<Protection/>
+	</Style>
+	
+		<#if customStyleFormates?? && (customStyleFormates?size>0) >
+			<#list customStyleFormates as style>
+				<Style ss:ID="${style.key}">
+						<#if style['format']?? >
+			  				<NumberFormat ss:Format="${style['format']}"/>
+			  			<#else>
+			  				<NumberFormat/>
+			  			</#if>
+			  			<Protection/>
+				</Style>
+			</#list>
+		</#if>  
+</Styles>
+<Worksheet ss:Name="sheet1">
+	<Table ss:ExpandedColumnCount="256" ss:ExpandedRowCount="3" x:FullColumns="1" x:FullRows="1" ss:DefaultColumnWidth="54" ss:DefaultRowHeight="16.5">
+	<Column ss:Index="1" ss:StyleID="RM_7.5.0.0_formula_FormulaProcess_processCode"  ss:Width="120"   />
+	<Column ss:Index="2" ss:StyleID="RM_7.5.0.0_formula_FormulaProcess_name"  ss:Width="120"   />
+	<Column ss:Index="3" ss:StyleID="RM_7.5.0.0_processType_ProcessType_id"  ss:Width="120"   />
+	<Column ss:Index="4" ss:StyleID="RM_7.5.0.0_formula_FormulaProcess_longTime"  ss:Width="120"   />
+	<Column ss:Index="5" ss:StyleID="RM_7.5.0.0_formula_FormulaProcess_transTime"  ss:Width="120"   />
+	<Column ss:Index="6" ss:StyleID="RM_7.5.0.0_formula_FormulaProcess_isFirstProcess"  ss:Width="120"   />
+	<Column ss:Index="7" ss:StyleID="RM_7.5.0.0_formula_FormulaProcess_isLastProcess"  ss:Width="120"   />
+	<Column ss:Index="8" ss:StyleID="RM_7.5.0.0_formula_FormulaProcess_procSort"  ss:Width="120"   />
+	<Column ss:Index="9" ss:StyleID="RM_7.5.0.0_formula_FormulaProcess_persistMode"  ss:Width="120"   />
+	<Column ss:Index="10" ss:StyleID="RM_7.5.0.0_formula_FormulaProcess_meno"  ss:Width="120"   />
+	<Column ss:Index="11" ss:StyleID="RM_7.5.0.0_formula_FormulaProcess_tableInfoId"  ss:Width="120"   />
+	<#assign secondCount=12/>
+	<#if customStyleCodes??>
+		<#list customStyleCodes as scode>
+			<Column ss:Index="${secondCount}" ss:Width="100"  ss:StyleID="${scode}"/>
+			<#assign secondCount = secondCount + 1>
+		</#list>
+	</#if>
+	
+		<Row ss:AutoFitHeight="0">
+			<Cell>
+				<Data ss:Type="String">工序编码</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcess_processCode
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">工序名称</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcess_name
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">RM.propertydisplayName.randon1487292204969.ec.common.ID</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcess_processType||RM_7.5.0.0_processType_ProcessType_id
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">标准时长(分)</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcess_longTime
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">工序间隔时间</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcess_transTime
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">首道工序</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcess_isFirstProcess
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">末道工序</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcess_isLastProcess
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">执行顺序</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcess_procSort
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">接续方式</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcess_persistMode
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">备注</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcess_meno
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">TABLE_INFO_ID</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcess_tableInfoId
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<#if customProperties?? &&  (customProperties?size>0) >
+				<#list customProperties as item >
+								<Cell >
+									<Data ss:Type="String">${(item.columnName)!''}</Data>
+									<Comment ss:Author="">
+											 <ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+												${(item.propertyCode)!''}
+											 </ss:Data>
+									</Comment>
+								</Cell>
+				</#list>
+			</#if>
+		</Row>
+	</Table>
+	<WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+		<PageSetup>
+			<Header x:Margin="0.511805555555556"/>
+			<Footer x:Margin="0.511805555555556"/>
+		</PageSetup>
+		<Print>
+			<HorizontalResolution>1200</HorizontalResolution>
+			<VerticalResolution>1200</VerticalResolution>
+		</Print>
+			<Selected/>
+			<PageBreakZoom>100</PageBreakZoom>
+		<Panes>
+			<Pane>
+				<Number>3</Number>
+				<ActiveRow>0</ActiveRow>
+				<ActiveCol>2</ActiveCol>
+				<RangeSelection>R1C3</RangeSelection>
+			</Pane>
+		</Panes>
+		<ProtectObjects>False</ProtectObjects>
+		<ProtectScenarios>False</ProtectScenarios>
+	</WorksheetOptions>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C6:R65536C6</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是,否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C7:R65536C7</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是,否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C9:R65536C9</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;ES, SS&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+</Worksheet>
+</Workbook>

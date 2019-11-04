@@ -1,0 +1,678 @@
+
+<#if customPropData??  && (customPropData?size>0) >
+<#assign customProperties = customPropData.properties />
+<#assign customStyleCodes = customPropData.styleCodes />
+<#assign customStyleFormates = customPropData.styleFormats />
+</#if>
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
+<DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+	<Author>datagriImportTemplate</Author>
+	<Created>2015-07-16T18:33:57</Created>
+</DocumentProperties>
+<ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+	<WindowWidth>18800</WindowWidth>
+	<WindowHeight>10540</WindowHeight>
+	<ProtectStructure>False</ProtectStructure>
+	<ProtectWindows>False</ProtectWindows>
+</ExcelWorkbook>
+<Styles>
+	<Style ss:ID="Default" ss:Name="Normal">
+		<Alignment/>
+		<Borders/>
+		<Font ss:FontName="Arial" x:CharSet="134" ss:Size="10"/>
+		<Interior/>
+		<NumberFormat/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s4">
+		<NumberFormat ss:Format="_ * #,##0.00_ ;_ * -#,##0.00_ ;_ * &quot;-&quot;??_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s5">
+		<NumberFormat ss:Format="_ &quot;￥&quot;* #,##0.00_ ;_ &quot;￥&quot;* -#,##0.00_ ;_ &quot;￥&quot;* &quot;-&quot;??_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s2">
+		<NumberFormat ss:Format="0%"/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s1">
+		<NumberFormat ss:Format="_ * #,##0_ ;_ * -#,##0_ ;_ * &quot;-&quot;_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s3">
+		<NumberFormat ss:Format="_ &quot;￥&quot;* #,##0_ ;_ &quot;￥&quot;* -#,##0_ ;_ &quot;￥&quot;* &quot;-&quot;_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s6"/>
+	<Style ss:ID="s7">
+		<NumberFormat ss:Format="yyyy-m-d;-;-;@"/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s8">
+		<NumberFormat ss:Format="yyyy-m-d\ H:mm;-;-;@"/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="unNullable">
+			<Alignment />
+			<Borders />
+			<Font ss:FontName="宋体" x:CharSet="134" ss:Size="10" ss:Color="#FF0000" />
+			<Interior />
+			<NumberFormat />
+			<Protection />
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_activeHiddenId">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_activeType">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_actOrder">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_auto">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_batchPhaseID">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_batchPhaseName">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_batchSite">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_channelOrManual">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_container">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_copy">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_execSort">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_exeSystem">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_finalInspection">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_fromContainer">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_hiddenSort">
+		<NumberFormat ss:Format="0.000000_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_ingredientsOrder">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_isAgile">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_isAnaly">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_isMixQuality">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_isReplace">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_isWatchActive">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_longTime">
+		<NumberFormat ss:Format="0.00_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_lossRate">
+		<NumberFormat ss:Format="0.00_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_mainActive">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_maxQuality">
+		<NumberFormat ss:Format="0.00_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_meno">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_minQuality">
+		<NumberFormat ss:Format="0.00_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_mobileTerminal">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_name">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_occurTurn">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_standardQuantity">
+		<NumberFormat ss:Format="0.000000_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_formula_FormulaProcessActive_subActiveNum">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_product_Product_id">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_testProj_TestProj_id">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_qualityStandard_Stand_id">
+		<Protection/>
+	</Style>
+	<Style ss:ID="RM_7.5.0.0_pickSite_PickSite_id">
+		<Protection/>
+	</Style>
+	
+		<#if customStyleFormates?? && (customStyleFormates?size>0) >
+			<#list customStyleFormates as style>
+				<Style ss:ID="${style.key}">
+						<#if style['format']?? >
+			  				<NumberFormat ss:Format="${style['format']}"/>
+			  			<#else>
+			  				<NumberFormat/>
+			  			</#if>
+			  			<Protection/>
+				</Style>
+			</#list>
+		</#if>  
+</Styles>
+<Worksheet ss:Name="sheet1">
+	<Table ss:ExpandedColumnCount="256" ss:ExpandedRowCount="3" x:FullColumns="1" x:FullRows="1" ss:DefaultColumnWidth="54" ss:DefaultRowHeight="16.5">
+	<Column ss:Index="1" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_name"  ss:Width="120"   />
+	<Column ss:Index="2" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_batchPhaseName"  ss:Width="120"   />
+	<Column ss:Index="3" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_occurTurn"  ss:Width="120"   />
+	<Column ss:Index="4" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_activeType"  ss:Width="120"   />
+	<Column ss:Index="5" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_fromContainer"  ss:Width="120"   />
+	<Column ss:Index="6" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_container"  ss:Width="120"   />
+	<Column ss:Index="7" ss:StyleID="MESBasic_1_product_Product_id"  ss:Width="120"   />
+	<Column ss:Index="8" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_isAgile"  ss:Width="120"   />
+	<Column ss:Index="9" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_isReplace"  ss:Width="120"   />
+	<Column ss:Index="10" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_isMixQuality"  ss:Width="120"   />
+	<Column ss:Index="11" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_standardQuantity"  ss:Width="120"   />
+	<Column ss:Index="12" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_minQuality"  ss:Width="120"   />
+	<Column ss:Index="13" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_maxQuality"  ss:Width="120"   />
+	<Column ss:Index="14" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_lossRate"  ss:Width="120"   />
+	<Column ss:Index="15" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_longTime"  ss:Width="120"   />
+	<Column ss:Index="16" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_auto"  ss:Width="120"   />
+	<Column ss:Index="17" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_actOrder"  ss:Width="120"   />
+	<Column ss:Index="18" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_ingredientsOrder"  ss:Width="120"   />
+	<Column ss:Index="19" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_execSort"  ss:Width="120"   />
+	<Column ss:Index="20" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_batchSite"  ss:Width="120"   />
+	<Column ss:Index="21" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_exeSystem"  ss:Width="120"   />
+	<Column ss:Index="22" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_mobileTerminal"  ss:Width="120"   />
+	<Column ss:Index="23" ss:StyleID="RM_7.5.0.0_testProj_TestProj_id"  ss:Width="120"   />
+	<Column ss:Index="24" ss:StyleID="RM_7.5.0.0_qualityStandard_Stand_id"  ss:Width="120"   />
+	<Column ss:Index="25" ss:StyleID="RM_7.5.0.0_pickSite_PickSite_id"  ss:Width="120"   />
+	<Column ss:Index="26" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_isWatchActive"  ss:Width="120"   />
+	<Column ss:Index="27" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_isAnaly"  ss:Width="120"   />
+	<Column ss:Index="28" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_finalInspection"  ss:Width="120"   />
+	<Column ss:Index="29" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_activeHiddenId"  ss:Width="120"   />
+	<Column ss:Index="30" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_channelOrManual"  ss:Width="120"   />
+	<Column ss:Index="31" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_meno"  ss:Width="120"   />
+	<Column ss:Index="32" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_batchPhaseID"  ss:Width="120"   />
+	<Column ss:Index="33" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_copy"  ss:Width="120"   />
+	<Column ss:Index="34" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_subActiveNum"  ss:Width="120"   />
+	<Column ss:Index="35" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_mainActive"  ss:Width="120"   />
+	<Column ss:Index="36" ss:StyleID="RM_7.5.0.0_formula_FormulaProcessActive_hiddenSort"  ss:Width="120"   />
+	<#assign secondCount=37/>
+	<#if customStyleCodes??>
+		<#list customStyleCodes as scode>
+			<Column ss:Index="${secondCount}" ss:Width="100"  ss:StyleID="${scode}"/>
+			<#assign secondCount = secondCount + 1>
+		</#list>
+	</#if>
+	
+		<Row ss:AutoFitHeight="0">
+			<Cell>
+				<Data ss:Type="String">活动名称</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_name
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">批控活动名称</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_batchPhaseName
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">发生于</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_occurTurn
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">类型</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_activeType
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">来自容器</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_fromContainer
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">容器</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_container
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">RM.propertydisplayName.randon1487331013618.MESBasic.propertydisplayName.randon1449796384550</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_product||MESBasic_1_product_Product_id
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">灵活投料</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_isAgile
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">替代料</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_isReplace
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">固定数量</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_isMixQuality
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">单位数量</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_standardQuantity
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">区间下限</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_minQuality
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">区间上限</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_maxQuality
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">损耗率(%)</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_lossRate
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">标准时长(分)</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_longTime
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">控制系统执行</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_auto
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">投料顺序</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_actOrder
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">配料顺序</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_ingredientsOrder
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">执行顺序</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_execSort
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">配料方式</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_batchSite
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">系统</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_exeSystem
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">移动端执行</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_mobileTerminal
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">RM.propertydisplayName.randon1490319574134.ec.common.ID</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_testProduct||RM_7.5.0.0_testProj_TestProj_id
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">RM.propertydisplayName.randon1487596851814.ec.common.ID</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_qualityStandard||RM_7.5.0.0_qualityStandard_Stand_id
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">RM.propertydisplayName.randon1504141163635.ec.common.ID</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_pickSite||RM_7.5.0.0_pickSite_PickSite_id
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">工艺监测</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_isWatchActive
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">统计标识</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_isAnaly
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">完工检验</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_finalInspection
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">活动隐藏Id</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_activeHiddenId
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">管道手工</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_channelOrManual
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">备注</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_meno
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">批控PhaseID</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_batchPhaseID
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">是否复制</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_copy
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">子活动数量</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_subActiveNum
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">主要活动</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_mainActive
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">隐藏顺序</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    RM_7.5.0.0_formula_FormulaProcessActive_hiddenSort
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<#if customProperties?? &&  (customProperties?size>0) >
+				<#list customProperties as item >
+								<Cell >
+									<Data ss:Type="String">${(item.columnName)!''}</Data>
+									<Comment ss:Author="">
+											 <ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+												${(item.propertyCode)!''}
+											 </ss:Data>
+									</Comment>
+								</Cell>
+				</#list>
+			</#if>
+		</Row>
+	</Table>
+	<WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+		<PageSetup>
+			<Header x:Margin="0.511805555555556"/>
+			<Footer x:Margin="0.511805555555556"/>
+		</PageSetup>
+		<Print>
+			<HorizontalResolution>1200</HorizontalResolution>
+			<VerticalResolution>1200</VerticalResolution>
+		</Print>
+			<Selected/>
+			<PageBreakZoom>100</PageBreakZoom>
+		<Panes>
+			<Pane>
+				<Number>3</Number>
+				<ActiveRow>0</ActiveRow>
+				<ActiveCol>2</ActiveCol>
+				<RangeSelection>R1C3</RangeSelection>
+			</Pane>
+		</Panes>
+		<ProtectObjects>False</ProtectObjects>
+		<ProtectScenarios>False</ProtectScenarios>
+	</WorksheetOptions>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C3:R65536C3</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;工序前, 工序中, 工序后&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C4:R65536C4</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;常规, 配料, 投料, 投配料, 检验, 产出, 人工确认&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C5:R65536C5</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是, 否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C8:R65536C8</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是,否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C9:R65536C9</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是,否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C10:R65536C10</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是,否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C16:R65536C16</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是,否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C20:R65536C20</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;配于现场, 配于容器, 配放于容器&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C21:R65536C21</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;批控系统, MES系统, PDA&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C22:R65536C22</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是,否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C26:R65536C26</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是,否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C27:R65536C27</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是,否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C28:R65536C28</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是,否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C30:R65536C30</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是,否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C33:R65536C33</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是,否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C35:R65536C35</Range>
+						<Type>List</Type>
+						<CellRangeList />
+						<Value>&quot;是,否&quot;</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>
+</Worksheet>
+</Workbook>

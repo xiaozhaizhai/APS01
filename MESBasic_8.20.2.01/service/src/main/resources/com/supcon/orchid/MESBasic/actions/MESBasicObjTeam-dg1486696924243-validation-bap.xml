@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="objTeam.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"X6Basic.propertydisplayName.radion1398303581302"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>

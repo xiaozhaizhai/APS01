@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="placeManage.placeCode">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1418607299231"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1418607299231", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="placeManage.placeName">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1418607347494"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1418607347494", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="placeManage.placeManager.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"foundation.staff.dimissionStaff_xls.staffName"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="placeManage.factoryNode.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1419232393782"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="placeManage.placeMemo">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1418607488747", "256"})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

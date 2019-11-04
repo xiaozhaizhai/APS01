@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<code>MESBasic_1</code>
+	<ecEnv>product</ecEnv>
+	<name>MESBasic.modulename.radion1414977652983</name>
+	<zhCnValue></zhCnValue>
+	<category>基础管理</category>
+	<artifact>MESBasic</artifact>
+	<projectVersion>8.20.2.01</projectVersion>
+	<orgVersion></orgVersion>
+	<description><![CDATA[包含了生产执行系统的基础对象]]></description>
+	<isInherentedBase>false</isInherentedBase>
+	<isNewGenerate>false</isNewGenerate>
+	<projFlag></projFlag>
+	<relations>X6Basic_1.0,</relations>
+	<relationsInternation>X6Basic.modulename.radion1366790851615,</relationsInternation>
+	<i10Properties>
+		<package_zh_TW>MESBasic.modulename.radion1414977652983=MESBasic.modulename.radion1414977652983,X6Basic.modulename.radion1366790851615=X6Basic.modulename.radion1366790851615</package_zh_TW>
+		<package_zh_CN>MESBasic.modulename.radion1414977652983=MES基础,X6Basic.modulename.radion1366790851615=X6基础</package_zh_CN>
+		<package_en_US>MESBasic.modulename.radion1414977652983=MES Basic,X6Basic.modulename.radion1366790851615=X6Basic.modulename.radion1366790851615</package_en_US>
+	</i10Properties>
+</module>

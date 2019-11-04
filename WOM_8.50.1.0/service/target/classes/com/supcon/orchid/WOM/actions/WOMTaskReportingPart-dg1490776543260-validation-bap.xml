@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="quality">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.randon1490773208429"})}</message>
+		</field-validator>
+		<field-validator type="double_plus">
+		<message>&lt;b&gt;${getText("WOM.propertydisplayName.randon1490773208429")}&lt;/b&gt;${getText("ec.common.validate.double.plus.error")}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="batchNum">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1490773190433", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1490773225991", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>

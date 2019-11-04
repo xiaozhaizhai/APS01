@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="container.code">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1415268359829"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1415268359829", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="container.name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1415268393452"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1415268393452", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="container.containerType.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1415320693399"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="container.containerStatus.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1415322023968"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<field name="container.volumneCalc">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1415320780802", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="container.pimsurl">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1415321422970", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1416532215837">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1416532238441List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1416532238441</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("MESBasic.modelname.radion1415869369969")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

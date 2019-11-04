@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models>
+  <model id="MessageCenter" tableName="X6BASIC_MESSAGE_CENTERS" extends="AbstractEcFullEntity" description="消息提醒">
+    <property id="accepter" columnName="ACCEPTER" type="LONG" description="被提醒人"/>
+    <property id="emailContent" columnName="EMAIL_CONTENT" type="LONGTEXT" description="邮件提醒内容"/>
+    <property id="emailTitle" columnName="EMAIL_TITLE" type="TEXT" length="256" description="邮件标题"/>
+    <property id="messageContent" columnName="MESSAGE_CONTENT" type="LONGTEXT" description="短信提醒内容"/>
+    <property id="modelId" columnName="MODEL_ID" type="LONG" description="实体ID"/>
+    <property id="pandionContent" columnName="PANDION_CONTENT" type="LONGTEXT" description="Pandion提醒内容"/>
+    <property id="resModelCode" columnName="RES_MODEL_CODE" type="TEXT" length="256" description="关联模型CODE"/>
+    <property id="sender" columnName="SENDER" type="LONG" description="发送人"/>
+    <property id="stationContent" columnName="STATION_CONTENT" type="LONGTEXT" description="站内信提醒内容"/>
+    <property id="warnTime" columnName="WARN_TIME" type="DATETIME" description="提醒时间"/>
+  </model>
+  <model id="MessageCenterDealInfo" tableName="X6BASIC_MESSAGE_CENTERS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_MESSAGECENTER_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BaseUnit" tableName="S2BASE_UNIT" extends="AbstractEcPartEntity" description="单位">
+    <property id="code" columnName="UNIT_CODE" type="TEXT" length="256" description="单位代码"/>
+    <index name="IDX_BASEUNIT_CODE" columns="code"/>
+    <property id="comments" columnName="UNIT_MEMO" type="LONGTEXT" description="备注"/>
+    <property id="id" columnName="UNIT_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="isMain" columnName="UNIT_MAIN" type="BOOLEAN" description="主单位"/>
+    <property id="name" columnName="UNIT_NAME" type="TEXT" length="256" description="单位名称"/>
+    <index name="IDX_BASEUNIT_NAME" columns="name"/>
+    <property id="rate" columnName="UNIT_RATE" type="DECIMAL" scale="6" description="比率"/>
+    <property id="unitGroup" columnName="UNIT_GROUPID" type="LONG" description="单位组"/>
+  </model>
+  <model id="UnitGroups" tableName="S2BASE_UNITGROUP" extends="AbstractEcFullEntity" description="单位组">
+    <property id="code" columnName="UNITGROUP_CODE" type="TEXT" length="256" description="单位组代码"/>
+    <index name="IDX_UNITGROUPS_CODE" columns="code"/>
+    <property id="groupBapType" columnName="UNITGROUP_BAPTYPE" type="SYSTEMCODE" description=" 单位组类型"/>
+    <property id="groupMemo" columnName="UNITGROUP_MEMO" type="LONGTEXT" description="备注"/>
+    <property id="groupType" columnName="UNITGROUP_TYPE" type="SYSTEMCODE" description="单位组类型"/>
+    <property id="id" columnName="UNITGROUP_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="name" columnName="UNITGROUP_NAME" type="TEXT" length="256" description="单位组名称"/>
+    <index name="IDX_UNITGROUPS_NAME" columns="name"/>
+  </model>
+  <model id="UnitGroupsDealInfo" tableName="S2BASE_UNITGROUP_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_UNITGROUPS_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="TimeRegion" tableName="X6BASIC_TIME_REGIONS" extends="AbstractEcFullEntity" description="时间区间">
+    <property id="endTime" columnName="END_TIME" type="DATE" description="结束时间"/>
+    <property id="name" columnName="NAME" type="TEXT" description="名称"/>
+    <property id="recordNum" columnName="RECORD_NUM" type="INTEGER" description="生成数据"/>
+    <property id="setMon" columnName="SET_MON" type="INTEGER" description="月"/>
+    <property id="setquater" columnName="SETQUATER" type="INTEGER" description="季度"/>
+    <property id="setyear" columnName="SETYEAR" type="INTEGER" description="年"/>
+    <property id="startTime" columnName="START_TIME" type="DATE" description="开始时间"/>
+    <property id="unit" columnName="UNIT" type="SYSTEMCODE" description="单位"/>
+    <property id="useEntity" columnName="USE_ENTITY" type="SYSTEMCODE" description="使用实体"/>
+  </model>
+  <model id="TimeRegionDealInfo" tableName="X6BASIC_TIME_REGIONS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_TIMEREGION_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="TimeRegionPar" tableName="X6BASIC_TIME_REGION_PARS" extends="AbstractEcPartEntity" description="时间区间明细">
+    <property id="endDate" columnName="END_DATE" type="DATE" description="结束时间"/>
+    <property id="month" columnName="MONTH" type="INTEGER" description="月"/>
+    <property id="name" columnName="NAME" type="TEXT" description="区间名称"/>
+    <property id="quarter" columnName="QUARTER" type="INTEGER" description="季度"/>
+    <property id="recordNum" columnName="RECORD_NUM" type="INTEGER" description="生成数据"/>
+    <property id="recordTine" columnName="RECORD_TINE" type="DATE" description="参照时间"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <property id="startDate" columnName="START_DATE" type="DATE" description="开始时间"/>
+    <property id="timeRegionID" columnName="TIME_REGIONID" type="LONG" description="时间区间id"/>
+    <property id="week" columnName="WEEK" type="INTEGER" description="周"/>
+    <property id="year" columnName="YEAR" type="INTEGER" description="年"/>
+  </model>
+  <model id="MeetingRoom" tableName="X6BASIC_MEETING_ROOMS" extends="AbstractEcFullEntity" description="会议室管理">
+    <property id="attMatching" columnName="ATT_MATCHING" type="LONG" description="考勤机类型1"/>
+    <property id="attMatching2" columnName="ATT_MATCHING2" type="LONG" description="考勤机类型2"/>
+    <property id="attMatchingAddress" columnName="ATT_MATCHING_ADDRESS" type="TEXT" length="256" description="入口考勤机"/>
+    <property id="attMatchingAddress2" columnName="ATT_MATCHING_ADDRESS2" type="TEXT" length="256" description="出口考勤机"/>
+    <property id="audio" columnName="AUDIO" type="BOOLEAN" description="音响设备"/>
+    <property id="camera" columnName="CAMERA" type="BOOLEAN" description="摄像机"/>
+    <property id="matching" columnName="MATCHING" type="BOOLEAN" description="考勤机"/>
+    <property id="memos" columnName="MEMOS" type="LONGTEXT" length="256" description="备注"/>
+    <property id="name" columnName="NAME" type="TEXT" length="256" description="会议室名称"/>
+    <property id="network" columnName="NETWORK" type="BOOLEAN" description="网络"/>
+    <property id="projector" columnName="PROJECTOR" type="BOOLEAN" description="投影仪"/>
+    <property id="roomSize" columnName="ROOM_SIZE" type="SYSTEMCODE" description="规模"/>
+    <property id="staff" columnName="STAFF" type="LONG" description="负责人"/>
+    <property id="useFlag" columnName="USE_FLAG" type="BOOLEAN" description="启用"/>
+    <property id="whiteBoard" columnName="WHITE_BOARD" type="BOOLEAN" description="白板"/>
+  </model>
+  <model id="MeetingRoomDealInfo" tableName="X6BASIC_MEETING_ROOMS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_MEETINGROOM_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="MeetingRoomMneCode" tableName="X6BASIC_MEETING_ROOMS_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="MeetingRoom" columnName="MEETING_ROOM" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="UsedRecord" tableName="X6BASIC_USED_RECORDS" extends="AbstractEcPartEntity" description="会议室使用记录">
+    <property id="endTime" columnName="END_TIME" type="DATETIME" description="结束时间"/>
+    <property id="meeting" columnName="MEETING" type="LONG" description="会议室"/>
+    <property id="staff" columnName="STAFF" type="LONG" description="使用人"/>
+    <property id="startTime" columnName="START_TIME" type="DATETIME" description="开始时间"/>
+    <property id="title" columnName="TITLE" type="TEXT" length="2000" description="会议使用情况"/>
+    <property id="typeId" columnName="TYPE_ID" type="TEXT" length="256" description="使用对象id"/>
+    <property id="useType" columnName="USE_TYPE" type="TEXT" length="256" description="使用对象"/>
+  </model>
+  <model id="SyncLog" tableName="X6BASIC_SYNC_LOGS" extends="AbstractEcFullEntity" description="同步日志表">
+    <property id="bbsFlag" columnName="BBS_FLAG" type="BOOLEAN" description="同步bbs账号失败"/>
+    <property id="emailFlag" columnName="EMAIL_FLAG" type="BOOLEAN" description="同步邮件失败"/>
+    <property id="eventTopic" columnName="EVENT_TOPIC" type="TEXT" length="400" description="topic"/>
+    <property id="log" columnName="LOG" type="LONGTEXT" description="日志"/>
+    <property id="pandionFlag" columnName="PANDION_FLAG" type="BOOLEAN" description="同步pandion失败"/>
+    <property id="syncPassword" columnName="SYNC_PASSWORD" type="TEXT" length="400" description="同步密码"/>
+    <property id="syncStaff" columnName="SYNC_STAFF" type="LONG" description="人员"/>
+    <property id="userName" columnName="USER_NAME" type="TEXT" length="200" description="用户名"/>
+  </model>
+  <model id="SyncLogDealInfo" tableName="X6BASIC_SYNC_LOGS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_SYNCLOG_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="ProductManage" tableName="X6BASIC_PRODUCT_MENAGE" extends="AbstractEcFullEntity" description="物品管理">
+    <property id="extraCol" columnName="EXTRA_COL" type="LONGTEXT" description="大字段"/>
+    <property id="code" columnName="CODE" type="TEXT" length="256" description="物品编码"/>
+    <index name="IDX_PRODUCTMANAGE_CODE" columns="code"/>
+    <property id="currQuantity" columnName="CURR_QUANTITY" type="DECIMAL" scale="2" description="现存量"/>
+    <property id="models" columnName="MODELS" type="TEXT" length="256" description="型号"/>
+    <property id="name" columnName="NAME" type="TEXT" length="256" description="物品名称"/>
+    <property id="prodMemo" columnName="PROD_MEMO" type="TEXT" length="2000" description="备注"/>
+    <property id="specific" columnName="SPECIFIC" type="TEXT" length="256" description="规格"/>
+    <property id="unit" columnName="UNIT" type="TEXT" length="256" description="单位"/>
+  </model>
+  <model id="ProductManageDealInfo" tableName="X6BASIC_PRODUCT_MENAGE_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PRODUCTMANAGE_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="PlanDaily" tableName="S2BASE_RANGEPLANDAILY" extends="AbstractEcPartEntity" description="排班结果">
+    <property id="endTime" columnName="RPD_ENDTIME" type="DATETIME" description="结束时间"/>
+    <property id="factory" columnName="WORKLINE" type="LONG" description="X6Basic.propertydisplayName.randon1512543328302"/>
+    <property id="id" columnName="RPD_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="rangeDate" columnName="RPD_DATE" type="DATE" description="排班日期"/>
+    <property id="rangePlanId" columnName="RPD_PLANID" type="INTEGER" description="排班计划"/>
+    <property id="rangePlanPart" columnName="RPD_PARTID" type="LONG" description="排班明细"/>
+    <property id="rpdMemo" columnName="RPD_MEMO" type="LONGTEXT" description="备注"/>
+    <property id="rule" columnName="RPD_RULEID" type="LONG" description="轮班规则"/>
+    <property id="rulePart" columnName="RPD_RULEPARTID" type="LONG" description="规则明细"/>
+    <property id="startTime" columnName="RPD_STARTTIME" type="DATETIME" description="开始时间"/>
+    <property id="team" columnName="RPD_TEAMID" type="LONG" description="班组"/>
+    <property id="workLine" columnName="RPD_WORKLINE" type="SYSTEMCODE" description="作业区"/>
+  </model>
+  <model id="RangePlan" tableName="S2BASE_RANGEPLAN" extends="AbstractEcFullEntity" description="排班计划">
+    <property id="beginDate" columnName="RP_BEGINDATE" type="DATE" description="生效日期"/>
+    <property id="endDate" columnName="RP_ENDDATE" type="DATE" description="失效日期"/>
+    <property id="id" columnName="RP_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="rangeDate" columnName="RP_DATE" type="DATE" description="排班日期"/>
+    <property id="rangeStaff" columnName="RP_RANGEID" type="LONG" description="排班人"/>
+    <property id="rpMemo" columnName="RP_MEMO" type="LONGTEXT" description="备注"/>
+    <property id="spellRule" columnName="RP_RULEID" type="LONG" description="轮班规则"/>
+    <property id="state" columnName="RP_STATE" type="BOOLEAN" description="启用"/>
+    <property id="workLine" columnName="RP_WORKLINE" type="SYSTEMCODE" description="生产线"/>
+  </model>
+  <model id="RangePlanDealInfo" tableName="S2BASE_RANGEPLAN_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_RANGEPLAN_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="RangePlanPart" tableName="S2BASE_RANGEPLANPART" extends="AbstractEcPartEntity" description="排班明细">
+    <property id="id" columnName="RPP_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="orders" columnName="RPP_ORDER" type="INTEGER" description="顺序"/>
+    <property id="rangePlan" columnName="RPP_PLANID" type="LONG" description="排班计划"/>
+    <property id="rppMemo" columnName="RPP_MEMO" type="LONGTEXT" description="备注"/>
+    <property id="team" columnName="RPP_TEAMID" type="LONG" description="班组"/>
+  </model>
+  <model id="AccountPeriod" tableName="X6BASIC_ACCOUNT_PERIODS" extends="AbstractEcFullEntity" description="会计期">
+    <property id="year" columnName="YEAR" type="SYSTEMCODE" description="年度"/>
+  </model>
+  <model id="AccountPeriodDealInfo" tableName="X6BASIC_ACCOUNT_PERIODS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_ACCOUNTPERIOD_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="AccountPeriodPart" tableName="X6BASIC_ACCOUNT_PERIOD_PARTS" extends="AbstractEcPartEntity" description="月份期间">
+    <property id="accountPeriod" columnName="ACCOUNT_PERIOD" type="LONG" description="会计期"/>
+    <property id="accountState" columnName="ACCOUNT_STATE" type="TEXT" description="状态"/>
+    <property id="endDate" columnName="END_DATE" type="DATE" description="结束日期"/>
+    <property id="isAccounted" columnName="IS_ACCOUNTED" type="BOOLEAN" description="已结算"/>
+    <property id="month" columnName="MONTH" type="SYSTEMCODE" description="月份"/>
+    <property id="startDate" columnName="START_DATE" type="DATE" description="开始日期"/>
+  </model>
+  <model id="SyncConfigs" tableName="X6BASIC_SYNC_CONFIGS" extends="AbstractEcFullEntity" description="同步配置项">
+    <property id="bbsAlias" columnName="BBS_ALIAS" type="TEXT" length="255" description="别名"/>
+    <property id="bbsDataSourse" columnName="BBS_DATA_SOURSE" type="TEXT" length="800" description="数据库连接"/>
+    <property id="bbsDeleteSync" columnName="BBS_DELETE_SYNC" type="BOOLEAN" description="删除时是否同步"/>
+    <property id="bbsPassword" columnName="BBS_PASSWORD" type="PASSWORD" description="密码"/>
+    <property id="bbsUserName" columnName="BBS_USER_NAME" type="TEXT" length="200" description="用户名"/>
+    <property id="des" columnName="DES" type="TEXT" length="2000" description="备注"/>
+    <property id="emailDataSourse" columnName="EMAIL_DATA_SOURSE" type="TEXT" length="800" description="数据库连接"/>
+    <property id="emailDelSync" columnName="EMAIL_DEL_SYNC" type="BOOLEAN" description="删除时是否同步"/>
+    <property id="emailDomain" columnName="EMAIL_DOMAIN" type="TEXT" length="400" description="邮件域名"/>
+    <property id="emailHomedir" columnName="EMAIL_HOMEDIR" type="TEXT" length="400" description="邮件服务器目录"/>
+    <property id="emailMaildir" columnName="EMAIL_MAILDIR" type="TEXT" length="400" description="邮件存放目录"/>
+    <property id="emailPassword" columnName="EMAIL_PASSWORD" type="PASSWORD" length="400" description="密码"/>
+    <property id="emailUserName" columnName="EMAIL_USER_NAME" type="TEXT" length="400" description="用户名"/>
+    <property id="pandionDataSourse" columnName="PANDION_DATA_SOURSE" type="TEXT" length="800" description="数据库连接"/>
+    <property id="pandionDelSync" columnName="PANDION_DEL_SYNC" type="BOOLEAN" description="删除时是否同步"/>
+    <property id="pandionPassword" columnName="PANDION_PASSWORD" type="PASSWORD" length="400" description="密码"/>
+    <property id="pandionUserName" columnName="PANDION_USER_NAME" type="TEXT" length="400" description="用户名"/>
+    <property id="syncBBSFlag" columnName="SYNCBBSFLAG" type="BOOLEAN" description="同步BBS账户"/>
+    <property id="syncEmailFlag" columnName="SYNC_EMAIL_FLAG" type="BOOLEAN" description="同步邮件账户"/>
+    <property id="syncPandionFlag" columnName="SYNC_PANDION_FLAG" type="BOOLEAN" description="同步聊天工具账户"/>
+  </model>
+  <model id="SyncConfigsDealInfo" tableName="X6BASIC_SYNC_CONFIGS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_SYNCCONFIGS_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="MailServer" tableName="X6BASIC_MAIL_SERVERS" extends="AbstractEcFullEntity" description="邮件服务器">
+    <property id="code" columnName="CODE" type="TEXT" length="256" description="编号"/>
+    <index name="IDX_MAILSERVER_CODE" columns="code"/>
+    <property id="dbMemo" columnName="DB_MEMO" type="LONGTEXT" description="备注"/>
+    <property id="dbName" columnName="DB_NAME" type="TEXT" length="256" description="数据库名称"/>
+    <property id="dbType" columnName="DB_TYPE" type="SYSTEMCODE" description="数据库类型"/>
+    <property id="isLocal" columnName="IS_LOCAL" type="BOOLEAN" description="本地数据库"/>
+    <property id="name" columnName="NAME" type="TEXT" length="256" description="名称"/>
+    <property id="psw" columnName="PSW" type="PASSWORD" description="密码"/>
+    <property id="url" columnName="URL" type="TEXT" length="256" description="数据库地址"/>
+    <property id="userName" columnName="USER_NAME" type="TEXT" length="256" description="用户名"/>
+  </model>
+  <model id="MailServerDealInfo" tableName="X6BASIC_MAIL_SERVERS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_MAILSERVER_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="SpellRule" tableName="S2BASE_SPELLRULE" extends="AbstractEcFullEntity" description="轮班规则">
+    <property id="code" columnName="SR_CODE" type="TEXT" length="256" description="轮班编码"/>
+    <index name="IDX_SPELLRULE_CODE" columns="code"/>
+    <property id="id" columnName="SR_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="name" columnName="SR_NAME" type="TEXT" length="256" description="轮班名称"/>
+    <property id="srMemo" columnName="SR_MEMO" type="LONGTEXT" description="备注"/>
+    <property id="times" columnName="SR_TIMES" type="TEXT" length="256" description="时间节点"/>
+  </model>
+  <model id="SpellRuleDealInfo" tableName="S2BASE_SPELLRULE_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_SPELLRULE_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="SpellRulePart" tableName="S2BASE_SPELLRULEPART" extends="AbstractEcPartEntity" description="班次明细">
+    <property id="endTime" columnName="SRP_ENDTIME" type="TEXT" length="256" description="结束时间"/>
+    <property id="id" columnName="SRP_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="spellRule" columnName="SRP_RULEID" type="LONG" description="轮班规则"/>
+    <property id="srpMemo" columnName="SRP_MEMO" type="LONGTEXT" description="备注"/>
+    <property id="startTime" columnName="SRP_STARTTIME" type="TEXT" length="256" description="开始时间"/>
+    <property id="teamOrder" columnName="SRP_TEAMORDER" type="TEXT" length="256" description="班次"/>
+  </model>
+  <model id="DocumentClasses" tableName="X6BASIC_DOCUMENT_CLASSES" extends="AbstractEcTreeFullEntity" description="文档分类">
+    <property id="extraCol" columnName="EXTRA_COL" type="LONGTEXT" description="大字段"/>
+    <property id="code" columnName="CODE" type="TEXT" length="256" description="编码"/>
+    <index name="IDX_DOCUMENTCLASS_CODE" columns="code"/>
+    <property id="codeRule" columnName="CODE_RULE" type="BAPCODE" length="256" description="编码规则"/>
+    <property id="description" columnName="DESCRIPTION" type="TEXT" length="2000" description="描述"/>
+    <property id="name" columnName="NAME" type="TEXT" length="256" description="文档分类"/>
+  </model>
+  <model id="DocumentClassesDealInfo" tableName="X6BASIC_DOCUMENT_CLASSES_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_DOCUMENTCLASS_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="Signature" tableName="X6BASIC_SIGNATURES" extends="AbstractEcFullEntity" description="签名">
+    <property id="description" columnName="DESCRIPTION" type="TEXT" length="4000" description="备注"/>
+    <property id="signaturePic" columnName="SIGNATURE_PIC" type="PICTURE" description="签名（图片）"/>
+    <property id="signaturePicByte" columnName="SIGNATURE_PIC_BYTE" type="LONGTEXT" length="2000" description="签名（字节）"/>
+    <property id="staff" columnName="STAFF" type="LONG" description="人员"/>
+  </model>
+  <model id="SignatureDealInfo" tableName="X6BASIC_SIGNATURES_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_SIGNATURE_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="SignetSetting" tableName="X6BASIC_SIGNET_SETTINGS" extends="AbstractEcFullEntity" description="印章管理">
+    <property id="checkPassword" columnName="CHECK_PASSWORD" type="PASSWORD" length="256" description="确认口令"/>
+    <property id="name" columnName="NAME" type="TEXT" length="256" description="名称"/>
+    <property id="password" columnName="PASSWORD" type="TEXT" length="256" description="口令"/>
+    <property id="singetType" columnName="SINGET_TYPE" type="SYSTEMCODE" description="类别"/>
+    <property id="url" columnName="URL" type="PICTURE" description="图片路径"/>
+    <property id="userinfo" columnName="USERINFO" type="LONG" description="用户"/>
+    <property id="userName" columnName="USER_NAME" type="TEXT" length="256" description="用户"/>
+  </model>
+  <model id="SignetSettingDealInfo" tableName="X6BASIC_SIGNET_SETTINGS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_SIGNETSETTING_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="AttMachine" tableName="X6BASIC_ATT_MACHINES" extends="AbstractEcFullEntity" description="考勤机管理">
+    <property id="attType" columnName="ATT_TYPE" type="SYSTEMCODE" description="类型"/>
+    <property id="code" columnName="CODE" type="TEXT" length="256" description="编号"/>
+    <index name="IDX_ATTMACHINE_CODE" columns="code"/>
+    <property id="databaseName" columnName="DATABASE_NAME" type="TEXT" length="256" description="数据库名称"/>
+    <property id="ifatt" columnName="IFATT" type="BOOLEAN" description="考勤"/>
+    <property id="ifconsume" columnName="IFCONSUME" type="BOOLEAN" description="消费"/>
+    <property id="ifMeeting" columnName="IF_MEETING" type="BOOLEAN" description="会议"/>
+    <property id="instructions" columnName="INSTRUCTIONS" type="TEXT" length="4000" description="说明"/>
+    <property id="isLocal" columnName="IS_LOCAL" type="BOOLEAN" description="本地数据库"/>
+    <property id="name" columnName="NAME" type="TEXT" length="256" description="名称"/>
+    <property id="procedure" columnName="IS_PROCEDURE" type="TEXT" length="256" description="设置程序"/>
+    <property id="pwd" columnName="PWD" type="PASSWORD" length="256" description="密码"/>
+    <property id="url" columnName="URL" type="TEXT" length="2000" description="数据库连接"/>
+    <property id="userName" columnName="USER_NAME" type="TEXT" length="255" description="用户名"/>
+  </model>
+  <model id="AttMachineDealInfo" tableName="X6BASIC_ATT_MACHINES_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_ATTMACHINE_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="Abook" tableName="X6BASIC_ABOOKS" extends="AbstractEcFullEntity" description="通讯录">
+    <property id="name" columnName="NAME" type="TEXT" length="256" description="名称"/>
+  </model>
+  <model id="AbookDealInfo" tableName="X6BASIC_ABOOKS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_ABOOK_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="TeamInfo" tableName="S2BASE_TEAMINFO" extends="AbstractEcFullEntity" description="班组">
+    <property id="code" columnName="TEAM_CODE" type="TEXT" length="256" description="班组编码"/>
+    <index name="IDX_TEAMINFO_CODE" columns="code"/>
+    <property id="createDate" columnName="TEAM_CREATEDATE" type="DATE" description="成立日期"/>
+    <property id="dept" columnName="TEAM_DEPTID" type="LONG" description="部门"/>
+    <property id="id" columnName="TEAM_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="name" columnName="TEAM_NAME" type="TEXT" length="256" description="班组名称"/>
+    <property id="principal" columnName="TEAM_PRINCIPAL" type="LONG" description="负责人"/>
+    <property id="state" columnName="TEAM_STATE" type="BOOLEAN" description="状态"/>
+    <property id="teamMemo" columnName="TEAM_MEMO" type="LONGTEXT" description="备注"/>
+    <property id="workLine" columnName="TEAM_WORKLINE" type="SYSTEMCODE" description="作业区"/>
+  </model>
+  <model id="TeamInfoDealInfo" tableName="S2BASE_TEAMINFO_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_TEAMINFO_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+</Models>

@@ -1,0 +1,1498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models>
+  <model id="BatchData" tableName="MESBASIC_BATCH_DATAS" extends="AbstractEcFullEntity" description="数据接口">
+    <property id="businessType" columnName="BUSINESS_TYPE" type="SYSTEMCODE" description="业务类型"/>
+    <index name="IDX_BATCHDATA_BUSINESS" columns="businessType"/>
+    <property id="content" columnName="CONTENT" type="TEXT" length="200" description="业务数据"/>
+    <property id="dataId" columnName="DATA_ID" type="TEXT" length="200" description="信号ID"/>
+    <property id="dataTime" columnName="DATA_TIME" type="DATETIME" description="数据时间"/>
+    <property id="insertCheck" columnName="INSERT_CHECK" type="BOOLEAN" description="插入标记"/>
+    <property id="originalSignalId" columnName="ORIGINAL_SIGNAL_ID" type="LONG" description="信号源Id"/>
+    <property id="processed" columnName="PROCESSED" type="BOOLEAN" description="处理标记"/>
+    <property id="purchaseCode" columnName="PURCHASE_CODE" type="TEXT" description="原料批号"/>
+    <property id="qc" columnName="QC" type="TEXT" length="50" description="质量变化"/>
+    <property id="signalSource" columnName="SIGNAL_SOURCE" type="SYSTEMCODE" description="来源"/>
+    <property id="tag" columnName="TAG" type="TEXT" length="200" description="位号"/>
+    <property id="tvalue" columnName="TVALUE" type="TEXT" length="500" description="位号值"/>
+  </model>
+  <model id="BatchDataDealInfo" tableName="MESBASIC_BATCH_DATAS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BATCHDATA_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="CommDealInfo" tableName="COMM_DEALINFO" extends="AbstractEcPartEntity" description="更改记录(采购组)">
+    <property id="assignID" columnName="DEALINFO_ASSIGNID" type="LONG" description="物品"/>
+    <property id="bapType" columnName="DEALINFO_BAPTYPE" type="SYSTEMCODE" description="维护类型"/>
+    <property id="dealContent" columnName="DEALINFO_CONTENT" type="TEXT" length="2000" description="维护内容"/>
+    <property id="dealerID" columnName="DEALINFO_DEALERID" type="LONG" description="维护人"/>
+    <property id="dealTime" columnName="DEALINFO_DEALTIME" type="DATETIME" description="维护时间"/>
+    <property id="id" columnName="DEALINFO_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="typeS2" columnName="DEALINFO_TYPE" type="INTEGER" description="维护类型S2"/>
+  </model>
+  <model id="CprodAtt" tableName="MESBASIC_CPROD_ATTS" extends="AbstractEcPartEntity" description="物品属性参照">
+    <property id="prodAttrId" columnName="PROD_ATTR_ID" type="LONG" description="物品属性"/>
+    <property id="productid" columnName="PRODUCTID" type="LONG" description="物品"/>
+  </model>
+  <model id="ProdDealInfo" tableName="S2BASE_PRODDEALINFO" extends="AbstractEcPartEntity" description="物品维护记录">
+    <property id="assignID" columnName="PDI_ASSIGNID" type="LONG" description="关联ID"/>
+    <property id="content" columnName="PDI_CONTENT" type="TEXT" length="2000" description="维护内容及原因"/>
+    <property id="ctype" columnName="PDI_TYPE" type="INTEGER" description="维护类型"/>
+    <property id="dealerID" columnName="PDI_DEALERID" type="LONG" description="维护人ID"/>
+    <property id="dealTime" columnName="PDI_DEALTIME" type="DATETIME" description="维护时间"/>
+    <property id="directoryID" columnName="PDI_DIRECTORYID" type="INTEGER" description="自定义目录ID"/>
+    <property id="id" columnName="PDI_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+  </model>
+  <model id="ProdLevel" tableName="S2BASE_PRODLEVEL" extends="AbstractEcPartEntity" description="物品等级设置表">
+    <property id="clevel" columnName="PRODLEVEL_LEVEL" type="TEXT" length="200" description="等级"/>
+    <property id="compareID" columnName="PRODLEVEL_COMPAREID" type="LONG" description="对应物品ID"/>
+    <property id="corder" columnName="PRODLEVEL_ORDER" type="INTEGER" description="顺序"/>
+    <property id="id" columnName="PRODLEVEL_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="isUsed" columnName="IS_USED" type="BOOLEAN" description="等级引用标志"/>
+    <property id="itemChange" columnName="PRODLEVEL_ITEMCHAGE" type="BOOLEAN" description="变更物品"/>
+    <property id="levelMemo" columnName="PRODLEVEL_LEVELMEMO" type="TEXT" length="2000" description="备注"/>
+    <property id="productID" columnName="PRODLEVEL_PRODUCTID" type="LONG" description="物品ID"/>
+    <property id="rejectLvl" columnName="PRODLEVEL_REJECTLVL" type="BOOLEAN" description="不合格"/>
+  </model>
+  <model id="ProdResetDaily" tableName="MESBASIC_PROD_RESET_DAILIES" extends="AbstractEcPartEntity" description="复验周期">
+    <property id="demo" columnName="DEMO" type="TEXT" length="2000" description="说明"/>
+    <property id="expireDaysForNotify" columnName="EXPIREDAYSFORNOTIFY" type="INTEGER" description="到期天数(提醒)"/>
+    <property id="expireDaysInterval" columnName="EXPIREDAYSINTERVAL" type="INTEGER" description="到期天数间隔"/>
+    <property id="notifyDays" columnName="NOTIFY_DAYS" type="INTEGER" description="提前提醒(天)"/>
+    <property id="productID" columnName="PRODUCTID" type="LONG" description="物品"/>
+    <property id="reinspect" columnName="REINSPECT" type="INTEGER" description="复验周期"/>
+    <property id="reinspectUnit" columnName="REINSPECTUNIT" type="SYSTEMCODE" description="复验周期单位"/>
+    <property id="resetCyc" columnName="RESET_CYC" type="INTEGER" description="周期(天)"/>
+  </model>
+  <model id="ProdSecUnit" tableName="MESBASIC_PROD_SEC_UNITS" extends="AbstractEcPartEntity" description="物品辅单位表">
+    <property id="baseUnit" columnName="BASE_UNIT" type="LONG" description="主单位"/>
+    <property id="changeRate" columnName="CHANGE_RATE" type="DECIMAL" scale="6" description="换算比率"/>
+    <property id="demo" columnName="DEMO" type="TEXT" length="2000" description="备注"/>
+    <property id="product" columnName="PRODUCT" type="LONG" description="物品"/>
+    <property id="secUnit" columnName="SEC_UNIT" type="LONG" description="辅单位"/>
+  </model>
+  <model id="Product" tableName="S2BASE_PRODUCT" extends="AbstractEcFullEntity" description="物品, 引用自S2的物品表">
+    <property id="abcClass" columnName="PRODUCT_BAPABC" type="SYSTEMCODE" description="ABC分类"/>
+    <property id="abcClassS2" columnName="PRODUCT_ABC" type="TEXT" length="200" description="ABC分类S2"/>
+    <property id="approachTime" columnName="APPROACH_TIME" type="INTEGER" description="近效期"/>
+    <property id="approachUnit" columnName="APPROACH_UNIT" type="SYSTEMCODE" description="近效期单位"/>
+    <property id="attachExplain" columnName="ATTACH_EXPLAIN" type="TEXT" length="200" description="附加说明"/>
+    <property id="autoSupply" columnName="AUTO_SUPPLY" type="SYSTEMCODE" description="自动补充标志"/>
+    <property id="avbCODE" columnName="AVBCODE" type="BOOLEAN" description="是否有效"/>
+    <property id="bapValueType" columnName="PRODUCT_BAPVALUETYPE" type="SYSTEMCODE" description="计价方式"/>
+    <property id="batch" columnName="BATCH" type="SYSTEMCODE" description="批次启用"/>
+    <property id="batchcode" columnName="BATCHCODE" type="LONG" description="批号流水号"/>
+    <property id="beUnique" columnName="PRODUCT_BEUNIQUE" type="TEXT" length="200" description="批次启用S2"/>
+    <property id="cad" columnName="CAD" type="TEXT" description="包装规格型号"/>
+    <property id="checkIndex" columnName="PRODUCT_CHECKINDEX" type="LONG" description="检验指标"/>
+    <property id="checkMethodbap" columnName="PRODUCT_BAPCHECKMETHOD" type="SYSTEMCODE" description="检验方式"/>
+    <property id="cmemo" columnName="PRODUCT_MEMO" type="TEXT" length="2000" description="s2备注"/>
+    <property id="costPriceOri" columnName="COST_PRICE_ORI" type="DECIMAL" scale="4" description="参考采购价原值"/>
+    <property id="createDate" columnName="PRODUCT_CREATETIMENEW" type="DATE" description="建档日期"/>
+    <property id="createTime" columnName="PRODUCT_CREATETIME" type="DATETIME" description="创建时间"/>
+    <property id="creator" columnName="PRODUCT_CREATEPERSON" type="LONG" description="建档人"/>
+    <property id="ctlEffectiveDateCount" columnName="CTLEFFECTIVEDATECOUNT" type="INTEGER" description="有效期控制天数"/>
+    <property id="dcontent" columnName="DCONTENT" type="TEXT" length="2000" description="维护内容及原因"/>
+    <property id="desity" columnName="DESITY" type="DECIMAL" scale="6" description="密度(kg/m3)"/>
+    <property id="factory" columnName="FACTORY" type="LONG" description="工厂模型"/>
+    <property id="frequency" columnName="FREQUENCY" type="INTEGER" description="最大复验次数"/>
+    <property id="goodState" columnName="GOOD_STATE" type="SYSTEMCODE" description="物品状态"/>
+    <property id="id" columnName="PRODUCT_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="interfaceUrl" columnName="INTERFACE_URL" type="SYSTEMCODE" description="批控服务地址"/>
+    <property id="isauto" columnName="ISAUTO" type="BOOLEAN" description="自动生成批号"/>
+    <property id="isContainer" columnName="PRODUCT_ISCONTAINER" type="BOOLEAN" description="容器启用"/>
+    <property id="isCtrlPass" columnName="PRODUCT_ISCTRLPASS" type="BOOLEAN" description="放行控制"/>
+    <property id="isItemLevel" columnName="PRODUCT_ISITEMLEVEL" type="BOOLEAN" description="启用等级品管理"/>
+    <property id="isKeepDate" columnName="PRODUCT_ISKEEPDATE" type="BOOLEAN" description="保质期管理"/>
+    <property id="isNeedConvert" columnName="PRODUCT_ISNEEDCONVERT" type="BOOLEAN" description="是否折算"/>
+    <property id="isNeedWeigh" columnName="PRODUCT_ISNEEDWEIGH" type="BOOLEAN" description="是否计量"/>
+    <property id="isPack" columnName="IS_PACK" type="BOOLEAN" description="是否包材"/>
+    <property id="isProReset" columnName="ISPRORESET" type="BOOLEAN" description="是否复验"/>
+    <property id="isSparePart" columnName="IS_SPARE_PART" type="BOOLEAN" description="是否备件"/>
+    <property id="keepDay" columnName="PRODUCT_KEEPDAY" type="INTEGER" description="保质期"/>
+    <property id="keepReckon" columnName="PRODUCT_BAPKEEPRECKON" type="SYSTEMCODE" description="有效期推算"/>
+    <property id="keepReckonS2" columnName="PRODUCT_KEEPRECKON" type="INTEGER" description="有效期推算S2"/>
+    <property id="keepUnit" columnName="PRODUCT_BAPKEEPUNIT" type="SYSTEMCODE" description="保质期单位"/>
+    <property id="keepUnitS2" columnName="PRODUCT_KEEPUNIT" type="INTEGER" description="保质期单位S2"/>
+    <property id="lastDate" columnName="PRODUCT_LASTDATE" type="DATETIME" description="上次盘点日期"/>
+    <property id="limsUnit" columnName="LIMS_UNIT" type="LONG" description="取样单位"/>
+    <property id="lowNum" columnName="PRODUCT_LOWNUM" type="DECIMAL" scale="3" description="最低库存"/>
+    <property id="mfgStockMode" columnName="MFG_STOCK_MODE" type="SYSTEMCODE" description="备料方式"/>
+    <property id="minOrderQuantity" columnName="PRODUCT_MINORDERQUANTITY" type="DECIMAL" scale="3" description="最小订货量"/>
+    <property id="minTargetStock" columnName="MIN_TARGET_STOCK" type="TEXT" description="安全库存"/>
+    <property id="mnecode" columnName="PRODUCT_MNECODE" type="TEXT" length="200" description="物品助记码"/>
+    <property id="modifyPerson" columnName="PRODUCT_MODIFYPERSON" type="LONG" description="最近维护人"/>
+    <property id="modifyTime" columnName="MODIFYTIME" type="DATETIME" description="修改时间"/>
+    <property id="mrpNum" columnName="PRODUCT_MRPNUM" type="DECIMAL" scale="3" description="经济批量"/>
+    <property id="notifyDays" columnName="PRODUCT_NOTIFYDAYS" type="INTEGER" description="提前提醒（天）"/>
+    <property id="numberParamF" columnName="PRODUCT_NUMBERPARAMF" type="DECIMAL" scale="6" description="折算率"/>
+    <property id="paRKINGSYS" columnName="PARKINGSYS" type="TEXT" description="包装形式"/>
+    <property id="pieceNum" columnName="PIECE_NUM" type="DECIMAL" scale="6" description="件重量"/>
+    <property id="planPrice" columnName="PRODUCT_PLANPRICE" type="DECIMAL" scale="4" description="计划价"/>
+    <property id="pointNum" columnName="PRODUCT_POINTNUM" type="DECIMAL" scale="3" description="批量增量"/>
+    <property id="precentPrice" columnName="PRODUCT_PRECENTPRICE" type="DECIMAL" scale="4" description="最近采购价"/>
+    <property id="prodModifyTime" columnName="PRODUCT_MODIFYTIME" type="DATETIME" description="最近维护时间"/>
+    <property id="prodType" columnName="PROD_TYPE" type="SYSTEMCODE" description="物品类别"/>
+    <property id="productAccmonth" columnName="PRODUCT_ACCMONTH" type="TEXT" description="财务月份"/>
+    <property id="productAllas" columnName="PRODUCT_ALIAS" type="TEXT" length="200" description="别名"/>
+    <property id="productAttribute" columnName="PRODUCT_ATTRIBUTE" type="TEXT" description="物品一级属性"/>
+    <property id="productBalancePrice" columnName="PRODUCT_BALANCEPRICE" type="DECIMAL" scale="6" description="结存价"/>
+    <property id="productBaseUnit" columnName="PRODUCT_BASEUNIT" type="LONG" description="主单位ID"/>
+    <property id="productBeasset" columnName="PRODUCT_BEASSET" type="INTEGER" description="是否固定资产"/>
+    <property id="productBebatch" columnName="PRODUCT_BEBATCH" type="INTEGER" description="是否批次管理"/>
+    <property id="productBeConsume" columnName="PRODUCT_BECONSUME" type="INTEGER" description="是否消耗品"/>
+    <property id="productBeMass" columnName="PRODUCT_BEMASS" type="INTEGER" description="是否保质期管理"/>
+    <property id="productBeProducing" columnName="PRODUCT_BEPRODUCING" type="INTEGER" description="是否在制品"/>
+    <property id="productBePropCheck" columnName="PRODUCT_BEPROPCHECK" type="BOOLEAN" description="是否质检"/>
+    <property id="productBepuchase" columnName="PRODUCT_BEPURCHASE" type="INTEGER" description="是否采购品"/>
+    <property id="productBeSale" columnName="PRODUCT_BESALE" type="BOOLEAN" description="是否销售品"/>
+    <property id="productBeSelf" columnName="PRODUCT_BESELF" type="INTEGER" description="是否自产品"/>
+    <property id="productBeService" columnName="PRODUCT_BESERVICE" type="BOOLEAN" description="是否仓库物品"/>
+    <property id="productBeVerstock" columnName="PRODUCT_BEOVERSTOCK" type="INTEGER" description="是否挤压控制"/>
+    <property id="productBigintparama" columnName="PRODUCT_BIGINTPARAMA" type="INTEGER" description="自定义字段PRODUCT_IPA"/>
+    <property id="productBigintparamb" columnName="PRODUCT_BIGINTPARAMB" type="INTEGER" description="自定义字段PRODUCT_IPB"/>
+    <property id="productBigintparamc" columnName="PRODUCT_BIGINTPARAMC" type="INTEGER" description="自定义字段PRODUCT_IPC"/>
+    <property id="productBigintparamd" columnName="PRODUCT_BIGINTPARAMD" type="INTEGER" description="自定义字段PRODUCT_IPD"/>
+    <property id="productBigintparame" columnName="PRODUCT_BIGINTPARAME" type="INTEGER" description="自定义字段PRODUCT_IPE"/>
+    <property id="productBigintparamf" columnName="PRODUCT_BIGINTPARAMF" type="INTEGER" description="自定义字段PRODUCT_IPF"/>
+    <property id="productBigintparamg" columnName="PRODUCT_BIGINTPARAMG" type="INTEGER" description="自定义测试"/>
+    <property id="productBigintparamh" columnName="PRODUCT_BIGINTPARAMH" type="INTEGER" description="自定义字段PRODUCT_IPH"/>
+    <property id="productBigintparami" columnName="PRODUCT_BIGINTPARAMI" type="INTEGER" description="自定义字段PRODUCT_IPI"/>
+    <property id="productBigintparamj" columnName="PRODUCT_BIGINTPARAMJ" type="INTEGER" description="自定义字段PRODUCT_IPJ"/>
+    <property id="productBigintparamk" columnName="PRODUCT_BIGINTPARAMK" type="INTEGER" description="自定义字段PRODUCT_IPK"/>
+    <property id="productBigintparaml" columnName="PRODUCT_BIGINTPARAML" type="INTEGER" description="自定义字段PRODUCT_IPL"/>
+    <property id="productBuyUnit" columnName="PRODUCT_BUYUNIT" type="LONG" description="采购单位ID"/>
+    <property id="productBuyUnitRate" columnName="PRODUCT_BUYUNITRATE" type="DECIMAL" scale="6" description="采购单位换算"/>
+    <property id="productCharparama" columnName="PRODUCT_CHARPARAMA" type="TEXT" length="2000" description="自定义字段PRODUCT_CPA"/>
+    <property id="productCharparamb" columnName="PRODUCT_CHARPARAMB" type="TEXT" length="2000" description="自定义字段PRODUCT_CPB"/>
+    <property id="productCharparamc" columnName="PRODUCT_CHARPARAMC" type="TEXT" length="2000" description="自定义字段PRODUCT_CPC"/>
+    <property id="productCharparamd" columnName="PRODUCT_CHARPARAMD" type="TEXT" length="2000" description="自定义字段PRODUCT_CPD"/>
+    <property id="productCharparame" columnName="PRODUCT_CHARPARAME" type="TEXT" length="2000" description="自定义字段PRODUCT_CPE"/>
+    <property id="productCharparamf" columnName="PRODUCT_CHARPARAMF" type="TEXT" length="2000" description="自定义字段PRODUCT_CPF"/>
+    <property id="productCharparamg" columnName="PRODUCT_CHARPARAMG" type="TEXT" length="2000" description="自定义字段PRODUCT_CPG"/>
+    <property id="productCharparamh" columnName="PRODUCT_CHARPARAMH" type="TEXT" length="2000" description="自定义字段PRODUCT_CPH"/>
+    <property id="productCharparami" columnName="PRODUCT_CHARPARAMI" type="TEXT" length="2000" description="自定义字段PRODUCT_CPI"/>
+    <property id="productCharparamj" columnName="PRODUCT_CHARPARAMJ" type="TEXT" length="2000" description="自定义字段PRODUCT_CPJ"/>
+    <property id="productCharparamk" columnName="PRODUCT_CHARPARAMK" type="TEXT" length="2000" description="自定义字段PRODUCT_CPK"/>
+    <property id="productCharparaml" columnName="PRODUCT_CHARPARAML" type="TEXT" length="2000" description="自定义字段PRODUCT_CPL"/>
+    <property id="productCharparamm" columnName="PRODUCT_CHARPARAMM" type="TEXT" length="2000" description="自定义字段PRODUCT_CPM"/>
+    <property id="productCharparamn" columnName="PRODUCT_CHARPARAMN" type="TEXT" length="2000" description="自定义字段PRODUCT_CPN"/>
+    <property id="productCharparamo" columnName="PRODUCT_CHARPARAMO" type="TEXT" length="2000" description="自定义字段PRODUCT_CPO"/>
+    <property id="productCharparamp" columnName="PRODUCT_CHARPARAMP" type="TEXT" length="2000" description="自定义字段PRODUCT_CPP"/>
+    <property id="productCharparamq" columnName="PRODUCT_CHARPARAMQ" type="TEXT" length="2000" description="自定义字段PRODUCT_CPQ"/>
+    <property id="productCharparamr" columnName="PRODUCT_CHARPARAMR" type="TEXT" length="2000" description="自定义字段PRODUCT_CPR"/>
+    <property id="productCharparams" columnName="PRODUCT_CHARPARAMS" type="TEXT" length="2000" description="自定义字段PRODUCT_CPS"/>
+    <property id="productCharparamt" columnName="PRODUCT_CHARPARAMT" type="TEXT" length="2000" description="自定义字段PRODUCT_CPT"/>
+    <property id="productCharparamu" columnName="PRODUCT_CHARPARAMU" type="TEXT" length="2000" description="自定义字段PRODUCT_CPU"/>
+    <property id="productCharparamv" columnName="PRODUCT_CHARPARAMV" type="TEXT" length="2000" description="自定义字段PRODUCT_CPV"/>
+    <property id="productCharparamw" columnName="PRODUCT_CHARPARAMW" type="TEXT" length="2000" description="自定义字段PRODUCT_CPW"/>
+    <property id="productCharparamx" columnName="PRODUCT_CHARPARAMX" type="TEXT" length="2000" description="自定义字段PRODUCT_CPX"/>
+    <property id="productCharparamy" columnName="PRODUCT_CHARPARAMY" type="TEXT" length="2000" description="自定义字段PRODUCT_CPY"/>
+    <property id="productCharparamz" columnName="PRODUCT_CHARPARAMZ" type="TEXT" length="2000" description="自定义字段PRODUCT_CPZ"/>
+    <property id="productChartCode" columnName="PRODUCT_CHARTCODE" type="TEXT" description="图号"/>
+    <property id="productCheckDays" columnName="PRODUCT_CHECKDAYS" type="INTEGER" description="检验期（天）"/>
+    <property id="productCheckFreq" columnName="PRODUCT_CHECKFREQ" type="INTEGER" description="盘点周期"/>
+    <property id="productCheckMethod" columnName="PRODUCT_CHECKMETHOD" type="INTEGER" description="检验方式s2"/>
+    <property id="productCode" columnName="PRODUCT_CODE" type="TEXT" length="200" description="物品编码, 去除业务主键和唯一限制 modify by yy 2019-04-24"/>
+    <index name="IDX_PRODUCT_PRODUCTC" columns="productCode"/>
+    <property id="productComment" columnName="PRODUCT_COMMENT" type="TEXT" length="2000" description="备注"/>
+    <property id="productCostPrice" columnName="PRODUCT_COSTPRICE" type="DECIMAL" scale="4" description="参考采购价"/>
+    <property id="productCostUnit" columnName="PRODUCT_COSTUNIT" type="LONG" description="成本单位ID"/>
+    <property id="productCostunitRate" columnName="PRODUCT_COSTUNITRATE" type="DECIMAL" scale="6" description="成本单位换算"/>
+    <property id="productDateparama" columnName="PRODUCT_DATEPARAMA" type="DATETIME" description="自定义字段PRODUCT_DPA"/>
+    <property id="productDateparamb" columnName="PRODUCT_DATEPARAMB" type="DATETIME" description="自定义字段PRODUCT_DPB"/>
+    <property id="productDateparamc" columnName="PRODUCT_DATEPARAMC" type="DATETIME" description="自定义字段PRODUCT_DPC"/>
+    <property id="productDateparamd" columnName="PRODUCT_DATEPARAMD" type="DATETIME" description="自定义字段PRODUCT_DPD"/>
+    <property id="productListID" columnName="PRODUCT_PRODLISTID" type="LONG" description="物品目录ID"/>
+    <property id="productModel" columnName="PRODUCT_MODEL" type="TEXT" length="200" description="型号"/>
+    <property id="productName" columnName="PRODUCT_NAME" type="TEXT" length="200" description="物品名称"/>
+    <property id="productNumberparamg" columnName="PRODUCT_NUMBERPARAMG" type="DECIMAL" scale="6" description="自定义字段PRODUCT_FPG"/>
+    <property id="productNumberparamh" columnName="PRODUCT_NUMBERPARAMH" type="DECIMAL" scale="6" description="自定义字段PRODUCT_FPH"/>
+    <property id="productNumberparami" columnName="PRODUCT_NUMBERPARAMI" type="DECIMAL" scale="6" description="自定义字段PRODUCT_FPI"/>
+    <property id="productNumberparamj" columnName="PRODUCT_NUMBERPARAMJ" type="DECIMAL" scale="6" description="自定义字段PRODUCT_FPJ"/>
+    <property id="productNumberparamk" columnName="PRODUCT_NUMBERPARAMK" type="DECIMAL" scale="6" description="自定义字段PRODUCT_FPK"/>
+    <property id="productNumberparaml" columnName="PRODUCT_NUMBERPARAML" type="DECIMAL" scale="6" description="自定义字段PRODUCT_FPL"/>
+    <property id="productSpecif" columnName="PRODUCT_SPECIF" type="TEXT" length="200" description="规格"/>
+    <property id="protoType" columnName="PRODUCT_PROTOTYPE" type="TEXT" length="200" description="物品属性"/>
+    <property id="purchGroupId" columnName="PRODUCT_PURCHGROUPID" type="LONG" description="采购组"/>
+    <property id="purDeliverDate" columnName="PUR_DELIVER_DATE" type="DATETIME" description="配送提前期"/>
+    <property id="purGroupMark" columnName="PUR_GROUP_MARK" type="TEXT" length="200" description="采购组原有字段值"/>
+    <property id="purMoveUpDate" columnName="PUR_MOVE_UP_DATE" type="DATETIME" description="采购提前期"/>
+    <property id="purPoint" columnName="PRODUCT_PURPOINT" type="DECIMAL" scale="3" description="订货点"/>
+    <property id="recCost" columnName="PRODUCT_RECCOST" type="DECIMAL" scale="4" description="最新库存成本"/>
+    <property id="recCostOri" columnName="REC_COST_ORI" type="DECIMAL" scale="4" description="最近库存成本原值"/>
+    <property id="receiveDate" columnName="PRODUCT_RECIEVEDATE" type="INTEGER" description="固定提前期"/>
+    <property id="recentPrice" columnName="PRODUCT_RECENTPRICE" type="DECIMAL" scale="4" description="最近结算价"/>
+    <property id="refCostPrice" columnName="PRODUCT_REFCOSTPRICE" type="DECIMAL" scale="4" description="参考成本"/>
+    <property id="replaceItem" columnName="PRODUCT_REPLACEITEM" type="LONG" description="替换品"/>
+    <property id="reqType" columnName="PRODUCT_BAPREQTYPE" type="SYSTEMCODE" description="物料需求分析方法"/>
+    <property id="reqTypeS2" columnName="PRODUCT_REQTYPE" type="INTEGER" description="物料需求分析方法S2"/>
+    <property id="resetDaily" columnName="PRODUCT_RESETDAILY" type="TEXT" length="2000" description="复验周期"/>
+    <property id="resetMark" columnName="PRODUCT_BAPRESETMARK" type="SYSTEMCODE" description="复验期推算"/>
+    <property id="resetMarkS2" columnName="PRODUCT_RESETMARK" type="INTEGER" description="复验期推算S2"/>
+    <property id="safeNum" columnName="PRODUCT_SAFENUM" type="DECIMAL" scale="3" description="安全库存"/>
+    <property id="salePrice" columnName="PRODUCT_SALEPRICE" type="DECIMAL" scale="4" description="参考售价"/>
+    <property id="salePriceOri" columnName="SALE_PRICE_ORI" type="DECIMAL" scale="4" description="参考售价原值"/>
+    <property id="saleRecentPrice" columnName="PRODUCT_SALERECENTPRICE" type="DECIMAL" scale="4" description="最近销售价"/>
+    <property id="saleUnit" columnName="PRODUCT_SALEUNIT" type="LONG" description="销售单位"/>
+    <property id="selectFlag" columnName="SELECT_FLAG" type="BOOLEAN" description="勾选"/>
+    <property id="standardPercent" columnName="PRODUCT_STANDARDPERCENT" type="DECIMAL" scale="6" description="标准含量系数"/>
+    <property id="standardPrice" columnName="PRODUCT_STANDARDPRICE" type="DECIMAL" scale="6" description="基准价"/>
+    <property id="storeDeadline" columnName="STOREDEADLINE" type="INTEGER" description="最长贮存期限"/>
+    <property id="storeDeadlineUnit" columnName="STOREDEADLINEUNIT" type="SYSTEMCODE" description="最长贮存期限单位"/>
+    <property id="storeSet" columnName="STORE_SET" type="LONG" description="货位"/>
+    <property id="storeUnit" columnName="PRODUCT_STOREUNIT" type="LONG" description="库存单位"/>
+    <property id="taxRate" columnName="PRODUCT_TAXRATE" type="DECIMAL" scale="6" description="税率"/>
+    <property id="topNum" columnName="PRODUCT_TOPNUM" type="DECIMAL" scale="3" description="最高库存"/>
+    <property id="unit" columnName="UNIT" type="TEXT" length="20" description="计量单位"/>
+    <property id="unitGroup" columnName="PRODUCT_UNITGROUPID" type="LONG" description="单位组"/>
+    <property id="valueType" columnName="PRODUCT_VALUETYPE" type="INTEGER" description="计价方式S2"/>
+    <property id="ware" columnName="WARE" type="LONG" description="仓库"/>
+  </model>
+  <model id="ProductDealInfo" tableName="S2BASE_PRODUCT_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PRODUCT_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="ProductMneCode" tableName="S2BASE_PRODUCT_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="Product" columnName="PRODUCT" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="ProductCost" tableName="S2BASE_PRODUCTCOST" extends="AbstractEcPartEntity" description="价格记录表">
+    <property id="baptype" columnName="PC_BAPTYPE" type="SYSTEMCODE" description="价格类型"/>
+    <property id="cmemo" columnName="PC_MEMO" type="LONGTEXT" length="2000" description="备注"/>
+    <property id="cost" columnName="PC_COST" type="DECIMAL" scale="4" description="价格"/>
+    <property id="id" columnName="PC_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="inputStaffID" columnName="PC_INPUTSTAFFID" type="LONG" description="入录人StaffID"/>
+    <property id="inputTime" columnName="PC_INPUTTIME" type="DATE" description="更新时间"/>
+    <property id="productID" columnName="PC_PRODUCTID" type="LONG" description="物品"/>
+    <property id="typeS2" columnName="PC_TYPE" type="INTEGER" description="价格类型S2"/>
+  </model>
+  <model id="BatchDealInfo" tableName="BATCH_DEALINFO" extends="AbstractEcPartEntity" description="批次处理信息表">
+    <property id="activeID" columnName="ACTIVEID" type="LONG" description="活动ID"/>
+    <property id="amount" columnName="AMOUNT" type="DECIMAL" scale="6" description="数量"/>
+    <property id="batchInfoID" columnName="BATCH_INFOID" type="LONG" description="批次信息表ID"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="批号"/>
+    <property id="dealDate" columnName="DEAL_DATE" type="DATETIME" description="处理时间"/>
+    <property id="dealDept" columnName="DEAL_DEPT" type="LONG" description="处理部门"/>
+    <property id="dealFromID" columnName="DEAL_FROMID" type="LONG" description="处理单据ID"/>
+    <property id="dealStaff" columnName="DEAL_STAFF" type="LONG" description="处理人"/>
+    <property id="dealTableNo" columnName="DEAL_TABLE_NO" type="TEXT" description="处理单据编号"/>
+    <property id="dealType" columnName="DEAL_TYPE" type="SYSTEMCODE" description="处理类型"/>
+    <property id="processID" columnName="PROCESSID" type="LONG" description="工序ID "/>
+    <property id="sourceBatch" columnName="SOURCE_BATCH" type="TEXT" description="源批号"/>
+    <property id="workOrderID" columnName="WORK_ORDERID" type="LONG" description="指令单ID "/>
+  </model>
+  <model id="BatchInformation" tableName="BATCH_INFORMATION" extends="AbstractEcFullEntity" description="批次信息表">
+    <property id="arriveDate" columnName="ARRIVE_DATE" type="DATETIME" description="到货日期"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="批号"/>
+    <property id="checkDate" columnName="CHECK_DATE" type="DATETIME" description="检验日期, (最近一次检验日期)"/>
+    <property id="checkState" columnName="CHECK_STATE" type="SYSTEMCODE" description="检验状态"/>
+    <property id="isAvailable" columnName="IS_AVAILABLE" type="BOOLEAN" description="是否可用"/>
+    <property id="manufacture" columnName="MANUFACTURE" type="TEXT" description="生产厂商"/>
+    <property id="passState" columnName="PASS_STATE" type="SYSTEMCODE" description="放行状态"/>
+    <property id="product" columnName="PRODUCT" type="LONG" description="物品"/>
+    <property id="productionDate" columnName="PRODUCTION_DATE" type="DATETIME" description="生产日期"/>
+    <property id="provider" columnName="PROVIDER" type="TEXT" description="供应商"/>
+    <property id="purchaseDate" columnName="PURCHASE_DATE" type="DATETIME" description="采购日期"/>
+    <property id="recheckDate" columnName="RECHECK_DATE" type="DATETIME" description="复检时间"/>
+    <property id="reNotify" columnName="RE_NOTIFY" type="INTEGER" description="复检提前提醒(天)"/>
+    <property id="sourceType" columnName="SOURCE_TYPE" type="SYSTEMCODE" description="生成源头"/>
+    <property id="supplierBatch" columnName="SUPPLIER_BATCH" type="TEXT" description="供方批号"/>
+    <property id="validDate" columnName="VALID_DATE" type="DATETIME" description="有效期"/>
+  </model>
+  <model id="BatchInformationDealInfo" tableName="BATCH_INFORMATION_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BATCHINFORMAT_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BatchRelationship" tableName="BATCH_RELATIONSHIP" extends="AbstractEcPartEntity" description="批次关系信息表">
+    <property id="batchType" columnName="BATCH_TYPE" type="SYSTEMCODE" description="类型"/>
+    <property id="mainBatch" columnName="MAIN_BATCH" type="TEXT" description="主批次"/>
+    <property id="mainProduct" columnName="MAIN_PRODUCT" type="LONG" description="主物品"/>
+    <property id="partBatch" columnName="PART_BATCH" type="TEXT" description="料批次"/>
+    <property id="partProduct" columnName="PART_PRODUCT" type="LONG" description="料物品"/>
+  </model>
+  <model id="ClearSinget" tableName="BATCHMANAG_CLEAR_SINGETS" extends="AbstractEcFullEntity" description="清空信号">
+    <property id="bmDepartment" columnName="BM_DEPARTMENT" type="LONG" description="所属车间"/>
+    <property id="clearSinget" columnName="CLEAR_SINGET" type="SYSTEMCODE" description="清空"/>
+    <property id="demo" columnName="DEMO" type="TEXT" length="2000" description="备注"/>
+    <property id="proProduct" columnName="PRO_PRODUCT" type="TEXT" description="备料类型"/>
+    <property id="singet" columnName="SINGET" type="LONG" description="测点"/>
+    <property id="toEquipment" columnName="TO_EQUIPMENT" type="LONG" description="设备"/>
+  </model>
+  <model id="ClearSingetDealInfo" tableName="BATCHMANAG_CLEAR_SINGETS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_CLEARSINGET_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BaseVendorClass" tableName="S2BASE_VENDORCLASS" extends="AbstractEcTreeFullEntity" description="供应商类型">
+    <property id="extraCol" columnName="EXTRA_COL" type="LONGTEXT" description="大字段"/>
+    <property id="code" columnName="VC_CODE" type="TEXT" length="200" description="分类编码"/>
+    <index name="IDX_BASEVENDORCLA_CODE" columns="code"/>
+    <property id="id" columnName="VC_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="layNo" columnName="VC_LAYNO" type="INTEGER" description="层次"/>
+    <property id="layRec" columnName="VC_LAYREC" type="TEXT" length="4000" description="层次结构"/>
+    <property id="name" columnName="VC_NAME" type="TEXT" length="256" description="分类名称"/>
+    <property id="vcMemo" columnName="VC_MEMO" type="TEXT" length="2000" description="备注"/>
+  </model>
+  <model id="BaseVendorClassDealInfo" tableName="S2BASE_VENDORCLASS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BASEVENDORCLA_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BaseVendorClassMneCode" tableName="S2BASE_VENDORCLASS_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="BaseVendorClass" columnName="BASE_VENDOR_CLASS" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="InterfaceSyncLog" tableName="INTERFACE_SYNC_LOG" extends="AbstractEcFullEntity" description="接口同步日志">
+    <property id="logBillNo" columnName="LOG_BILL_NO" type="TEXT" description="单据编号"/>
+    <property id="logDate" columnName="LOG_DATE" type="DATETIME" description="同步时间"/>
+    <property id="logFault" columnName="LOG_FAULT" type="TEXT" description="错误信息"/>
+    <property id="logID" columnName="LOGID" type="TEXT" description="数据PK值"/>
+    <property id="logIsIgnore" columnName="LOG_IS_IGNORE" type="BOOLEAN" description="是否忽视"/>
+    <property id="logOperate" columnName="LOG_OPERATE" type="TEXT" description="操作类型"/>
+    <property id="logStaff" columnName="LOG_STAFF" type="LONG" description="同步人员"/>
+    <property id="logSynFlag" columnName="LOG_SYN_FLAG" type="BOOLEAN" description="数据同步状态"/>
+    <property id="logType" columnName="LOG_TYPE" type="TEXT" description="数据类型"/>
+    <property id="logTypeDes" columnName="LOG_TYPE_DES" type="TEXT" description="数据类型描述"/>
+  </model>
+  <model id="InterfaceSyncLogDealInfo" tableName="INTERFACE_SYNC_LOG_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_INTERFACESYNC_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="FactoryModel" tableName="factory_tbcompanystructure" extends="AbstractEcTreeFullEntity" description="工厂, 与PIMS使用相同的数据结构。">
+    <property id="area" columnName="AREA" type="SYSTEMCODE" description="位置"/>
+    <property id="areaName" columnName="AREA_NAME" type="TEXT" description="区域名称"/>
+    <property id="assignBatchNo" columnName="ASSIGN_BATCH_NO" type="LONG" description="指定批号位号"/>
+    <property id="belongLine" columnName="BELONG_LINE" type="LONG" description="所属生产线"/>
+    <property id="code" columnName="CODE" type="TEXT" length="200" description="节点编码"/>
+    <index name="IDX_FACTORYMODEL_CODE" columns="code"/>
+    <property id="department" columnName="DEPARTMENT" type="LONG" description="部门"/>
+    <property id="emsFlag" columnName="EMS_FLAG" type="BOOLEAN" description="参与能耗计划"/>
+    <property id="endItem" columnName="END_ITEM" type="LONG" description="结束工序位号"/>
+    <property id="fromSystemCode" columnName="FROM_SYSTEM_CODE" type="TEXT" description="外部系统编号, 配料容器组&amp;配料容器，与之对应的其他系统的对应记录的编号"/>
+    <property id="interfaceUrl" columnName="INTERFACE_URL" type="SYSTEMCODE" description="中间接口服务地址"/>
+    <property id="isEbr" columnName="IS_EBR" type="BOOLEAN" description="是否同步EBR, 目前生产模块中有些生产线是需要和ebr进行数据交互，有些是不需要和ebr进行交互，工厂模型生产线中增加一个字段用来关联是否需要同步到ebr"/>
+    <property id="isOnlyStore" columnName="IS_ONLY_STORE" type="BOOLEAN" description="多货位, 按物料定义货位（多货位）"/>
+    <property id="name" columnName="NODENAME" type="TEXT" length="100" description="节点名称"/>
+    <property id="description" columnName="NODEDESC" type="TEXT" length="2000" description="节点描述"/>
+    <property id="nodeType" columnName="NODE_TYPE" type="LONG" description="节点类型"/>
+    <property id="runState" columnName="RUN_STATE" type="SYSTEMCODE" description="配料容器(组)状态"/>
+    <property id="workArea" columnName="WORK_AREA" type="LONG" description="生产区域"/>
+  </model>
+  <model id="FactoryModelDealInfo" tableName="factory_tbcompanystructure_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_FACTORYMODEL_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="FactoryModelMneCode" tableName="factory_tbcompanystructure_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="FactoryModel" columnName="FACTORY_MODEL" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="ObjBatContainer" tableName="MESBASIC_OBJ_BAT_CONTAINERS" extends="AbstractEcPartEntity" description="关联配料容器">
+    <property id="objBatContainer" columnName="OBJ_BAT_CONTAINER" type="LONG" description="配料容器(组)"/>
+    <property id="objFactory" columnName="OBJ_FACTORY" type="LONG" description="工作单元"/>
+  </model>
+  <model id="ObjEquipment" tableName="MESBASIC_OBJ_EQUIPMENTS" extends="AbstractEcPartEntity" description="关联设备">
+    <property id="clearItem" columnName="CLEAR_ITEM" type="LONG" description="清空位号"/>
+    <property id="clearType" columnName="CLEAR_TYPE" type="SYSTEMCODE" description="清空类型"/>
+    <property id="equipmentNum" columnName="EQUIPMENT_NUM" type="TEXT" description="设备位号"/>
+    <property id="equipmentType" columnName="EQUIPMENT_TYPE" type="SYSTEMCODE" description="设备类别"/>
+    <property id="equs" columnName="EQUS" type="TEXT" description="设备记录"/>
+    <property id="isContainer" columnName="IS_CONTAINER" type="BOOLEAN" description="是否容器"/>
+    <property id="isFixed" columnName="IS_FIXED" type="BOOLEAN" description="固定安装"/>
+    <property id="objDepartment" columnName="OBJ_DEPARTMENT" type="LONG" description="部门"/>
+    <property id="objEqu" columnName="OBJ_EQU" type="LONG" description="关联设备"/>
+    <property id="objFactory" columnName="OBJ_FACTORY" type="LONG" description="关联工厂"/>
+  </model>
+  <model id="ObjPostion" tableName="MESBASIC_OBJ_POSTIONS" extends="AbstractEcPartEntity" description="关联岗位">
+    <property id="objFactory" columnName="OBJ_FACTORY" type="LONG" description="关联工厂"/>
+    <property id="objPos" columnName="OBJ_POS" type="LONG" description="关联岗位"/>
+  </model>
+  <model id="ObjProduct" tableName="MESBASIC_OBJ_PRODUCTS" extends="AbstractEcPartEntity" description="关联物品">
+    <property id="emsFlag" columnName="EMS_FLAG" type="BOOLEAN" description="参与能耗计划"/>
+    <property id="objFactory" columnName="OBJ_FACTORY" type="LONG" description="关联工厂"/>
+    <property id="objProduct" columnName="OBJ_PRODUCT" type="LONG" description="关联物品"/>
+  </model>
+  <model id="ObjTeam" tableName="MESBASIC_OBJ_TEAMS" extends="AbstractEcPartEntity" description="班组">
+    <property id="objFactory" columnName="OBJ_FACTORY" type="LONG" description="工作中心"/>
+    <property id="objTeam" columnName="OBJ_TEAM" type="LONG" description="关联班组"/>
+  </model>
+  <model id="ObjWareStore" tableName="MESBASIC_OBJ_WARE_STORES" extends="AbstractEcPartEntity" description="配料仓">
+    <property id="objFactory" columnName="OBJ_FACTORY" type="LONG" description="工作中心"/>
+    <property id="product" columnName="PRODUCT" type="LONG" description="物料"/>
+    <property id="store" columnName="STORE" type="LONG" description="货位"/>
+    <property id="ware" columnName="WARE" type="LONG" description="仓库"/>
+  </model>
+  <model id="PositionDeal" tableName="MESBASIC_POSITION_DEALS" extends="AbstractEcPartEntity" description="岗位处理">
+    <property id="bapPosition" columnName="BAP_POSITION" type="LONG" description="BAP岗位"/>
+    <property id="pimsPostion" columnName="PIMS_POSTION" type="LONG" description="PIMS岗位"/>
+  </model>
+  <model id="DepartmentWare" tableName="MESBASIC_DEPARTMENT_WARES" extends="AbstractEcPartEntity" description="车间仓">
+    <property id="factoryId" columnName="FACTORY_ID" type="LONG" description="工作中心"/>
+    <property id="meno" columnName="MENO" type="TEXT" description="备注"/>
+    <property id="storeId" columnName="STORE_ID" type="LONG" description="货位"/>
+    <property id="wareId" columnName="WARE_ID" type="LONG" description="仓库"/>
+  </model>
+  <model id="FacWareMaterial" tableName="MESBASIC_FAC_WARE_MATERIALS" extends="AbstractEcPartEntity" description="物料表">
+    <property id="factoryId" columnName="FACTORY_ID" type="LONG" description="工作中心"/>
+    <property id="headID" columnName="HEAD_ID" type="LONG" description="表头ID"/>
+    <property id="meno" columnName="MENO" type="TEXT" description="备注"/>
+    <property id="productId" columnName="PRODUCT_ID" type="LONG" description="物料"/>
+    <property id="storeId" columnName="STORE_ID" type="LONG" description="货位"/>
+    <property id="wareId" columnName="WARE_ID" type="LONG" description="仓库"/>
+  </model>
+  <model id="NodeType" tableName="factory_tbnodetype" extends="AbstractEcFullEntity" description="节点类型">
+    <property id="code" columnName="CODE" type="TEXT" description="类型编号"/>
+    <index name="IDX_NODETYPE_CODE" columns="code"/>
+    <property id="name" columnName="NAME" type="TEXT" description="类型名称"/>
+    <index name="IDX_NODETYPE_NAME" columns="name"/>
+    <property id="nodeComment" columnName="NODECOMMENT" type="TEXT" description="备注"/>
+  </model>
+  <model id="NodeTypeDealInfo" tableName="factory_tbnodetype_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_NODETYPE_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="NodeTypeMneCode" tableName="factory_tbnodetype_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="NodeType" columnName="NODE_TYPE" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="CustomerMaterial" tableName="MESBASIC_CUSTOMER_MATERIALS" extends="AbstractEcFullEntity" description="客户物品">
+    <property id="code" columnName="CODE" type="TEXT" description="客户物料编码"/>
+    <property id="customer" columnName="CUSTOMER" type="LONG" description="客户"/>
+    <property id="customerMaterialMemo" columnName="CUSTOMER_MATERIAL_MEMO" type="LONGTEXT" description="备注"/>
+    <property id="isUse" columnName="IS_USE" type="BOOLEAN" description="是否启用"/>
+    <property id="material" columnName="MATERIAL" type="LONG" description="物料"/>
+    <property id="name" columnName="NAME" type="TEXT" description="客户物料名称"/>
+  </model>
+  <model id="CustomerMaterialDealInfo" tableName="MESBASIC_CUSTOMER_MATERIALS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_CUSTOMERMATER_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="ItemRecord" tableName="Pellet_ItemRecord" extends="AbstractEcFullEntity" description="位号数据统计">
+    <property id="averageValue" columnName="IR_AVERAGEVALUE" type="DECIMAL" scale="6" description="平均值"/>
+    <property id="balanceValue" columnName="IR_TOTALVALUE_BALANCE" type="DECIMAL" scale="2" description="平衡值"/>
+    <property id="count" columnName="IR_COUNT" type="INTEGER" description="记录条数"/>
+    <property id="daily" columnName="IR_DAILYID" type="LONG" description="排班计划"/>
+    <property id="id" columnName="IR_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="itemNumber" columnName="IR_ITEMNUMBER" type="TEXT" length="200" description="位号"/>
+    <property id="maxValue" columnName="IR_MAXVALUE" type="DECIMAL" scale="6" description="最大值"/>
+    <property id="minValue" columnName="IR_MINVALUE" type="DECIMAL" scale="6" description="最小值"/>
+    <property id="planNo" columnName="IR_PLANNO" type="TEXT" length="200" description="计划编号"/>
+    <property id="realValue" columnName="IR_REALVALUE" type="DECIMAL" scale="6" description="瞬时值"/>
+    <property id="reaultValue" columnName="IR_RESULTVALUE" type="BOOLEAN" description="质检结果"/>
+    <property id="recordDate" columnName="IR_RECORDDATE" type="DATE" description="记录日期"/>
+    <property id="recordTime" columnName="IR_RECORDTIME" type="DATETIME" description="记录时间"/>
+    <property id="team" columnName="IR_TEAMID" type="LONG" description="班组"/>
+    <property id="totalValue" columnName="IR_TOTALVALUE" type="DECIMAL" scale="6" description="累计值"/>
+    <property id="workLine" columnName="IR_WORKLINE" type="SYSTEMCODE" description="作业区"/>
+    <property id="zoneMonth" columnName="IR_ZONEMONTH" type="INTEGER" description="分区字段, 分区字段，记录年月"/>
+  </model>
+  <model id="ItemRecordDealInfo" tableName="Pellet_ItemRecord_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_ITEMRECORD_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="MESServices" tableName="MESBASIC_MESSERVICES" extends="AbstractEcFullEntity" description="后台服务, 服务模型，记录运行的后台服务。">
+    <property id="active" columnName="ACTIVE" type="BOOLEAN" description="运行状态, true表示可以运行，false表示不可以运行"/>
+    <property id="lastRunningTime" columnName="LAST_RUNNING_TIME" type="DATETIME" description="上一次运行时间, 服务上一次运行的时间"/>
+    <property id="serviceCode" columnName="SERVICE_CODE" type="TEXT" length="200" description="服务编码, 服务的编码"/>
+    <index name="IDX_MESSERVICES_SERVICEC" columns="serviceCode"/>
+    <property id="serviceName" columnName="SERVICE_NAME" type="TEXT" length="400" description="服务名称, 用于描述的服务的名称。"/>
+  </model>
+  <model id="MESServicesDealInfo" tableName="MESBASIC_MESSERVICES_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_MESSERVICES_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="ServiceLogger" tableName="MESBASIC_SERVICE_LOGGERS" extends="AbstractEcPartEntity" description="服务日志">
+    <property id="logContent" columnName="LOG_CONTENT" type="TEXT" length="4000" description="日志内容"/>
+    <property id="logTime" columnName="LOG_TIME" type="DATETIME" description="记录时间, 日志记录的时间"/>
+    <property id="mesService" columnName="MES_SERVICE" type="LONG" description="后台服务"/>
+  </model>
+  <model id="PotData" tableName="MESBASIC_POT_DATAS" extends="AbstractEcFullEntity" description="罐区数据接口, 第三方数据接口。 第三方系统将把与本系统交互的数据填写到这张表里与本系统进行交互。">
+    <property id="businessType" columnName="BUSINESS_TYPE" type="SYSTEMCODE" description="业务类型"/>
+    <index name="IDX_POTDATA_BUSINESS" columns="businessType"/>
+    <property id="content" columnName="CONTENT" type="TEXT" length="2000" description="业务数据, 用于通用接口。 所有由除PIMS以外的系统需要与MES交互的时候，都通过这个字段进行。"/>
+    <property id="dataTime" columnName="DATA_TIME" type="DATETIME" description="数据时间, 由PIMS插入到接口表时，PIMS位号对应的数值的时间"/>
+    <property id="dataTimeStr" columnName="DATA_TIME_STR" type="TEXT" description="数据时间(字符串格式), 用以记录创建时间。excel导入时，需要手动填写该字段，并且将单元格格式设置为&quot;文本&quot;，输入的时间格式为&quot;yyyy-mm-dd hh:mm:ss&quot;，否则导入的数据将无法被处理。同一批导入的数据应该将该字段设置为相同的时间，这样才能保证新导入的数据能够被同时处理。"/>
+    <property id="processed" columnName="PROCESSED" type="BOOLEAN" description="处理标记, 标记当前数据记录是否已经被相应的业务模块代码处理。"/>
+    <index name="IDX_POTDATA_PROCESSED" columns="processed"/>
+    <property id="tag" columnName="TAG" type="TEXT" length="500" description="位号, PIMS中的一个位号点。"/>
+    <property id="tempID" columnName="TEMPID" type="TEXT" length="200" description="业务主键"/>
+    <index name="IDX_POTDATA_TEMPID" columns="tempID"/>
+    <property id="tvalue" columnName="TVALUE" type="DECIMAL" scale="4" description="位号值, 由PIMS插入的一个位号在对应时间的数值。"/>
+  </model>
+  <model id="PotDataDealInfo" tableName="MESBASIC_POT_DATAS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_POTDATA_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="Equipment" tableName="EAM_BASEINFO" extends="AbstractEcFullEntity" description="设备">
+    <property id="areaNum" columnName="AREA_NUM" type="TEXT" description="设备位号"/>
+    <property id="autoCreateContainer" columnName="AUTO_CREATE_CONTAINER" type="BOOLEAN" description="自动生成容器, 如果勾选了关联容器，并勾选了自动生成容器，则在保存设备的时候，自动创建一个编码和名称与设备相同的容器。"/>
+    <property id="code" columnName="EAM_CODE" type="TEXT" length="400" description="编码"/>
+    <index name="IDX_EQUIPMENT_CODE" columns="code"/>
+    <property id="demo" columnName="EAM_MEMO" type="TEXT" length="2000" description="备注"/>
+    <property id="eamAbc" columnName="EAM_ABC" type="TEXT" length="200" description="ABC分类, ABC分类，关联系统编码EAM002"/>
+    <property id="eamAssetCode" columnName="EAM_ASSETCODE" type="TEXT" length="200" description="资产编码, 资产编码"/>
+    <property id="eamBuyTime" columnName="EAM_BUY_TIME" type="DATE" description="购入时间"/>
+    <property id="eamDesignFirm" columnName="EAM_DESIGNFIRM" type="TEXT" length="2000" description="设计单位, 设计单位"/>
+    <property id="eamDutyStaffId" columnName="EAM_DUTYSTAFFID" type="LONG" description="责任人"/>
+    <property id="eamFigureNo" columnName="EAM_FIGURENO" type="TEXT" length="2000" description="图号, 图号"/>
+    <property id="eamHaveRunstate" columnName="EAM_HAVERUNSTATE" type="TEXT" length="1" description="关注运行, 关注运行0:否1:是"/>
+    <property id="eamInstallFirm" columnName="EAM_INSTALLFIRM" type="TEXT" length="2000" description="安装公司"/>
+    <property id="eamInstallPlace" columnName="EAM_INSTALLPLACE" type="TEXT" length="200" description="安装位置, 安装位置，关联系统编码EAM007"/>
+    <property id="eamIsSpecial" columnName="EAM_ISSPECIAL" type="BOOLEAN" description="特种设备, 是否特种设备，1是"/>
+    <property id="eamModel" columnName="EAM_MODEL" type="TEXT" length="200" description="型号"/>
+    <property id="eamNetsum" columnName="EAM_NETSUM" type="DECIMAL" scale="6" description="净值"/>
+    <property id="eamParentCode" columnName="EAM_PARENTCODE" type="TEXT" length="200" description="归属编码"/>
+    <property id="eamPeriodTime" columnName="EAM_PERIODTIME" type="DECIMAL" scale="4" description="保养周期"/>
+    <property id="eamPeriodType" columnName="EAM_PERIODTYPE" type="INTEGER" description="周期类型"/>
+    <property id="eamPeriodUnit" columnName="EAM_PERIODUNIT" type="INTEGER" description="周期单位, 1,7,30（绝对时间）3（小时）4次,5吨,6公里"/>
+    <property id="eamProduceCode" columnName="EAM_PRODUCECODE" type="TEXT" length="2000" description="出厂编号"/>
+    <property id="eamProduceDate" columnName="EAM_PRODUCEDATE" type="DATE" description="出厂日期"/>
+    <property id="eamProduceFirm" columnName="EAM_PRODUCEFIRM" type="TEXT" length="2000" description="制造单位"/>
+    <property id="eamProductId" columnName="EAM_PRODUCTID" type="LONG" description="物品ID"/>
+    <property id="eamProperty" columnName="EAM_PROPERTY" type="TEXT" length="200" description="设备属性, 设备属性，关联系统编码EAM003"/>
+    <property id="eamRunStateId" columnName="EAM_RUNSTATEID" type="INTEGER" description="运行状态ID"/>
+    <property id="eamSpefic" columnName="EAM_SPECIF" type="TEXT" length="200" description="规格, 原列名来为EAM_SPEFIC，与设备模块的列名不一致EAM_SPECIF"/>
+    <property id="eamState" columnName="EAM_STATE" type="TEXT" length="200" description="设备状态, 设备状态，关联系统编码EAM001"/>
+    <property id="eamSum" columnName="EAM_SUM" type="DECIMAL" scale="6" description="原值"/>
+    <property id="eamType" columnName="EAM_TYPE" type="BAPCODE" description="设备类型"/>
+    <property id="eamUseDate" columnName="EAM_USEDATE" type="DATE" description="启用日期"/>
+    <property id="eamUseDeptId" columnName="EAM_USEDEPTID" type="LONG" description="使用部门"/>
+    <property id="eamUseYear" columnName="EAM_USEYEAR" type="DECIMAL" scale="6" description="使用年限"/>
+    <property id="eamVendorName" columnName="EAM_VENDORNAME" type="TEXT" length="2000" description="供应商"/>
+    <property id="fileDate" columnName="FILE_DATE" type="DATE" description="建档日期"/>
+    <property id="fileState" columnName="FILE_STATE" type="TEXT" length="2000" description="建档标记, 建档标记，关联设备编码BEAM038"/>
+    <property id="id" columnName="EAM_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="installPlace" columnName="INSTALL_PLACE" type="LONG" description="区域位置"/>
+    <property id="isMea" columnName="EAM_ISMEA" type="BOOLEAN" description="是否测量设备"/>
+    <property id="isRelateContainer" columnName="IS_RELATE_CONTAINER" type="BOOLEAN" description="关联容器, 如果勾选关联容器，则允许用户选择一个被关联的容器对象。"/>
+    <property id="isSpecialNew" columnName="IS_SPECIAL_NEW" type="BOOLEAN" description="是否特种设备"/>
+    <property id="name" columnName="EAM_NAME" type="TEXT" length="800" description="设备名称"/>
+    <property id="otherspecia" columnName="EAM_OTHERSPECIA" type="TEXT" description="其他特殊设备, 设备冗余字段，为系统编码其他特殊设备BEAM043"/>
+    <property id="relateContainer" columnName="RELATE_CONTAINER" type="LONG" description="容器"/>
+    <property id="specialtyNew" columnName="SPECIALTY_NEW" type="TEXT" description="专业, 设备字段冗余，为系统编码BEAM040"/>
+    <property id="specialType" columnName="SPECIAL_TYPE" type="TEXT" description="特种设备类型, 设备冗余字段，为系统编码特种设备类型BEAM039"/>
+    <property id="workcenter" columnName="WORKCENTER" type="LONG" description="工作中心"/>
+  </model>
+  <model id="EquipmentDealInfo" tableName="EAM_BASEINFO_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_EQUIPMENT_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="EquipmentMneCode" tableName="EAM_BASEINFO_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="Equipment" columnName="EQUIPMENT" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="BaseVendor" tableName="S2BASE_VENDOR" extends="AbstractEcFullEntity" description="供应商">
+    <property id="createStaff" columnName="VENDOR_CREATEPERSON" type="LONG" description="创建人"/>
+    <property id="createTime" columnName="VENDOR_CREATETIME" type="DATETIME" description="创建时间"/>
+    <property id="id" columnName="VENDOR_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="lossRate" columnName="LOSS_RATE" type="DECIMAL" scale="6" description="途耗率(‰)"/>
+    <property id="modifyStaff" columnName="VENDOR_MODIFYPERSON" type="LONG" description="修改人"/>
+    <property id="modifyTime" columnName="VENDOR_MODIFYTIME" type="DATETIME" description="修改时间"/>
+    <property id="vendorAccount" columnName="VENDOR_ACCOUNT" type="TEXT" length="50" description="银行账号"/>
+    <property id="vendorAddress" columnName="VENDOR_ADDRESS" type="TEXT" length="200" description="地址"/>
+    <property id="vendorAheadDays" columnName="VENDOR_AHEADDAYS" type="INTEGER" description="到货提醒周期"/>
+    <property id="vendorAPMoney" columnName="VENDOR_APMONEY" type="DECIMAL" scale="6" description="上期应付余额"/>
+    <property id="vendorBank" columnName="VENDOR_BANK" type="TEXT" length="100" description="开户银行"/>
+    <property id="vendorCode" columnName="VENDOR_CODE" type="TEXT" length="20" description="供应商编码"/>
+    <index name="IDX_BASEVENDOR_VENDORCO" columns="vendorCode"/>
+    <property id="vendorCorpopation" columnName="VENDOR_CORPORATION" type="TEXT" length="60" description="法人"/>
+    <property id="vendorCustomerID" columnName="VENDOR_CUSTOMERID" type="LONG" description="对应客户"/>
+    <property id="vendorDCCode" columnName="VENDOR_DCCODE" type="SYSTEMCODE" description="地区"/>
+    <property id="vendorDegreeCode" columnName="VENDOR_DEGREECODE" type="SYSTEMCODE" description="供应商等级"/>
+    <property id="vendorDeliveryCode" columnName="VENDOR_DELIVERYCODE" type="SYSTEMCODE" description="发运方式"/>
+    <property id="vendorDepartID" columnName="VENDOR_DEPARTID" type="LONG" description="分管部门"/>
+    <property id="vendorEmail" columnName="VENDOR_EMAIL" type="TEXT" length="30" description="Email地址"/>
+    <property id="vendorEvDate" columnName="VENDOR_EVDATE" type="DATE" description="评估日期"/>
+    <property id="vendorEvState" columnName="VENDOR_EVSTATE" type="SYSTEMCODE" description="评估状态"/>
+    <property id="vendorFax" columnName="VENDOR_FAX" type="TEXT" length="20" description="传真"/>
+    <property id="vendorIntroduce" columnName="VENDOR_INTRODUCE" type="TEXT" length="2000" description="企业简介"/>
+    <property id="vendorMemo" columnName="VENDOR_MEMO" type="TEXT" length="500" description="备注"/>
+    <property id="vendorMobile" columnName="VENDOR_MOBILE" type="TEXT" length="50" description="手机"/>
+    <property id="vendorName" columnName="VENDOR_NAME" type="TEXT" length="200" description="供应商名称"/>
+    <property id="vendorPayCondition" columnName="VENDOR_PAYCONDITION" type="TEXT" length="100" description="付款条件"/>
+    <property id="vendorPayTerm" columnName="VENDOR_PAYTERM" type="INTEGER" description="账期（天）"/>
+    <property id="vendorPhone" columnName="VENDOR_PHONE" type="TEXT" length="50" description="电话"/>
+    <property id="vendorPostCode" columnName="VENDOR_POSTCODE" type="TEXT" length="8" description="邮编"/>
+    <property id="vendorProperty" columnName="VENDOR_PROPERTY" type="SYSTEMCODE" description="企业性质"/>
+    <property id="vendorRecentSupplyDate" columnName="VENDOR_RECENTSUPPLYDATE" type="DATE" description="最近供货日期"/>
+    <property id="vendorRegFund" columnName="VENDOR_REGFUND" type="TEXT" length="50" description="注册资金"/>
+    <property id="vendorShortName" columnName="VENDOR_SHORTNAME" type="TEXT" length="200" description="供应商简称"/>
+    <property id="vendorStaffID" columnName="VENDOR_STAFFID" type="LONG" description="采购员"/>
+    <property id="vendorState" columnName="VENDOR_STATE" type="SYSTEMCODE" description="启用状态"/>
+    <property id="vendorTaxCode" columnName="VENDOR_TAXCODE" type="TEXT" length="20" description="税务登记号"/>
+    <property id="vendorTempPeriodF" columnName="VENDOR_TEMPPERIODF" type="DATE" description="临时交易开始时间"/>
+    <property id="vendorTempPeriodT" columnName="VENDOR_TEMPPERIODT" type="DATE" description="临时交易结束时间"/>
+    <property id="vendorTradeCode" columnName="VENDOR_TRADECODE" type="TEXT" length="20" description="工商登记号"/>
+    <property id="vendorVCCode" columnName="VENDOR_VCCODE" type="TEXT" description="供应商分类"/>
+    <property id="vendorVocation" columnName="VENDOR_VOCATION" type="SYSTEMCODE" description="行业"/>
+    <property id="vendorWeb" columnName="VENDOR_WEB" type="TEXT" length="50" description="主页"/>
+  </model>
+  <model id="BaseVendorDealInfo" tableName="S2BASE_VENDOR_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BASEVENDOR_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BaseVendorMneCode" tableName="S2BASE_VENDOR_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="BaseVendor" columnName="BASE_VENDOR" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="Container" tableName="MESBASIC_CONTAINERS" extends="AbstractEcFullEntity" description="容器">
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="bigintparamc" columnName="BIGINTPARAMC" type="INTEGER" description="自定义字段IPC"/>
+    <property id="bigintparamd" columnName="BIGINTPARAMD" type="INTEGER" description="自定义字段IPD"/>
+    <property id="bigintparame" columnName="BIGINTPARAME" type="INTEGER" description="自定义字段IPE"/>
+    <property id="bigintparamf" columnName="BIGINTPARAMF" type="INTEGER" description="自定义字段IPF"/>
+    <property id="bigintparamg" columnName="BIGINTPARAMG" type="INTEGER" description="自定义字段IPG"/>
+    <property id="bigintparamh" columnName="BIGINTPARAMH" type="INTEGER" description="自定义字段IPH"/>
+    <property id="bigintparami" columnName="BIGINTPARAMI" type="INTEGER" description="自定义字段IPI"/>
+    <property id="bigintparamj" columnName="BIGINTPARAMJ" type="INTEGER" description="自定义字段IPJ"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="charparamc" columnName="CHARPARAMC" type="TEXT" length="2000" description="自定义字段CPC"/>
+    <property id="charparamd" columnName="CHARPARAMD" type="TEXT" length="2000" description="自定义字段CPD"/>
+    <property id="charparame" columnName="CHARPARAME" type="TEXT" length="2000" description="自定义字段CPE"/>
+    <property id="charparamf" columnName="CHARPARAMF" type="TEXT" length="2000" description="自定义字段CPF"/>
+    <property id="charparamg" columnName="CHARPARAMG" type="TEXT" length="2000" description="自定义字段CPG"/>
+    <property id="charparamh" columnName="CHARPARAMH" type="TEXT" length="2000" description="自定义字段CPH"/>
+    <property id="charparami" columnName="CHARPARAMI" type="TEXT" length="2000" description="自定义字段CPI"/>
+    <property id="charparamj" columnName="CHARPARAMJ" type="TEXT" length="2000" description="自定义字段CPJ"/>
+    <property id="code" columnName="CODE" type="TEXT" length="200" description="编码, 储料罐的编号，系统唯一"/>
+    <index name="IDX_CONTAINER_CODE" columns="code"/>
+    <property id="containerShape" columnName="CONTAINER_SHAPE" type="SYSTEMCODE" description="容器形状"/>
+    <property id="containerStatus" columnName="CONTAINER_STATUS" type="SYSTEMCODE" description="容器状态"/>
+    <property id="containerType" columnName="CONTAINER_TYPE" type="SYSTEMCODE" description="容器类型"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="dateparamc" columnName="DATEPARAMC" type="DATETIME" description="自定义字段DPC"/>
+    <property id="dateparamd" columnName="DATEPARAMD" type="DATETIME" description="自定义字段DPD"/>
+    <property id="dateparame" columnName="DATEPARAME" type="DATETIME" description="自定义字段DPE"/>
+    <property id="dateparamf" columnName="DATEPARAMF" type="DATETIME" description="自定义字段DPF"/>
+    <property id="dateparamg" columnName="DATEPARAMG" type="DATETIME" description="自定义字段DPG"/>
+    <property id="dateparamh" columnName="DATEPARAMH" type="DATETIME" description="自定义字段DPH"/>
+    <property id="density" columnName="DENSITY" type="DECIMAL" scale="4" description="储料密度, 用来计算储罐内物料的重量。"/>
+    <property id="department" columnName="DEPARTMENT" type="LONG" description="所属部门"/>
+    <property id="equip" columnName="EQUIP" type="LONG" description="设备"/>
+    <property id="factorDisplay" columnName="FACTOR_DISPLAY" type="TEXT" length="2000" description="体积计算公式(展示用)"/>
+    <property id="gasDensityFactor" columnName="GAS_DENSITY_FACTOR" type="TEXT" length="2000" description="气相密度修正公式, 用于计算气体的实际密度值，密度修正公式为空时，直接采用查表密度。比如，气体的密度计算公式为：实际密度=查表密度*（压力*10+1）。"/>
+    <property id="hlevel" columnName="HLEVEL" type="DECIMAL" scale="6" description="最大工作液位(m)"/>
+    <property id="levelDeviation" columnName="LEVEL_DEVIATION" type="DECIMAL" scale="6" description="实际液位偏差(m), 该字段若不为空，则计算“实际液位(m)”时要加上该字段的数值，该字段可以填入正值或负值。"/>
+    <property id="liquidDensityFactor" columnName="LIQUID_DENSITY_FACTOR" type="TEXT" length="2000" description="液相密度修正公式, 用于计算液体的实际密度值，密度修正公式为空时，直接采用查表密度。比如，气体的密度计算公式为：实际密度=查表密度*（压力*10+1）。"/>
+    <property id="llevel" columnName="LLEVEL" type="DECIMAL" scale="6" description="最低工作液位(m)"/>
+    <property id="model" columnName="MODEL" type="LONG" description="型号"/>
+    <property id="name" columnName="NAME" type="TEXT" length="200" description="容器名称, 容器的名称"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="numberparamc" columnName="NUMBERPARAMC" type="DECIMAL" scale="6" description="自定义字段FPC"/>
+    <property id="numberparamd" columnName="NUMBERPARAMD" type="DECIMAL" scale="6" description="自定义字段FPD"/>
+    <property id="numberparame" columnName="NUMBERPARAME" type="DECIMAL" scale="6" description="自定义字段FPE"/>
+    <property id="numberparamf" columnName="NUMBERPARAMF" type="DECIMAL" scale="6" description="自定义字段FPF"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="objparamc" columnName="OBJPARAMC" type="LONG" description="自定义字段OPC"/>
+    <property id="objparamd" columnName="OBJPARAMD" type="LONG" description="自定义字段OPD"/>
+    <property id="person" columnName="PERSON" type="LONG" description="责任人"/>
+    <property id="pimsurl" columnName="PIMSURL" type="TEXT" length="2000" description="监控页面, PIMS的一个页面链接"/>
+    <property id="produceMgr" columnName="PRODUCE_MGR" type="BOOLEAN" description="生产区容器, 选中时，表示是生产区使用的容器"/>
+    <property id="product" columnName="PRODUCT" type="LONG" description="物品"/>
+    <property id="propertyTags" columnName="PROPERTY_TAGS" type="LONG" description="状态位号"/>
+    <property id="radius" columnName="RADIUS" type="DECIMAL" scale="6" description="半径(m)"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="scparamc" columnName="SCPARAMC" type="TEXT" length="2000" description="自定义字段SCPC"/>
+    <property id="scparamd" columnName="SCPARAMD" type="TEXT" length="2000" description="自定义字段SCPD"/>
+    <property id="stdDensity" columnName="STD_DENSITY" type="DECIMAL" scale="6" description="标准密度"/>
+    <property id="tankCapacity" columnName="TANK_CAPACITY" type="DECIMAL" scale="6" description="罐总量"/>
+    <property id="tankHeight" columnName="TANK_HEIGHT" type="DECIMAL" scale="6" description="罐高(m)"/>
+    <property id="tankMgr" columnName="TANK_MGR" type="BOOLEAN" description="罐区容器, 选中时，说明这个容器是使用在罐区管理中的。"/>
+    <property id="volumneCalc" columnName="VOLUMNE_CALC" type="TEXT" length="2000" description="体积计算公式, 体积计算公式；如果配置了型号，则该公式引用型号上的体积计算公式，用户可以手工修改该公式。如果没有配置型号，则用户手工录入一个体积的计算公式。公式中有未知参数，使用param0，param1等代替，作为动态传入的参数。"/>
+    <property id="warehouse" columnName="WAREHOUSE" type="TEXT" length="200" description="仓库, 仓库编码"/>
+    <property id="warePosition" columnName="WARE_POSITION" type="TEXT" length="200" description="库位"/>
+  </model>
+  <model id="ContainerDealInfo" tableName="MESBASIC_CONTAINERS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_CONTAINER_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="ContainerMneCode" tableName="MESBASIC_CONTAINERS_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="Container" columnName="CONTAINER" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="ContainerExp" tableName="MESBASIC_CONTAINER_EXPS" extends="AbstractEcPartEntity" description="字段对应列表">
+    <property id="code" columnName="CODE" type="TEXT" description="字段编码"/>
+    <property id="headId" columnName="HEAD_ID" type="LONG" description="容器"/>
+    <property id="name" columnName="NAME" type="TEXT" description="字段名称"/>
+    <property id="representCode" columnName="REPRESENT_CODE" type="TEXT" description="对应值"/>
+  </model>
+  <model id="FlowRecord" tableName="MESBASIC_FLOW_RECORDS" extends="AbstractEcPartEntity" description="进出记录, 用于显示当前储罐的进出罐记录，进出罐记录保存时就往这张表里插数据。">
+    <property id="action" columnName="ACTION" type="TEXT" description="进/出罐"/>
+    <property id="businessType" columnName="BUSINESS_TYPE" type="TEXT" description="业务类型"/>
+    <property id="containerId" columnName="CONTAINER_ID" type="LONG" description="储罐"/>
+    <property id="destination" columnName="DESTINATION" type="TEXT" description="目的容器"/>
+    <property id="desType" columnName="DES_TYPE" type="TEXT" description="目的类型"/>
+    <property id="endLevel" columnName="END_LEVEL" type="DECIMAL" scale="6" description="结束液位(m)"/>
+    <property id="endTime" columnName="END_TIME" type="DATETIME" description="结束时间"/>
+    <property id="flowRecordId" columnName="FLOW_RECORD_ID" type="LONG" description="进出罐记录ID"/>
+    <property id="gasVolume" columnName="GAS_VOLUME" type="DECIMAL" scale="6" description="气体进/出罐体积(m³)"/>
+    <property id="gasWeight" columnName="GAS_WEIGHT" type="DECIMAL" scale="6" description="气体进/出罐质量(t)"/>
+    <property id="levelDiff" columnName="LEVEL_DIFF" type="DECIMAL" scale="6" description="液位差(m)"/>
+    <property id="liquidVolume" columnName="LIQUID_VOLUME" type="DECIMAL" scale="6" description="进/出罐体积(m³)"/>
+    <property id="liquidWeight" columnName="LIQUID_WEIGHT" type="DECIMAL" scale="6" description="进/出罐重量(t)"/>
+    <property id="productId" columnName="PRODUCT_ID" type="LONG" description="物料"/>
+    <property id="routineId" columnName="ROUTINE_ID" type="LONG" description="物流路径"/>
+    <property id="source" columnName="SOURCE" type="TEXT" description="源容器"/>
+    <property id="sourceType" columnName="SOURCE_TYPE" type="TEXT" description="源类型"/>
+    <property id="startLevel" columnName="START_LEVEL" type="DECIMAL" scale="6" description="开始液位(m)"/>
+    <property id="startTime" columnName="START_TIME" type="DATETIME" description="开始时间"/>
+  </model>
+  <model id="FunctionInfo" tableName="MESBASIC_FUNCTION_INFOS" extends="AbstractEcPartEntity" description="函数表">
+    <property id="expression" columnName="EXPRESSION" type="TEXT" length="2000" description="计算公式"/>
+    <property id="relatedContainer" columnName="RELATED_CONTAINER" type="LONG" description="容器ID"/>
+  </model>
+  <model id="MaintainLog" tableName="MESBASIC_MAINTAIN_LOGS" extends="AbstractEcPartEntity" description="维护日志, 记录储罐变更的日志，主要涉及常规信息、储罐换料、以及状态变更。">
+    <property id="jsonData" columnName="JSON_DATA" type="TEXT" length="2000" description="数据"/>
+    <property id="logType" columnName="LOG_TYPE" type="TEXT" description="日志类型"/>
+    <property id="maintainDept" columnName="MAINTAIN_DEPT" type="TEXT" description="维护部门"/>
+    <property id="maintainStaff" columnName="MAINTAIN_STAFF" type="TEXT" description="维护人"/>
+    <property id="maintainTime" columnName="MAINTAIN_TIME" type="DATETIME" description="创建时间"/>
+    <property id="operation" columnName="OPERATION" type="TEXT" description="操作"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="tank" columnName="TANK" type="LONG" description="容器"/>
+  </model>
+  <model id="PropertyTags" tableName="MESBASIC_PROPERTY_TAGS" extends="AbstractEcPartEntity" description="容器属性">
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="bigintparamc" columnName="BIGINTPARAMC" type="INTEGER" description="自定义字段IPC"/>
+    <property id="bigintparamd" columnName="BIGINTPARAMD" type="INTEGER" description="自定义字段IPD"/>
+    <property id="bigintparame" columnName="BIGINTPARAME" type="INTEGER" description="自定义字段IPE"/>
+    <property id="bigintparamf" columnName="BIGINTPARAMF" type="INTEGER" description="自定义字段IPF"/>
+    <property id="bigintparamg" columnName="BIGINTPARAMG" type="INTEGER" description="自定义字段IPG"/>
+    <property id="bigintparamh" columnName="BIGINTPARAMH" type="INTEGER" description="自定义字段IPH"/>
+    <property id="bigintparami" columnName="BIGINTPARAMI" type="INTEGER" description="自定义字段IPI"/>
+    <property id="bigintparamj" columnName="BIGINTPARAMJ" type="INTEGER" description="自定义字段IPJ"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="charparamc" columnName="CHARPARAMC" type="TEXT" length="2000" description="自定义字段CPC"/>
+    <property id="charparamd" columnName="CHARPARAMD" type="TEXT" length="2000" description="自定义字段CPD"/>
+    <property id="charparame" columnName="CHARPARAME" type="TEXT" length="2000" description="自定义字段CPE"/>
+    <property id="charparamf" columnName="CHARPARAMF" type="TEXT" length="2000" description="自定义字段CPF"/>
+    <property id="charparamg" columnName="CHARPARAMG" type="TEXT" length="2000" description="自定义字段CPG"/>
+    <property id="charparamh" columnName="CHARPARAMH" type="TEXT" length="2000" description="自定义字段CPH"/>
+    <property id="charparami" columnName="CHARPARAMI" type="TEXT" length="2000" description="自定义字段CPI"/>
+    <property id="charparamj" columnName="CHARPARAMJ" type="TEXT" length="2000" description="自定义字段CPJ"/>
+    <property id="container" columnName="CONTAINER" type="LONG" description="容器"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="dateparamc" columnName="DATEPARAMC" type="DATETIME" description="自定义字段DPC"/>
+    <property id="dateparamd" columnName="DATEPARAMD" type="DATETIME" description="自定义字段DPD"/>
+    <property id="dateparame" columnName="DATEPARAME" type="DATETIME" description="自定义字段DPE"/>
+    <property id="dateparamf" columnName="DATEPARAMF" type="DATETIME" description="自定义字段DPF"/>
+    <property id="dateparamg" columnName="DATEPARAMG" type="DATETIME" description="自定义字段DPG"/>
+    <property id="dateparamh" columnName="DATEPARAMH" type="DATETIME" description="自定义字段DPH"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="numberparamc" columnName="NUMBERPARAMC" type="DECIMAL" scale="6" description="自定义字段FPC"/>
+    <property id="numberparamd" columnName="NUMBERPARAMD" type="DECIMAL" scale="6" description="自定义字段FPD"/>
+    <property id="numberparame" columnName="NUMBERPARAME" type="DECIMAL" scale="6" description="自定义字段FPE"/>
+    <property id="numberparamf" columnName="NUMBERPARAMF" type="DECIMAL" scale="6" description="自定义字段FPF"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="objparamc" columnName="OBJPARAMC" type="LONG" description="自定义字段OPC"/>
+    <property id="objparamd" columnName="OBJPARAMD" type="LONG" description="自定义字段OPD"/>
+    <property id="primary" columnName="IS_PRIMARY" type="BOOLEAN" description="主计量"/>
+    <property id="property" columnName="PROPERTY" type="LONG" description="计量表"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="scparamc" columnName="SCPARAMC" type="TEXT" length="2000" description="自定义字段SCPC"/>
+    <property id="scparamd" columnName="SCPARAMD" type="TEXT" length="2000" description="自定义字段SCPD"/>
+  </model>
+  <model id="StoreSet" tableName="MATERIAL_STORE_SETS" extends="AbstractEcTreeFullEntity" description="货位档案">
+    <property id="inPriority" columnName="IN_PRIORITY" type="INTEGER" description="入库优先级"/>
+    <property id="limtQuantity" columnName="LIMT_QUANTITY" type="DECIMAL" scale="6" description="最大数量"/>
+    <property id="limtVolumn" columnName="LIMT_VOLUMN" type="DECIMAL" scale="6" description="最大体积"/>
+    <property id="limtWeight" columnName="LIMT_WEIGHT" type="DECIMAL" scale="6" description="最大重量"/>
+    <property id="outPriority" columnName="OUT_PRIORITY" type="INTEGER" description="出库优先级"/>
+    <property id="owner" columnName="OWNER" type="LONG" description="保管人"/>
+    <property id="placeSetCode" columnName="PLACE_SET_CODE" type="TEXT" description="货位编码"/>
+    <index name="IDX_STORESET_PLACESET" columns="placeSetCode"/>
+    <property id="placeSetName" columnName="PLACE_SET_NAME" type="TEXT" description="货位名称"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <property id="wareId" columnName="WARE_ID" type="LONG" description="仓库编码"/>
+  </model>
+  <model id="StoreSetDealInfo" tableName="MATERIAL_STORE_SETS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_STORESET_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="Area" tableName="BEAM_AREAS" extends="AbstractEcTreeFullEntity" description="区域位置">
+    <property id="areaAttribute" columnName="AREA_ATTRIBUTE" type="INTEGER" description="是否末级"/>
+    <property id="areaMemo" columnName="AREA_MEMO" type="TEXT" length="2000" description="备注"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="bigintparamc" columnName="BIGINTPARAMC" type="INTEGER" description="自定义字段IPC"/>
+    <property id="bigintparamd" columnName="BIGINTPARAMD" type="INTEGER" description="自定义字段IPD"/>
+    <property id="bigintparame" columnName="BIGINTPARAME" type="INTEGER" description="自定义字段IPE"/>
+    <property id="bigintparamf" columnName="BIGINTPARAMF" type="INTEGER" description="自定义字段IPF"/>
+    <property id="bigintparamg" columnName="BIGINTPARAMG" type="INTEGER" description="自定义字段IPG"/>
+    <property id="bigintparamh" columnName="BIGINTPARAMH" type="INTEGER" description="自定义字段IPH"/>
+    <property id="bigintparami" columnName="BIGINTPARAMI" type="INTEGER" description="自定义字段IPI"/>
+    <property id="bigintparamj" columnName="BIGINTPARAMJ" type="INTEGER" description="自定义字段IPJ"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="charparamc" columnName="CHARPARAMC" type="TEXT" length="2000" description="自定义字段CPC"/>
+    <property id="charparamd" columnName="CHARPARAMD" type="TEXT" length="2000" description="自定义字段CPD"/>
+    <property id="charparame" columnName="CHARPARAME" type="TEXT" length="2000" description="自定义字段CPE"/>
+    <property id="charparamf" columnName="CHARPARAMF" type="TEXT" length="2000" description="自定义字段CPF"/>
+    <property id="charparamg" columnName="CHARPARAMG" type="TEXT" length="2000" description="自定义字段CPG"/>
+    <property id="charparamh" columnName="CHARPARAMH" type="TEXT" length="2000" description="自定义字段CPH"/>
+    <property id="charparami" columnName="CHARPARAMI" type="TEXT" length="2000" description="自定义字段CPI"/>
+    <property id="charparamj" columnName="CHARPARAMJ" type="TEXT" length="2000" description="自定义字段CPJ"/>
+    <property id="code" columnName="CODE" type="TEXT" length="200" description="编码名称"/>
+    <index name="IDX_AREA_CODE" columns="code"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="dateparamc" columnName="DATEPARAMC" type="DATETIME" description="自定义字段DPC"/>
+    <property id="dateparamd" columnName="DATEPARAMD" type="DATETIME" description="自定义字段DPD"/>
+    <property id="dateparame" columnName="DATEPARAME" type="DATETIME" description="自定义字段DPE"/>
+    <property id="dateparamf" columnName="DATEPARAMF" type="DATETIME" description="自定义字段DPF"/>
+    <property id="dateparamg" columnName="DATEPARAMG" type="DATETIME" description="自定义字段DPG"/>
+    <property id="dateparamh" columnName="DATEPARAMH" type="DATETIME" description="自定义字段DPH"/>
+    <property id="name" columnName="NAME" type="TEXT" length="200" description="区域位置"/>
+    <index name="IDX_AREA_NAME" columns="name"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="numberparamc" columnName="NUMBERPARAMC" type="DECIMAL" scale="6" description="自定义字段FPC"/>
+    <property id="numberparamd" columnName="NUMBERPARAMD" type="DECIMAL" scale="6" description="自定义字段FPD"/>
+    <property id="numberparame" columnName="NUMBERPARAME" type="DECIMAL" scale="6" description="自定义字段FPE"/>
+    <property id="numberparamf" columnName="NUMBERPARAMF" type="DECIMAL" scale="6" description="自定义字段FPF"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="objparamc" columnName="OBJPARAMC" type="LONG" description="自定义字段OPC"/>
+    <property id="objparamd" columnName="OBJPARAMD" type="LONG" description="自定义字段OPD"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="scparamc" columnName="SCPARAMC" type="TEXT" length="2000" description="自定义字段SCPC"/>
+    <property id="scparamd" columnName="SCPARAMD" type="TEXT" length="2000" description="自定义字段SCPD"/>
+  </model>
+  <model id="AreaDealInfo" tableName="BEAM_AREAS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_AREA_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="AreaMneCode" tableName="BEAM_AREAS_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="Area" columnName="AREA" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="PlaceManage" tableName="MESBASIC_PLACE_MENAGE" extends="AbstractEcFullEntity" description="测点位置管理">
+    <property id="factoryNode" columnName="FACTORY_NODE" type="LONG" description="工厂模型"/>
+    <property id="isAll" columnName="IS_ALL" type="BOOLEAN" description="总表位置"/>
+    <property id="placeCode" columnName="PLACE_CODE" type="TEXT" description="位置编码"/>
+    <index name="IDX_PLACEMANAGE_PLACECODE" columns="placeCode"/>
+    <property id="placeManager" columnName="PLACE_MANAGER" type="LONG" description="负责人"/>
+    <property id="placeMemo" columnName="PLACE_MEMO" type="TEXT" description="备注"/>
+    <property id="placeName" columnName="PLACE_NAME" type="TEXT" description="位置名称"/>
+  </model>
+  <model id="PlaceManageDealInfo" tableName="MESBASIC_PLACE_MENAGE_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PLACEMANAGE_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="PlaceManageMneCode" tableName="MESBASIC_PLACE_MENAGE_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="PlaceManage" columnName="PLACE_MANAGE" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="WareClass" tableName="MATERIAL_WARE_CLASSES" extends="AbstractEcTreeFullEntity" description="仓库分类">
+    <property id="classMemo" columnName="CLASS_MEMO" type="TEXT" description="备注"/>
+    <property id="code" columnName="CODE" type="TEXT" description="分类编码"/>
+    <index name="IDX_WARECLASS_CODE" columns="code"/>
+    <property id="name" columnName="NAME" type="TEXT" description="仓库分类"/>
+  </model>
+  <model id="WareClassDealInfo" tableName="MATERIAL_WARE_CLASSES_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_WARECLASS_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="WareClassMneCode" tableName="MATERIAL_WARE_CLASSES_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="WareClass" columnName="WARE_CLASS" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="ProdAttribute" tableName="S2BASE_PRODATTRIBUTE" extends="AbstractEcTreeFullEntity" description="物品属性表">
+    <property id="cmemo" columnName="PRODATT_MEMO" type="TEXT" length="2000" description="备注"/>
+    <property id="code" columnName="PRODATT_CODE" type="TEXT" length="2000" description="属性编码"/>
+    <index name="IDX_PRODATTRIBUTE_CODE" columns="code"/>
+    <property id="id" columnName="PRODATT_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="layNo" columnName="PRODATT_LAYNO" type="INTEGER" description="层次"/>
+    <property id="layRec" columnName="PRODATT_LAYREC" type="TEXT" length="4000" description="层次结构"/>
+    <property id="name" columnName="PRODATT_NAME" type="TEXT" length="200" description="属性名称"/>
+    <property id="playno" columnName="PLAYNO" type="TEXT" length="200" description="物品属性级别代码(弃用)"/>
+    <property id="playrec" columnName="PLAYREC" type="TEXT" length="200" description="物品属性级别记录（弃用）"/>
+  </model>
+  <model id="ProdAttributeDealInfo" tableName="S2BASE_PRODATTRIBUTE_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PRODATTRIBUTE_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BaseProdList" tableName="S2BASE_PRODLIST" extends="AbstractEcTreeFullEntity" description="物品目录">
+    <property id="extraCol" columnName="EXTRA_COL" type="LONGTEXT" description="大字段"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="charparamc" columnName="CHARPARAMC" type="TEXT" length="2000" description="自定义字段CPC"/>
+    <property id="charparamd" columnName="CHARPARAMD" type="TEXT" length="2000" description="自定义字段CPD"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="id" columnName="PRODLIST_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="layNo" columnName="PRODLIST_LAYNO" type="INTEGER" description="层次"/>
+    <property id="layRec" columnName="PRODLIST_LAYREC" type="TEXT" length="4000" description="层次结构"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="prodList" columnName="PRODLIST_MEMO" type="TEXT" description="目录说明"/>
+    <property id="prodListCode" columnName="PRODLIST_CODE" type="TEXT" description="目录代码"/>
+    <index name="IDX_BASEPRODLIST_PRODLIST" columns="prodListCode"/>
+    <property id="prodListEnd" columnName="PRODLIST_END" type="INTEGER" description="是否最末级"/>
+    <property id="prodListName" columnName="PRODLIST_NAME" type="TEXT" description="目录名称"/>
+    <property id="prodListState" columnName="PRODLIST_STATE" type="BOOLEAN" description="目录状态"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+  </model>
+  <model id="BaseProdListDealInfo" tableName="S2BASE_PRODLIST_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BASEPRODLIST_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BaseCustomer" tableName="S2BASE_CUSTOMER" extends="AbstractEcFullEntity" description="客户">
+    <property id="createStaff" columnName="CUSTOMER_CREATEPERSON" type="LONG" description="创建人"/>
+    <property id="createTime" columnName="CUSTOMER_CREATETIME" type="DATETIME" description="创建时间"/>
+    <property id="customerAccount" columnName="CUSTOMER_ACCOUNT" type="TEXT" length="200" description="银行账号"/>
+    <property id="customerAddress" columnName="CUSTOMER_ADDRESS" type="TEXT" length="200" description="地址"/>
+    <property id="customerBank" columnName="CUSTOMER_BANK" type="TEXT" length="100" description="开户行"/>
+    <property id="customerCCCode" columnName="CUSTOMER_CCCODE" type="TEXT" description="客户分类"/>
+    <property id="customerCode" columnName="CUSTOMER_CODE" type="TEXT" length="20" description="客户编码"/>
+    <index name="IDX_BASECUSTOMER_CUSTOMER" columns="customerCode"/>
+    <property id="customerCorporation" columnName="CUSTOMER_CORPORATION" type="TEXT" length="60" description="法人"/>
+    <property id="customerCreditLimit" columnName="CUSTOMER_CREDITLIMIT" type="INTEGER" description="信用期限"/>
+    <property id="customerCreditLine" columnName="CUSTOMER_CREDITLINE" type="DECIMAL" scale="6" description="信用额度"/>
+    <property id="customerCreditMemo" columnName="CUSTOMER_CREDITMEMO" type="TEXT" length="512" description="信贷文本"/>
+    <property id="customerDCCode" columnName="CUSTOMER_DCCODE" type="SYSTEMCODE" description="地区"/>
+    <property id="customerDegreeCode" columnName="CUSTOMER_DEGREECODE" type="SYSTEMCODE" description="客户等级"/>
+    <property id="customerDepartID" columnName="CUSTOMER_DEPARTID" type="LONG" description="分管部门"/>
+    <property id="customerEmail" columnName="CUSTOMER_EMAIL" type="TEXT" length="30" description="Email地址"/>
+    <property id="customerFax" columnName="CUSTOMER_FAX" type="TEXT" length="200" description="传真"/>
+    <property id="customerFreezen" columnName="CUSTOMER_FREEZEN" type="INTEGER" description="信贷冻结状态"/>
+    <property id="customerIntroduce" columnName="CUSTOMER_INTRODUCE" type="TEXT" length="2000" description="企业简介"/>
+    <property id="customerInvoiceAddress" columnName="CUSTOMER_INVOICEADDRESS" type="TEXT" length="600" description="开票地址"/>
+    <property id="customerInvoicePhone" columnName="CUSTOMER_INVOICEPHONE" type="TEXT" length="200" description="开票地点电话"/>
+    <property id="customerIsBlack" columnName="CUSTOMER_ISBLACK" type="SYSTEMCODE" description="是否黑名单"/>
+    <property id="customerMemo" columnName="CUSTOMER_MEMO" type="TEXT" length="2000" description="备注"/>
+    <property id="customerMobile" columnName="CUSTOMER_MOBILE" type="TEXT" length="200" description="手机"/>
+    <property id="customerName" columnName="CUSTOMER_NAME" type="TEXT" length="200" description="客户名称"/>
+    <property id="customerPayCondition" columnName="CUSTOMER_PAYCONDITION" type="TEXT" length="100" description="付款条件"/>
+    <property id="customerPhone" columnName="CUSTOMER_PHONE" type="TEXT" length="200" description="电话"/>
+    <property id="customerPostCode" columnName="CUSTOMER_POSTCODE" type="TEXT" length="200" description="邮编"/>
+    <property id="customerProperty" columnName="CUSTOMER_PROPERTY" type="SYSTEMCODE" description="企业性质"/>
+    <property id="customerRegFund" columnName="CUSTOMER_REGFUND" type="TEXT" length="50" description="注册资金"/>
+    <property id="customerShortName" columnName="CUSTOMER_SHORTNAME" type="TEXT" length="200" description="客户简称"/>
+    <property id="customerState" columnName="CUSTOMER_STATE" type="SYSTEMCODE" description="启用状态"/>
+    <property id="customerTaxCode" columnName="CUSTOMER_TAXCODE" type="TEXT" length="200" description="税务登记号"/>
+    <property id="customerTradeCode" columnName="CUSTOMER_TRADECODE" type="TEXT" length="200" description="工商登记号"/>
+    <property id="customerType" columnName="CUSTOMER_TYPE" type="SYSTEMCODE" description="客户类型"/>
+    <property id="customerVendorID" columnName="CUSTOMER_VENDORID" type="LONG" description="对应供应商"/>
+    <property id="customerVocation" columnName="CUSTOMER_VOCATION" type="SYSTEMCODE" description="行业"/>
+    <property id="customerWeb" columnName="CUSTOMER_WEB" type="TEXT" length="50" description="主页地址"/>
+    <property id="id" columnName="CUSTOMER_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="modifyStaff" columnName="CUSTOMER_MODIFYPERSON" type="LONG" description="修改人"/>
+    <property id="modifyTime" columnName="CUSTOMER_MODIFYTIME" type="DATETIME" description="修改时间"/>
+    <property id="ownerStaff" columnName="CUSTOMER_OWNER" type="LONG" description="拥有者"/>
+    <index name="IDX_BASECUSTOMER_OWNERSTA" columns="ownerStaff"/>
+  </model>
+  <model id="BaseCustomerDealInfo" tableName="S2BASE_CUSTOMER_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BASECUSTOMER_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BaseCustomerMneCode" tableName="S2BASE_CUSTOMER_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="BaseCustomer" columnName="BASE_CUSTOMER" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="BaseCustomerClass" tableName="S2BASE_CUSTOMERCLASS" extends="AbstractEcTreeFullEntity" description="客户类型">
+    <property id="extraCol" columnName="EXTRA_COL" type="LONGTEXT" description="大字段"/>
+    <property id="ccCode" columnName="CC_CODE" type="TEXT" length="50" description="分类编码"/>
+    <index name="IDX_BASECUSTOMERC_CCCODE" columns="ccCode"/>
+    <property id="ccMemo" columnName="CC_MEMO" type="TEXT" length="500" description="备注"/>
+    <property id="ccName" columnName="CC_NAME" type="TEXT" length="256" description="分类名称"/>
+    <index name="IDX_BASECUSTOMERC_CCNAME" columns="ccName"/>
+    <property id="id" columnName="CC_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="layNo" columnName="CC_LAYNO" type="INTEGER" description="层次"/>
+    <property id="layRec" columnName="CC_LAYREC" type="TEXT" length="4000" description="层次结构"/>
+  </model>
+  <model id="BaseCustomerClassDealInfo" tableName="S2BASE_CUSTOMERCLASS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BASECUSTOMERC_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BaseCustomerClassMneCode" tableName="S2BASE_CUSTOMERCLASS_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="BaseCustomerClass" columnName="BASE_CUSTOMER_CLASS" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="Prodattrel" tableName="S2BASE_PRODATTREL" extends="AbstractEcFullEntity" description="物品属性关联">
+    <property id="firattid" columnName="PRODATTREL_FIRATTID" type="LONG" description="物品一级属性"/>
+    <property id="id" columnName="PRODATTREL_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="productId" columnName="PRODATTREL_PRODUCTID" type="LONG" description="物品"/>
+    <property id="secattid" columnName="PRODATTREL_SECATTID" type="LONG" description="物品二级属性"/>
+  </model>
+  <model id="ProdattrelDealInfo" tableName="S2BASE_PRODATTREL_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PRODATTREL_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="InterfaceLog" tableName="MESBASIC_INTERFACE_LOGS" extends="AbstractEcFullEntity" description="调度日志">
+    <property id="businessDate" columnName="BUSINESS_DATE" type="DATETIME" description="业务时间"/>
+    <property id="demo" columnName="DEMO" type="TEXT" length="2000" description="描述"/>
+    <property id="logger" columnName="LOGGER" type="LONGTEXT" description="日志"/>
+  </model>
+  <model id="InterfaceLogDealInfo" tableName="MESBASIC_INTERFACE_LOGS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_INTERFACELOG_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="Ware" tableName="MATERIAL_WARES" extends="AbstractEcFullEntity" description="仓库表">
+    <property id="belongDept" columnName="BELONG_DEPT" type="LONG" description="所属部门"/>
+    <property id="cargoStatue" columnName="CARGO_STATUE" type="SYSTEMCODE" description="货位状态"/>
+    <property id="contact" columnName="CONTACT" type="TEXT" length="500" description="联系方式"/>
+    <property id="isCargo" columnName="IS_CARGO" type="BOOLEAN" description="是否货位管理"/>
+    <property id="storeKeeper" columnName="STORE_KEEPER" type="LONG" description="保管员"/>
+    <property id="wareAddress" columnName="WARE_ADDRESS" type="TEXT" length="200" description="仓库地址"/>
+    <property id="wareClass" columnName="WARE_CLASS" type="LONG" description="仓库分类"/>
+    <property id="wareCode" columnName="WARE_CODE" type="TEXT" length="64" description="仓库编码"/>
+    <index name="IDX_WARE_WARECODE" columns="wareCode"/>
+    <property id="wareMemo" columnName="WARE_MEMO" type="TEXT" length="1000" description="备注"/>
+    <property id="wareName" columnName="WARE_NAME" type="TEXT" length="100" description="仓库名称"/>
+    <property id="wareState" columnName="WARE_STATE" type="SYSTEMCODE" description="仓库状态"/>
+  </model>
+  <model id="WareDealInfo" tableName="MATERIAL_WARES_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_WARE_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="WareMneCode" tableName="MATERIAL_WARES_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="Ware" columnName="WARE" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="PurchGroup" tableName="S2BASE_USERREPORT" extends="AbstractEcFullEntity" description="采购组">
+    <property id="id" columnName="USERREPORT_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="purchGroupMemo" columnName="USERREPORT_MEMO" type="TEXT" length="2000" description="备注"/>
+    <property id="purchGroupName" columnName="USERREPORT_PARAMC" type="TEXT" length="200" description="采购组名称"/>
+    <property id="purchParamA" columnName="USERREPORT_PARAMA" type="LONG" description="列表过滤参数A"/>
+    <property id="purchUserReportState" columnName="USERREPORT_STATE" type="TEXT" length="200" description="状态"/>
+  </model>
+  <model id="PurchGroupDealInfo" tableName="S2BASE_USERREPORT_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PURCHGROUP_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="PurchGroupMember" tableName="S2BASE_MEMBER" extends="AbstractEcPartEntity" description="采购组人员">
+    <property id="memberGroupID" columnName="MEMBER_GROUPID" type="LONG" description="组ID"/>
+    <property id="memberMemo" columnName="MEMBER_MEMO" type="TEXT" length="2000" description="备注"/>
+    <property id="memberStaffID" columnName="MEMBER_STAFFID" type="LONG" description="人员信息"/>
+  </model>
+  <model id="DataTrans" tableName="MESBASIC_DATA_TRANS" extends="AbstractEcFullEntity" description="数据接口, 第三方数据接口。 第三方系统将把与本系统交互的数据填写到这张表里与本系统进行交互。">
+    <property id="businessType" columnName="BUSINESS_TYPE" type="SYSTEMCODE" description="业务类型"/>
+    <index name="IDX_DATATRANS_BUSINESS" columns="businessType"/>
+    <property id="content" columnName="CONTENT" type="TEXT" length="2000" description="业务数据, 用于通用接口。 所有由除PIMS以外的系统需要与MES交互的时候，都通过这个字段进行。"/>
+    <property id="dataTime" columnName="DATA_TIME" type="DATETIME" description="数据时间, 由PIMS插入到接口表时，PIMS位号对应的数值的时间"/>
+    <property id="processed" columnName="PROCESSED" type="BOOLEAN" description="处理标记, 标记当前数据记录是否已经被相应的业务模块代码处理。"/>
+    <index name="IDX_DATATRANS_PROCESSED" columns="processed"/>
+    <property id="tag" columnName="TAG" type="TEXT" length="500" description="位号, PIMS中的一个位号点。"/>
+    <property id="tvalue" columnName="TVALUE" type="DECIMAL" scale="4" description="位号值"/>
+  </model>
+  <model id="DataTransDealInfo" tableName="MESBASIC_DATA_TRANS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_DATATRANS_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="ItemSeq" tableName="MESBASIC_ITEM_SEQS" extends="AbstractEcPartEntity" description="测点处理标示">
+    <property id="errorFlag" columnName="ERROR_FLAG" type="BOOLEAN" description="异常标识"/>
+    <property id="maxId" columnName="MAX_ID" type="LONG" description="测点ID"/>
+    <property id="seqType" columnName="SEQ_TYPE" type="TEXT" length="400" description="类型"/>
+  </model>
+  <model id="QACheckIndex" tableName="LIMSBASIC_CHECK_INDICES" extends="AbstractEcFullEntity" description="检验指标">
+    <property id="active" columnName="ACTIVE" type="BOOLEAN" description="启用"/>
+    <property id="checkFee" columnName="CHECKINDEX_CHECKFEE" type="DECIMAL" scale="6" description="检验费用"/>
+    <property id="checkIndexCode" columnName="CHECKINDEX_CODE" type="TEXT" description="指标编码"/>
+    <property id="checkIndexName" columnName="CHECKINDEX_NAME" type="TEXT" description="指标名称"/>
+    <property id="code" columnName="CODE" type="BAPCODE" description="指标编码"/>
+    <index name="IDX_QACHECKINDEX_CODE" columns="code"/>
+    <property id="cstate" columnName="CHECKINDEX_STATE" type="TEXT" description="启用状态"/>
+    <property id="decLength" columnName="DEC_LENGTH" type="INTEGER" description="小数位数"/>
+    <property id="dispRule" columnName="CHECKINDEX_DISPRULE" type="TEXT" length="2000" description="规则公式"/>
+    <property id="editType" columnName="EDIT_TYPE" type="TEXT" length="200" description="编辑方式"/>
+    <property id="memoField" columnName="MEMO_FIELD" type="TEXT" length="2000" description="备注"/>
+    <property id="name" columnName="NAME" type="TEXT" length="200" description="指标名称"/>
+    <property id="showValues" columnName="SHOW_VALUES" type="TEXT" length="2000" description="候选值"/>
+    <property id="unitID" columnName="UNITID" type="LONG" description="计量单位"/>
+    <property id="valueKind" columnName="VALUE_KIND" type="TEXT" length="200" description="值类型"/>
+  </model>
+  <model id="QACheckIndexDealInfo" tableName="LIMSBASIC_CHECK_INDICES_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_QACHECKINDEX_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="OriginalSignal" tableName="MESBASIC_ORIGINAL_SIGNALS" extends="AbstractEcFullEntity" description="检测信号表">
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="bigintparamc" columnName="BIGINTPARAMC" type="INTEGER" description="自定义字段IPC"/>
+    <property id="bigintparamd" columnName="BIGINTPARAMD" type="INTEGER" description="自定义字段IPD"/>
+    <property id="bigintparame" columnName="BIGINTPARAME" type="INTEGER" description="自定义字段IPE"/>
+    <property id="bigintparamf" columnName="BIGINTPARAMF" type="INTEGER" description="自定义字段IPF"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="charparamc" columnName="CHARPARAMC" type="TEXT" length="2000" description="自定义字段CPC"/>
+    <property id="charparamd" columnName="CHARPARAMD" type="TEXT" length="2000" description="自定义字段CPD"/>
+    <property id="charparame" columnName="CHARPARAME" type="TEXT" length="2000" description="自定义字段CPE"/>
+    <property id="charparamf" columnName="CHARPARAMF" type="TEXT" length="2000" description="自定义字段CPF"/>
+    <property id="charparamg" columnName="CHARPARAMG" type="TEXT" length="2000" description="自定义字段CPG"/>
+    <property id="charparamh" columnName="CHARPARAMH" type="TEXT" length="2000" description="自定义字段CPH"/>
+    <property id="col1" columnName="COL1" type="TEXT" length="100" description="列1"/>
+    <property id="col2" columnName="COL2" type="LONG" description="列2"/>
+    <property id="col3" columnName="COL3" type="LONG" description="列3"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="dateparamc" columnName="DATEPARAMC" type="DATETIME" description="自定义字段DPC"/>
+    <property id="flag" columnName="FLAG" type="TEXT" length="50" description="特征字段"/>
+    <property id="fv" columnName="FV" type="TEXT" length="80" description="FV"/>
+    <property id="mark" columnName="MARK" type="INTEGER" description="处理标记"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="numberparamc" columnName="NUMBERPARAMC" type="DECIMAL" scale="6" description="自定义字段FPC"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="objparamc" columnName="OBJPARAMC" type="LONG" description="自定义字段OPC"/>
+    <property id="objparamd" columnName="OBJPARAMD" type="LONG" description="自定义字段OPD"/>
+    <property id="occurTime" columnName="OCCUR_TIME" type="DATETIME" description="时间"/>
+    <property id="qc" columnName="QC" type="TEXT" length="100" description="质量变化"/>
+    <property id="quality" columnName="QUALITY" type="LONG" description="质量码"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="scparamc" columnName="SCPARAMC" type="TEXT" length="2000" description="自定义字段SCPC"/>
+    <property id="scparamd" columnName="SCPARAMD" type="TEXT" length="2000" description="自定义字段SCPD"/>
+    <property id="source" columnName="SOURCE" type="SYSTEMCODE" description="来源"/>
+    <property id="tagName" columnName="TAG_NAME" type="TEXT" length="300" description="位号名"/>
+    <property id="tagType" columnName="TAG_TYPE" type="LONG" description="位号类型"/>
+    <property id="tvalue" columnName="TVALUE" type="TEXT" length="200" description="位号值"/>
+  </model>
+  <model id="OriginalSignalDealInfo" tableName="MESBASIC_ORIGINAL_SIGNALS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_ORIGINALSIGNAL_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="Config" tableName="MESBASIC_CONFIGS" extends="AbstractEcPartEntity" description="路径配置, 配置路径上的仪表、阀门、泵等等">
+    <property id="forDestination" columnName="FOR_DESTINATION" type="BOOLEAN" description="用于目的"/>
+    <property id="formula" columnName="FORMULA" type="TEXT" length="2000" description="计算公式, 批次管理中，路径上的每一个配置信息的值的获取方式，是通过该计算公式计算得到的，并不是直接从测点上获取的数值。"/>
+    <property id="forSource" columnName="FOR_SOURCE" type="BOOLEAN" description="用于源"/>
+    <property id="isDefault" columnName="IS_DEFAULT" type="BOOLEAN" description="默认计量"/>
+    <property id="keyAmount" columnName="KEY_AMOUNT" type="BOOLEAN" description="关键数据"/>
+    <property id="maxAggValue" columnName="MAX_AGG_VALUE" type="DECIMAL" scale="4" description="最大有效累积量, 如果该仪表生成记录的时候，累计值大于最大有效值，则在具体业务中可能会采用其他计量。例如在罐区管理中，如果该值达到最大有效值，则出罐/入罐量就会采用液位计来计量"/>
+    <property id="measurement" columnName="MEASUREMENT" type="SYSTEMCODE" description="赋值方式"/>
+    <property id="meter" columnName="METER" type="LONG" description="计量仪表"/>
+    <property id="name" columnName="NAME" type="TEXT" length="200" description="名称"/>
+    <property id="pump" columnName="PUMP" type="LONG" description="泵"/>
+    <property id="pumpBelong" columnName="PUMP_BELONG" type="SYSTEMCODE" description="泵归属"/>
+    <property id="routine" columnName="ROUTINE" type="LONG" description="路径"/>
+    <property id="switcher" columnName="SWITCHER" type="LONG" description="阀门"/>
+    <property id="tankCode" columnName="TANK_CODE" type="TEXT" description="容器编码"/>
+    <property id="testFormula" columnName="TEST_FORMULA" type="TEXT" length="200" description="模拟公式, 批次非真实环境适用公式"/>
+  </model>
+  <model id="InvolveItemsetups" tableName="MESBASIC_INVOLVE_ITEMSETUPS" extends="AbstractEcPartEntity" description="计算涉及的测点, 批次管理中，计算路径上相关的数据时，涉及到的所有的测点。">
+    <property id="itemSetup" columnName="ITEM_SETUP" type="LONG" description="测点"/>
+    <property id="routine" columnName="ROUTINE" type="LONG" description="路径"/>
+  </model>
+  <model id="Routine" tableName="MESBASIC_ROUTINES" extends="AbstractEcFullEntity" description="路径">
+    <property id="businessType" columnName="BUSINESS_TYPE" type="SYSTEMCODE" description="业务类型"/>
+    <property id="code" columnName="CODE" type="TEXT" length="200" description="路径编码"/>
+    <index name="IDX_ROUTINE_CODE" columns="code"/>
+    <property id="density" columnName="DENSITY" type="DECIMAL" scale="2" description="密度"/>
+    <property id="desCode" columnName="DES_CODE" type="TEXT" description="目的容器编码"/>
+    <property id="desContainer" columnName="DES_CONTAINER" type="LONG" description="目标容器"/>
+    <property id="destEqp" columnName="DEST_EQP" type="LONG" description="目的设备"/>
+    <property id="destEquObj" columnName="DEST_EQU_OBJ" type="LONG" description="目的设备"/>
+    <property id="destination" columnName="DESTINATION" type="TEXT" length="200" description="目的, 路径目的地的编码"/>
+    <property id="desType" columnName="DES_TYPE" type="SYSTEMCODE" description="目的类型"/>
+    <property id="name" columnName="NAME" type="TEXT" length="200" description="路径名称"/>
+    <property id="product" columnName="PRODUCT" type="LONG" description="物品"/>
+    <property id="rootineUse" columnName="ROOTINE_USE" type="SYSTEMCODE" description="路径状态"/>
+    <property id="rootType" columnName="ROOT_TYPE" type="SYSTEMCODE" description="路径类型"/>
+    <property id="routineStatus" columnName="ROUTINE_STATUS" type="SYSTEMCODE" description="工作状态"/>
+    <property id="routineStrategy" columnName="ROUTINE_STRATEGY" type="SYSTEMCODE" description="工作模式"/>
+    <property id="sourceType" columnName="SOURCE_TYPE" type="SYSTEMCODE" description="源类型"/>
+    <property id="srcCode" columnName="SRC_CODE" type="TEXT" description="源容器编码"/>
+    <property id="srcContainer" columnName="SRC_CONTAINER" type="LONG" description="源容器"/>
+    <property id="srouce" columnName="SROUCE" type="TEXT" length="500" description="源头, 路径源头的编码"/>
+    <property id="srouceEqp" columnName="SROUCE_EQP" type="LONG" description="源设备"/>
+    <property id="srouceEqpObj" columnName="SROUCE_EQP_OBJ" type="LONG" description="源设备"/>
+    <property id="switcher" columnName="SWITCHER" type="LONG" description="发生信号"/>
+  </model>
+  <model id="RoutineDealInfo" tableName="MESBASIC_ROUTINES_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_ROUTINE_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="SwitcherModel" tableName="MESBASIC_SWITCHER_MODELS" extends="AbstractEcPartEntity" description="开关量">
+    <property id="backword" columnName="BACKWORD" type="BOOLEAN" description="反向"/>
+    <property id="config" columnName="CONFIG" type="LONG" description="路径"/>
+    <property id="forword" columnName="FORWORD" type="BOOLEAN" description="正向"/>
+    <property id="stype" columnName="STYPE" type="SYSTEMCODE" description="类型"/>
+    <property id="switcher" columnName="SWITCHER" type="LONG" description="开关量"/>
+  </model>
+  <model id="TankModel" tableName="MESBASIC_TANK_MODELS" extends="AbstractEcTreeFullEntity" description="容器型号, 储罐的型号配置，提供针对一个储罐的液位差与体积的换算关系。">
+    <property id="code" columnName="CODE" type="TEXT" length="200" description="编码, 储罐型号的编码。"/>
+    <index name="IDX_TANKMODEL_CODE" columns="code"/>
+    <property id="hlevel" columnName="HLEVEL" type="DECIMAL" scale="4" description="最大工作液位, 储罐工作的最高液位"/>
+    <property id="llevel" columnName="LLEVEL" type="DECIMAL" scale="4" description="最低工作液位, 储罐工作的最低液位"/>
+    <property id="name" columnName="NAME" type="TEXT" length="200" description="型号名称, 储罐型号的名称"/>
+    <property id="shape" columnName="SHAPE" type="SYSTEMCODE" description="储罐形状"/>
+    <property id="volume" columnName="VOLUME" type="TEXT" length="2000" description="储量计算公式, 根据储罐内液体的液位，计算储罐内的液体体积。罐体在可用工作液位时，罐内液体体积的计算公式，公式中有未知参数，使用param0，param1等代替，作为动态传入的参数，一般仅包含param0，表示液位。"/>
+  </model>
+  <model id="TankModelDealInfo" tableName="MESBASIC_TANK_MODELS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_TANKMODEL_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="TankModelMneCode" tableName="MESBASIC_TANK_MODELS_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="TankModel" columnName="TANK_MODEL" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="ItemPart" tableName="PELLET_ITEMPART" extends="AbstractEcPartEntity" description="相关测点">
+    <property id="ipID" columnName="IP_ID" type="LONG" description="位号ID"/>
+    <property id="item" columnName="IP_ITEMID" type="LONG" description="位号"/>
+    <property id="itemMemo" columnName="IP_MEMO" type="LONGTEXT" length="4000" description="备注"/>
+    <property id="itemNumber" columnName="IP_ITEMNUMBER" type="TEXT" length="2000" description="生产位号"/>
+    <property id="itemRef" columnName="IP_ITEMREFER" type="TEXT" length="2000" description="对应位号"/>
+    <property id="itemStatus" columnName="ITEM_STATUS" type="SYSTEMCODE" description="状态"/>
+    <property id="itemView" columnName="ITEM_VIEW" type="LONG" description="查看位号"/>
+  </model>
+  <model id="ItemSetup" tableName="PELLET_ITEMSETUP" extends="AbstractEcFullEntity" description="测点">
+    <property id="active" columnName="ACTIVE" type="BOOLEAN" description="启用, 标记位号是否继续采集数据。"/>
+    <property id="calcType" columnName="IS_CALCTYPE" type="SYSTEMCODE" description="算法类型"/>
+    <property id="code" columnName="CODE" type="TEXT" length="2000" description="测点编码, 在系统内部的测点的编码"/>
+    <index name="IDX_ITEMSETUP_CODE" columns="code"/>
+    <property id="compareNumber" columnName="COMPARE_NUMBER" type="DECIMAL" scale="6" description="比较数值, 虚拟位号使用：当未填写计算公式时，必须填写该“比较数值”，表示和关联的测点数据进行差值比较。"/>
+    <property id="compareTime" columnName="COMPARE_TIME" type="DECIMAL" scale="6" description="比较时间(分钟), 虚拟位号使用：当未填写计算公式时，必须填写“比较时间”，表示和多久之前的测点数据进行比较。"/>
+    <property id="crtValue" columnName="CRT_VALUE" type="DECIMAL" scale="4" description="当前值, 位号最近一次数据更新时的数据值"/>
+    <property id="dataSouceType" columnName="DATA_COME_FROM" type="SYSTEMCODE" description="数据来源"/>
+    <property id="dataType" columnName="IS_DATATYPE" type="SYSTEMCODE" description="数据类型（与老系统兼容）"/>
+    <property id="delay" columnName="DELAY" type="INTEGER" description="时延(s), 针对虚拟位号，它的值是有其他位号通过计算公式计算得到的，但公式中的每一个位号的值采集时间不一定一致，因此系统认为在采集时间不超过时延量的数据，都认为是同一批数据，即可以进行运算的数据。"/>
+    <property id="department" columnName="IS_DEPARTMENT" type="LONG" description="部门"/>
+    <property id="energyType" columnName="IS_ITEMCLASS" type="SYSTEMCODE" description="能源类型"/>
+    <property id="factor" columnName="FACTOR" type="LONGTEXT" length="4000" description="修正公式, 位号的修正公式，由于PIMS此埃及数据与管理系统的显示单位不一致，或者仪表的检验修正数量，需要修正采集的数据。在修正公式中，使用n代表原始值，且仅允许一个字母参数n。该公式是一个四则运算公式，例如1.2*n+0.5，如果位号是一个累计值，则修正的是指定时间段内的累积量，如果是瞬时值，修正的是瞬时量，对于开关量，不进行修正。"/>
+    <property id="formula" columnName="IS_FORMULA" type="LONGTEXT" length="4000" description="计算公式"/>
+    <property id="frequency" columnName="IS_FREQUENCY" type="SYSTEMCODE" description="数据频率"/>
+    <property id="gatherLevel" columnName="IS_GATHERLVL" type="SYSTEMCODE" description="统计级别"/>
+    <property id="isId" columnName="IS_ID" type="LONG" description="同步S2ID"/>
+    <property id="isSystem" columnName="IS_ISSYSTEM" type="BOOLEAN" description="系统定义"/>
+    <property id="itemClass" columnName="MEASURE_CLASS" type="SYSTEMCODE" description="位号属性"/>
+    <property id="itemMemo" columnName="IS_MEMO" type="LONGTEXT" length="4000" description="备注"/>
+    <property id="itemName" columnName="IS_ITEMNAME" type="TEXT" length="500" description="测点名称"/>
+    <property id="itemNumber" columnName="IS_ITEMNUMBER" type="TEXT" length="500" description="生产位号"/>
+    <property id="itemPlace" columnName="ITEM_PLACE" type="LONG" description="测点位置"/>
+    <property id="itemRole" columnName="IS_ITEMROLE" type="SYSTEMCODE" description="测点角色"/>
+    <property id="lastEtime" columnName="LAST_ETIME" type="DATETIME" description="最近期末时间, 该测点最后一次被统计时，统计记录的期末时间。"/>
+    <property id="lastEvalue" columnName="LAST_EVALUE" type="DECIMAL" scale="6" description="最近期末值, 该测点最后一次被统计时，统计记录的期末值"/>
+    <property id="lastStime" columnName="LAST_STIME" type="DATETIME" description="最近期初时间, 该测点最后一次被统计时，统计记录的期初时间。"/>
+    <property id="lastSvalue" columnName="LAST_SVALUE" type="DECIMAL" scale="6" description="最近期初值, 该测点最后一次被统计时，统计记录的期初值"/>
+    <property id="machine" columnName="IS_MACHINE" type="TEXT" length="500" description="装置名称"/>
+    <property id="manuallySet" columnName="MANUALLY_SET" type="BOOLEAN" description="手动设置相关测点, 若勾选该字段，相关测点PT可编辑并且显示增删行按钮；若不勾选，相关测点PT只读并隐藏增删行按钮。"/>
+    <property id="params" columnName="IS_PARAMETER" type="TEXT" length="2000" description="参数"/>
+    <property id="procedure" columnName="IS_PROCEDURE" type="TEXT" length="200" description="工序"/>
+    <property id="projectType" columnName="IS_PROJECTTYPE" type="SYSTEMCODE" description="项目类型"/>
+    <property id="purpose" columnName="PURPOSE" type="SYSTEMCODE" description="测点用途"/>
+    <property id="range" columnName="RANGE" type="DECIMAL" scale="6" description="量程"/>
+    <property id="tagType" columnName="TAG_TYPE" type="SYSTEMCODE" description="类型"/>
+    <property id="unit" columnName="UNIT" type="LONG" description="计量单位"/>
+    <property id="unitCode" columnName="IS_MEASURE" type="TEXT" length="200" description="单位编码"/>
+    <property id="updatTime" columnName="UPDAT_TIME" type="DATETIME" description="更新时间, 位号最近一次数据更新的时间"/>
+    <property id="virtualTag" columnName="VIRTUAL_TAG" type="BOOLEAN" description="虚拟位号, 虚拟位号必须有计算公式，虚拟位号的值，是由计算公式中的各项计算得到的。"/>
+    <property id="workLine" columnName="IS_WORKLINE" type="SYSTEMCODE" description="作业区"/>
+  </model>
+  <model id="ItemSetupDealInfo" tableName="PELLET_ITEMSETUP_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_ITEMSETUP_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="ItemSetupMneCode" tableName="PELLET_ITEMSETUP_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="ItemSetup" columnName="ITEM_SETUP" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="EamType" tableName="EAM_EAMTYPE" extends="AbstractEcTreeFullEntity" description="设备类型">
+    <property id="code" columnName="EAMTYPE_CODE" type="BAPCODE" length="200" description="编码"/>
+    <index name="IDX_EAMTYPE_CODE" columns="code"/>
+    <property id="eamtypeAttribute" columnName="EAMTYPE_ATTRIBUTE" type="BOOLEAN" description="末级"/>
+    <property id="id" columnName="EAMTYPE_ID" type="LONG" isPK="true" description="ID, Primary Key"/>
+    <property id="isMea" columnName="EAMTYPE_ISMEA" type="BOOLEAN" description="测量设备"/>
+    <property id="isspecial" columnName="EAMTYPE_ISSPECIAL" type="BOOLEAN" description="特种设备"/>
+    <property id="layNo" columnName="EAMTYPE_LAYNO" type="INTEGER" description="层次, 将LAY_NO改成EAMTYPE_LAYNO，因为设备档案模块代里是这个字段，如果使用LAY_NO两边建的数据在另一边使用时无法根据左边的树进行过滤"/>
+    <property id="layRec" columnName="EAMTYPE_LAYREC" type="TEXT" length="4000" description="层次结构, 将LAY_REC改成EAMTYPE_LAYREC，因为设备档案模块代里是这个字段，如果使用LAY_REC两边建的数据在另一边使用时无法根据左边的树进行过滤"/>
+    <property id="name" columnName="EAMTYPE_NAME" type="TEXT" length="200" description="设备类型"/>
+    <property id="otherspecial" columnName="EAMTYPE_OTHERSPECIAL" type="SYSTEMCODE" description="其他特殊设备"/>
+    <property id="typeMemo" columnName="EAMTYPE_MEMO" type="LONGTEXT" length="2000" description="备注"/>
+  </model>
+  <model id="EamTypeDealInfo" tableName="EAM_EAMTYPE_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_EAMTYPE_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="EamTypeMneCode" tableName="EAM_EAMTYPE_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="EamType" columnName="EAM_TYPE" type="LONG" operateType="CREATE"/>
+  </model>
+</Models>

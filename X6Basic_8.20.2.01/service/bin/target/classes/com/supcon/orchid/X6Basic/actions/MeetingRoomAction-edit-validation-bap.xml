@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="meetingRoom.name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"X6Basic.propertydisplayName.radion1366792696971"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1366792696971", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<field name="meetingRoom.attMatchingAddress">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1371176748814", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="meetingRoom.attMatchingAddress2">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1371176808842", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="meetingRoom.memos">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1366792826881", "256"})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

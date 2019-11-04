@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="ware.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.randon1484031239866"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+</validators>

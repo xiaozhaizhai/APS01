@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	
+
+	<field name="property.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1490010423584"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="unitQuality">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"RM.propertydisplayName.randon1487243139093"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"RM.propertydisplayName.randon1487243139093", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	<field name="phase">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"RM.propertydisplayName.randon1503477430704"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"RM.propertydisplayName.randon1503477430704", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="sequence">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"RM.propertydisplayName.randon1503477288458"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"RM.propertydisplayName.randon1503477288458", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	<field name="minQuality">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"RM.propertydisplayName.randon1488852437576"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"RM.propertydisplayName.randon1488852437576", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="maxQuality">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"RM.propertydisplayName.randon1488852460357"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"RM.propertydisplayName.randon1488852460357", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="lossRate">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"RM.propertydisplayName.randon1491544403180"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"RM.propertydisplayName.randon1491544403180", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="meno">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1488852483896", "256"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>

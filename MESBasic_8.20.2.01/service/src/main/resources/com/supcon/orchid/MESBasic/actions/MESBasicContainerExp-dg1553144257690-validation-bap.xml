@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="name">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1553144942140", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="representCode">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1553144955108", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="code">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1553144902565", "256"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	
+
+	<field name="businessType">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1555293349287", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="action">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1555293390953", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="liquidWeight">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1555293194490"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1555293194490", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="liquidVolume">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1555293206265"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1555293206265", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="gasWeight">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1555293233181"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1555293233181", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="gasVolume">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1555293260505"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1555293260505", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="startLevel">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1555293181589"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1555293181589", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="endLevel">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1555293218148"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1555293218148", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="levelDiff">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1555293248327"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1555293248327", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	<field name="startTime">
+        <field-validator type="regex">
+			<param name="regex"><![CDATA[^(?:(?:1[6-9]|[2-9]\d)?\d{2}[\/\-\.](?:0?[1,3-9]|1[0-2])[\/\-\.](?:29|30))(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:1[6-9]|[2-9]\d)?\d{2}[\/\-\.](?:0?[1,3,5,7,8]|1[02])[\/\-\.]31)(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])[\/\-\.]0?2[\/\-\.]29)(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:16|[2468][048]|[3579][26])00[\/\-\.]0?2[\/\-\.]29)(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:1[6-9]|[2-9]\d)?\d{2}[\/\-\.](?:0?[1-9]|1[0-2])[\/\-\.](?:0?[1-9]|1\d|2[0-8]))(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$]]></param>
+           <message>${getText("ec.common.validate.date.format.error", {"MESBasic.propertydisplayName.randon1555293161365"})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="endTime">
+        <field-validator type="regex">
+			<param name="regex"><![CDATA[^(?:(?:1[6-9]|[2-9]\d)?\d{2}[\/\-\.](?:0?[1,3-9]|1[0-2])[\/\-\.](?:29|30))(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:1[6-9]|[2-9]\d)?\d{2}[\/\-\.](?:0?[1,3,5,7,8]|1[02])[\/\-\.]31)(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])[\/\-\.]0?2[\/\-\.]29)(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:16|[2468][048]|[3579][26])00[\/\-\.]0?2[\/\-\.]29)(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:1[6-9]|[2-9]\d)?\d{2}[\/\-\.](?:0?[1-9]|1[0-2])[\/\-\.](?:0?[1-9]|1\d|2[0-8]))(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$]]></param>
+           <message>${getText("ec.common.validate.date.format.error", {"MESBasic.propertydisplayName.randon1555293170857"})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="source">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1555293376259", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="sourceType">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1555293383468", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="destination">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1555293360137", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="desType">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1555293367908", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="flowRecordId">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"MESBasic.propertydisplayName.randon1555293271767"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"MESBasic.propertydisplayName.randon1555293271767", 19})}</message>
+        </field-validator>
+	</field>
+	
+</validators>

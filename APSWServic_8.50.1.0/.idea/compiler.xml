@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="com.supcon.orchid.RM.service" />
+        <module name="com.supcon.orchid.MESBasic.core" />
+        <module name="com.supcon.orchid.WOM.service" />
+        <module name="com.supcon.orchid.APSWServic.service" />
+        <module name="com.supcon.orchid.WOM.core" />
+        <module name="com.supcon.orchid.MESBasic.service" />
+        <module name="com.supcon.orchid.RM.core" />
+        <module name="com.supcon.orchid.X6Basic.service" />
+        <module name="com.supcon.orchid.X6Basic.core" />
+        <module name="com.supcon.orchid.APSWServic.core" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

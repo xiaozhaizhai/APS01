@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models> 
+  <model id="Product" operateType="ALTER" tableName="S2BASE_PRODUCT"> 
+    <property id="productCode" operateType="ALTER" columnName="PRODUCT_CODE" type="TEXT" length="200"/>  
+    <property id="productName" operateType="ALTER" columnName="PRODUCT_NAME" type="TEXT" length="200"/> 
+  </model>  
+  <model id="TestTree" operateType="CREATE" extends="AbstractEcTreeFullEntity" tableName="TestTree"/>
+  <model id="TestTreeDealInfo" tableName="TestTree_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <index id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <index id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <index id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <index id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <index id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+  </model>
+</Models>

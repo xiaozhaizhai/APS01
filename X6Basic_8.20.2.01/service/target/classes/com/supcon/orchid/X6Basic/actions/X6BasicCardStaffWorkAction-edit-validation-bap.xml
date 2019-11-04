@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="cardStaffWork.staff.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"foundation.staff.dimissionStaff_xls.staffName"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="cardStaffWork.cardNo">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"X6Basic.propertydisplayName.radion1400115866733"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">400</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1400115866733", "400"})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

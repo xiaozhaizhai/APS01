@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+	<link href="css/batchIndex.css" rel="stylesheet" type="text/css" />
+    <link href="css/active-diagram.css" rel=stylesheet>
+    <link href="css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <title>活动明细详情</title>
+</head>
+
+<body>
+
+<!-- Fixed top -->
+<div id="top">
+	<div class="fixed">
+		<!--<a href="index.html" title="" class="logo"></a>-->
+		<!--<ul class="top-menu">-->
+
+		<!--</ul>-->
+	</div>
+</div>
+<!-- /fixed top -->
+
+
+<!-- Content container -->
+<div id="container">
+
+	<!-- Sidebar -->
+	<div id="sidebar">
+
+		<div class="sidebar-tabs" style="height: 100%;">
+			<ul class="tabs-nav two-items">
+				<li><span>工序执行记录</span></li>
+			</ul>
+
+            <div id="general" style="height: calc(100% - 33px);">
+                <nav class="navbar-default" role="navigation" style="height: 100%;">
+                    <div class="sidebar-collapse">
+                        <ul class="nav" id="side-menu">
+
+                        </ul>
+                    </div>
+                </nav>
+                <!-- /main navigation -->
+            </div>
+		</div>
+
+
+	</div>
+	<!-- /sidebar -->
+
+
+	<!-- Content -->
+	<div id="content">
+
+		<!-- Content wrapper -->
+		<div class="wrapper">
+
+			<!-- Breadcrumbs line -->
+			<div class="crumbs">
+				<ul id="breadcrumbs" class="breadcrumb">
+					<li><span>活动执行记录</span></li>
+				</ul>
+
+				<ul class="alt-buttons">
+                    <li><a class="fullview"></a></li>
+                </ul>
+			</div>
+			<!-- /breadcrumbs line -->
+
+			<div id="divContent">
+				<!-- Page header -->
+				<div class="page-header">
+					<div class="page-title">
+						<h5><embed src="img/shengchanjiagong.svg" class = "icon_shengchan"/>   活动详细展现</h5>
+					</div>
+
+				</div>
+				<!-- /page header -->
+
+				<!-- Action tabs -->
+				<div class="actions-wrapper" style="text-align: center">
+					<div class='output-image'>
+						<svg width="120" height="100" viewBox="0 0 120 100"
+							 xmlns="http://www.w3.org/2000/svg" id="activePlan" version="1.1">
+							<g>
+								<rect x="0" y="30" width="20" height="5" rx="2" ry="2" fill="rgb(208, 226, 210)" stroke="rgb(79, 157, 79)"></rect>
+								<text x="30" y="37">进行中</text>
+								<rect x="0" y="50" width="20" height="5" rx="2" ry="2" fill="rgb(239, 219, 211)" stroke="rgb(209, 84, 0)"></rect>
+								<text x="30" y="57">待执行</text>
+								<rect x="0" y="70" width="20" height="5" rx="2" ry="2" fill="rgb(201, 224, 242)" stroke="rgb(72, 130, 216)"></rect>
+								<text x="30" y="77">已结束</text>
+							</g>
+
+						</svg>
+					</div>
+
+				</div>
+				<div class="detailsArea">
+					<h5 class="widget-name"><embed src="img/zuoyequ.svg" class = "icon_shengchan"/>生产追踪</h5>
+					<div class="widget">
+						<div class="table-overflow">
+							<!--投、配料表格-->
+
+							<!--产出表格-->
+
+							<!--质检表格-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /content wrapper -->
+
+	</div>
+	<!-- /content -->
+
+</div>
+<!-- /content container -->
+
+
+<!-- Footer -->
+<!--<div id="footer"></div>-->
+<!-- /footer -->
+<script src="js/jquery.min.js"></script>
+<script src="js/active-diagram.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/layer/layer.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Data Tables -->
+<script src="js/jquery.dataTables.js"></script>
+<script src="js/dataTables.bootstrap.js"></script>
+<script>
+    $('.fullview').click(function(){
+        $("body").toggleClass("clean");
+        $('#sidebar').toggleClass("hide-sidebar mobile-sidebar");
+        $('#content').toggleClass("full-content");
+    });
+    function format ( d ) {
+        return '<table cellpadding="5" cellspacing="0" border="0" style="text-align: center;">'+
+            '<tr>'+
+            '<td>物料来源:</td>'+
+            '<td>'+d.name+'</td>'+
+            '</tr>'+
+            '</table>';
+    }
+    function openPage(title, url) {
+        //iframe窗
+        parent.layer.open({
+            type: 2,
+            title: title,
+            shadeClose: true,
+            shade: false,
+            // maxmin: true, //开启最大化最小化按钮
+            area: ['900px', '625px'],
+            content: [url, 'no']
+        });
+    }
+	function openPageByGoodId(title, url) {
+        window.open(url,'title = '+title,'')
+    }
+</script>
+<script src="index.js"></script>
+</body>
+</html>

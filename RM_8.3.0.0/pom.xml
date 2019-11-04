@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.supcon.orchid.build</groupId>
+		<artifactId>bundle-settings</artifactId>
+		<version>15</version>
+	</parent>
+	<groupId>com.supcon.orchid</groupId>
+	<artifactId>RM</artifactId>
+	<version>8.3.0.0</version>
+	<name>RM</name>
+	<packaging>pom</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<bundle.version>${project.version}</bundle.version>
+		<bundle.name>${project.name}</bundle.name>
+		<bundle.symbolicName>${project.artifactId}</bundle.symbolicName>
+		
+		<orchid.container.version>4.50.20.00</orchid.container.version>
+		<orchid.foundation.version>4.50.20.00</orchid.foundation.version>
+		<orchid.workflow.version>4.50.20.00</orchid.workflow.version>
+		<orchid.script.version>4.50.20.00</orchid.script.version>
+		<orchid.entityconf.version>4.50.20.00</orchid.entityconf.version>
+	</properties>
+	<modules>
+		<module>core</module>
+		<module>service</module>
+		<!--<module>test</module-->
+	</modules>
+	<repositories>
+		 <repository>
+                <id>bap.public.group</id>
+                <url>http://repository.supcon.com/nexus/content/groups/public/</url>
+                <releases>
+                        <enabled>true</enabled>
+                </releases>
+                <snapshots>
+                        <enabled>false</enabled>
+                </snapshots>
+        </repository>
+
+	</repositories>
+	<!-- CUSTOM CODE START(pom,scm,,RM_7.5.0.0) -->
+<!-- 自定义代码 -->
+
+<!-- CUSTOM CODE END -->
+	<!-- 打包到外部仓库配置样例
+	<organization>
+		<name>ZHEJIANG SUPCON TECHNOLOGY CO.,LTD. </name>
+	</organization>
+
+	<scm>
+		<connection>scm:svn:http://svn.supcon.com/svn/openms/orchid/PIMS</connection>
+		<developerConnection>scm:svn:http://svn.supcon.com/svn/openms/orchid/PIMS/releases/1.0.0.ALPHA1</developerConnection>
+	</scm>
+	<issueManagement>
+		<system>trac</system>
+		<url>http://trac.supcon.com/bap/</url>
+	</issueManagement>
+	<ciManagement>
+		<system>jenkins</system>
+		<url>http://scm.supcon.com/jenkins/</url>
+	</ciManagement>
+	<distributionManagement>
+		<repository>
+			<id>bap.release.repository</id>
+			<url>http://scm.supcon.com/nexus/content/repositories/bap.release.repository/</url>
+		</repository>
+		<snapshotRepository>
+			<id>bap.snapshot.repository</id>
+			<url>http://scm.supcon.com/nexus/content/repositories/bap.snapshot.repository/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	-->
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <OCD description="RM配置" name="RM配置" id="platform.bap.RM" type="flat">
+ 	<AD name="是否启用EBR" id="RM.isebr" required="true" description="是否启用EBR" type="Boolean" default="false" order="0"/>
+    <AD name="是否启用批控" id="RM.batchContral" required="true" description="是否启用批控" type="Boolean" default="false" order="1" />
+    <AD name="变更状态是否需要审批" id="RM.isApprove" required="true" description="如果是则需要进入审批流程，否则直接可以启用停用" type="Boolean" default="false" order="3"/>
+    <AD name="变更用途是否需要审批" id="RM.useChangeIsApprove" required="true" description="如果是则需要进入审批流程，否则弹框进行用途变更" type="Boolean" default="false" order="4"/>
+	<AD name="是否启用LIMS" id="RM.isLIMS" required="true" description="是否启用LIMS" type="Boolean" default="false" order="2"/>
+ 	<AD name="mq服务器地址" id="RM.serviceUrl" required="true" description="监听mq服务器地址" type="String" default="localhost" order="5" />
+	<AD name="是否启用新公式" id="product.instruct.newformula.flag" required="false" description=" 批次计算四则运算是否启用新方法，支持函数" type="Boolean" default="false" />
+</OCD>
+</metatype:MetaData>

@@ -1,0 +1,199 @@
+body{
+	padding:0;
+	margin:0;
+}
+
+html, body {
+	width:100%;
+	height: 100%;
+}
+
+.login-container{
+	width:100%;
+	height: 100%;
+	background:url('/bap/struts/touchScreen/img/login_bg.png') no-repeat 0 0;
+	font-family:"微软雅黑","Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.login-container1{
+	width:100%;
+	height: 100%;
+	background:url('/bap/struts/touchScreen/img/login_bg2.png') no-repeat 0 0;
+	font-family:"微软雅黑","Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.login-content{
+	padding-top: 310px;
+	padding-left: 458px;
+}
+.login-select{
+	width:765px;
+	height:92px;
+	position:relative;
+}
+.login-select-text{
+	width:615px;
+	padding-left:50px;
+	height:92px;
+	line-height:92px;
+	color:#0063b0;
+	font-size:40px;
+	float:left;	
+	cursor:pointer;
+}
+.login-select-list{
+	position:absolute;
+	display:none;
+	top:102px;
+	list-style:none;
+	padding:15px 0;
+	margin:0;
+	width:763px;
+	border:1px solid #0063B0;
+	border-radius:10px;
+	font-size:40px;
+	color:#0063b0;
+	background:#fff;
+}
+.login-select-list li{
+	height:84px;
+	line-height:84px;
+	padding-left:50px;
+	cursor:pointer;
+}
+.login-select-list li.current{
+	background:#357ebd;
+	color:#fff;
+}
+.login-select-btn{
+	float:left;
+	width:100px;
+	height:92px;
+	cursor:pointer;
+}
+.login-input{
+	width:765px;
+	height:183px;
+	margin-top:28px;
+}
+.login-input-id{
+	margin: 15px 0 0 131px;
+	height:60px;
+	line-height:60px;
+	width:628px;
+	font-size:40px;
+	border:0;
+}
+.login-input-password{
+	margin: 25px 0 0 131px;
+	height:60px;
+	line-height:60px;
+	width:628px;
+	font-size:40px;
+	border:0;
+}
+.login-input-id:focus, .login-input-password:focus{
+	outline: none;
+}
+.login-button{
+	width:765px;
+	height:94px;
+	margin-top:119px;
+}
+.login-input-submit{
+	margin: 0;
+	height:94px;
+	background:none;
+	border:0;
+	cursor:pointer;
+	width:765px;
+}
+.login-content input{
+	font-family:"微软雅黑","Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+
+
+.menu-container{
+	width:100%;
+	height: 100%;
+	background:#22415D;
+	position:relative;
+}
+.menu-list{
+	list-style:none;
+	color:#fff;
+	padding:0;
+	padding-top:40px;
+	margin:0;
+}
+.menu-list li{
+	width:160px;
+	border:1px solid #22415D;
+	height:63px;
+	padding-top:10px;
+	padding-left:34px;
+	margin-bottom:40px;
+	font-size:24px;
+	font-weight:bold;
+	border-radius:0 10px 10px 0;
+	cursor:pointer;
+	
+}
+.user-info{
+	width:100%;
+	color: #fff;
+	position:absolute;
+	left:0;
+	bottom:0;
+	border-top: 1px solid #122c43;
+}
+
+.user-info-box{
+	padding: 25px 0 25px 20px;
+	border-top: 1px solid #375b7b;	
+}
+
+.user-info-name{
+	margin-right: 20px;
+	padding-left:22px;
+	background: url( '../img/icon_user.png' ) no-repeat 0 2px;
+}
+
+.user-info-box span{
+	display:inline-block;
+	height:20px;
+	line-height:20px;
+}
+
+.menu-list li.hover{
+	background:#357ebd;
+	border:1px solid #357ebd;
+}
+
+.menu-list li.current{
+	background:#25A36A;
+	border:1px solid #25A36A;
+}
+
+.menu-list-icon{
+	display:inline-block;
+	width:55px;
+	height:50px;
+	float:left;
+	background:url('/bap/struts/touchScreen/img/icons.png') no-repeat;
+}
+.menu-list-text{
+	display:inline-block;
+	height:50px;
+	line-height:50px;
+	float:left;
+}
+.icon-baoxiu{
+	background-position:0 -125px;
+}
+.icon-jiancha{
+	background-position:0 -236px;
+}
+.icon-tuichu{
+	background-position:0 -337px;
+}

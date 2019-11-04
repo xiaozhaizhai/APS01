@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="craftName">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1541034087253", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="standardValue">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1541034112568"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1541034112568", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1541034061588", "256"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>

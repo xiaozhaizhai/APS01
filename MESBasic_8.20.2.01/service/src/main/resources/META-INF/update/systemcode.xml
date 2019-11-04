@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bapSystemCode> 
+  <systementity code="rootType" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1460683614436" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0"> 
+    <systemcode id="rootType/001" code="001" value="MESBasic.systemCodevalue.randon1460683655453" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2172" seqId="2172" fullPathName="罐区"/>  
+    <systemcode id="rootType/002" code="002" value="MESBasic.systemCodevalue.randon1460683667078" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2173" seqId="2173" fullPathName="批次"/> 
+  </systementity>  
+  <systementity code="year" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1524758435749" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="reinspectUnit/year" value="MESBasic.systemCodevalue.randon1524758545299" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="7068" seqId="7068" fullPathName="年"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="day" moduleCode="MESBasic_1" version="0" valid="true" sysDefault="false" id="reinspectUnit/day" value="MESBasic.systemCodevalue.randon1524758513381" attribute="false" memo="" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="7066" seqId="7066" fullPathName="日">
+    <systemcode/>
+  </systementity>
+</bapSystemCode>

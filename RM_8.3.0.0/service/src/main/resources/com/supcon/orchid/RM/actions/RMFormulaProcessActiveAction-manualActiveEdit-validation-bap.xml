@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="formulaProcessActive.name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1487330156499"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1487330156499", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="formulaProcessActive.container">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1488696547250", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="formulaProcessActive.longTime">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"RM.propertydisplayName.randon1490162289778"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"RM.propertydisplayName.randon1490162289778", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+
+	
+
+	<field name="formulaProcessActive.actOrder">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1489911238343"})}</message>
+		</field-validator>
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"RM.propertydisplayName.randon1489911238343"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"RM.propertydisplayName.randon1489911238343", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="formulaProcessActive.execSort">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1539917544374", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="formulaProcessActive.meno">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1487331194516", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="formulaProcessActive.batchPhaseID">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1493729738415", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<field name="_complex_complex_datagrid_1487917113304">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1488778215616List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1488778215616</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("RM.modelname.randon1487811340490")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

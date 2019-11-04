@@ -1,0 +1,2 @@
+   def formulaProcessService=springContext.getBean("rM_formulaProcessService");
+formulaProcessService.processActiveDeleteForType2(id);         

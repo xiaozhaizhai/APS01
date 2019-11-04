@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	
+
+	<field name="putInUrl">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1503300915609", "256"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>

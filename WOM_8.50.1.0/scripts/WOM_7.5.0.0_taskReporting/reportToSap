@@ -1,0 +1,2 @@
+ def womMesToSapService=springContext.getBean("womMesToSapService");
+womMesToSapService.saveProduct(id.toString());      

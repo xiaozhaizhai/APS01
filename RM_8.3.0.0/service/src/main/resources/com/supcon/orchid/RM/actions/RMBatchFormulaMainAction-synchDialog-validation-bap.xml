@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	
+
+	<field name="batchFormulaMain.batchFormulaId">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1546051384996"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1546051384996", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="batchFormulaMain.formulaCode">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1546051436101rmbatch", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="batchFormulaMain.edition">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"RM.propertydisplayName.randon1546051278782rmbatch"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"RM.propertydisplayName.randon1546051278782rmbatch", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="batchFormulaMain.remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1546051474183", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

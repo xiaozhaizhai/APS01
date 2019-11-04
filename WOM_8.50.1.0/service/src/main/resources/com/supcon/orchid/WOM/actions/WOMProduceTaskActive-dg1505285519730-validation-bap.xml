@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	
+
+	
+
+	<field name="name">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1490683872072", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+
+	
+
+	<field name="standardNum">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1489730105405"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1489730105405", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="minQuality">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1489729953842"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1489729953842", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="maxQuality">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1489729974625"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1489729974625", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="planNum">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1489730174515"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1489730174515", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="lossRate">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1489730189645"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1489730189645", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="actOrder">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"WOM.propertydisplayName.randon1489726473525"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"WOM.propertydisplayName.randon1489726473525", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="offerOrder">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"WOM.propertydisplayName.randon1498091639306"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"WOM.propertydisplayName.randon1498091639306", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+
+	<field name="remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1489730249805", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>

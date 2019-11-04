@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bapSystemCode> 
+  <systementity code="008" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1489653267889" sysDefault="false" listType="TREE" multiFlag="false" memo="" valid="true" version="0" id="area/008" value="MESBasic.systemCodevalue.randon1489653492652" attribute="false" sort="" parentId="area/001" leaf="true" defaultFlag="" layNo="2" layRec="2219-2223" seqId="2223" fullPathName="位置1/1002车间乳胶漆生产线三楼5号釜"> 
+    <systemcode id="area/001" code="001" value="MESBasic.systemCodevalue.randon1486620605011" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="false" defaultFlag="" layNo="1" layRec="2875" seqId="2875" fullPathName="位置1"/>  
+    <systemcode id="area/002" code="002" value="MESBasic.systemCodevalue.randon1486620627802" attribute="false" memo="" sort="" valid="true" version="0" parentId="area/001" leaf="true" defaultFlag="" layNo="2" layRec="2875-2876" seqId="2876" fullPathName="位置1/位置2"/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="004" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1489991235398" sysDefault="false" listType="TREE" multiFlag="false" memo="" valid="true" version="0" id="MesArea/004" value="MESBasic.systemCodevalue.randon1489991382168" attribute="false" sort="" parentId="MesArea/001" leaf="true" defaultFlag="" layNo="2" layRec="2297-2300" seqId="2300" fullPathName="位置1/1002车间乳胶漆生产线三楼4号釜"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="04" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1490773274781" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="MESSourceType/04" value="MESBasic.systemCodevalue.randon1490773430314" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="3238" seqId="3238" fullPathName="入库"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="03" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1490773481010" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="MESCheckState/03" value="MESBasic.systemCodevalue.randon1490773924085" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="3241" seqId="3241" fullPathName="不合格"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="02" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1490773837589" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="MESPassState/02" value="MESBasic.systemCodevalue.randon1490773959507" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="3243" seqId="3243" fullPathName="已放行"> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="13" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1490773984323" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="MESDealType/13" value="MESBasic.systemCodevalue.randon1490774197157" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="3256" seqId="3256" fullPathName="放行"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="03" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1490775857849" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="MESRelaType/03" value="MESBasic.systemCodevalue.randon1490775933251" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="3259" seqId="3259" fullPathName="报工"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="001" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1504574703499" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="serviceUrl/001" value="MESBasic.systemCodevalue.randon1504574813494" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2371" seqId="2371" fullPathName="101车间"> 
+    <systemcode/> 
+  </systementity>  
+  <systementity code="002" moduleCode="MESBasic_1" version="0" valid="true" sysDefault="false" id="serviceUrl/002" value="MESBasic.systemCodevalue.randon1505220970433" attribute="false" memo="" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2625" seqId="2625" fullPathName="102车间"> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="storageState2" moduleCode="MESBasic_1" version="0" valid="true" sysDefault="false" id="storageState/storageState2" value="MESBasic.systemCodevalue.randon1472198776410" attribute="false" memo="" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="3514" seqId="3514" fullPathName="停用"> 
+    <systemcode/> 
+  </systementity>  
+  <systementity code="005" moduleCode="MESBasic_1" version="0" valid="true" sysDefault="false" id="ProductType/005" value="MESBasic.systemCodevalue.randon1516696960952" attribute="false" memo="" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4632" seqId="4632" fullPathName="自制类"> 
+    <systemcode/> 
+  </systementity>  
+  <systementity code="new" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1522307807479" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="supplyState/new" value="MESBasic.systemCodevalue.randon1522307943278" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="6338" seqId="6338" fullPathName="新供应商"> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="cancel" moduleCode="MESBasic_1" version="0" valid="true" sysDefault="false" id="supplyState/cancel" value="MESBasic.systemCodevalue.randon1522312104616" attribute="false" memo="" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="6340" seqId="6340" fullPathName="取消"> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="004" moduleCode="MESBasic_1" version="0" valid="true" sysDefault="false" id="supplyState/004" value="MESBasic.systemCodevalue.randon1522380206541" attribute="false" memo="" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="6344" seqId="6344" fullPathName="取消">
+    <systemcode/>
+    <systemcode/>
+    <systemcode/>
+    <systemcode/>
+  </systementity>
+</bapSystemCode>

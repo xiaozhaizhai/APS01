@@ -1,0 +1,4 @@
+ def putInMaterialService=springContext.getBean("wOM_putInMaterialService");
+ if(putInMaterialService!=null){
+ putInMaterialService.createPutInMaterialToProOut(id);   
+ }  

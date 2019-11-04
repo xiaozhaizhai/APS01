@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedulerJobList>
+		<SchedulerJob>
+			<moduleCode>MESBasic_1</moduleCode>
+			<code>MESBasic_1_orisignalDataTask</code>
+			<shortCode>orisignalDataTask</shortCode>
+			<name>MESBasic.schedulerJobname.randon1559800365641</name>
+			<isScheduleImm>false</isScheduleImm>
+			<description><![CDATA[从pims过来的信号到MESBASIC_ORIGINAL_SIGNALS通过调度业务服务转储到MESBASIC_BATCH_DATAS    ]]></description>
+			<jobType>1</jobType>
+			<jobContent>/public/MESBasic/originalSignal/originalSignal/signalDataTask.action</jobContent>
+			<startTime></startTime>
+			<endTime></endTime>
+			<triggerType>CRON</triggerType>
+			<repeatCount></repeatCount>
+			<intervalNum></intervalNum>
+			<intervalUnit>SECOND</intervalUnit>
+			<cron><![CDATA[*/30 * * * * ?]]></cron>
+			<datasouceCode></datasouceCode>
+			<procedureName></procedureName>
+			<status>UNSCHEDULED</status>
+			<hasRunTimes>0</hasRunTimes>
+			<nextRunTime></nextRunTime>
+			<errorMsg></errorMsg>
+			<inheritFlag>false</inheritFlag>
+		</SchedulerJob>
+</schedulerJobList>	

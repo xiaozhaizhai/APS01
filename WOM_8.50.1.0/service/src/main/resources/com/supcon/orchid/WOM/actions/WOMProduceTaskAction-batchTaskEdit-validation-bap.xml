@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	
+
+	<field name="_complex_complex_datagrid_1489730777175">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1496209378724">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1489731933996">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1489736024676">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1496209262624List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1496209262624</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("WOM.modelname.randon1489671093316")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+	<field name="dg1496209262749List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1496209262749</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("WOM.modelname.randon1489671093316")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+	<field name="dg1496209262808List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1496209262808</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("WOM.modelname.randon1489671052624")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+	<field name="dg1496209382613List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1496209382613</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("WOM.modelname.randon1489671141506")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

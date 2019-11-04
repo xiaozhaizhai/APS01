@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="materialsOutput.activeID.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1487295011793"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="materialsOutput.operateStaffID.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertyshowName.randon1568014998036.flag"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="materialsOutput.wareID.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.randon1484031316281"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="materialsOutput.produceNum">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.randon1541146740613"})}</message>
+		</field-validator>
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1541146740613"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1541146740613", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="materialsOutput.batch">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1541146730158", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="materialsOutput.remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1541146719340", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

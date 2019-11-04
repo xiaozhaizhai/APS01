@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	
+
+	
+
+	
+
+	
+
+	<field name="pmemo">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1487987361282", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	
+
+	
+
+	<field name="batchText">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1566888429426", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="onhand">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1566888673309"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1566888673309", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+</validators>

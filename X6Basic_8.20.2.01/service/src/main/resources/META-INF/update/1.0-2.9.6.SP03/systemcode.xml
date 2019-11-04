@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bapSystemCode> 
+  <systementity code="entityType" moduleCode="X6Basic_1.0" version="0" valid="true" sysDefault="false"> 
+    <systemcode id="entityType/05" code="05" value="X6Basic.systemCodevalue.randon1465711899447" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2691" seqId="2691" fullPathName="测量月周检计划"/> 
+  </systementity>  
+  <systementity code="02" moduleCode="X6Basic_1.0" name="X6Basic.systemEntityname.randon1470220736138" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="checkIndex_dispType/02" value="X6Basic.systemCodevalue.randon1470220859833" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4051" seqId="4051" fullPathName="不启用">
+    <systemcode/>
+    <systemcode/>
+  </systementity>
+  <systementity code="04" moduleCode="X6Basic_1.0" name="X6Basic.systemEntityname.randon1470220996824" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="checkIndex_carryRule/04" value="X6Basic.systemCodevalue.randon1470221139680" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4055" seqId="4055" fullPathName="强制进位">
+    <systemcode/>
+    <systemcode/>
+    <systemcode/>
+    <systemcode/>
+  </systementity>
+  <systementity code="05" moduleCode="X6Basic_1.0" name="X6Basic.systemEntityname.randon1470221186704" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="checkIndex_roundDig/05" value="X6Basic.systemCodevalue.randon1470221314476" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4060" seqId="4060" fullPathName="百位">
+    <systemcode/>
+    <systemcode/>
+    <systemcode/>
+    <systemcode/>
+    <systemcode/>
+  </systementity>
+  <systementity code="03" moduleCode="X6Basic_1.0" name="X6Basic.systemEntityname.randon1470221372723" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="checkIndex_unitNum/03" value="X6Basic.systemCodevalue.randon1470221436611" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4063" seqId="4063" fullPathName="1">
+    <systemcode/>
+    <systemcode/>
+    <systemcode/>
+  </systementity>
+</bapSystemCode>

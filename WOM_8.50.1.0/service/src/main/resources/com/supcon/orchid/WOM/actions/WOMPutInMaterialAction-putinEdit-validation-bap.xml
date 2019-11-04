@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="putInMaterial.taskID.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"ec.common.tableNo"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="putInMaterial.putinStaff.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"foundation.staff.dimissionStaff_xls.staffName"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="putInMaterial.remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1490604919519", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1490605828218">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1490605831075List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1490605831075</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("WOM.modelname.randon1490604876056")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

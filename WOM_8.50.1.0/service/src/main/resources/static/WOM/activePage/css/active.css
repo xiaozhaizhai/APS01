@@ -1,0 +1,93 @@
+body {
+    background-color : #ccc;
+}
+@keyframes atom {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+.container {
+    position : absolute;
+    width : 100%;
+    height : 100%;
+}
+.title {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    width: 100%;
+    height: 40px;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: rgba(67, 67, 67, .3);
+    padding-left: 20px;
+    color : #fff;
+}
+.activeMenu{
+    width: 25%;
+    min-width: 400px;
+    height: 100%;
+    border-radius: 2px;
+    background-color: #242424;
+    position: absolute;
+    overflow: hidden;
+    border: 2px solid #0d0d0d;
+    /* float: left; */
+}
+
+.activeDetails{
+    margin-left: 12px;
+    width: 75%;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 2px;
+    position: relative;
+    left: 25%;
+    border: 2px solid #171515;
+    background-color: #242424;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    color: #fff;
+    /* float: left; */
+}
+.menuContainer {
+    height: 100%;
+    border-radius: 2px;
+    background-color: #242424;
+    position: relative;
+    /* border: 2px solid #0d0d0d; */
+}
+.detailsContainer {
+    height: 100%;
+    border-radius: 2px;
+    background-color: #242424;
+    position: relative;
+    /* border: 2px solid #0d0d0d; */
+}
+.operaBar {
+    height: 28px;
+    background-color: rgba(67, 67, 67, .6);
+    position: relative;
+    top: -13px;
+}
+.closeActive img {
+    height : 28px;
+    margin-right : 8px;
+    float : right;
+}
+
+svg .bigGroup rect:hover {
+    stroke-dasharray : 70 0;
+    stroke-dashoffset : 0;
+    transition : 2s all ease;
+    stroke : #f9e514;
+}
+svg text {
+    fill :#FFFFFF;
+    font-family :'FZLTHJW--GB1-0';
+    font-size : 18px
+}

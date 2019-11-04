@@ -1,0 +1,2 @@
+ def prepareMaterialService=springContext.getBean("wOM_prepareMaterialService");
+prepareMaterialService.appropriationCreate(id); 

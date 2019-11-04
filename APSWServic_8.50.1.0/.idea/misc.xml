@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../MESBasic_8.20.2.01/pom.xml" />
+        <option value="$PROJECT_DIR$/../WOM_8.50.1.0/pom.xml" />
+        <option value="$PROJECT_DIR$/../X6Basic_8.20.2.01/pom.xml" />
+        <option value="$PROJECT_DIR$/../RM_8.3.0.0/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

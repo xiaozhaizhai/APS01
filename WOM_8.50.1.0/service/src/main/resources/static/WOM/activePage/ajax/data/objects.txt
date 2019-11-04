@@ -1,0 +1,94 @@
+{
+    "data": [
+        {
+            "actualUseNum": 100,
+            "batch": "batch_001",
+            "good": {
+                "id": 1001,
+                "productBaseUnit": {
+                    "name": "吨"
+                },
+                "productCode": "20181018001",
+                "productName": "纯碱"
+            },
+            "id": null,
+            "placeSet": {
+                "id": 1002,
+                "placeSetCode": "00003",
+                "placeSetName": "00003store001"
+            },
+            "putinDate": 1548040380000,
+            "putinEndDate": 1548126833000,
+            "remark": "测试投料2",
+            "putInStaff": "丁丁",
+            "taskActiExelog": {
+                "activeName": "纯碱",
+                "activeSource": {
+                    "id": "womActiveSource/01",
+                    "value": "配方"
+                },
+                "activeType": {
+                    "id": "activeType/activeType2",
+                    "value": "配料"
+                },
+                "dataSource": null,
+                "id": 1173,
+                "taskProcessID": {
+                    "name": "烷基化反应"
+                }
+            },
+            "taskObj": null,
+            "version": 0,
+            "wareID": {
+                "id": 1000,
+                "wareCode": "factor001",
+                "wareName": "一号仓库"
+            }
+        },
+        {
+            "actualUseNum": 75,
+            "batch": "batch_002",
+            "good": {
+                "id": 1001,
+                "productBaseUnit": {
+                    "name": "吨"
+                },
+                "productCode": "20181018001",
+                "productName": "纯碱"
+            },
+            "id": null,
+            "placeSet": {
+                "id": 1000,
+                "placeSetCode": "00001",
+                "placeSetName": "00001store001"
+            },
+            "putinDate": 1548126824000,
+            "putinEndDate": 1548213180000,
+            "remark": "测试投料1",
+            "putInStaff": "丁丁",
+            "taskActiExelog": {
+                "activeName": "纯碱",
+                "activeSource": {
+                    "id": "womActiveSource/01",
+                    "value": "配方"
+                },
+                "activeType": {
+                    "id": "activeType/activeType2",
+                    "value": "配料"
+                },
+                "dataSource": null,
+                "id": 1173,
+                "taskProcessID": {
+                    "name": "烷基化反应"
+                }
+            },
+            "taskObj": null,
+            "version": 0,
+            "wareID": {
+                "id": 1000,
+                "wareCode": "factor001",
+                "wareName": "一号仓库"
+            }
+        }
+    ]
+}

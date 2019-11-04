@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="container.code">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion141526835982911"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion141526835982911", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="container.name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion141526839345211"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion141526839345211", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="container.containerStatus.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion141532202396811"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="container.containerType.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion141532069339911"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="container.stdDensity">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon155170051264111"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon155170051264111", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="container.department.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion141577274079911"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="container.person.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion141577274078811"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="container.tankCapacity">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon155170052717811"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon155170052717811", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="container.llevel">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1551700367374"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1551700367374", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="container.hlevel">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1551700336733"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1551700336733", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	<field name="container.radius">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1551700448213"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1551700448213", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="container.tankHeight">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1551700543658"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1551700543658", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	
+
+	<field name="container.liquidDensityFactor">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1557726111607", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="container.gasDensityFactor">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1557726090595", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="container.volumneCalc">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion141532078080211", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="container.remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1551700493116", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1551701915456">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1553145137336">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1555313916326">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1555313935758">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1551701917640List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1551701917640</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("MESBasic.modelname.radion1415869369969")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+	<field name="dg1553144257690List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1553144257690</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("MESBasic.modelname.randon1553144862986")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+	<field name="dg1555312971656List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1555312971656</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("MESBasic.modelname.randon1555293134923")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+	<field name="dg1555312985524List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1555312985524</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("MESBasic.modelname.randon1555293405102")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <OCD description="MES配置" name="MES配置" id="platform.bap.MES" type="flat">
+  	<AD name="key" id="bap.pims.author.app.key" required="true" description="pims验证所需要的key" type="String" default="9fMsHQVkYu2L3n" />
+	<AD name="secret" id="bap.pims.author.app.secret" required="true" description="pims验证所需要的secret" type="String" default="RkkrOzyjbvUQufDdfDCgau9kMg" />
+ 	<AD name="wareStore" id="bap.wareStore" required="true" description="配料仓是否按物料分别定义仓库货位" type="Boolean" default="true" />
+ </OCD>
+</metatype:MetaData>

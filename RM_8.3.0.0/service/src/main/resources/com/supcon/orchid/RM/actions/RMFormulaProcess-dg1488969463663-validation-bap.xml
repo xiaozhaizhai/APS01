@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="processCode">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1572485872996", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1487295011793"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1487295011793", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="longTime">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"RM.propertydisplayName.randon1487292241411"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"RM.propertydisplayName.randon1487292241411", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="transTime">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"RM.propertydisplayName.randon1572329252195"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"RM.propertydisplayName.randon1572329252195", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	
+
+	<field name="procSort">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1539849930820", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	<field name="meno">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1487292273721", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="tableInfoId">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"ec.common.TABLE_INFO_ID"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"ec.common.TABLE_INFO_ID", 19})}</message>
+        </field-validator>
+	</field>
+	
+</validators>

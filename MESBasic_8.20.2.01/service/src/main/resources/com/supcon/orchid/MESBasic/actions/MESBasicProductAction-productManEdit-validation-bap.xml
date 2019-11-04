@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="product.productCode">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1415772644833"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1415772644833", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="product.productName">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1415772740737", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="product.productAllas">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1450083209826", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="product.productSpecif">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1415772620384", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="product.productModel">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1415772568665", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+
+	<field name="product.batch.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1416221870395"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="product.productCheckMethod">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"MESBasic.propertydisplayName.randon1450083874220"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"MESBasic.propertydisplayName.randon1450083874220", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	
+
+	<field name="product.productComment">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1460975861043", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="product.productCostPrice">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1450083900246"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1450083900246", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="product.salePrice">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1464167201782"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1464167201782", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="product.productBeMass">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"MESBasic.propertydisplayName.randon1450083387212"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"MESBasic.propertydisplayName.randon1450083387212", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="product.standardPercent">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"MESBasic.propertydisplayName.randon1466391287048"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"MESBasic.propertydisplayName.randon1466391287048", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

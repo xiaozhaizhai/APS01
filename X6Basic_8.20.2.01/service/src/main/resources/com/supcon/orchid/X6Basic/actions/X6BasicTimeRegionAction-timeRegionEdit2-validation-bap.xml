@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="timeRegion.name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"X6Basic.propertydisplayName.randon1441778463050"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.randon1441778463050", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="timeRegion.unit.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"X6Basic.propertydisplayName.randon1441779032052"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="_complex_complex_datagrid_1441883109437">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1445343942880List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1445343942880</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("X6Basic.modelname.randon1441778429589")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

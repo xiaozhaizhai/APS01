@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="rejectReason.rejectReson">
+		<field-validator type="stringlength">
+			<param name="maxLength">1000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1543218783588", "1000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="rejectReason.demo">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1543218754563", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

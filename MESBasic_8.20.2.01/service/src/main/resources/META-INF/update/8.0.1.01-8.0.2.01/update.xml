@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models>
+  <model id="BaseVendor" operateType="ALTER" tableName="S2BASE_VENDOR">
+    <property id="lossRate" operateType="CREATE" columnName="LOSS_RATE" description="途耗率(‰)" type="DECIMAL" scale="6"/>
+  </model>
+</Models>

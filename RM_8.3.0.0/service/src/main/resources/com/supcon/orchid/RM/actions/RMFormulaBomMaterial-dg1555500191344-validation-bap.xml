@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="material.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertyshowName.randon1555500336194.flag"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="preNum">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"RM.propertydisplayName.randon1555499568096"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"RM.propertydisplayName.randon1555499568096", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="minNum">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"RM.propertydisplayName.randon1555499550251"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"RM.propertydisplayName.randon1555499550251", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="maxNum">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"RM.propertydisplayName.randon1555499520595"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"RM.propertydisplayName.randon1555499520595", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="demo">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1555499580716", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+</validators>

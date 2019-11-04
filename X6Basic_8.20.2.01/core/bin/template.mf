@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ${bundle.name}
+Bundle-SymbolicName: ${bundle.symbolicName}
+Bundle-Version: ${bundle.version}
+Bundle-Vendor: ZHEJIANG SUPCON TECHNOLOGY CO.,LTD.
+Orchid-EcGenerated: true
+Import-Package: com.supcon.orchid.foundation.entities;version="[2.0,3.0)",
+ com.supcon.orchid.tree;version="[2.0,3.0)"
+Import-Bundle: com.supcon.orchid.org.hibernate;version="[3.4.0,3.6.0)",
+ com.springsource.javassist;version="[3.9,4.0)"
+Excluded-Exports: src.main.*

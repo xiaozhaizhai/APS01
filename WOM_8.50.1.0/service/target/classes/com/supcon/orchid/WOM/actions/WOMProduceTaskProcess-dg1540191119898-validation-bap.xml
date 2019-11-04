@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="name">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1489720649125", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="longTime">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1489720689233"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1489720689233", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	<field name="startTime">
+        <field-validator type="regex">
+			<param name="regex"><![CDATA[^(?:(?:1[6-9]|[2-9]\d)?\d{2}[\/\-\.](?:0?[1,3-9]|1[0-2])[\/\-\.](?:29|30))(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:1[6-9]|[2-9]\d)?\d{2}[\/\-\.](?:0?[1,3,5,7,8]|1[02])[\/\-\.]31)(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])[\/\-\.]0?2[\/\-\.]29)(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:16|[2468][048]|[3579][26])00[\/\-\.]0?2[\/\-\.]29)(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:1[6-9]|[2-9]\d)?\d{2}[\/\-\.](?:0?[1-9]|1[0-2])[\/\-\.](?:0?[1-9]|1\d|2[0-8]))(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$]]></param>
+           <message>${getText("ec.common.validate.date.format.error", {"WOM.propertydisplayName.randon1541653857030"})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="endTime">
+        <field-validator type="regex">
+			<param name="regex"><![CDATA[^(?:(?:1[6-9]|[2-9]\d)?\d{2}[\/\-\.](?:0?[1,3-9]|1[0-2])[\/\-\.](?:29|30))(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:1[6-9]|[2-9]\d)?\d{2}[\/\-\.](?:0?[1,3,5,7,8]|1[02])[\/\-\.]31)(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])[\/\-\.]0?2[\/\-\.]29)(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:16|[2468][048]|[3579][26])00[\/\-\.]0?2[\/\-\.]29)(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$|^(?:(?:1[6-9]|[2-9]\d)?\d{2}[\/\-\.](?:0?[1-9]|1[0-2])[\/\-\.](?:0?[1-9]|1\d|2[0-8]))(?: (?:0?\d|1\d|2[0-3]))?(?:\:(?:0?\d|[1-5]\d))?(?:\:(?:0?\d|[1-5]\d))?$]]></param>
+           <message>${getText("ec.common.validate.date.format.error", {"WOM.propertydisplayName.randon1541653874550"})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	
+
+	<field name="factoryId.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.radion14192323937823455"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="afterRatio">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1506304526619"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1506304526619", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="exeOrder">
+        <field-validator type="int">
+           <message>${getText("ec.common.validate.int.format.error", {"WOM.propertydisplayName.randon1539844454637"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">10</param>
+        	<message>${getText("ec.common.validate.double.format.error2", {"WOM.propertydisplayName.randon1539844454637", 10})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	<field name="remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1489720730887", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+</validators>

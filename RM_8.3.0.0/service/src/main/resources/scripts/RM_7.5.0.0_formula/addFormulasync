@@ -1,0 +1,2 @@
+  def interfaceSyncLogService=springContext.getBean("rM_interfaceSyncLogService");
+interfaceSyncLogService.addFormulasync(id.toString(),null);      

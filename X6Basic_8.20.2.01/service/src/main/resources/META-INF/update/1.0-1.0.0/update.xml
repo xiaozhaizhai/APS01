@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models>
+  <model id="UnitGroups" operateType="ALTER" tableName="S2BASE_UNITGROUP">
+    <property id="groupType" operateType="ALTER" columnName="UNITGROUP_TYPE" type="SYSTEMCODE"/>
+  </model>
+</Models>

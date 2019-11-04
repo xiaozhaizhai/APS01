@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="code">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"X6Basic.propertydisplayName.radion1398235521123"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1398235521123", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"X6Basic.propertydisplayName.radion1398235640483"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1398235640483", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="isMain">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"X6Basic.propertydisplayName.radion1398235666506"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="rate">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"X6Basic.propertydisplayName.radion1398235704972"})}</message>
+		</field-validator>
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"X6Basic.propertydisplayName.radion1398235704972"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"X6Basic.propertydisplayName.radion1398235704972", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+</validators>

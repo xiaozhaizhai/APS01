@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bapSystemCode> 
+  <systementity code="rootType" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1460683614436" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0"> 
+    <systemcode id="rootType/001" code="001" value="MESBasic.systemCodevalue.randon1460683655453" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2172" seqId="2172" fullPathName="罐区"/>  
+    <systemcode id="rootType/002" code="002" value="MESBasic.systemCodevalue.randon1460683667078" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2173" seqId="2173" fullPathName="批次"/> 
+  </systementity>  
+  <systementity code="04" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1470187909663" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="valueType/04" value="MESBasic.systemCodevalue.randon1470188000854" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4028" seqId="4028" fullPathName="批次计价"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="03" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1470189475696" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="product_reqType/03" value="MESBasic.systemCodevalue.randon1470189589177" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4031" seqId="4031" fullPathName="LRP"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="03" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1470191117154" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="product_keepUnit/03" value="MESBasic.systemCodevalue.randon1470191181789" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4034" seqId="4034" fullPathName="年"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="02" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1477220009966" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="product_keepReckon/02" value="MESBasic.systemCodevalue.randon1470191264207" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4036" seqId="4036" fullPathName="按月"> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="02" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1470191380131" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="product_resetMark/02" value="MESBasic.systemCodevalue.randon1470191429023" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4038" seqId="4038" fullPathName="检验日期"> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="04" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1470194458298" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="product_paramJ/04" value="MESBasic.systemCodevalue.randon1470194562619" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4042" seqId="4042" fullPathName="其他"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="product_smIntParamB" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1470194832506" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0"/>  
+  <systementity code="bugRank" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1470212508268" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0"/>  
+  <systementity code="03" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1470212555856" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="checkIndex_bugRank/03" value="MESBasic.systemCodevalue.randon1470212722270" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4045" seqId="4045" fullPathName="一般"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="02" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1470212737225" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="checkIndex_valueKind/02" value="MESBasic.systemCodevalue.randon1470212821832" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4047" seqId="4047" fullPathName="数值"> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="02" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1470212859622" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="checkIndex_editType/02" value="MESBasic.systemCodevalue.randon1470212936319" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4049" seqId="4049" fullPathName="选择"> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="02" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1470222041325" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="checkIndex_dispType1/02" value="MESBasic.systemCodevalue.randon1470222182938" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4065" seqId="4065" fullPathName="不启用"> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="2" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1471517579435" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="product_checkMethod/2" value="MESBasic.systemCodevalue.randon1471517639999" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4356" seqId="4356" fullPathName="抽检"> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="2" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1471524179402" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="productCost_type/2" value="MESBasic.systemCodevalue.randon1471524334669" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4359" seqId="4359" fullPathName="最新库存成本"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="12" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1471524896663" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="dealInfo_type/12" value="MESBasic.systemCodevalue.randon1471525022250" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4363" seqId="4363" fullPathName="采购组更改信息"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="6" moduleCode="MESBasic_1" version="0" valid="true" sysDefault="false" id="valueType/6" value="MESBasic.systemCodevalue.randon1472555081036" attribute="false" memo="" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="4528" seqId="4528" fullPathName="批次计价"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="03" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1477034040864" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="productReqType/03" value="MESBasic.systemCodevalue.randon1477034200451" attribute="false" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="5630" seqId="5630" fullPathName="LRP"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="01" moduleCode="MESBasic_1" name="MESBasic.systemEntityname.randon1477219978576" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0"/>  
+  <systementity code="04" moduleCode="MESBasic_1" version="0" valid="true" sysDefault="false" id="valueType/04" value="MESBasic.systemCodevalue.randon1477220654567" attribute="false" memo="" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="5638" seqId="5638" fullPathName="批次计价"> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="0" moduleCode="MESBasic_1" version="1" valid="true" sysDefault="false" id="productCost_type/0" value="MESBasic.systemCodevalue.randon1471524278123" attribute="false" memo="" sort="" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="5560" seqId="5560" fullPathName="0参考成本">
+    <systemcode/>
+  </systementity>
+</bapSystemCode>

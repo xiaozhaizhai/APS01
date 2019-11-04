@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	
+
+	<field name="num">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.randon1491802231630"})}</message>
+		</field-validator>
+		<field-validator type="double_plus">
+		<message>${getText("ec.common.validate.double.plus.error", {"WOM.propertydisplayName.randon1491802231630"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1491802260903", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>

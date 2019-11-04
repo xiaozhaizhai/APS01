@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<struts>
+	<package name="orchid-MESBasic" abstract="true" extends="orchid-default">
+		<!-- CUSTOM CODE START(struts,action,,MESBasic_1) -->
+<!-- 自定义代码 -->
+
+<!-- CUSTOM CODE END -->
+	</package>
+</struts>

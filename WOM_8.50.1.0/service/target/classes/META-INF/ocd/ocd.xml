@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<OCD description="WOM配置" name="WOM配置" id="platform.bap.WOM" type="flat">
+		
+      
+        <AD name="指令单设置物料批号" id="WOM.proBatch" required="true"  description="若为是则在指令单中支持设置所需物料的批号，若为否则不支持" type="Boolean" default="false" >
+		</AD>
+
+		<AD name="是否启用MES物料管理" id="WOM.mesProBatch" required="true"  description="若为是则在工单模块触发生成物料管理模块的调拨单、出库单、入库单" type="Boolean" default="true" >
+		</AD>
+
+		
+	    <AD name="是否与SAP进行同步" id="WOM.isSynSAP" required="true"  description="工单管理模块的单据是否与SAP进行同步" type="Boolean" default="false" >
+		</AD>
+ 		<AD name="是否自动备料" id="WOM.isSynPrepare" required="false"  description="指令单生效后是否自动生成备料单" type="Boolean" default="true" >
+
+		</AD>
+		
+		<AD name="SAP服务器地址" id="WOM.sapAddress" required="true"  description="SAP服务器的地址(协议://ip:port)" type="String" default="http://192.168.6.144:8001" >
+		</AD>
+
+		<AD name="下单人员编码" id="WOM.producePerson" required="true" description="APS接口默认下单人员" type="String" default="1000" order="4" >
+		</AD>
+
+	</OCD>
+	
+</metatype:MetaData>

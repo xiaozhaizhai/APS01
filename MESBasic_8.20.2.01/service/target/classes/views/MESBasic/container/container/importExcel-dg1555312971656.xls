@@ -1,0 +1,377 @@
+
+<#if customPropData??  && (customPropData?size>0) >
+<#assign customProperties = customPropData.properties />
+<#assign customStyleCodes = customPropData.styleCodes />
+<#assign customStyleFormates = customPropData.styleFormats />
+</#if>
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
+<DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+	<Author>datagriImportTemplate</Author>
+	<Created>2015-07-16T18:33:57</Created>
+</DocumentProperties>
+<ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+	<WindowWidth>18800</WindowWidth>
+	<WindowHeight>10540</WindowHeight>
+	<ProtectStructure>False</ProtectStructure>
+	<ProtectWindows>False</ProtectWindows>
+</ExcelWorkbook>
+<Styles>
+	<Style ss:ID="Default" ss:Name="Normal">
+		<Alignment/>
+		<Borders/>
+		<Font ss:FontName="Arial" x:CharSet="134" ss:Size="10"/>
+		<Interior/>
+		<NumberFormat/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s4">
+		<NumberFormat ss:Format="_ * #,##0.00_ ;_ * -#,##0.00_ ;_ * &quot;-&quot;??_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s5">
+		<NumberFormat ss:Format="_ &quot;￥&quot;* #,##0.00_ ;_ &quot;￥&quot;* -#,##0.00_ ;_ &quot;￥&quot;* &quot;-&quot;??_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s2">
+		<NumberFormat ss:Format="0%"/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s1">
+		<NumberFormat ss:Format="_ * #,##0_ ;_ * -#,##0_ ;_ * &quot;-&quot;_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s3">
+		<NumberFormat ss:Format="_ &quot;￥&quot;* #,##0_ ;_ &quot;￥&quot;* -#,##0_ ;_ &quot;￥&quot;* &quot;-&quot;_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s6"/>
+	<Style ss:ID="s7">
+		<NumberFormat ss:Format="yyyy-m-d;-;-;@"/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s8">
+		<NumberFormat ss:Format="yyyy-m-d\ H:mm;-;-;@"/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="unNullable">
+			<Alignment />
+			<Borders />
+			<Font ss:FontName="宋体" x:CharSet="134" ss:Size="10" ss:Color="#FF0000" />
+			<Interior />
+			<NumberFormat />
+			<Protection />
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_action">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_businessType">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_destination">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_desType">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_endLevel">
+		<NumberFormat ss:Format="0.000_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_endTime">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_flowRecordId">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_gasVolume">
+		<NumberFormat ss:Format="0.000_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_gasWeight">
+		<NumberFormat ss:Format="0.000_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_levelDiff">
+		<NumberFormat ss:Format="0.000_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_liquidVolume">
+		<NumberFormat ss:Format="0.000_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_liquidWeight">
+		<NumberFormat ss:Format="0.000_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_source">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_sourceType">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_startLevel">
+		<NumberFormat ss:Format="0.000_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_FlowRecord_startTime">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_container_Container_code">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_product_Product_id">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_routine_Routine_code">
+		<Protection/>
+	</Style>
+	
+		<#if customStyleFormates?? && (customStyleFormates?size>0) >
+			<#list customStyleFormates as style>
+				<Style ss:ID="${style.key}">
+						<#if style['format']?? >
+			  				<NumberFormat ss:Format="${style['format']}"/>
+			  			<#else>
+			  				<NumberFormat/>
+			  			</#if>
+			  			<Protection/>
+				</Style>
+			</#list>
+		</#if>  
+</Styles>
+<Worksheet ss:Name="sheet1">
+	<Table ss:ExpandedColumnCount="256" ss:ExpandedRowCount="3" x:FullColumns="1" x:FullRows="1" ss:DefaultColumnWidth="54" ss:DefaultRowHeight="16.5">
+	<Column ss:Index="1" ss:StyleID="MESBasic_1_container_Container_code"  ss:Width="120"   />
+	<Column ss:Index="2" ss:StyleID="MESBasic_1_container_FlowRecord_businessType"  ss:Width="120"   />
+	<Column ss:Index="3" ss:StyleID="MESBasic_1_container_FlowRecord_action"  ss:Width="120"   />
+	<Column ss:Index="4" ss:StyleID="MESBasic_1_container_FlowRecord_liquidWeight"  ss:Width="120"   />
+	<Column ss:Index="5" ss:StyleID="MESBasic_1_container_FlowRecord_liquidVolume"  ss:Width="120"   />
+	<Column ss:Index="6" ss:StyleID="MESBasic_1_container_FlowRecord_gasWeight"  ss:Width="120"   />
+	<Column ss:Index="7" ss:StyleID="MESBasic_1_container_FlowRecord_gasVolume"  ss:Width="120"   />
+	<Column ss:Index="8" ss:StyleID="MESBasic_1_container_FlowRecord_startLevel"  ss:Width="120"   />
+	<Column ss:Index="9" ss:StyleID="MESBasic_1_container_FlowRecord_endLevel"  ss:Width="120"   />
+	<Column ss:Index="10" ss:StyleID="MESBasic_1_container_FlowRecord_levelDiff"  ss:Width="120"   />
+	<Column ss:Index="11" ss:StyleID="MESBasic_1_product_Product_id"  ss:Width="120"   />
+	<Column ss:Index="12" ss:StyleID="MESBasic_1_container_FlowRecord_startTime"  ss:Width="120"   />
+	<Column ss:Index="13" ss:StyleID="MESBasic_1_container_FlowRecord_endTime"  ss:Width="120"   />
+	<Column ss:Index="14" ss:StyleID="MESBasic_1_container_FlowRecord_source"  ss:Width="120"   />
+	<Column ss:Index="15" ss:StyleID="MESBasic_1_container_FlowRecord_sourceType"  ss:Width="120"   />
+	<Column ss:Index="16" ss:StyleID="MESBasic_1_container_FlowRecord_destination"  ss:Width="120"   />
+	<Column ss:Index="17" ss:StyleID="MESBasic_1_container_FlowRecord_desType"  ss:Width="120"   />
+	<Column ss:Index="18" ss:StyleID="MESBasic_1_routine_Routine_code"  ss:Width="120"   />
+	<Column ss:Index="19" ss:StyleID="MESBasic_1_container_FlowRecord_flowRecordId"  ss:Width="120"   />
+	<#assign secondCount=20/>
+	<#if customStyleCodes??>
+		<#list customStyleCodes as scode>
+			<Column ss:Index="${secondCount}" ss:Width="100"  ss:StyleID="${scode}"/>
+			<#assign secondCount = secondCount + 1>
+		</#list>
+	</#if>
+	
+		<Row ss:AutoFitHeight="0">
+			<Cell>
+				<Data ss:Type="String">MESBasic.propertydisplayName.randon1555293321716.MESBasic.propertydisplayName.radion1415268359829</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_containerId||MESBasic_1_container_Container_code
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">业务类型</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_businessType
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">进/出罐</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_action
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">进/出罐重量(t)</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_liquidWeight
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">进/出罐体积(m³)</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_liquidVolume
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">气体进/出罐质量(t)</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_gasWeight
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">气体进/出罐体积(m³)</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_gasVolume
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">开始液位(m)</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_startLevel
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">结束液位(m)</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_endLevel
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">液位差(m)</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_levelDiff
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">MESBasic.propertydisplayName.randon1555293286092.MESBasic.propertydisplayName.randon1449796384550</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_productId||MESBasic_1_product_Product_id
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">开始时间</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_startTime
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">结束时间</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_endTime
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">源容器</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_source
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">源类型</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_sourceType
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">目的容器</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_destination
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">目的类型</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_desType
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">MESBasic.propertydisplayName.randon1555293302977.MESBasic.propertydisplayName.radion1415336575756</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_routineId||MESBasic_1_routine_Routine_code
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String">进出罐记录ID</Data>
+				<Comment ss:Author="">
+					<ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+					    MESBasic_1_container_FlowRecord_flowRecordId
+					</ss:Data>
+				</Comment>
+			</Cell>
+			<#if customProperties?? &&  (customProperties?size>0) >
+				<#list customProperties as item >
+								<Cell >
+									<Data ss:Type="String">${(item.columnName)!''}</Data>
+									<Comment ss:Author="">
+											 <ss:Data xmlns="http://www.w3.org/TR/REC-html40">
+												${(item.propertyCode)!''}
+											 </ss:Data>
+									</Comment>
+								</Cell>
+				</#list>
+			</#if>
+		</Row>
+	</Table>
+	<WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+		<PageSetup>
+			<Header x:Margin="0.511805555555556"/>
+			<Footer x:Margin="0.511805555555556"/>
+		</PageSetup>
+		<Print>
+			<HorizontalResolution>1200</HorizontalResolution>
+			<VerticalResolution>1200</VerticalResolution>
+		</Print>
+			<Selected/>
+			<PageBreakZoom>100</PageBreakZoom>
+		<Panes>
+			<Pane>
+				<Number>3</Number>
+				<ActiveRow>0</ActiveRow>
+				<ActiveCol>2</ActiveCol>
+				<RangeSelection>R1C3</RangeSelection>
+			</Pane>
+		</Panes>
+		<ProtectObjects>False</ProtectObjects>
+		<ProtectScenarios>False</ProtectScenarios>
+	</WorksheetOptions>
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C12:R65536C12</Range>
+						<Type>Date</Type>
+						<Qualifier>Less</Qualifier>
+						<Value>2958465</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>		
+				<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+						<Range>R2C13:R65536C13</Range>
+						<Type>Date</Type>
+						<Qualifier>Less</Qualifier>
+						<Value>2958465</Value>
+						<ErrorStyle>Stop</ErrorStyle>
+					</DataValidation>		
+</Worksheet>
+</Workbook>

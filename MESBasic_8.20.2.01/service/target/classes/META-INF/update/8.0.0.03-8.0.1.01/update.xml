@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models>
+  <model id="ProdSecUnit" operateType="CREATE" extends="AbstractEcPartEntity" tableName="MESBASIC_PROD_SEC_UNITS">
+    <property id="product" operateType="CREATE" columnName="PRODUCT" description="物品" type="LONG"/>
+    <property id="baseUnit" operateType="CREATE" columnName="BASE_UNIT" description="主单位" type="LONG"/>
+    <property id="secUnit" operateType="CREATE" columnName="SEC_UNIT" description="辅单位" type="LONG"/>
+    <property id="changeRate" operateType="CREATE" columnName="CHANGE_RATE" description="换算比率" type="DECIMAL" scale="6"/>
+    <property id="demo" operateType="CREATE" columnName="DEMO" description="备注" type="TEXT" length="2000"/>
+  </model>
+</Models>

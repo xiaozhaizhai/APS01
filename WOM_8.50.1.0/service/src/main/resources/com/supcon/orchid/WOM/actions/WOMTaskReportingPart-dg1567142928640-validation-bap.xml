@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="batchNum">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.randon1490773190433"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1490773190433", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="reportNum">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertyshowName.randon1566264338723.flag"})}</message>
+		</field-validator>
+		<field-validator type="double_plus">
+		<message>${getText("ec.common.validate.double.plus.error", {"WOM.propertyshowName.randon1566264338723.flag"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="modifyNum">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertyshowName.randon1568879108107.flag"})}</message>
+		</field-validator>
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertyshowName.randon1568879108107.flag"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertyshowName.randon1568879108107.flag", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="content">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertyshowName.randon1566264343713.flag"})}</message>
+		</field-validator>
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertyshowName.randon1566264343713.flag"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertyshowName.randon1566264343713.flag", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="modifyCont">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertyshowName.randon1568879308241.flag"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertyshowName.randon1568879308241.flag", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	<field name="remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1490773225991", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models> 
+  <model id="TimeRegion" operateType="CREATE" extends="AbstractEcFullEntity" tableName="X6BASIC_TIME_REGIONS"> 
+    <property id="endTime" operateType="CREATE" columnName="END_TIME" description="结束时间" type="DATE"/>  
+    <property id="name" operateType="CREATE" columnName="NAME" description="名称" type="TEXT"/>  
+    <property id="recordNum" operateType="CREATE" columnName="RECORD_NUM" description="生成数据" type="INTEGER"/>  
+    <property id="setMon" operateType="CREATE" columnName="SET_MON" description="月" type="INTEGER"/>  
+    <property id="setquater" operateType="CREATE" columnName="SETQUATER" description="季度" type="INTEGER"/>  
+    <property id="setyear" operateType="CREATE" columnName="SETYEAR" description="年" type="INTEGER"/>  
+    <property id="startTime" operateType="CREATE" columnName="START_TIME" description="开始时间" type="DATE"/>  
+    <property id="unit" operateType="CREATE" columnName="UNIT" description="单位" type="SYSTEMCODE"/>  
+    <property id="useEntity" operateType="CREATE" columnName="USE_ENTITY" description="使用实体" type="SYSTEMCODE"/> 
+  </model>  
+  <model id="TimeRegionDealInfo" tableName="X6BASIC_TIME_REGIONS_DI" extends="AbstractDealInfoEntity"> 
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>  
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>  
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>  
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>  
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>  
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>  
+    <index name="IDX_TIMEREGION_DiTABLEID" columns="tableInfoId" operateType="CREATE"/> 
+  </model>  
+  <model id="TimeRegionPar" operateType="CREATE" extends="AbstractEcPartEntity" tableName="X6BASIC_TIME_REGION_PARS"> 
+    <property id="endDate" operateType="CREATE" columnName="END_DATE" description="结束时间" type="DATE"/>  
+    <property id="month" operateType="CREATE" columnName="MONTH" description="月" type="INTEGER"/>  
+    <property id="name" operateType="CREATE" columnName="NAME" description="区间名称" type="TEXT"/>  
+    <property id="quarter" operateType="CREATE" columnName="QUARTER" description="季度" type="INTEGER"/>  
+    <property id="recordNum" operateType="CREATE" columnName="RECORD_NUM" description="生成数据" type="INTEGER"/>  
+    <property id="recordTine" operateType="CREATE" columnName="RECORD_TINE" description="参照时间" type="DATE"/>  
+    <property id="remark" operateType="CREATE" columnName="REMARK" description="备注" type="TEXT"/>  
+    <property id="startDate" operateType="CREATE" columnName="START_DATE" description="开始时间" type="DATE"/>  
+    <property id="timeRegionID" operateType="CREATE" columnName="TIME_REGIONID" description="时间区间id" type="LONG"/>  
+    <property id="week" operateType="CREATE" columnName="WEEK" description="周" type="INTEGER"/>  
+    <property id="year" operateType="CREATE" columnName="YEAR" description="年" type="INTEGER"/> 
+  </model>  
+  <model id="Abook" operateType="ALTER" tableName="X6BASIC_ABOOKS">
+    <property id="name" operateType="ALTER" columnName="NAME" description="名称" type="TEXT" length="256"/>
+  </model>
+  <model id="AttMachine" operateType="ALTER" tableName="X6BASIC_ATT_MACHINES">
+    <property id="code" operateType="ALTER" columnName="CODE" description="编号" type="TEXT" length="256"/>
+    <property id="name" operateType="ALTER" columnName="NAME" description="名称" type="TEXT" length="256"/>
+  </model>
+  <model id="ProductManage" operateType="ALTER" tableName="X6BASIC_PRODUCT_MENAGE">
+    <property id="code" operateType="ALTER" columnName="CODE" description="物品编码" type="TEXT" length="256"/>
+    <property id="name" operateType="ALTER" columnName="NAME" description="物品名称" type="TEXT" length="256"/>
+  </model>
+  <model id="DocumentClasses" operateType="ALTER" tableName="X6BASIC_DOCUMENT_CLASSES">
+    <property id="name" operateType="ALTER" columnName="NAME" description="文档分类" type="TEXT" length="256"/>
+  </model>
+  <model id="MailServer" operateType="ALTER" tableName="X6BASIC_MAIL_SERVERS">
+    <property id="code" operateType="ALTER" columnName="CODE" description="编号" type="TEXT" length="256"/>
+    <property id="name" operateType="ALTER" columnName="NAME" description="名称" type="TEXT" length="256"/>
+  </model>
+  <model id="MessageCenter" operateType="ALTER" tableName="X6BASIC_MESSAGE_CENTERS">
+    <property id="emailTitle" operateType="ALTER" columnName="EMAIL_TITLE" description="邮件标题" type="TEXT" length="256"/>
+  </model>
+  <model id="SignetSetting" operateType="ALTER" tableName="X6BASIC_SIGNET_SETTINGS">
+    <property id="name" operateType="ALTER" columnName="NAME" description="名称" type="TEXT" length="256"/>
+  </model>
+  <model id="SpellRule" operateType="ALTER" tableName="S2BASE_SPELLRULE">
+    <property id="code" operateType="ALTER" columnName="SR_CODE" description="轮班编码" type="TEXT" length="256"/>
+    <property id="name" operateType="ALTER" columnName="SR_NAME" description="轮班名称" type="TEXT" length="256"/>
+  </model>
+  <model id="SpellRulePart" operateType="ALTER" tableName="S2BASE_SPELLRULEPART">
+    <property id="teamOrder" operateType="ALTER" columnName="SRP_TEAMORDER" description="班次" type="TEXT" length="256"/>
+  </model>
+  <model id="SyncLog" operateType="ALTER" tableName="X6BASIC_SYNC_LOGS">
+    <property id="eventTopic" operateType="ALTER" columnName="EVENT_TOPIC" description="topic" type="TEXT" length="400"/>
+  </model>
+  <model id="TeamInfo" operateType="ALTER" tableName="S2BASE_TEAMINFO">
+    <property id="code" operateType="ALTER" columnName="TEAM_CODE" description="班组编码" type="TEXT" length="256"/>
+    <property id="name" operateType="ALTER" columnName="TEAM_NAME" description="班组名称" type="TEXT" length="256"/>
+  </model>
+  <model id="UnitGroups" operateType="ALTER" tableName="S2BASE_UNITGROUP">
+    <property id="name" operateType="ALTER" columnName="UNITGROUP_NAME" description="单位组名称" type="TEXT" length="256"/>
+  </model>
+</Models>

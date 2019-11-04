@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="checkItems">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1555552292724"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1555552292724", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="standrad">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1555552315202", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+</validators>

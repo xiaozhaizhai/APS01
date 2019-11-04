@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models> 
+  <model id="AccountPeriod" operateType="ALTER" tableName="X6BASIC_ACCOUNT_PERIODS"> 
+    <property id="year" operateType="ALTER" columnName="YEAR" description="年度" type="SYSTEMCODE"/> 
+  </model>  
+  <model id="BaseUnit" operateType="ALTER" tableName="S2BASE_UNIT"> 
+    <property id="code" operateType="ALTER" columnName="UNIT_CODE" description="单位代码" type="TEXT" length="256"/>  
+    <property id="rate" operateType="ALTER" columnName="UNIT_RATE" description="比率" type="DECIMAL" scale="6"/>  
+    <property id="name" operateType="ALTER" columnName="UNIT_NAME" description="单位名称" type="TEXT" length="256"/> 
+  </model>  
+  <model id="UnitGroups" operateType="ALTER" tableName="S2BASE_UNITGROUP"> 
+    <property id="code" operateType="ALTER" columnName="UNITGROUP_CODE" description="单位组代码" type="TEXT" length="256"/>  
+    <property id="name" operateType="ALTER" columnName="UNITGROUP_NAME" description="单位组名称" type="TEXT" length="256"/> 
+  </model> 
+</Models>

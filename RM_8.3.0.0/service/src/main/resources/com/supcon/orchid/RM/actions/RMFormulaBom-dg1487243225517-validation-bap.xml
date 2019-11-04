@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="unitQuality">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"RM.propertydisplayName.randon1487243139091"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"RM.propertydisplayName.randon1487243139091", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+</validators>

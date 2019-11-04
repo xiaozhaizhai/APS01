@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<code>APSWServic_8.50.1.0</code>
+	<ecEnv>product</ecEnv>
+	<name>APSWServic.modulename.randon1572334960694</name>
+	<zhCnValue></zhCnValue>
+	<category>工单管理</category>
+	<artifact>APSWServic</artifact>
+	<projectVersion>8.50.1.0</projectVersion>
+	<orgVersion></orgVersion>
+	<description><![CDATA[]]></description>
+	<isInherentedBase>false</isInherentedBase>
+	<isNewGenerate>false</isNewGenerate>
+	<projFlag></projFlag>
+	<scripts>
+	</scripts>
+	<customerConditions>
+	</customerConditions>
+	<specialPermissions>
+	</specialPermissions>
+	<entities>
+		<entity>
+			<code>APSWServic_8.50.1.0_productIfce</code>
+			<ecEnv>product</ecEnv>
+			<name>APSWServic.entityname.randon1572335026154</name>
+			<zhCnValue></zhCnValue>
+			<entityName>productIfce</entityName>
+			<workflowEnabled>false</workflowEnabled>
+			<payCloseAttention>false</payCloseAttention>
+			<description><![CDATA[]]></description>
+			<prefix>productIfce</prefix>
+			<groupEnabled>false</groupEnabled>
+			<crossCompanyFlag>false</crossCompanyFlag>
+			<isBase>true</isBase>
+			<enableAudit>false</enableAudit>
+			<isInherentedBase>false</isInherentedBase>
+			<mobile>false</mobile>
+			<enableAclRestrict>false</enableAclRestrict>
+			<enableRest>false</enableRest>
+			<enableWs>false</enableWs>
+			<entityType>
+				<id>SYSTEM/BAP</id>
+			</entityType>
+			<models>
+			</models>
+			<views>
+			</views>
+			
+			
+		</entity>
+	</entities>
+	<relations>MESBasic_1,publicSet_1.0,RM_7.5.0.0,WOM_7.5.0.0,X6Basic_1.0,</relations>
+</module>

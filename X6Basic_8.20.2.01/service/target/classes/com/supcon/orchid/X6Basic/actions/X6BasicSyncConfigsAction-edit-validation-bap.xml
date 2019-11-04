@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	
+
+	<field name="syncConfigs.emailDomain">
+		<field-validator type="stringlength">
+			<param name="maxLength">400</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1409209558180", "400"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="syncConfigs.emailUserName">
+		<field-validator type="stringlength">
+			<param name="maxLength">400</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1409053735984", "400"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="syncConfigs.emailPassword">
+		<field-validator type="stringlength">
+			<param name="maxLength">400</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1409053892290", "400"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="syncConfigs.emailDataSourse">
+		<field-validator type="stringlength">
+			<param name="maxLength">800</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1409053998518", "800"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	<field name="syncConfigs.bbsUserName">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1409053693007", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="syncConfigs.bbsAlias">
+		<field-validator type="stringlength">
+			<param name="maxLength">255</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1411371105276", "255"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="syncConfigs.bbsDataSourse">
+		<field-validator type="stringlength">
+			<param name="maxLength">800</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1409053968152", "800"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	<field name="syncConfigs.pandionUserName">
+		<field-validator type="stringlength">
+			<param name="maxLength">400</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1409053775252", "400"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="syncConfigs.pandionPassword">
+		<field-validator type="stringlength">
+			<param name="maxLength">400</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1409053929563", "400"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="syncConfigs.pandionDataSourse">
+		<field-validator type="stringlength">
+			<param name="maxLength">800</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1409054018572", "800"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="syncConfigs.des">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1409054394069", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

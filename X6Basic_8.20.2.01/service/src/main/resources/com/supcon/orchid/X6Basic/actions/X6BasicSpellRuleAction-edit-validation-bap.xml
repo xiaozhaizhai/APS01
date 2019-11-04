@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="spellRule.code">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"X6Basic.propertydisplayName.radion1398306715753"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1398306715753", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="spellRule.name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"X6Basic.propertydisplayName.radion1398306741696"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"X6Basic.propertydisplayName.radion1398306741696", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="_complex_complex_datagrid_1398316958929">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1398316931895List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1398316931895</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("X6Basic.modelname.radion1398306848646")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

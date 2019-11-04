@@ -1,0 +1,38 @@
+Manifest-Version: 1.0
+Export-Package: com.supcon.orchid.X6Basic.entities;version="7.5.0.0";u
+ ses:="com.supcon.orchid.annotation,com.supcon.orchid.audit.annotation
+ ,com.supcon.orchid.foundation.entities,com.supcon.orchid.orm.entities
+ ,javax.persistence,javax.xml.bind.annotation,javax.xml.bind.annotatio
+ n.adapters,org.apache.solr.client.solrj.beans,org.hibernate.annotatio
+ ns",com.supcon.orchid.X6Basic.services;version="7.5.0.0";uses:="com.s
+ upcon.orchid.X6Basic.entities,com.supcon.orchid.audit.entities,com.su
+ pcon.orchid.ec.entities,com.supcon.orchid.ec.services,com.supcon.orch
+ id.foundation.entities,com.supcon.orchid.foundation.ws.entities,com.s
+ upcon.orchid.services,javax.jws,javax.ws.rs,javax.xml.bind.annotation
+ ,org.hibernate.criterion"
+Tool: Bundlor 1.1.2.RELEASE
+Bundle-Name: X6Basic Core
+Import-Library: org.springframework.spring;version="3.0"
+Import-Bundle: com.supcon.orchid.org.hibernate;version="[3.4.0,3.6.0)"
+ ,com.springsource.javassist;version="[3.9,4.0)",com.supcon.bap.cxf-bu
+ ndle;version="2.7";resolution:="mandatory"
+Bundle-Vendor: ZHEJIANG SUPCON TECHNOLOGY CO.,LTD.
+Bundle-Version: 7.5.0.0
+Spring-Context: *;timeout:=3600
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.supcon.orchid.X6Basic.core
+Import-Package: com.supcon.orchid,com.supcon.orchid.annotation,com.sup
+ con.orchid.audit.annotation,com.supcon.orchid.audit.entities,com.supc
+ on.orchid.ec.entities;version="[2.0,4.0)",com.supcon.orchid.ec.servic
+ es,com.supcon.orchid.foundation.adapter;version="[2.0,4.0)",com.supco
+ n.orchid.foundation.entities;version="[2.0,4.0)",com.supcon.orchid.fo
+ undation.ws.adapter;version="[2.0,4.0)",com.supcon.orchid.foundation.
+ ws.entities,com.supcon.orchid.orm.entities;version="[2.0,4.0)",com.su
+ pcon.orchid.orm.entities.jaxb;version="[2.0,4.0)",com.supcon.orchid.s
+ ervices,com.supcon.orchid.tree;version="[2.0,4.0)",com.supcon.orchid.
+ utils,javax.jws,javax.persistence,javax.ws.rs,javax.xml.bind.annotati
+ on,javax.xml.bind.annotation.adapters,org.apache.solr.client.solrj.be
+ ans,org.aspectj;version="[1.6.0,1.9.0)",org.aspectj.lang;version="[1.
+ 6.0,1.9.0)",org.hibernate.annotations,org.hibernate.criterion
+Orchid-EcGenerated: true
+

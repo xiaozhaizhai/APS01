@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models> 
+  <model id="ItemRecord" operateType="ALTER" tableName="Pellet_ItemRecord"> 
+    <property id="id" operateType="ALTER" orgColumnName="ID" columnName="IR_ID" description="ID, Primary Key" isPk="true" type="LONG"/> 
+  </model>  
+  <model id="Product" operateType="ALTER" tableName="S2BASE_PRODUCT"> 
+    <property id="standardPrice" operateType="CREATE" columnName="PRODUCT_STANDARDPRICE" description="基准价" type="DECIMAL" scale="6"/>  
+    <property id="recCost" operateType="CREATE" columnName="PRODUCT_RECCOST" description="最新成本" type="DECIMAL" scale="6"/>  
+    <property id="saleRecentPrice" operateType="CREATE" columnName="PRODUCT_SALERECENTPRICE" description="最近销售价" type="DECIMAL" scale="6"/>  
+    <property id="salePrice" operateType="CREATE" columnName="PRODUCT_SALEPRICE" description="参考售价" type="DECIMAL" scale="6"/>  
+    <property id="recentPrice" operateType="CREATE" columnName="PRODUCT_RECENTPRICE" description="最近结算价" type="DECIMAL" scale="6"/> 
+  </model> 
+</Models>

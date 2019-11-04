@@ -1,0 +1,2 @@
+   def produceTaskService=springContext.getBean("wOM_produceTaskService");
+produceTaskService.addProduceTaskSync(id.toString(),null);  

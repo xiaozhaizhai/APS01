@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="batchNum.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.randon1490064501469"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="planNum">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.randon1490346958585"})}</message>
+		</field-validator>
+		<field-validator type="double_plus">
+		<message>&lt;b&gt;${getText("WOM.propertydisplayName.randon1490346958585")}&lt;/b&gt;${getText("ec.common.validate.double.plus.error")}</message>
+		</field-validator>
+	</field>
+	
+
+	
+</validators>

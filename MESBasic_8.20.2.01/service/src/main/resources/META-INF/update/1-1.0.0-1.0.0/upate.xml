@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models> 
+  <model id="Product" operateType="ALTER" tableName="S2BASE_PRODUCT"> 
+    <property id="abcClass" operateType="ALTER" orgColumnName="ABC_CLASS" columnName="PRODUCT_ABC" type="SYSTEMCODE"/>  
+    <property id="unit" operateType="ALTER" columnName="UNIT" type="TEXT" length="20"/>  
+    <property id="productCID" operateType="CREATE" description="公司ID" columnName="CID" type="OBJECT"/>  
+    <property id="productCreateDepartmentID" operateType="CREATE" description="创建部门" columnName="CREATE_DEPARTMENT_ID" type="OBJECT"/>  
+    <property id="ceratePositionID" operateType="CREATE" description="创建岗位" columnName="CREATE_POSITION_ID" type="OBJECT"/>  
+    <property id="effectiveState" operateType="CREATE" description="生效状态" columnName="EFFECTIVE_STATE" type="INTEGER"/>  
+    <property id="productGroupID" operateType="CREATE" description="组ID" columnName="GROUP_ID" type="OBJECT"/>  
+    <property id="position" operateType="CREATE" description="岗位层级" columnName="POSITION_LAY_REC" type="TEXT" length="255"/>  
+    <property id="processKey" operateType="CREATE" description="流程Key" columnName="PROCESS_KEY" type="TEXT" length="255"/>  
+    <property id="processVersion" operateType="CREATE" description="流程版本" columnName="PROCESS_VERSION" type="INTEGER"/>  
+    <property id="productAccmonth" operateType="CREATE" description="财务月份" columnName="PRODUCT_ACCMONTH" type="TEXT"/>  
+    <property id="productAllas" operateType="CREATE" description="存货别名" columnName="PRODUCT_ALIAS" type="TEXT" length="200"/>  
+    <property id="productAttribute" operateType="CREATE" description="物品一级属性" columnName="PRODUCT_ATTRIBUTE" type="TEXT"/>  
+    <property id="productBalancePrice" operateType="CREATE" description="结存价" columnName="PRODUCT_BALANCEPRICE" type="DECIMAL" scale="6"/>  
+    <property id="produceBaseUnit" operateType="CREATE" description="主单位ID" columnName="PRODUCT_BASEUNIT" type="OBJECT"/>  
+    <property id="productBeasset" operateType="CREATE" description="是否固定资产" columnName="PRODUCT_BEASSET" type="INTEGER"/>  
+    <property id="productBaseUnit" operateType="CREATE" description="主单位ID" columnName="PRODUCT_BASEUNIT" type="OBJECT"/>  
+    <property id="productBebatch" operateType="CREATE" description="是否批次管理" columnName="PRODUCT_BEBATCH" type="INTEGER"/>  
+    <property id="productBeConsume" operateType="CREATE" description="是否消耗品" columnName="PRODUCT_BECONSUME" type="INTEGER"/>  
+    <property id="productBeMass" operateType="CREATE" description="是否保质期管理" columnName="PRODUCT_BEMASS" type="INTEGER"/>  
+    <property id="productBeVerstock" operateType="CREATE" description="是否挤压控制" columnName="PRODUCT_BEOVERSTOCK" type="INTEGER"/>  
+    <property id="productBeProducing" operateType="CREATE" description="是否在制品" columnName="PRODUCT_BEPRODUCING" type="INTEGER"/>  
+    <property id="productBePropCheck" operateType="CREATE" description="是否质检" columnName="PRODUCT_BEPROPCHECK" type="INTEGER"/>  
+    <property id="productBepuchase" operateType="CREATE" description="是否采购品" columnName="PRODUCT_BEPURCHASE" type="INTEGER"/>  
+    <property id="productBeSale" operateType="CREATE" description="是否销售品" columnName="PRODUCT_BESALE" type="INTEGER"/>  
+    <property id="productBeSelf" operateType="CREATE" description="是否自产品" columnName="PRODUCT_BESELF" type="INTEGER"/>  
+    <property id="productBeService" operateType="CREATE" description="是否应税劳务" columnName="PRODUCT_BESERVICE" type="INTEGER"/>  
+    <property id="productBuyUnit" operateType="CREATE" description="采购单位ID" columnName="PRODUCT_BUYUNIT" type="OBJECT"/>  
+    <property id="productBuyUnitRate" operateType="CREATE" description="采购单位换算" columnName="PRODUCT_BUYUNITRATE" type="DECIMAL" scale="6"/>  
+    <property id="productChartCode" operateType="CREATE" description="图号" columnName="PRODUCT_CHARTCODE" type="TEXT"/>  
+    <property id="productCheckDays" operateType="CREATE" description="检验期（天）" columnName="PRODUCT_CHECKDAYS" type="INTEGER"/>  
+    <property id="productCheckFreq" operateType="CREATE" description="盘点周期" columnName="PRODUCT_CHECKFREQ" type="INTEGER"/>  
+    <property id="productCheckMethod" operateType="CREATE" description="检验方式" columnName="PRODUCT_CHECKMETHOD" type="INTEGER"/>  
+    <property id="productCostPrice" operateType="CREATE" description="参考采购价" columnName="PRODUCT_COSTPRICE" type="DECIMAL" scale="6"/>  
+    <property id="productCostUnit" operateType="CREATE" description="成本单位ID" columnName="PRODUCT_COSTUNIT" type="OBJECT"/>  
+    <property id="productCostunitRate" operateType="CREATE" description="成本单位换算" columnName="PRODUCT_COSTUNITRATE" type="DECIMAL" scale="6"/>  
+    <property id="batch" operateType="ALTER" columnName="BATCH" type="SYSTEMCODE"/>  
+    <property id="goodState" operateType="ALTER" columnName="GOOD_STATE" type="SYSTEMCODE"/>  
+    <property id="prodType" operateType="ALTER" columnName="PROD_TYPE" type="SYSTEMCODE"/> 
+  </model>  
+  <model id="BaseVendor" operateType="CREATE" extends="AbstractEcFullEntity" tableName="S2BASE_VENDOR"> 
+    <property id="id" operateType="ALTER" orgColumnName="ID" columnName="PRODLIST_ID" isPk="true" type="LONG"/>  
+    <property id="extraCol" operateType="ALTER" columnName="EXTRA_COL" type="LONGTEXT"/>  
+    <property id="version" operateType="ALTER" columnName="APPTAB_VERSION" type="INTEGER" orgColumnName="VERSION"/>  
+    <property id="vendorCode" operateType="CREATE" description="供应商编码" columnName="VENDOR_CODE" type="TEXT" length="200"/>  
+    <property id="vendorName" operateType="CREATE" description="供应商名称" columnName="VENDOR_NAME" type="TEXT" length="200"/>  
+    <property id="vendorShortName" operateType="CREATE" description="供应商简称" columnName="VENDOR_SHORTNAME" type="TEXT"/>  
+    <property id="venderVCCode" operateType="CREATE" description="供应商分类码" columnName="VENDOR_VCCODE" type="TEXT" length="200"/>  
+    <property id="vendorVcCode" operateType="CREATE" description="供应商分类编码" columnName="VENDOR_VCCODE" type="OBJECT"/>  
+    <property id="vendorProperty" operateType="CREATE" description="企业性质" columnName="VENDOR_PROPERTY" type="TEXT" length="100"/>  
+    <property id="vendorVocation" operateType="CREATE" description="所属行业" columnName="VENDOR_VOCATION" type="TEXT" length="100"/>  
+    <property id="vendorDegreeCode" operateType="CREATE" description="供应商等级" columnName="VENDOR_DEGREECODE" type="TEXT" length="100"/>  
+    <property id="vendorEvDate" operateType="CREATE" description="评估日期" columnName="VENDOR_EVDATE" type="DATE"/>  
+    <property id="vendorEvState" operateType="CREATE" description="评估状态" columnName="VENDOR_EVSTATE" type="INTEGER"/>  
+    <property id="vendorRegFund" operateType="CREATE" description="注册资金" columnName="VENDOR_REGFUND" type="TEXT" length="50"/>  
+    <property id="vendorCorporation" operateType="CREATE" description="法人代表" columnName="VENDOR_CORPORATION" type="TEXT" length="60"/>  
+    <property id="vendorDCCode" operateType="CREATE" description="地区" columnName="VENDOR_DCCODE" type="TEXT" length="20"/>  
+    <property id="vendorIntroduce" operateType="CREATE" description="企业简介" columnName="VENDOR_INTRODUCE" type="TEXT" length="2000"/>  
+    <property id="vendorMemo" operateType="CREATE" description="备注" columnName="VENDOR_MEMO" type="TEXT" length="2000"/>  
+    <property id="vendorWeb" operateType="CREATE" description="主页" columnName="VENDOR_WEB" type="TEXT" length="50"/>  
+    <property id="vendorEmail" operateType="CREATE" description="电子邮件" columnName="VENDOR_EMAIL" type="TEXT" length="30"/>  
+    <property id="vendorPhone" operateType="CREATE" description="电话" columnName="VENDOR_PHONE" type="TEXT" length="50"/>  
+    <property id="vendorMobile" operateType="CREATE" description="移动电话" columnName="VENDOR_MOBILE" type="TEXT" length="50"/>  
+    <property id="vendorFax" operateType="CREATE" description="传真" columnName="VENDOR_FAX" type="TEXT" length="20"/>  
+    <property id="vendorPostCode" operateType="CREATE" description="邮政编码" columnName="VENDOR_POSTCODE" type="TEXT" length="20"/>  
+    <property id="vendorAddress" operateType="CREATE" description="地址" columnName="VENDOR_ADDRESS" type="TEXT" length="200"/>  
+    <property id="vendorBank" operateType="CREATE" description="开户银行" columnName="VENDOR_BANK" type="TEXT" length="100"/>  
+    <property id="vendorAccount" operateType="CREATE" description="银行帐号" columnName="VENDOR_ACCOUNT" type="TEXT" length="50"/>  
+    <property id="vendorTradeCode" operateType="CREATE" description="工商登记号" columnName="VENDOR_TRADECODE" type="TEXT" length="20"/>  
+    <property id="vendorTaxCode" operateType="CREATE" description="税务登记号" columnName="VENDOR_TAXCODE" type="TEXT" length="20"/>  
+    <property id="vendorDeliveryCode" operateType="CREATE" description="发运方式" columnName="VENDOR_DELIVERYCODE" type="TEXT" length="20"/>  
+    <property id="vendorPayCondition" operateType="CREATE" description="付款条件" columnName="VENDOR_PAYCONDITION" type="TEXT" length="100"/>  
+    <property id="vendorCustomerID" operateType="CREATE" description="对应客户" columnName="VENDOR_CUSTOMERID" type="OBJECT"/>  
+    <property id="vendorDepartID" operateType="CREATE" description="分管部门" columnName="VENDOR_DEPARTID" type="INTEGER"/>  
+    <property id="vendorStaffID" operateType="CREATE" description="分管业务员" columnName="VENDOR_STAFFID" type="OBJECT"/>  
+    <property id="vendorState" operateType="CREATE" description="状态" columnName="VENDOR_STATE" type="SYSTEMCODE"/>  
+    <property id="vendorBillAddress" operateType="CREATE" description="开票地址" columnName="VENDOR_BILLADDRESS" type="TEXT" length="500"/> 
+  </model>  
+  <model id="BaseVendorDealInfo" tableName="S2BASE_VENDOR_DI" extends="AbstractDealInfoEntity"> 
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>  
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>  
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>  
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>  
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>  
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>  
+    <index name="IDX_BASEVENDOR_DiTABLEID" columns="tableInfoId" operateType="CREATE"/> 
+  </model>  
+  <model id="BaseCustomer" operateType="CREATE" extends="AbstractEcFullEntity" tableName="S2BASE_CUSTOMER"> 
+    <property id="customerCode" operateType="CREATE" description="客户编码" columnName="CUSTOMER_CODE" type="TEXT"/>  
+    <property id="customerName" operateType="CREATE" description="客户名称" columnName="CUSTOMER_NAME" type="TEXT"/>  
+    <property id="customerShortName" operateType="CREATE" description="客户简称" columnName="CUSTOMER_SHORTNAME" type="TEXT"/>  
+    <property id="createStaff" operateType="ALTER" orgColumnName="CREATE_STAFF_ID" columnName="APPTAB_INPUTERID" type="OBJECT"/>  
+    <property id="createTime" operateType="ALTER" orgColumnName="CREATE_TIME" columnName="APPTAB_INPUTTIME" type="DATETIME"/>  
+    <property id="effectStaff" operateType="ALTER" orgColumnName="EFFECT_STAFF_ID" columnName="APPTAB_EFFECTER" type="OBJECT"/>  
+    <property id="effectTime" operateType="ALTER" orgColumnName="EFFECT_TIME" columnName="APPTAB_EFFECTTIME" type="DATETIME"/>  
+    <property id="modifyStaff" operateType="ALTER" orgColumnName="MODIFY_STAFF_ID" columnName="APPTAB_DEALERID" type="OBJECT"/>  
+    <property id="modifyTime" operateType="ALTER" orgColumnName="MODIFY_TIME" columnName="APPTAB_DEALTIME" type="DATETIME"/>  
+    <property id="customerCcCode" operateType="CREATE" description="客户类型编码" columnName="CUSTOMER_CCCODE" type="OBJECT"/>  
+    <property id="customerState" operateType="CREATE" description="状态" columnName="CUSTOMER_STATE" type="SYSTEMCODE"/> 
+  </model>  
+  <model id="BaseCustomerDealInfo" tableName="S2BASE_CUSTOMER_DI" extends="AbstractDealInfoEntity"> 
+    <index id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>  
+    <index id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>  
+    <index id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>  
+    <index id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>  
+    <index id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>  
+    <index id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/> 
+  </model>  
+  <model id="CustomerShortName" operateType="CREATE" extends="AbstractEcPartEntity" tableName="CUSTOMER_SHORTNAME"/>  
+  <model id="BaseVendorClass" operateType="CREATE" extends="AbstractEcTreeFullEntity" tableName="S2BASE_VENDORCLASS"> 
+    <property id="layNo" operateType="ALTER" orgColumnName="LAY_NO" columnName="CC_LAYNO" type="INTEGER"/>  
+    <property id="layRec" operateType="ALTER" orgColumnName="LAY_REC" columnName="CC_LAYREC" type="LONGTEXT"/>  
+    <property id="name" operateType="CREATE" description="分类名称" columnName="VC_NAME" type="TEXT" length="256"/>  
+    <property id="code" operateType="CREATE" description="目录代码" columnName="PRODLIST_CODE" type="TEXT" length="200"/>  
+    <property id="vcMemo" operateType="CREATE" description="备注" columnName="VC_MEMO" type="TEXT" length="2000"/> 
+  </model>  
+  <model id="BaseVendorClassDealInfo" tableName="S2BASE_VENDORCLASS_DI" extends="AbstractDealInfoEntity"> 
+    <index id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>  
+    <index id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>  
+    <index id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>  
+    <index id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>  
+    <index id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>  
+    <index id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/> 
+  </model>  
+  <model id="BaseCustomerClass" operateType="CREATE" extends="AbstractEcTreeFullEntity" tableName="S2BASE_CUSTOMERCLASS"> 
+    <property id="ccNAME" operateType="CREATE" description="名称" columnName="CC_NAME" type="TEXT" length="256"/>  
+    <property id="ccCode" operateType="CREATE" description="编码" columnName="CC_CODE" type="TEXT" length="200"/>  
+    <property id="ccMemo" operateType="CREATE" description="备注" columnName="CC_MEMO" type="TEXT" length="2000"/> 
+  </model>  
+  <model id="BaseCustomerClassDealInfo" tableName="S2BASE_CUSTOMERCLASS_DI" extends="AbstractDealInfoEntity"> 
+    <index id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>  
+    <index id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>  
+    <index id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>  
+    <index id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>  
+    <index id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>  
+    <index id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/> 
+  </model>  
+  <model id="VendorClass" operateType="CREATE" extends="AbstractEcPartEntity" tableName="S2BASE_VENDORCLASS"> 
+    <property id="vendorMange" operateType="CREATE" description="供应商" columnName="VC_CODE" type="OBJECT"/> 
+  </model>  
+  <model id="BaseCustClass" operateType="CREATE" extends="AbstractEcPartEntity" tableName="S2BASE_CUSTOMERCLASS"> 
+    <property id="custCode" operateType="CREATE" description="编码" columnName="CC_CODE" type="OBJECT"/> 
+  </model>  
+  <model id="ProdList" operateType="CREATE" extends="AbstractEcFullEntity" tableName="S2BASE_PRODLIST"> 
+    <property id="category" operateType="CREATE" description="目录类别" columnName="PRODLIST_CATEGORY" type="INTEGER"/>  
+    <property id="prodListEnd" operateType="CREATE" description="是否最末级" columnName="PRODLIST_END" type="INTEGER"/>  
+    <property id="fun" operateType="CREATE" description="资金占用规划" columnName="PRODLIST_FUN" type="DECIMAL" scale="4"/>  
+    <property id="inheritProdID" operateType="CREATE" description="对应映射物品ID" columnName="PRODLIST_INHERITPRODID" type="OBJECT"/>  
+    <property id="prodListLayNo" operateType="CREATE" description="目录层次级别" columnName="PRODLIST_LAYNO" type="INTEGER"/>  
+    <property id="prodListLayRec" operateType="CREATE" description="目录层次记录" columnName="PRODLIST_LAYREC" type="TEXT"/>  
+    <property id="prodListMeno" operateType="CREATE" description="目录说明" columnName="PRODLIST_MEMO" type="TEXT"/>  
+    <property id="prodListName" operateType="CREATE" description="目录名称" columnName="PRODLIST_NAME" type="TEXT"/>  
+    <property id="productID" operateType="CREATE" description="存货ID" columnName="PRODLIST_PRODUCTID" type="OBJECT"/>  
+    <property id="prodListState" operateType="CREATE" description="目录状态" columnName="PRODLIST_STATE" type="INTEGER"/>  
+    <property id="prodListType" operateType="CREATE" description="目录类型" columnName="PRODLIST_TYPE" type="INTEGER"/> 
+  </model>  
+  <model id="ProdListDealInfo" tableName="S2BASE_PRODLIST_DI" extends="AbstractDealInfoEntity"> 
+    <index id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>  
+    <index id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>  
+    <index id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>  
+    <index id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>  
+    <index id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>  
+    <index id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/> 
+  </model>  
+  <model id="BaseProdList" operateType="CREATE" extends="AbstractEcTreeFullEntity" tableName="S2BASE_PRODLIST"> 
+    <property id="prodListCode" operateType="CREATE" description="目录代码" columnName="PRODLIST_CODE" type="TEXT"/>  
+    <property id="prodList" operateType="CREATE" description="目录说明" columnName="PRODLIST_MEMO" type="TEXT"/>  
+    <property id="prodLidtEnd" operateType="CREATE" description="是否最末级" columnName="PRODLIST_END" type="INTEGER"/> 
+  </model>  
+  <model id="BaseProdListDealInfo" tableName="S2BASE_PRODLIST_DI" extends="AbstractDealInfoEntity"> 
+    <index id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>  
+    <index id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>  
+    <index id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>  
+    <index id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>  
+    <index id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>  
+    <index id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/> 
+  </model> 
+</Models>

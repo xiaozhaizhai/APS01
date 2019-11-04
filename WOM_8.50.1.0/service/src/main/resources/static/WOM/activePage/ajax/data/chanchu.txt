@@ -1,0 +1,157 @@
+{
+    "data": [
+        {
+            "productID": {
+                "productCode": "2018AS0904001",
+                "productName": "百草枯"
+            },
+            "reportDate": 1548307656438,
+            "reportStaff": {
+                "name": "dingding"
+            },
+            "taskReportingPartList": [
+                {
+                    "batchNum": "batch_any114",
+                    "remark": null,
+                    "reportDate": 1548307656438,
+                    "product": {
+                        "productSpecif" : "食品级"
+                    } ,
+                    "reportNum": 122,
+                    "reportStaff": {
+                        "name": "dingding"
+                    },
+                    "storeID": {
+                        "placeSetCode": "00002",
+                        "placeSetName": "00002store001"
+                    }
+                },
+                {
+                    "batchNum": "batch_any115",
+                    "remark": null,
+                    "reportDate": 1548307656598,
+                    "product": {
+                        "productSpecif" : "工业级"
+                    } ,
+                    "reportNum": 80,
+                    "reportStaff": {
+                        "name": "dingding"
+                    },
+                    "storeID": {
+                        "placeSetCode": "00002",
+                        "placeSetName": "00002store001"
+                    }
+                }
+            ],
+            "wareID": {
+                "cargoStatue": {
+                    "id": "storageState/storageState1"
+                },
+                "wareCode": "factor001",
+                "wareName": "一号仓库"
+            }
+        },
+        {
+            "productID": {
+                "productCode": "2018AS0904001",
+                "productName": "百草枯"
+            },
+            "reportDate": 1548307656438,
+            "reportStaff": {
+                "name": "dingding"
+            },
+            "taskReportingPartList": [
+                {
+                    "batchNum": "batch_any114",
+                    "remark": null,
+                    "reportDate": 1548307656438,
+                    "product": {
+                        "productSpecif" : "食品级"
+                    } ,
+                    "reportNum": 122,
+                    "reportStaff": {
+                        "name": "dingding"
+                    },
+                    "storeID": {
+                        "placeSetCode": "00002",
+                        "placeSetName": "00002store001"
+                    }
+                },
+                {
+                    "batchNum": "batch_any115",
+                    "remark": null,
+                    "reportDate": 1548307656598,
+                    "product": {
+                        "productSpecif" : "工业级"
+                    } ,
+                    "reportNum": 80,
+                    "reportStaff": {
+                        "name": "dingding"
+                    },
+                    "storeID": {
+                        "placeSetCode": "00002",
+                        "placeSetName": "00002store001"
+                    }
+                }
+            ],
+            "wareID": {
+                "cargoStatue": {
+                    "id": "storageState/storageState1"
+                },
+                "wareCode": "factor001",
+                "wareName": "一号仓库"
+            }
+        },
+        {
+            "productID": {
+                "productCode": "2018AS0904001",
+                "productName": "百草枯"
+            },
+            "reportDate": 1548307656438,
+            "reportStaff": {
+                "name": "dingding"
+            },
+            "taskReportingPartList": [
+                {
+                    "batchNum": "batch_any114",
+                    "remark": null,
+                    "reportDate": 1548307656438,
+                    "product": {
+                        "productSpecif" : "食品级"
+                    } ,
+                    "reportNum": 122,
+                    "reportStaff": {
+                        "name": "dingding"
+                    },
+                    "storeID": {
+                        "placeSetCode": "00002",
+                        "placeSetName": "00002store001"
+                    }
+                },
+                {
+                    "batchNum": "batch_any115",
+                    "remark": null,
+                    "reportDate": 1548307656598,
+                    "product": {
+                        "productSpecif" : "工业级"
+                    } ,
+                    "reportNum": 80,
+                    "reportStaff": {
+                        "name": "dingding"
+                    },
+                    "storeID": {
+                        "placeSetCode": "00002",
+                        "placeSetName": "00002store001"
+                    }
+                }
+            ],
+            "wareID": {
+                "cargoStatue": {
+                    "id": "storageState/storageState1"
+                },
+                "wareCode": "factor001",
+                "wareName": "一号仓库"
+            }
+        }
+    ]
+}

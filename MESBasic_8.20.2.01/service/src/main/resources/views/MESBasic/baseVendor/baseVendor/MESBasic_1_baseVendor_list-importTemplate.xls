@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
+<DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+	<Created>1899-12-30T00:00:00</Created>
+</DocumentProperties>
+<ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+	<WindowWidth>18800</WindowWidth>
+	<WindowHeight>10540</WindowHeight>
+	<ProtectStructure>False</ProtectStructure>
+	<ProtectWindows>False</ProtectWindows>
+</ExcelWorkbook>
+<Styles>
+	<Style ss:ID="Default" ss:Name="Normal">
+		<Alignment/>
+		<Borders/>
+		<Font ss:FontName="Arial" x:CharSet="134" ss:Size="12"/>
+		<Interior/>
+		<NumberFormat/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s4">
+		<NumberFormat ss:Format="_ * #,##0.00_ ;_ * -#,##0.00_ ;_ * &quot;-&quot;??_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s5">
+		<NumberFormat ss:Format="_ &quot;￥&quot;* #,##0.00_ ;_ &quot;￥&quot;* -#,##0.00_ ;_ &quot;￥&quot;* &quot;-&quot;??_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s2">
+		<NumberFormat ss:Format="0%"/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s1">
+		<NumberFormat ss:Format="_ * #,##0_ ;_ * -#,##0_ ;_ * &quot;-&quot;_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s3">
+		<NumberFormat ss:Format="_ &quot;￥&quot;* #,##0_ ;_ &quot;￥&quot;* -#,##0_ ;_ &quot;￥&quot;* &quot;-&quot;_ ;_ @_ "/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s6"/>
+	<Style ss:ID="s7">
+		<NumberFormat ss:Format="yyyy-m-d;-;-;@"/>
+		<Protection/>
+	</Style>
+	<Style ss:ID="s8">
+		<NumberFormat ss:Format="yyyy-m-d\ H:mm;-;-;@"/>
+		<Protection/>
+	</Style>
+	
+		<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorCode">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorName">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorPostCode">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorShortName">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorVocation">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorVcCode">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_ownerPosition">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_ownerStaff">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorDegreeCode">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorFax">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorEvState">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorDepartID">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorPhone">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorAccount">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorAddress">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorDCCode">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorIntroduce">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorBank">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorMemo">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorProperty">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorTaxCode">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorRegFund">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorDeliveryCode">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorState">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorPayCondition">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorEmail">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorTradeCode">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorMobile">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorCorporation">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorWeb">
+		<Protection/>
+	</Style>
+	<Style ss:ID="MESBasic_1_baseVendor_BaseVendor_vendorEvDate">
+		<Protection/>
+	</Style>
+	
+</Styles>
+<Worksheet ss:Name="sheet1">
+	<Table ss:ExpandedColumnCount="256" ss:ExpandedRowCount="3" x:FullColumns="1" x:FullRows="1" ss:DefaultColumnWidth="54" ss:DefaultRowHeight="16.5">
+	<Column ss:Index="1" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorCode"/>
+	<Column ss:Index="2" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorName"/>
+	<Column ss:Index="3" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorPostCode"/>
+	<Column ss:Index="4" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorShortName"/>
+	<Column ss:Index="5" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorVocation"/>
+	<Column ss:Index="6" ss:StyleID=""/>
+	<Column ss:Index="7" ss:StyleID=""/>
+	<Column ss:Index="8" ss:StyleID=""/>
+	<Column ss:Index="9" ss:StyleID=""/>
+	<Column ss:Index="10" ss:StyleID=""/>
+	<Column ss:Index="11" ss:StyleID=""/>
+	<Column ss:Index="12" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorDegreeCode"/>
+	<Column ss:Index="13" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorFax"/>
+	<Column ss:Index="14" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorEvState"/>
+	<Column ss:Index="15" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorDepartID"/>
+	<Column ss:Index="16" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorPhone"/>
+	<Column ss:Index="17" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorAccount"/>
+	<Column ss:Index="18" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorAddress"/>
+	<Column ss:Index="19" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorDCCode"/>
+	<Column ss:Index="20" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorIntroduce"/>
+	<Column ss:Index="21" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorBank"/>
+	<Column ss:Index="22" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorMemo"/>
+	<Column ss:Index="23" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorProperty"/>
+	<Column ss:Index="24" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorTaxCode"/>
+	<Column ss:Index="25" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorRegFund"/>
+	<Column ss:Index="26" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorDeliveryCode"/>
+	<Column ss:Index="27" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorState"/>
+	<Column ss:Index="28" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorPayCondition"/>
+	<Column ss:Index="29" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorEmail"/>
+	<Column ss:Index="30" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorTradeCode"/>
+	<Column ss:Index="31" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorMobile"/>
+	<Column ss:Index="32" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorCorporation"/>
+	<Column ss:Index="33" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorWeb"/>
+	<Column ss:Index="34" ss:StyleID="MESBasic_1_baseVendor_BaseVendor_vendorEvDate"/>
+	
+		<Row ss:AutoFitHeight="0">
+				<Cell><Data ss:Type="String">供应商编码</Data></Cell>
+				<Cell><Data ss:Type="String">供应商名称</Data></Cell>
+				<Cell><Data ss:Type="String">邮政编码</Data></Cell>
+				<Cell><Data ss:Type="String">供应商简称</Data></Cell>
+				<Cell><Data ss:Type="String">所属行业</Data></Cell>
+				<Cell><Data ss:Type="String">供应商分类编码.ID</Data></Cell>
+				<Cell><Data ss:Type="String">供应商分类编码.版本</Data></Cell>
+				<Cell><Data ss:Type="String">所有者岗位.岗位编码</Data></Cell>
+				<Cell><Data ss:Type="String">所有者岗位.岗位名称</Data></Cell>
+				<Cell><Data ss:Type="String">拥有者.人员编码</Data></Cell>
+				<Cell><Data ss:Type="String">拥有者.员工姓名</Data></Cell>
+				<Cell><Data ss:Type="String">供应商等级</Data></Cell>
+				<Cell><Data ss:Type="String">传真</Data></Cell>
+				<Cell><Data ss:Type="String">评估状态</Data></Cell>
+				<Cell><Data ss:Type="String">分管部门</Data></Cell>
+				<Cell><Data ss:Type="String">电话</Data></Cell>
+				<Cell><Data ss:Type="String">银行帐号</Data></Cell>
+				<Cell><Data ss:Type="String">地址</Data></Cell>
+				<Cell><Data ss:Type="String">地区</Data></Cell>
+				<Cell><Data ss:Type="String">企业简介</Data></Cell>
+				<Cell><Data ss:Type="String">开户银行</Data></Cell>
+				<Cell><Data ss:Type="String">备注</Data></Cell>
+				<Cell><Data ss:Type="String">企业性质</Data></Cell>
+				<Cell><Data ss:Type="String">税务登记号</Data></Cell>
+				<Cell><Data ss:Type="String">注册资金</Data></Cell>
+				<Cell><Data ss:Type="String">发运方式</Data></Cell>
+				<Cell><Data ss:Type="String">状态</Data></Cell>
+				<Cell><Data ss:Type="String">付款条件</Data></Cell>
+				<Cell><Data ss:Type="String">电子邮件</Data></Cell>
+				<Cell><Data ss:Type="String">工商登记号</Data></Cell>
+				<Cell><Data ss:Type="String">移动电话</Data></Cell>
+				<Cell><Data ss:Type="String">法人代表</Data></Cell>
+				<Cell><Data ss:Type="String">主页</Data></Cell>
+				<Cell><Data ss:Type="String">评估日期</Data></Cell>
+		</Row>
+	</Table>
+	<WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+		<PageSetup>
+			<Header x:Margin="0.511805555555556"/>
+			<Footer x:Margin="0.511805555555556"/>
+		</PageSetup>
+		<Print>
+			<HorizontalResolution>1200</HorizontalResolution>
+			<VerticalResolution>1200</VerticalResolution>
+		</Print>
+			<Selected/>
+			<PageBreakZoom>100</PageBreakZoom>
+		<Panes>
+			<Pane>
+				<Number>3</Number>
+				<ActiveRow>0</ActiveRow>
+				<ActiveCol>2</ActiveCol>
+				<RangeSelection>R1C3</RangeSelection>
+			</Pane>
+		</Panes>
+		<ProtectObjects>False</ProtectObjects>
+		<ProtectScenarios>False</ProtectScenarios>
+	</WorksheetOptions>
+</Worksheet>
+</Workbook>

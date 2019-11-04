@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<module>
+  <id>1000</id>
+  <version>1.0.0.0</version>
+  <interface>
+    <!--模块接口列表-->
+	<method>
+      <name>pims.factory.getstructureroot</name>
+      <url>public/factory/api.action</url>
+    </method>   
+    <method>
+      <name>pims.factory.getstructure</name>
+      <url>public/factory/api.action</url>
+    </method>    
+	<method>
+      <name>pims.factory.getemployees</name>
+      <url>public/factory/api.action</url>     
+    </method> 
+	<method>
+      <name>pims.factory.getallemployees</name>
+      <url>public/factory/api.action</url>     
+    </method> 
+	<method>
+      <name>pims.factory.getdevices</name>
+      <url>public/factory/api.action</url>      
+    </method> 
+	<method>
+      <name>pims.factory.getmateriel</name>
+      <url>public/factory/api.action</url> 
+    </method> 
+	<method>
+      <name>pims.factory.getstation</name>
+      <url>public/factory/api.action</url> 
+    </method> 
+	<method>
+      <name>pims.factory.addemployee</name>
+      <url>public/factory/api.action</url> 
+    </method>
+	<method>
+      <name>pims.factory.modifyemployee</name>
+      <url>public/factory/api.action</url> 
+    </method>
+	<method>
+      <name>pims.factory.removeemployees</name>
+      <url>public/factory/api.action</url> 
+    </method>
+	<method>
+      <name>pims.factory.getnodetypes</name>
+      <url>public/factory/api.action</url> 
+    </method>
+	<method>
+      <name>pims.factory.getstructurebynodetype</name>
+      <url>public/factory/api.action</url> 
+    </method>
+	<method>
+      <name>pims.factory.syncemployees</name>
+      <url>public/factory/api.action</url> 
+    </method>
+    <method>
+      <name>pims.base.getallemployees</name>
+      <url>public/factory/api.action</url> 
+    </method>
+    <method>
+      <name>pims.base.getemployee</name>
+      <url>public/factory/api.action</url> 
+    </method>
+<!--     <method> -->
+<!--       <name>pims.user.checkprivileges</name> -->
+<!--       <url>public/factory/api.action</url>  -->
+<!--     </method> -->
+<!--     <method> -->
+<!--       <name>pims.user.getallprivileges</name> -->
+<!--       <url>public/factory/api.action</url>  -->
+<!--     </method> -->
+  </interface>
+</module>

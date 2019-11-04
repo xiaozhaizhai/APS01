@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models> 
+  <model id="Product" operateType="ALTER" tableName="S2BASE_PRODUCT"> 
+    <property id="pieceNum" operateType="ALTER" columnName="PIECE_NUM" description="件重量" type="DECIMAL" scale="6"/> 
+  </model>  
+  <model id="Equipment" operateType="ALTER" tableName="EAM_BASEINFO">
+    <property id="eamProduceCode" operateType="ALTER" columnName="EAM_PRODUCECODE" description="出厂编号" type="TEXT" length="2000"/>
+    <property id="eamProduceDate" operateType="ALTER" columnName="EAM_PRODUCEDATE" description="出厂日期" type="DATE"/>
+  </model>
+</Models>

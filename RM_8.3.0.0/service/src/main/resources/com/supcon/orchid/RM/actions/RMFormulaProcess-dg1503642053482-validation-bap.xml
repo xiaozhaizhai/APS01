@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1487295011793"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1487295011793", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="longTime">
+		<field-validator type="double_plus">
+		<message>${getText("ec.common.validate.double.plus.error", {"RM.propertydisplayName.randon1487292241411"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="procSort">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1539849930820", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="meno">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1487292273721", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="batchUnitID">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1493729983867", "256"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../MESBasic_8.20.2.01 (1)/MESBasic.iml" filepath="$PROJECT_DIR$/../MESBasic_8.20.2.01 (1)/MESBasic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../RM_8.3.0.0/RM.iml" filepath="$PROJECT_DIR$/../RM_8.3.0.0/RM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WOM_8.50.1.0/WOM.iml" filepath="$PROJECT_DIR$/../WOM_8.50.1.0/WOM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../X6Basic_8.20.2.01/X6Basic.iml" filepath="$PROJECT_DIR$/../X6Basic_8.20.2.01/X6Basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../MESBasic_8.20.2.01 (1)/core/com.supcon.orchid.MESBasic.core.iml" filepath="$PROJECT_DIR$/../MESBasic_8.20.2.01 (1)/core/com.supcon.orchid.MESBasic.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../MESBasic_8.20.2.01 (1)/service/com.supcon.orchid.MESBasic.service.iml" filepath="$PROJECT_DIR$/../MESBasic_8.20.2.01 (1)/service/com.supcon.orchid.MESBasic.service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../RM_8.3.0.0/core/com.supcon.orchid.RM.core.iml" filepath="$PROJECT_DIR$/../RM_8.3.0.0/core/com.supcon.orchid.RM.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../RM_8.3.0.0/service/com.supcon.orchid.RM.service.iml" filepath="$PROJECT_DIR$/../RM_8.3.0.0/service/com.supcon.orchid.RM.service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WOM_8.50.1.0/core/com.supcon.orchid.WOM.core.iml" filepath="$PROJECT_DIR$/../WOM_8.50.1.0/core/com.supcon.orchid.WOM.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WOM_8.50.1.0/service/com.supcon.orchid.WOM.service.iml" filepath="$PROJECT_DIR$/../WOM_8.50.1.0/service/com.supcon.orchid.WOM.service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../X6Basic_8.20.2.01/core/com.supcon.orchid.X6Basic.core.iml" filepath="$PROJECT_DIR$/../X6Basic_8.20.2.01/core/com.supcon.orchid.X6Basic.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../X6Basic_8.20.2.01/service/com.supcon.orchid.X6Basic.service.iml" filepath="$PROJECT_DIR$/../X6Basic_8.20.2.01/service/com.supcon.orchid.X6Basic.service.iml" />
+    </modules>
+  </component>
+</project>

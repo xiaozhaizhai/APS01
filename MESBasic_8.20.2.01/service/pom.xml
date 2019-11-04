@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.supcon.orchid</groupId>
+		<artifactId>MESBasic</artifactId>
+		<version>8.20.2.01</version>
+	</parent>
+	<groupId>com.supcon.orchid.MESBasic</groupId>
+	<artifactId>com.supcon.orchid.MESBasic.service</artifactId>
+	<name>MESBasic Services</name>	
+
+	<dependencies>
+		<dependency>
+			<groupId>com.supcon.orchid.MESBasic</groupId>
+			<artifactId>com.supcon.orchid.MESBasic.core</artifactId>
+			<version>8.20.2.01</version>
+		</dependency>
+		<dependency>
+			<groupId>com.supcon.orchid.foundation</groupId>
+			<artifactId>com.supcon.orchid.foundation.core</artifactId>
+			<version>${orchid.foundation.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.supcon.orchid.container</groupId>
+			<artifactId>com.supcon.orchid.container.mvc</artifactId>
+			<version>${orchid.container.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.supcon.orchid.workflow</groupId>
+			<artifactId>com.supcon.orchid.workflow.core</artifactId>
+			<version>${orchid.workflow.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.supcon.orchid.script</groupId>
+			<artifactId>com.supcon.orchid.script.core</artifactId>
+			<version>${orchid.script.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.supcon.orchid.entityconf</groupId>
+			<artifactId>com.supcon.orchid.entityconf.core</artifactId>
+			<version>${orchid.entityconf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>com.springsource.javax.persistence</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>com.supcon.orchid.org.hibernate</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.spring-library</artifactId>
+			<type>libd</type>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>com.supcon.orchid.freemarker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>com.springsource.slf4j.api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts.xwork</groupId>
+			<artifactId>com.supcon.orchid.xwork-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>com.supcon.orchid.struts2-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>com.supcon.orchid.struts2-convention-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>com.springsource.javax.servlet</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>com.springsource.javax.servlet.jsp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.ognl</groupId>
+			<artifactId>com.supcon.orchid.ognl</artifactId>
+		</dependency>
+		
+		<dependency>
+		  <groupId>com.supcon.bap.kernel</groupId>
+		  <artifactId>bap-license-api</artifactId>
+		  <version>1.0.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.supcon.orchid.X6Basic</groupId>
+			<artifactId>com.supcon.orchid.X6Basic.service</artifactId>
+			<version>8.20.2.01</version>
+		</dependency>
+		<!-- CUSTOM CODE START(pom,service,,MESBasic_1) -->
+<!-- 自定义代码 -->
+  <dependency>
+   <groupId>org.osgi</groupId>
+   <artifactId>org.osgi.enterprise</artifactId>
+  </dependency>
+<!-- CUSTOM CODE END -->
+	</dependencies>
+	
+	<!-- CUSTOM CODE START(pom,service-extra,,MESBasic_1) -->
+<!-- 自定义代码 -->
+
+<!-- CUSTOM CODE END -->
+</project>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="proActAndBatState.activeBatchStateID.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"publicSet.propertydisplayName.randon1509427955424"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+
+	<field name="proActAndBatState.activeEnd.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.randon1509445866110"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="proActAndBatState.remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1509445670888", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

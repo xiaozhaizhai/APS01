@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Export-Package: com.supcon.mlp.lib.util;version="1";uses:="com.supcon.
+ orchid.foundation.entities,javax.script",com.supcon.orchid.MESBasic.e
+ ntities;version="1";uses:="com.supcon.orchid.X6Basic.entities,com.sup
+ con.orchid.annotation,com.supcon.orchid.foundation.entities,com.supco
+ n.orchid.orm.entities,javax.persistence,javax.xml.bind.annotation,org
+ .hibernate.annotations",com.supcon.orchid.MESBasic.services;version="
+ 1";uses:="com.supcon.orchid.MESBasic.entities,com.supcon.orchid.ec.se
+ rvices,com.supcon.orchid.services,javax.ws.rs,org.hibernate,org.hiber
+ nate.criterion",com.supocn.mlp.lib.math;version="1";uses:="javax.scri
+ pt"
+Import-Bundle: com.supcon.orchid.org.hibernate;version="[3.4.0,3.6.0)"
+ ,com.springsource.javassist;version="[3.9,4.0)"
+Bundle-Vendor: ZHEJIANG SUPCON TECHNOLOGY CO.,LTD.
+Bundle-Version: 1
+Tool: Bundlor 1.1.2.RELEASE
+Bundle-Name: MESBasic Core
+Bundle-ManifestVersion: 2
+Import-Package: com.supcon.orchid,com.supcon.orchid.X6Basic.entities;v
+ ersion="1.0",com.supcon.orchid.annotation,com.supcon.orchid.ec.entiti
+ es;version="[2.0,3.0)",com.supcon.orchid.ec.services,com.supcon.orchi
+ d.foundation.entities;version="[2.0,3.0)",com.supcon.orchid.orm.entit
+ ies,com.supcon.orchid.services,com.supcon.orchid.tree;version="[2.0,3
+ .0)",com.supcon.orchid.utils,javax.persistence,javax.script,javax.ws.
+ rs,javax.xml.bind.annotation,org.hibernate,org.hibernate.annotations,
+ org.hibernate.criterion
+Bundle-SymbolicName: com.supcon.orchid.MESBasic.core
+Orchid-EcGenerated: true
+

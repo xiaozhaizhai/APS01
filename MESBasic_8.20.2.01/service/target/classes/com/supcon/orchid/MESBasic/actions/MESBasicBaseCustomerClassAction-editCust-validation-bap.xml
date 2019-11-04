@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="baseCustomerClass.ccCode">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.randon1449628448449"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">50</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449628448449", "50"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomerClass.ccName">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.randon1449628587988"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449628587988", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomerClass.ccMemo">
+		<field-validator type="stringlength">
+			<param name="maxLength">500</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449628553060", "500"})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="factoryModel.code">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1419233767027"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1419233767027", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="factoryModel.name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion141923322393782"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">100</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion141923322393782", "100"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<field name="factoryModel.description">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1419233695132", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1460956815236">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	<field name="_complex_complex_datagrid_1490261790624">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1460959839290">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1460959996094">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1460955592809List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1460955592809</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("MESBasic.modelname.randon1460950588653")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+	<field name="dg1460958585675List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1460958585675</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("MESBasic.modelname.randon1460950269640")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+	<field name="dg1460958766002List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1460958766002</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("MESBasic.modelname.randon1460950716828")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+	<field name="dg1490261761014List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1490261761014</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("MESBasic.modelname.randon1490261243605")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

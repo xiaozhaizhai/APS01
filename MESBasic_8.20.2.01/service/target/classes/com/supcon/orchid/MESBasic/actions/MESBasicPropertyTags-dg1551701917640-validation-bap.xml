@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	
+
+	
+
+	<field name="remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1551700197254", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+</validators>

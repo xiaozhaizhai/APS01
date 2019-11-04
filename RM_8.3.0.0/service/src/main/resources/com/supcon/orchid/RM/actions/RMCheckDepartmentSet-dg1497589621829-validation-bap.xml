@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="activeID.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1487295011793"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="factoryID.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.radion14192323937821111"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="applyCheckDept.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1497583157950"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="applyCheckStaff.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1497583193083"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="exeCheckDept.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1497583228588"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1497583245440", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>

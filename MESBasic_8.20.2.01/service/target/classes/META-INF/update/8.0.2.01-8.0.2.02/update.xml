@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models> 
+  <model id="FactoryModel" operateType="ALTER" tableName="factory_tbcompanystructure"> 
+    <property id="isEbr" operateType="CREATE" columnName="IS_EBR" description="是否同步EBR, 目前生产模块中有些生产线是需要和ebr进行数据交互，有些是不需要和ebr进行交互，工厂模型生产线中增加一个字段用来关联是否需要同步到ebr" type="BOOLEAN"/> 
+  </model>  
+  <model id="Ware" operateType="ALTER" tableName="MATERIAL_WARES"> 
+    <property id="wareClass" operateType="CREATE" columnName="WARE_CLASS" description="仓库分类" type="LONG"/> 
+  </model>  
+  <model id="Product" operateType="ALTER" tableName="S2BASE_PRODUCT">
+    <property id="isSparePart" operateType="CREATE" columnName="IS_SPARE_PART" description="是否备件" type="BOOLEAN"/>
+  </model>
+</Models>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bapSystemCode>
+  <systementity code="product_checkMethod" moduleCode="MESBasic_1" version="0" valid="true" sysDefault="false">
+    <systemcode id="product_checkMethod/3" code="3" value="MESBasic.systemCodevalue.randon1539074103926" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="9528" seqId="9528" fullPathName="免检"/>
+  </systementity>
+</bapSystemCode>

@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Export-Package: com.supcon.orchid.X6Basic.entities;version="1.0";uses:
+ ="com.supcon.orchid.annotation,com.supcon.orchid.foundation.entities,
+ com.supcon.orchid.orm.entities,javax.persistence,javax.xml.bind.annot
+ ation,org.apache.solr.client.solrj.beans,org.hibernate.annotations",c
+ om.supcon.orchid.X6Basic.services;version="1.0";uses:="com.supcon.orc
+ hid.X6Basic.entities,com.supcon.orchid.ec.services,com.supcon.orchid.
+ services,javax.ws.rs,org.hibernate.criterion"
+Import-Bundle: com.supcon.orchid.org.hibernate;version="[3.4.0,3.6.0)"
+ ,com.springsource.javassist;version="[3.9,4.0)"
+Bundle-Vendor: ZHEJIANG SUPCON TECHNOLOGY CO.,LTD.
+Bundle-Version: 1.0
+Tool: Bundlor 1.1.2.RELEASE
+Bundle-Name: X6Basic Core
+Bundle-ManifestVersion: 2
+Import-Package: com.supcon.orchid,com.supcon.orchid.annotation,com.sup
+ con.orchid.ec.services,com.supcon.orchid.foundation.entities;version=
+ "[2.0,3.0)",com.supcon.orchid.orm.entities,com.supcon.orchid.services
+ ,com.supcon.orchid.tree;version="[2.0,3.0)",com.supcon.orchid.utils,j
+ avax.persistence,javax.ws.rs,javax.xml.bind.annotation,org.apache.sol
+ r.client.solrj.beans,org.hibernate.annotations,org.hibernate.criterio
+ n
+Bundle-SymbolicName: com.supcon.orchid.X6Basic.core
+Orchid-EcGenerated: true
+

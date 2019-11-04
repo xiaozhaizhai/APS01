@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: WOM
+Bundle-SymbolicName: WOM
+Bundle-Version: 7.5.0.0
+Bundle-Vendor: ZHEJIANG SUPCON TECHNOLOGY CO.,LTD.

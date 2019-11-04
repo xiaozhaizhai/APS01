@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="productId.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"WOM.propertydisplayName.radion14157726448331"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="batchNum">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1489977087708", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="useNum">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertyshowName.randon1566367515055.flag"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertyshowName.randon1566367515055.flag", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="hasDoneNum">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertyshowName.randon1567751630613.flag"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertyshowName.randon1567751630613.flag", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	<field name="remark">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"WOM.propertydisplayName.randon1489977145770", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="prepareNum">
+        <field-validator type="double">
+           <message>${getText("ec.common.validate.double.format.error", {"WOM.propertydisplayName.randon1489977119890"})}</message>
+        </field-validator>
+        <field-validator type="number_precision">
+			<param name="precision">19</param>
+			<param name="scale">6</param>
+        	<message>${getText("ec.common.validate.double.format.error1", {"WOM.propertydisplayName.randon1489977119890", 13, 6})}</message>
+        </field-validator>
+	</field>
+	
+
+	
+
+	
+</validators>

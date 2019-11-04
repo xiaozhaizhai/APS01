@@ -1,0 +1,726 @@
+package com.supcon.orchid.MESBasic.services;
+import java.lang.reflect.InvocationTargetException;
+import java.io.Serializable;
+import java.util.Map;
+import java.util.Date;
+import org.hibernate.criterion.Criterion;
+import java.util.List;
+import com.supcon.orchid.services.IBusinessKeyService;
+import com.supcon.orchid.services.IModelTreeLayRecService;
+import com.supcon.orchid.services.Page;
+import com.supcon.orchid.ec.services.DataGridService;
+import com.supcon.orchid.ec.entities.Event;
+import com.supcon.orchid.ec.entities.View;
+import com.supcon.orchid.ec.entities.DataGrid;
+import com.supcon.orchid.ec.entities.Model;
+import com.supcon.orchid.ec.entities.Property;
+import org.hibernate.criterion.DetachedCriteria;
+import com.supcon.orchid.audit.entities.SignatureLog;
+
+import com.supcon.orchid.MESBasic.entities.MESBasicFactoryModelDealInfo;
+import com.supcon.orchid.utils.Param;
+import com.supcon.orchid.ec.entities.EntityTableInfo;
+import com.supcon.orchid.MESBasic.entities.MESBasicBatchData;
+import com.supcon.orchid.MESBasic.entities.MESBasicCommDealInfo;
+import com.supcon.orchid.MESBasic.entities.MESBasicCprodAtt;
+import com.supcon.orchid.MESBasic.entities.MESBasicProdDealInfo;
+import com.supcon.orchid.MESBasic.entities.MESBasicProdLevel;
+import com.supcon.orchid.MESBasic.entities.MESBasicProdResetDaily;
+import com.supcon.orchid.MESBasic.entities.MESBasicProdSecUnit;
+import com.supcon.orchid.MESBasic.entities.MESBasicProduct;
+import com.supcon.orchid.MESBasic.entities.MESBasicProductCost;
+import com.supcon.orchid.MESBasic.entities.MESBasicBatchDealInfo;
+import com.supcon.orchid.MESBasic.entities.MESBasicBatchInformation;
+import com.supcon.orchid.MESBasic.entities.MESBasicBatchRelationship;
+import com.supcon.orchid.MESBasic.entities.MESBasicClearSinget;
+import com.supcon.orchid.MESBasic.entities.MESBasicBaseVendorClass;
+import com.supcon.orchid.MESBasic.entities.MESBasicInterfaceSyncLog;
+import com.supcon.orchid.MESBasic.entities.MESBasicFactoryModel;
+import com.supcon.orchid.MESBasic.entities.MESBasicObjBatContainer;
+import com.supcon.orchid.MESBasic.entities.MESBasicObjEquipment;
+import com.supcon.orchid.MESBasic.entities.MESBasicObjPostion;
+import com.supcon.orchid.MESBasic.entities.MESBasicObjProduct;
+import com.supcon.orchid.MESBasic.entities.MESBasicObjTeam;
+import com.supcon.orchid.MESBasic.entities.MESBasicObjWareStore;
+import com.supcon.orchid.MESBasic.entities.MESBasicPositionDeal;
+import com.supcon.orchid.MESBasic.entities.MESBasicDepartmentWare;
+import com.supcon.orchid.MESBasic.entities.MESBasicFacWareMaterial;
+import com.supcon.orchid.MESBasic.entities.MESBasicNodeType;
+import com.supcon.orchid.MESBasic.entities.MESBasicCustomerMaterial;
+import com.supcon.orchid.MESBasic.entities.MESBasicItemRecord;
+import com.supcon.orchid.MESBasic.entities.MESBasicMESServices;
+import com.supcon.orchid.MESBasic.entities.MESBasicServiceLogger;
+import com.supcon.orchid.MESBasic.entities.MESBasicPotData;
+import com.supcon.orchid.MESBasic.entities.MESBasicEquipment;
+import com.supcon.orchid.MESBasic.entities.MESBasicBaseVendor;
+import com.supcon.orchid.MESBasic.entities.MESBasicContainer;
+import com.supcon.orchid.MESBasic.entities.MESBasicContainerExp;
+import com.supcon.orchid.MESBasic.entities.MESBasicFlowRecord;
+import com.supcon.orchid.MESBasic.entities.MESBasicFunctionInfo;
+import com.supcon.orchid.MESBasic.entities.MESBasicMaintainLog;
+import com.supcon.orchid.MESBasic.entities.MESBasicPropertyTags;
+import com.supcon.orchid.MESBasic.entities.MESBasicStoreSet;
+import com.supcon.orchid.MESBasic.entities.MESBasicArea;
+import com.supcon.orchid.MESBasic.entities.MESBasicPlaceManage;
+import com.supcon.orchid.MESBasic.entities.MESBasicWareClass;
+import com.supcon.orchid.MESBasic.entities.MESBasicProdAttribute;
+import com.supcon.orchid.MESBasic.entities.MESBasicBaseProdList;
+import com.supcon.orchid.MESBasic.entities.MESBasicBaseCustomer;
+import com.supcon.orchid.MESBasic.entities.MESBasicBaseCustomerClass;
+import com.supcon.orchid.MESBasic.entities.MESBasicProdattrel;
+import com.supcon.orchid.MESBasic.entities.MESBasicInterfaceLog;
+import com.supcon.orchid.MESBasic.entities.MESBasicWare;
+import com.supcon.orchid.MESBasic.entities.MESBasicPurchGroup;
+import com.supcon.orchid.MESBasic.entities.MESBasicPurchGroupMember;
+import com.supcon.orchid.MESBasic.entities.MESBasicDataTrans;
+import com.supcon.orchid.MESBasic.entities.MESBasicItemSeq;
+import com.supcon.orchid.MESBasic.entities.MESBasicQACheckIndex;
+import com.supcon.orchid.MESBasic.entities.MESBasicOriginalSignal;
+import com.supcon.orchid.MESBasic.entities.MESBasicConfig;
+import com.supcon.orchid.MESBasic.entities.MESBasicInvolveItemsetups;
+import com.supcon.orchid.MESBasic.entities.MESBasicRoutine;
+import com.supcon.orchid.MESBasic.entities.MESBasicSwitcherModel;
+import com.supcon.orchid.MESBasic.entities.MESBasicTankModel;
+import com.supcon.orchid.MESBasic.entities.MESBasicItemPart;
+import com.supcon.orchid.MESBasic.entities.MESBasicItemSetup;
+import com.supcon.orchid.MESBasic.entities.MESBasicEamType;
+/* CUSTOM CODE START(service,import,MESBasic_1_factoryModel_FactoryModel,MESBasic_1) */
+// 自定义代码
+
+/* CUSTOM CODE END */
+public interface MESBasicFactoryModelService extends IBusinessKeyService, IModelTreeLayRecService {
+	
+	/**
+	 * 获取父节点对象
+	*/
+	public Map<String, Object> getParentNodeMap(Serializable mainDisplayName, Serializable businessKeyName, List<Serializable> serial, String queryParam);
+	
+	/**
+	 * 根据ID，获取 工厂 对象
+	 * @param id
+	 * @return
+	 */
+	MESBasicFactoryModel getFactoryModel(long id);
+
+	/**
+	 * 根据ID，获取 工厂 对象
+	 * @param id
+	 * @return
+	 */
+	MESBasicFactoryModel getFactoryModel(long id, String viewCode);
+
+	/**
+	 * 根据ID，获取 工厂 对象 并转化为JSON
+	 * @param id
+	 * @return
+	 */
+	String getFactoryModelAsJSON(long id, String include);
+
+	/**
+	 * 删除  工厂 对象
+	 * @param factoryModel 工厂
+	 */
+	void deleteFactoryModel(MESBasicFactoryModel factoryModel);
+
+		
+	/**
+	 * 根据ID，删除  工厂 对象
+	 * @param id
+	 */
+	void deleteFactoryModel(long factoryModelId, int factoryModelVersion);
+
+	/**
+	 * 根据ID，删除  工厂 对象
+	 * @param id
+	 */
+	void deleteFactoryModel(long factoryModelId, int factoryModelVersion,SignatureLog signatureLog);
+
+	/**
+	 * 根据ID串，删除多个  工厂 对象
+	 * @param factoryModelIds
+	 */
+	void deleteFactoryModel(String factoryModelIds);
+
+	/**
+	 * 根据ID串，删除多个  工厂 对象
+	 * @param factoryModelIds
+	 */
+	void deleteFactoryModel(String factoryModelIds,SignatureLog signatureLog);
+
+	/**
+	 * 根据ID，删除多个  工厂 对象
+	 * @param factoryModelIds
+	 */
+	void deleteFactoryModel(List<Long> factoryModelIds);
+	
+	/**
+	 * 根据ID，删除多个  工厂 对象
+	 * @param factoryModelIds
+	 */
+	void deleteFactoryModel(List<Long> factoryModelIds, String eventTopic);
+
+	/**
+	 * 根据ID，还原  工厂 对象
+	 * @param factoryModelId
+	 */
+	void restoreFactoryModel(String factoryModelIds);
+	/**
+	 * 根据ID，还原  工厂 对象
+	 * @param factoryModelId
+	 */
+	void restoreFactoryModel(long factoryModelId);
+	
+	/**
+	 * 保存  工厂 对象
+	 * @param factoryModel  工厂
+	 * @param dgLists DataGrid对象集合
+	 * @param dgDeleteIDs DataGrid对象删除ID集合
+	 * @param assFileUploads DataGrid关联附件集合
+	 */
+	void saveFactoryModel(MESBasicFactoryModel factoryModel, Map<String,String> dgLists,Map<String,String> dgDeleteIDs,Map<String,Object> assFileUploads, String viewCode);
+	
+	void batchImportBaseFactoryModel(List<MESBasicFactoryModel>  factoryModels);
+	
+	void excelBatchImportBaseFactoryModel(List<MESBasicFactoryModel>  factoryModels);
+	
+	/**
+	 * 保存  工厂 对象
+	 * @param factoryModel  工厂
+	 * @param dgLists DataGrid对象集合
+	 * @param dgDeleteIDs DataGrid对象删除ID集合
+	 * @param assFileUploads DataGrid关联附件集合
+	 */
+	void saveFactoryModel(MESBasicFactoryModel factoryModel, Map<String,String> dgLists,Map<String,String> dgDeleteIDs,Map<String,Object> assFileUploads);
+
+	/**
+	 * 保存  工厂 对象
+	 * @param factoryModel  工厂
+	 * @param dgLists DataGrid对象集合
+	 * @param dgDeleteIDs DataGrid对象删除ID集合
+	 * @param assFileUploads DataGrid关联附件集合
+	 */
+	void saveFactoryModel(MESBasicFactoryModel factoryModel,Map<String,String> dgLists,Map<String,String> dgDeleteIDs,Map<String,Object> assFileUploads, String viewCode, String eventTopic,boolean... isImport);
+	
+	/**
+	 * 保存  工厂 对象
+	 * @param factoryModel  工厂
+	 * @param dgLists DataGrid对象集合
+	 * @param dgDeleteIDs DataGrid对象删除ID集合
+	 * @param assFileUploads DataGrid关联附件集合
+	 */
+	void saveFactoryModel(MESBasicFactoryModel factoryModel,Map<String,String> dgLists,Map<String,String> dgDeleteIDs,Map<String,Object> assFileUploads, String viewCode, String eventTopic,SignatureLog signatureLog,boolean... isImport);
+	
+	/**
+	 * 保存  工厂 对象
+	 * @param factoryModel  工厂
+	 * @param dataGridService DataGridService对象
+	 * 电子签名接口
+	 */
+	void saveFactoryModel(MESBasicFactoryModel factoryModel, DataGridService dataGridService, String viewCode, String eventTopic,SignatureLog signatureLog,boolean... isImport);
+	
+	/**
+	 * 保存  工厂 对象
+	 * @param factoryModel  工厂
+	 * @param dgLists DataGrid对象集合
+	 * @param dgDeleteIDs DataGrid对象删除ID集合
+	 * @param assFileUploads DataGrid关联附件集合
+	 */
+	void mergeFactoryModel(MESBasicFactoryModel factoryModel, Map<String,String> dgLists,Map<String,String> dgDeleteIDs,Map<String,Object> assFileUploads);
+
+	/**
+	 * 根据条件(多条件)获取指定页码的 工厂 集合
+	 * 
+	 * @param page
+	 * @param criterions
+	 * @return
+	 */
+	Page<MESBasicFactoryModel> findFactoryModels(Page<MESBasicFactoryModel> page,Criterion...criterions);
+	
+	/*
+	 * 解析主模型的过滤条件
+	 *
+	 */
+	public List<Object> generateParamExcelSql(List<Param> params, Integer type, String viewCode);
+	
+	/**
+	 * 根据模型名称获得视图名称
+	 * @param modelCode
+	 * @return
+	 */
+	public String getViewName(String modelCode);
+	
+	/**
+	 * 保存处理意见
+	 * 
+	 * @param FactoryModelDealInfo 工厂DealInfo
+	 * @return
+	 */
+	void saveDealInfo(MESBasicFactoryModelDealInfo dealInfo);
+
+	/**
+	 * 根据 tableInfoId 获取处理意见
+	 * 
+	 * @param tableInfoId
+	 * @return
+	 */
+	int getDealInfoCount(Long tableInfoId);
+
+	/**
+	 * 根据 tableInfoId 获取处理意见
+	 * 
+	 * @param tableInfoId
+	 * @param expandFlag 是否展现没有详细描述的处理意见
+	 * @return
+	 */
+	List<Object[]> findDealInfos(Long tableInfoId, boolean expandFlag);
+	
+	/**
+	 * @param tableInfoId
+	 * @param expandFlag
+	 * @return
+	 */
+	Map<String, List<Object[]>> findDealInfosGroup(Long tableInfoId, boolean expandFlag);
+
+	/**
+	 * 根据菜单编码获取菜单对应的工作流的processKey（仅工作流）
+	 * 
+	 * @param menuCode 菜单编码
+	 * @return
+	 */
+	public String getWorkFlowInfo(String menuCode);
+	
+	/**
+	 * 根据条件(多条件)获取指定页码的 工厂 集合
+	 * 
+	 * @param page
+	 * @param criterions
+	 * @param viewCode
+	 * @param type
+	 * @param processKey
+	 * @param params 条件参数信息
+	 * @param permissionCode 权限code
+	 * @return
+	 */
+	void findFactoryModels(Page<MESBasicFactoryModel> page, String viewCode, int type,String processKey,Boolean flowBulkFlag, Boolean hasAttachment, List<Param> params, String permissionCode,Boolean noQueryFlag,String exportSql, Map exportMap);
+
+	/**
+	 * 根据条件(多条件)获取指定页码的 工厂 集合
+	 * 
+	 * @param page
+	 * @param criterions
+	 * @param viewCode
+	 * @param type
+	 * @param processKey
+	 * @param params 条件参数信息
+	 * @param permissionCode 权限code
+	 * @param objects
+	 * @return
+	 */
+	void findFactoryModels(Page<MESBasicFactoryModel> page, String viewCode, int type,String processKey,Boolean flowBulkFlag, Boolean hasAttachment, List<Param> params, String permissionCode,Boolean noQueryFlag,String exportSql, Map exportMap, Object... objects);
+
+	/**
+	 * 根据条件(多条件)获取指定页码的 工厂 集合
+	 * 
+	 * @param page
+	 * @param criterions
+	 * @param viewCode
+	 * @param type
+	 * @param processKey
+	 * @param params 条件参数信息
+	 * @return
+	 */
+	void findFactoryModels(Page<MESBasicFactoryModel> page, String viewCode, int type,String processKey,Boolean flowBulkFlag, Boolean hasAttachment,Boolean noQueryFlag, String exportSql, Map exportMap, List<Param> params);
+	/**
+	 * 根据条件(多条件)获取指定页码的数据集合(针对编辑页面datagrid)
+	 * 
+	 * @param dg
+	 * @param dgClass
+	 * @param page
+	 * @param orgObj
+	 * @param condition 配置datagrid时配置的自定义SQL
+	 */
+	void findDataGridPage(DataGrid dg,Class dgClass,Page dgPage,Object orgObj, String condition, List<Object> params);
+
+	/**
+	 * 助记码查找
+	 * 
+	 * @param viewCode
+	 * @param params 查询条件
+	 * @param showNumber 显示记录数
+	 * @param condition 配置时配置的自定义SQL
+	 */
+	List<Object[]> mneCodeSearch( String viewCode,  int showNumber, boolean cross,List<Param> params,String  refViewCode,String currentViewCode,String sqlType,String realPermissionCode);
+
+	/**
+	 * 获取树的直接子节点（仅树形模型）
+	 * 
+	 * @param viewCode
+	 * @param params 查询条件
+	 * @param showNumber 显示记录数
+	 * @param condition 配置时配置的自定义SQL
+	 */
+	List<MESBasicFactoryModel> getTreeChildren(Long parentId, String cond, Object... params);
+	
+	/**
+	 * 获取树节点(by id and layRec)
+	 *
+	 * @param treeInfo
+	 * @param condition
+	 * @param params
+	 */
+	List<MESBasicFactoryModel> getTreeInfo(Map<Long, String> treeInfo, String condition, List<Object> params);
+	
+	
+	List<MESBasicFactoryModel> getFactoryModels(String sql , List<Object> params);
+	
+	/**
+	 * 通过sql获取实体list
+	 * @param sql
+	 * @param params
+	 */
+	public List<MESBasicFactoryModel> findFactoryModelsBySql(String sql, List<Object> params);
+	
+	/**
+	 * 通过hql获取实体list
+	 * @param hql
+	 * @param Object...
+	 */
+	public List<MESBasicFactoryModel> findFactoryModelsByHql(String hql, Object... objects);
+	
+	MESBasicFactoryModel loadFactoryModelByBussinessKey(MESBasicFactoryModel factoryModel);
+	
+	Page<MESBasicFactoryModel> getFactoryModels(Page<MESBasicFactoryModel> page, String sql , List<Object> params, String sort);
+	//==============DataGrid多选控件使用 start================
+	
+	/**
+	 * Excel 导入前
+	 * @param testPTs
+	 */
+	public void beforeExcelImportFactoryModel(List<MESBasicFactoryModel> factoryModels, Map<String, Map<Integer, Map<Integer, String>>> errors);
+	/**
+	 * Excel 导入后
+	 * @param testPTs
+	 */
+	public void afterExcelImportFactoryModel(List<MESBasicFactoryModel> factoryModels);
+	
+	/**
+	 * Excel 批量导入前
+	 * @param testPTs
+	 */
+	public void beforeExcelBatchImportFactoryModel(List<MESBasicFactoryModel> factoryModels, Map<Integer, Map<Integer, String>> errors);
+	/**
+	 * Excel 批量导入后
+	 * @param testPTs
+	 */
+	public void afterExcelBatchImportFactoryModel(List<MESBasicFactoryModel> factoryModels);
+	
+	/**
+	 * Excel 主辅模型导入前
+	 * @param testPTs
+	 */
+	public void beforeImportFactoryModel(List<MESBasicFactoryModel> insertObjs, List<MESBasicFactoryModel> updateObjs, 
+		List<Map<String,String>> columnInfo,List<Map<String, Map<Integer, Map<Integer, String>>>> errMsgSheet, Map<String ,List<Map<String, Object>>> importNodeInfo, Map<String, Property> importPropInfo);
+	/**
+	 * Excel 主辅模型导入后
+	 * @param testPTs
+	 */
+	public void afterImportFactoryModel(List<MESBasicFactoryModel> insertObjs, List<MESBasicFactoryModel> updateObjs, 
+		List<Map<String,String>> columnInfo, Map<String ,List<Map<String, Object>>> importNodeInfo, Map<String, Property> importPropInfo);
+	
+	/**
+	 * 处理节点leaf属性
+	 * @param factoryModelIds 需要处理的id
+	 */
+	void dealFactoryModelLeaf(List<Long> factoryModelIds);
+	/**
+	 * 树拖动节点
+	 * @param source
+	 * @param target
+	 */
+	void drag(long dragSource, long dragTarget, long sort);
+	
+	List<MESBasicFactoryModel> convertTree(List<MESBasicFactoryModel> factoryModels);
+	
+	
+	/**
+	 * 根据业务主键查询对象
+	 * @param bussinessKey
+	 */
+	public MESBasicFactoryModel loadFactoryModelByBussinessKey(Serializable bussinessKey);
+	
+	/**
+	 * 根据字段查询对象列表
+	 * @param propertyName
+	 * @param object
+	 */
+	public List<MESBasicFactoryModel> findByProperty(String propertyName, Object object);
+	/**
+	 * 根据字段查询唯一对象
+	 * @param propertyName
+	 * @param object
+	 */
+	public MESBasicFactoryModel findEntityByProperty(String propertyName, Object object);
+	
+	/**
+	 * 根据业务主键删除对象 以逗号分隔
+	 * @param bussinessKey
+	 */
+	public void deleteByBussinessKeys(String bussinessKeys);
+	
+	/**
+	 * 动态查询bap_validate_datagrids变量
+	 */
+	public String findValidateDatagrids(Map<String,Class> dgclass,String viewCode);
+	
+	public String findValidateDatagrids(Map<String,Class> dgclass);
+	
+	/**
+	 * 动态查询MainViewPath变量
+	 */
+	public String findMainViewPath();
+	
+	/**
+	 * 动态查询datagrids
+	 */
+	public List<DataGrid> findDatagrids();
+	
+		/**
+	 * 根据业务主键名称获取所有有效的业务主键数据
+	 * @param bussinessKeyName
+	 */
+	public List<Object> getBusinessKeyData(String businessKeyName);
+	
+	/**
+	 * 根据业务主键名称获取所有业务主键数据
+	 * @param bussinessKeyName
+	 */
+	public List<Object> getBusinessKeyDataByBusinessKeyName(String businessKeyName);
+	
+	/**
+	 * 根据字段名获取该字段在表中数据数
+	 * @param propertyName
+	 */
+	public Map<Object, Object> getReplaceProperty(String propertyName,String businessKey);
+	
+	
+	/**
+	 * 批量导入excel数据(表单)
+	 * @param insertObjs 新增数据
+	 * @param updateObjs 修改数据
+	 * @param columnInfo excel中的列信息
+	 */
+	public Map<Object, Long> importBatchFactoryModel(List<MESBasicFactoryModel> insertObjs, List<MESBasicFactoryModel> updateObjs, List<Map<String,String>> columnInfo, Map<String ,List<Map<String, Object>>> importNodeInfo, Map<String, Property> importPropInfo);
+	
+	/**
+	 * 批量导入excel数据(表单)
+	 * @param insertObjs 新增数据
+	 * @param updateObjs 修改数据
+	 * @param columnInfo excel中的列信息
+	 */
+	public Map<Object, Long> importBatchFactoryModel(List<MESBasicFactoryModel> insertObjs, List<MESBasicFactoryModel> updateObjs, List<Map<String,String>> columnInfo, Map<String ,List<Map<String, Object>>> importNodeInfo, Map<String, Property> importPropInfo,SignatureLog signatureLog);
+	
+	
+	public Map<String, Object> getMainDisplayMap(Serializable mainDisplayName, Serializable mainBusName, List<Serializable> mainDisplayKeys);
+	
+	public List<String> getSystemCodeFullPathNameByEntityCode(String entityCode);
+	
+	/**
+	 * 获取已启用的自定义字段对象.
+	 * 
+	 * @param entityCode 模型code
+	 * @return Property Code
+	 */
+	List<String> getRunningCustomProperties(String entityCode);
+	
+	/**
+	 * 根据模型字段名称获取引用的字段
+	 * @param propertyCode
+	 * @return
+	 */
+	public String getAssProperty(String propertyCode);
+	
+	/**
+	 * 根据字段code获取模型code 
+	 * @param propertyCode
+	 * @return
+	 */
+	public String getPropertyModelCode(String propertyCode);
+
+	
+	/**
+	 * 以下为兼容视图热部署之前代码的方法
+	 */
+	 
+	/**
+	 * 根据条件(多条件)获取指定页码的 配料仓 集合(针对编辑页面datagrid)
+	 * 
+	 * @param page
+	 * @param factoryModel  工厂
+	 * @param condition 配置datagrid时配置的自定义SQL
+	 */
+	 void findDg1490059032286Page(Page<MESBasicObjWareStore> dg1490059032286Page,MESBasicFactoryModel factoryModel, String condition, List<Object> params);
+	/**
+	 * 根据条件(多条件)获取指定页码的 关联岗位 集合(针对编辑页面datagrid)
+	 * 
+	 * @param page
+	 * @param factoryModel  工厂
+	 * @param condition 配置datagrid时配置的自定义SQL
+	 */
+	 void findDg1460955592809Page(Page<MESBasicObjPostion> dg1460955592809Page,MESBasicFactoryModel factoryModel, String condition, List<Object> params);
+	/**
+	 * 根据条件(多条件)获取指定页码的 关联设备 集合(针对编辑页面datagrid)
+	 * 
+	 * @param page
+	 * @param factoryModel  工厂
+	 * @param condition 配置datagrid时配置的自定义SQL
+	 */
+	 void findDg1460958585675Page(Page<MESBasicObjEquipment> dg1460958585675Page,MESBasicFactoryModel factoryModel, String condition, List<Object> params);
+	/**
+	 * 根据条件(多条件)获取指定页码的 关联物品 集合(针对编辑页面datagrid)
+	 * 
+	 * @param page
+	 * @param factoryModel  工厂
+	 * @param condition 配置datagrid时配置的自定义SQL
+	 */
+	 void findDg1460958766002Page(Page<MESBasicObjProduct> dg1460958766002Page,MESBasicFactoryModel factoryModel, String condition, List<Object> params);
+	/**
+	 * 根据条件(多条件)获取指定页码的 班组 集合(针对编辑页面datagrid)
+	 * 
+	 * @param page
+	 * @param factoryModel  工厂
+	 * @param condition 配置datagrid时配置的自定义SQL
+	 */
+	 void findDg1490261761014Page(Page<MESBasicObjTeam> dg1490261761014Page,MESBasicFactoryModel factoryModel, String condition, List<Object> params);
+	 
+	 
+	/**
+	 * 保存  工厂 对象
+	 * @param factoryModel  工厂
+	 * @param dataGridService DataGridService对象
+	 */
+	void saveFactoryModel(MESBasicFactoryModel factoryModel, DataGridService dataGridService, String viewCode);
+	
+	/**
+	 * 保存  工厂 对象
+	 * @param factoryModel  工厂
+	 * @param dataGridService DataGridService对象
+	 */
+	void saveFactoryModel(MESBasicFactoryModel factoryModel, DataGridService dataGridService, String viewCode, String eventTopic,boolean... isImport);
+	
+	/**
+	 * 保存  工厂 对象
+	 * @param factoryModel  工厂
+	 * @param dataGridService DataGridService对象
+	 */
+	void saveFactoryModel(MESBasicFactoryModel factoryModel, DataGridService dataGridService);
+
+	/**
+	 * 导入保存  工厂 对象
+	 * @param factoryModel  工厂
+	 * @param dataGridService DataGridService对象
+	 */
+	Map<Object, Object> factoryModelDataGridImport(MESBasicFactoryModel factoryModel, DataGridService dataGridService, String viewCode, String eventTopic,Property businessKey, boolean isImport);
+	
+	public void batchSaveFactoryModel(MESBasicFactoryModel factoryModel, DataGridService dataGridService, View view,List<Event>  events, String eventTopic, boolean... isImport);
+
+	/**
+	 * 保存  工厂 对象
+	 * @param factoryModel  工厂
+	 * @param dataGridService DataGridService对象
+	 */
+	void mergeFactoryModel(MESBasicFactoryModel factoryModel, DataGridService dataGridService);
+	
+	/**
+	 * Excel导出 
+	 */
+	void excelExport();
+	
+	/**
+	 * 页面打印 
+	 */
+	void print(int printType);
+	
+	public  Object generateObjectFromJson(String jsonStr, Class clazz);
+	
+	/**
+	 * 获取分页
+	 */
+	Page<MESBasicFactoryModel> getByPage(Page<MESBasicFactoryModel> page,
+			DetachedCriteria detachedCriteria);
+	
+	/**
+	 * 获取关联配料容器列表
+	 */
+	public List<MESBasicObjBatContainer> getObjBatContainerList(MESBasicFactoryModel factoryModel);
+	
+	
+	void checkDeletePermit(Long id);
+	
+	void findBusinessKeyUsed(long factoryModelId);
+	
+	void generateFactoryModelCodes(MESBasicFactoryModel factoryModel) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException;
+	
+	void generateFactoryModelCodes(MESBasicFactoryModel factoryModel, Boolean viewIsView) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException;
+	
+	void generateFactoryModelSummarys(MESBasicFactoryModel factoryModel) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException;
+	
+	void generateFactoryModelSummarys(MESBasicFactoryModel factoryModel, Boolean viewIsView) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException;
+	
+	String generateCustomPropertySql(String viewCode, String sql);
+	
+	void commonQuery(Page<MESBasicFactoryModel> page, String viewCode, int type, String processKey, Boolean flowBulkFlag,
+			Boolean hasAttachment, List<Param> params, String permissionCode,Boolean noQueryFlag,String exportSql, Map exportMap, Object... objects);
+			
+	String fLTL(String str);
+	
+	String fLTU(String str);
+	
+	void checkUniqueConstraint(MESBasicFactoryModel factoryModel);
+	
+	void dealDatagridsSave(MESBasicFactoryModel factoryModel,String viewCode,Map<String,String> dgLists,Map<String,String> dgDeleteIDs,Map<String,Object> assFileUploads);
+	
+	String generateTableNo();
+	
+	/* CUSTOM CODE START(service,functions,MESBasic_1_factoryModel_FactoryModel,MESBasic_1) */
+// 自定义代码
+  /**
+	 * 获取parentModel的所有子节点
+	 * @param parentModel
+	 * @return
+	 */
+	public List<MESBasicFactoryModel> getChildren(MESBasicFactoryModel parentModel);
+	/**
+	 * 检查物品是否被工厂节点引用
+	 * @param productId
+	 * @return
+	 */
+	public boolean isProductLinked(Long productId);
+  
+    public String checkFatherNodeType(String nodeType, String parentId);
+  
+    public String checkSonNodeType(String nodeType,String factoryId);
+  
+    public String getSystemCodeFullPathNameByDescA(String equipmentTypeId);
+  
+  	//public String getParentNodeDepartment(String parentID);
+  
+  	public List<Object[]> getParentNodeDepartment(String parentID);
+  
+  	public String getParentNodeWorkArea(String parentID);
+  	
+  	//查询是否上载工艺模块
+  	public List<Object[]> getBatchMode();
+  	
+  	//查询是否有启用的工艺路线使用该生产模型
+  	public List<Object> getEnabled(String factoryId);
+  	
+  	//查询是否有启用的工艺路线使用该设备对象
+  	public List<Object> checkObjEquIsUsedByProRootSet(String objEquId);
+	
+	//查询该工作单元是否被活动集合引用
+    List<Object> modifyActiveByProRootSetChecked(String factoryId);
+  
+    //查询是否有工艺路线使用该设备
+	List<Object> checkObjEquIsByProRootSet(String objEquId);
+/* CUSTOM CODE END */
+}

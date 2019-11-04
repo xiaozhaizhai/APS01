@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bapSystemCode>
+  <systementity code="entityType" moduleCode="X6Basic_1.0" version="0" valid="true" sysDefault="false">
+    <systemcode id="entityType/lubricateOilPlan" code="lubricateOilPlan" value="X6Basic.systemCodevalue.randon1487296543251" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="9859" seqId="9859" fullPathName="润滑油计划"/>
+  </systementity>
+</bapSystemCode>

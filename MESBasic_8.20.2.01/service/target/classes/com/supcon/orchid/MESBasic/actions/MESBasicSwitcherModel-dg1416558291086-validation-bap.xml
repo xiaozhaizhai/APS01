@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="stype.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1416558430815"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+</validators>

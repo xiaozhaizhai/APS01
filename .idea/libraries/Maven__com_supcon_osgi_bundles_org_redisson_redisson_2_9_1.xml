@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.supcon.osgi.bundles:org.redisson.redisson:2.9.1">
+    <CLASSES>
+      <root url="jar://D:/maven178/com/supcon/osgi/bundles/org.redisson.redisson/2.9.1/org.redisson.redisson-2.9.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/maven178/com/supcon/osgi/bundles/org.redisson.redisson/2.9.1/org.redisson.redisson-2.9.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/maven178/com/supcon/osgi/bundles/org.redisson.redisson/2.9.1/org.redisson.redisson-2.9.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

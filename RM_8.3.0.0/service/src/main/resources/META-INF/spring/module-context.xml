@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:soap="http://cxf.apache.org/bindings/soap"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd 
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd 
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd 
+	http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd 
+	http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+	http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd"
+	default-autowire="no">
+	
+	<description>配方管理 Spring 配置文件</description>
+
+	<util:properties id="defaultProps">
+		<prop key="bap.recall.remain.time">3600</prop>
+	</util:properties>
+	<context:property-placeholder location="file:config/orchid-${orchid.env}.properties" ignore-resource-not-found="true" ignore-unresolvable="true" properties-ref="defaultProps"/>
+	
+	<context:annotation-config />
+
+	<context:component-scan base-package="com.supcon.orchid.RM.daos.impl,com.supcon.orchid.RM.services.impl,com.supcon.orchid.RM.actions"  annotation-config="true" />
+
+	 <bean name="sessionFactory" class="com.supcon.orchid.orm.hibernate.BAPSessionFactoryBean" 
+		p:packagesToScan="com.supcon.orchid.RM.entities"
+		p:sessionFactoryExtender-ref="defaultSessionFactoryExtender" ></bean>
+  
+	<!-- 事务管理器配置,单数据源事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	 <!-- 启用@AspectJ支持 -->
+    <aop:aspectj-autoproxy />
+	
+	<bean id="auditLogAspect" class="com.supcon.orchid.audit.aspect.AuditLogAspect" />
+	
+	<util:list id="jsonTypes">
+		<value>application/json</value>
+	</util:list>
+	
+	
+	
+	<util:map id="jsonNamespaceMap" map-class="java.util.Hashtable">
+	</util:map>
+	
+	<util:list id="jsonKeys">
+	</util:list>
+	
+	<bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.json.JSONProvider">
+		<property name="serializeAsArray" value="false" />
+		<property name="arrayKeys" ref="jsonKeys" />
+		<property name="produceMediaTypes" ref="jsonTypes" />
+		<property name="consumeMediaTypes" ref="jsonTypes" />
+		<property name="readXsiType" value="false"></property>
+		<property name="writeXsiType" value="false"></property>
+	</bean>
+	<bean id="BAPoutDatabindingIntercepter" class="com.supcon.orchid.workflow.engine.services.BAPOutDatabindingIntercepter"/>
+	<bean id="xmlProvider" class="com.supcon.orchid.workflow.engine.services.BAPJAXBProvider" />
+	<!-- WebService-->
+	<!-- CUSTOM CODE START(spring,service,,RM_7.5.0.0) -->
+<!-- 自定义代码 -->
+  	<bean id="mqSyncTask" class = "com.supcon.orchid.RM.schedule.MQScheduleDeal" />
+        <bean id="mqScheTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+                <!-- 指定触发器信息 -->
+                <property name="timerTask">
+                        <ref bean="mqSyncTask" />
+                </property>
+                <!-- 后续延迟 ms-->
+                <property name="period">
+                        <value>60000</value>
+                </property>
+                <!-- 设置启动延迟 ms--> 
+                <property name="delay">
+                        <value>30000</value>
+                </property>
+        </bean>
+        <bean id="timerBean" class="org.springframework.scheduling.timer.TimerFactoryBean">
+                <property name="scheduledTimerTasks">
+                        <list>
+                                <ref bean="mqScheTask" />
+                        </list>
+                </property>
+        </bean>
+<!-- CUSTOM CODE END -->
+</beans>

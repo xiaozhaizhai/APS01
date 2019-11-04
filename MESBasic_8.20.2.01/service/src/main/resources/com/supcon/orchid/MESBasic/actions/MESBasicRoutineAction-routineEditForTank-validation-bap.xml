@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="routine.code">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1415336575756"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1415336575756", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="routine.name">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1415336597801"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.radion1415336597801", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	<field name="routine.sourceType.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1415337129694"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="routine.srcContainer.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1415337161653"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="routine.desType.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1415337160653"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="routine.desContainer.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.radion1115337161653"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="routine.rootineUse.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.randon1423898703640"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="routine.srcCode">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1552632147558", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="routine.desCode">
+		<field-validator type="stringlength">
+			<param name="maxLength">256</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1552632164567", "256"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1415338492541">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1416558268661">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1460684019181List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1460684019181</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("MESBasic.modelname.radion1416557727476")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+	<field name="dg1460684019272List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1460684019272</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("MESBasic.modelname.radion1415337833221")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

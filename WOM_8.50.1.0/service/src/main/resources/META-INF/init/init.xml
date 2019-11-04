@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models>
+  <model id="QualityInspect" tableName="WOM_QUALITY_INSPECTS" extends="AbstractEcFullEntity" description="质检报工">
+    <property id="activeID" columnName="ACTIVEID" type="LONG" description="生产活动"/>
+    <property id="inspectBatch" columnName="INSPECT_BATCH" type="TEXT" description="请检批号"/>
+    <property id="inspectNum" columnName="INSPECT_NUM" type="DECIMAL" scale="6" description="请检数量"/>
+    <property id="inspectType" columnName="INSPECT_TYPE" type="SYSTEMCODE" description="请检方式"/>
+    <property id="operateStaffID" columnName="OPERATE_STAFFID" type="LONG" description="操作员"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+  </model>
+  <model id="QualityInspectDealInfo" tableName="WOM_QUALITY_INSPECTS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_QUALITYINSPECT_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="DayBatchPlanInfo" tableName="PPM_DAY_PLAN_INFOS" extends="AbstractEcFullEntity" description="生产计划, 天计划与批计划参照">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="planDate" columnName="PLAN_DATE" type="DATE" description="日期"/>
+    <property id="planType" columnName="PLAN_TYPE" type="TEXT" description="计划类型"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <property id="reportDeptID" columnName="REPORT_DEPTID" type="LONG" description="申报部门"/>
+    <property id="reportStaffID" columnName="REPORT_STAFFID" type="LONG" description="申报人"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <index name="IDX_DAYBATCHPLANI_TABLEINF" columns="tableInfoId"/>
+  </model>
+  <model id="DayBatchPlanInfoDealInfo" tableName="PPM_DAY_PLAN_INFOS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_DAYBATCHPLANI_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="DayBatchPlanInfoSupervision" tableName="PPM_DAY_PLAN_INFOS_SV" extends="AbstractSupervisionEntity">
+    <property id="valid" columnName="VALID" type="BOOLEAN" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_DAYBATCHPLANI_SuTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="DayBatchPlanParts" tableName="PPM_DAY_PLAN_PARS" extends="AbstractEcPartEntity" description="计划明细">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="生产批号"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="dayPlanInfo" columnName="DAY_PLAN_INFO" type="LONG" description="表头ID"/>
+    <property id="endTime" columnName="END_TIME" type="DATETIME" description="计划结束时间"/>
+    <property id="factoryCode" columnName="FACTORY_CODE" type="LONG" description="工厂编码"/>
+    <property id="formularID" columnName="FORMULARID" type="LONG" description="配方"/>
+    <property id="manudeptId" columnName="MANUDEPT_ID" type="LONG" description="生产部门"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="planState" columnName="PLAN_STATE" type="TEXT" description="执行状态"/>
+    <property id="productId" columnName="PRODUCT_ID" type="LONG" description="产品编码"/>
+    <property id="quantity" columnName="QUANTITY" type="DECIMAL" scale="6" description="计划数量"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="startTime" columnName="START_TIME" type="DATETIME" description="计划开始时间"/>
+    <index name="IDX_DAYBATCHPLANP_TABLEINF" columns="tableInfoId"/>
+  </model>
+  <model id="CheckManage" tableName="WOM_CHECK_MENAGE" extends="AbstractEcPartEntity" description="检验记录业签">
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="批号"/>
+    <property id="checkDept" columnName="CHECK_DEPT" type="LONG" description="检验部门"/>
+    <property id="checkTime" columnName="CHECK_TIME" type="DATETIME" description="检验时间"/>
+    <property id="chenkReportName" columnName="CHENK_REPORT_NAME" type="TEXT" description="检验报告单"/>
+    <property id="chenkReportUrl" columnName="CHENK_REPORT_URL" type="TEXT" description="检验报告单url"/>
+    <property id="inspectDept" columnName="INSPECT_DEPT" type="LONG" description="请检部门"/>
+    <property id="inspectName" columnName="INSPECT_NAME" type="TEXT" description="请检单"/>
+    <property id="inspectTime" columnName="INSPECT_TIME" type="DATETIME" description="请检时间"/>
+    <property id="inspectUrl" columnName="INSPECT_URL" type="TEXT" description="请检单url"/>
+    <property id="produceTask" columnName="PRODUCE_TASK" type="LONG" description="指令单"/>
+    <property id="product" columnName="PRODUCT" type="LONG" description="物品"/>
+    <property id="result" columnName="RESULT" type="TEXT" description="检验结论"/>
+    <property id="standard" columnName="STANDARD" type="TEXT" description="质量标准"/>
+  </model>
+  <model id="Inspect" tableName="WOM_INSPECTS" extends="AbstractEcPartEntity" description="请检单">
+    <property id="name" columnName="NAME" type="TEXT" description="请检单"/>
+    <property id="url" columnName="URL" type="TEXT" length="200" description="url"/>
+  </model>
+  <model id="ProduceTaskManage" tableName="指令单" extends="AbstractEcFullEntity" description="指令单">
+    <property id="produceTask" columnName="PRODUCE_TASK" type="LONG" description="指令单"/>
+  </model>
+  <model id="ProduceTaskManageDealInfo" tableName="指令单_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PRODUCETASKMA_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="PutInManage" tableName="WOM_PUT_IN_MENAGE" extends="AbstractEcPartEntity" description="投料记录业签">
+    <property id="produceTask" columnName="PRODUCE_TASK" type="LONG" description="指令单"/>
+    <property id="putInMetarialPart" columnName="PUT_IN_METARIAL_PART" type="LONG" description="投料单明细"/>
+    <property id="putInUrl" columnName="PUT_IN_URL" type="TEXT" description="投料单Url"/>
+  </model>
+  <model id="TaskReportManage" tableName="WOM_TASK_REPORT_MENAGE" extends="AbstractEcPartEntity" description="报工记录业签">
+    <property id="produceTask" columnName="PRODUCE_TASK" type="LONG" description="指令单"/>
+    <property id="taskReportPart" columnName="TASK_REPORT_PART" type="LONG" description="报工单明细"/>
+    <property id="taskReportUrl" columnName="TASK_REPORT_URL" type="TEXT" description="报工单URL"/>
+  </model>
+  <model id="BatchCharge" tableName="WOM_BATCH_CHARGES" extends="AbstractEcPartEntity" description="投料清单">
+    <property id="actualUseNum" columnName="ACTUAL_USE_NUM" type="DECIMAL" scale="6" description="用料量"/>
+    <property id="batch" columnName="BATCH" type="TEXT" description="批号"/>
+    <property id="good" columnName="GOOD" type="LONG" description="物品"/>
+    <property id="headerId" columnName="HEADER_ID" type="LONG" description="报工头"/>
+    <property id="materialInWareNum" columnName="MATERIAL_IN_WARE_NUM" type="DECIMAL" scale="6" description="已配送数量"/>
+    <property id="placeSet" columnName="PLACE_SET" type="LONG" description="货位"/>
+    <property id="planNum" columnName="PLAN_NUM" type="DECIMAL" scale="6" description="计划数量"/>
+    <property id="putinDate" columnName="PUTIN_DATE" type="DATETIME" description="投料时间"/>
+    <property id="putinEndDate" columnName="PUTIN_END_DATE" type="DATETIME" description="投料结束时间"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <property id="standingCrop" columnName="STANDING_CROP" type="LONG" description="现存量"/>
+    <property id="wareID" columnName="WAREID" type="LONG" description="仓库"/>
+  </model>
+  <model id="CraftRecords" tableName="WOM_CRAFT_RECORDS" extends="AbstractEcPartEntity" description="工艺执行记录">
+    <property id="actualValue" columnName="ACTUAL_VALUE" type="DECIMAL" scale="6" description="报出值"/>
+    <property id="header" columnName="HEADER" type="LONG" description="表头"/>
+    <property id="recordEndTime" columnName="RECORD_END_TIME" type="DATETIME" description="记录结束时间"/>
+    <property id="recordStartTime" columnName="RECORD_START_TIME" type="DATETIME" description="记录开始时间"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <property id="standardCraft" columnName="STANDARD_CRAFT" type="LONG" description="工艺标准"/>
+    <property id="standardID" columnName="STANDARDID" type="LONG" description="工艺指标ID"/>
+  </model>
+  <model id="CraftStandards" tableName="WOM_CRAFT_STANDARDS" extends="AbstractEcPartEntity" description="工艺标准">
+    <property id="craft" columnName="CRAFT" type="LONG" description="工艺"/>
+    <property id="craftName" columnName="CRAFT_NAME" type="TEXT" description="工艺名称"/>
+    <property id="procFeedbackID" columnName="PROC_FEEDBACKID" type="LONG" description="工序报工表头"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <property id="standardValue" columnName="STANDARD_VALUE" type="DECIMAL" scale="6" description="标准值"/>
+  </model>
+  <model id="ProcFeedbackHead" tableName="WOM_PROC_FEEDBACK_HEADS" extends="AbstractEcFullEntity" description="工序报工表头">
+    <property id="adjustDealRecord" columnName="ADJUST_DEAL_RECORD" type="LONG" description="调整处理单"/>
+    <property id="isAgile" columnName="IS_AGILE" type="BOOLEAN" description="灵活投料"/>
+    <property id="processActive" columnName="PROCESS_ACTIVE" type="LONG" description="工序活动"/>
+    <property id="product" columnName="PRODUCT" type="LONG" description="物品"/>
+    <property id="remark" columnName="REMARK" type="LONGTEXT" description="备注"/>
+    <property id="staffID" columnName="STAFFID" type="LONG" description="制单人"/>
+    <property id="taskId" columnName="TASK_ID" type="LONG" description="生产指令单"/>
+  </model>
+  <model id="ProcFeedbackHeadDealInfo" tableName="WOM_PROC_FEEDBACK_HEADS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PROCFEEDBACKH_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="StandingcropRef" tableName="MATERIAL_STANDINGCROPS" extends="AbstractEcFullEntity" description="现存量">
+    <property id="availiQuantity" columnName="AVAILI_QUANTITY" type="DECIMAL" scale="6" description="可用量"/>
+    <property id="backQuantity" columnName="BACK_QUANTITY" type="DECIMAL" scale="6" description="退料量"/>
+    <property id="batchText" columnName="BATCH_TEXT" type="TEXT" description="物料批号"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="frozenQuantity" columnName="FROZEN_QUANTITY" type="DECIMAL" scale="6" description="冻结量"/>
+    <property id="good" columnName="GOOD" type="LONG" description="物品"/>
+    <index name="IDX_STANDINGCROPR_GOOD" columns="good"/>
+    <property id="manulOrder" columnName="MANUL_ORDER" type="LONG" description="生产订单"/>
+    <index name="IDX_STANDINGCROPR_MANULORD" columns="manulOrder"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="onhand" columnName="ONHAND" type="DECIMAL" scale="6" description="现存量"/>
+    <property id="placeSet" columnName="PLACESET" type="LONG" description="货位编码"/>
+    <property id="prepareMaterial" columnName="PREPARE_MATERIAL" type="LONG" description="生产备料单"/>
+    <property id="prepareOrder" columnName="PREPARE_ORDER" type="LONG" description="备料单"/>
+    <index name="IDX_STANDINGCROPR_PREPAREO" columns="prepareOrder"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="wareID" columnName="WAREID" type="LONG" description="仓库"/>
+  </model>
+  <model id="StandingcropRefDealInfo" tableName="MATERIAL_STANDINGCROPS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_STANDINGCROPR_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="StandingcropRefMneCode" tableName="MATERIAL_STANDINGCROPS_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="StandingcropRef" columnName="STANDINGCROP_REF" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="TaskReporting" tableName="WOM_TASK_REPORTINGS" extends="AbstractEcFullEntity" description="生产报工">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="backFlag" columnName="BACK_FLAG" type="BOOLEAN" description="退库标记"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="生产批号"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="inCode" columnName="IN_CODE" type="TEXT" description="内部编码"/>
+    <property id="inputCode" columnName="INPUT_CODE" type="TEXT" description="入库单号"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="produceActive" columnName="PRODUCE_ACTIVE" type="LONG" description="生产活动"/>
+    <property id="productID" columnName="PRODUCTID" type="LONG" description="产品编码"/>
+    <property id="proof" columnName="PROOF" type="TEXT" description="物料凭证"/>
+    <property id="proofNum" columnName="PROOF_NUM" type="TEXT" description="凭证编号"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="reportDate" columnName="REPORT_DATE" type="DATETIME" description="报工时间"/>
+    <property id="reportStaff" columnName="REPORT_STAFF" type="LONG" description="报工人"/>
+    <property id="reportType" columnName="REPORT_TYPE" type="SYSTEMCODE" description="报工类型"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <index name="IDX_TASKREPORTING_TABLEINF" columns="tableInfoId"/>
+    <property id="taskID" columnName="TASKID" type="LONG" description="生产指令单"/>
+    <property id="wareID" columnName="WAREID" type="LONG" description="仓库ID"/>
+    <property id="writeOffId" columnName="WRITE_OFF_ID" type="TEXT" description="冲销ID"/>
+  </model>
+  <model id="TaskReportingDealInfo" tableName="WOM_TASK_REPORTINGS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_TASKREPORTING_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="TaskReportingSupervision" tableName="WOM_TASK_REPORTINGS_SV" extends="AbstractSupervisionEntity">
+    <property id="valid" columnName="VALID" type="BOOLEAN" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_TASKREPORTING_SuTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="TaskReportingPart" tableName="WOM_TASK_REPORTING_PARTS" extends="AbstractEcPartEntity" description="生产报工明细">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" length="200" description="入库批号"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="content" columnName="CONTENT" type="DECIMAL" scale="6" description="含量"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="headId" columnName="HEAD_ID" type="LONG" description="表头id"/>
+    <property id="modifyCont" columnName="MODIFY_CONT" type="DECIMAL" scale="6" description="修改的含量"/>
+    <property id="modifyNum" columnName="MODIFY_NUM" type="DECIMAL" scale="6" description="修改的数量"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="proBatchNum" columnName="PRO_BATCH_NUM" type="TEXT" description="生产批号"/>
+    <property id="productID" columnName="PRODUCTID" type="LONG" description="产品"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="reportDate" columnName="REPORT_DATE" type="DATETIME" description="报工时间"/>
+    <property id="reportNum" columnName="REPORT_NUM" type="DECIMAL" scale="6" description="数量"/>
+    <property id="reportStaff" columnName="REPORT_STAFF" type="LONG" description="报工人"/>
+    <property id="reportType" columnName="REPORT_TYPE" type="SYSTEMCODE" description="报工类型"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="storeID" columnName="STOREID" type="LONG" description="货位ID"/>
+    <index name="IDX_TASKREPORTING_TABLEINF" columns="tableInfoId"/>
+    <property id="taskID" columnName="TASKID" type="LONG" description="生产指令单"/>
+    <property id="wareId" columnName="WARE_ID" type="LONG" description="入库仓库"/>
+  </model>
+  <model id="MaterialsOutput" tableName="WOM_MATERIALS_OUTPUTS" extends="AbstractEcFullEntity" description="物料产出">
+    <property id="activeID" columnName="ACTIVEID" type="LONG" description="生产活动"/>
+    <property id="batch" columnName="BATCH" type="TEXT" description="批号"/>
+    <property id="operateStaffID" columnName="OPERATE_STAFFID" type="LONG" description="操作员"/>
+    <property id="placeSet" columnName="PLACE_SET" type="LONG" description="货位"/>
+    <property id="produceNum" columnName="PRODUCE_NUM" type="DECIMAL" scale="6" description="产出数量"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <property id="wareID" columnName="WAREID" type="LONG" description="仓库"/>
+  </model>
+  <model id="MaterialsOutputDealInfo" tableName="WOM_MATERIALS_OUTPUTS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_MATERIALSOUTP_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="ProActAndBatState" tableName="WOM_PRO_ACT_AND_BAT_STATES" extends="AbstractEcFullEntity" description="生产活动与批状态">
+    <property id="activeBatchStateID" columnName="ACTIVE_BATCH_STATEID" type="LONG" description="活动与批状态ID"/>
+    <property id="activeEnd" columnName="ACTIVE_END" type="SYSTEMCODE" description="活动结束"/>
+    <property id="qualifiedPass" columnName="QUALIFIED_PASS" type="BOOLEAN" description="合格放行意见"/>
+    <property id="quaWithoutPass" columnName="QUA_WITHOUT_PASS" type="BOOLEAN" description="合格且无需放行"/>
+    <property id="regectsDeal" columnName="REGECTS_DEAL" type="BOOLEAN" description="不良品处理意见"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+  </model>
+  <model id="ProActAndBatStateDealInfo" tableName="WOM_PRO_ACT_AND_BAT_STATES_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PROACTANDBATS_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BatchingMaterial" tableName="WOM_BATCHING_MATERIALS" extends="AbstractEcFullEntity" description="配料指令">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="arriveTime" columnName="ARRIVE_TIME" type="DATETIME" description="需送达时间"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="配料指令单"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="doneNum" columnName="DONE_NUM" type="DECIMAL" scale="6" description="已配数量"/>
+    <property id="needNum" columnName="NEED_NUM" type="DECIMAL" scale="6" description="需配数量"/>
+    <property id="needPartId" columnName="NEED_PART_ID" type="LONG" description="配料需求明细ID"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="orderStaff" columnName="ORDER_STAFF" type="LONG" description="指令创建人"/>
+    <property id="phaseID" columnName="PHASEID" type="TEXT" description="phaseID"/>
+    <property id="productId" columnName="PRODUCT_ID" type="LONG" description="物料"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="state" columnName="STATE" type="SYSTEMCODE" description="状态"/>
+    <property id="sycnState" columnName="SYCN_STATE" type="BOOLEAN" description="已向配料系统下指令"/>
+    <index name="IDX_BATCHINGMATER_TABLEINF" columns="tableInfoId"/>
+    <property id="taskID" columnName="TASKID" type="LONG" description="生产指令单ID"/>
+  </model>
+  <model id="BatchingMaterialDealInfo" tableName="WOM_BATCHING_MATERIALS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BATCHINGMATER_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BatchingMaterialSupervision" tableName="WOM_BATCHING_MATERIALS_SV" extends="AbstractSupervisionEntity">
+    <property id="valid" columnName="VALID" type="BOOLEAN" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BATCHINGMATER_SuTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BatchingMaterialPart" tableName="WOM_BATCHING_MATERIAL_PARTS" extends="AbstractEcPartEntity" description="配料记录">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="activeType" columnName="ACTIVE_TYPE" type="SYSTEMCODE" description="活动类型"/>
+    <property id="actOrder" columnName="ACT_ORDER" type="INTEGER" description="投料顺序"/>
+    <property id="armStoreID" columnName="ARM_STOREID" type="LONG" description="货位（目的）"/>
+    <property id="armWareID" columnName="ARM_WAREID" type="LONG" description="仓库（目的）"/>
+    <property id="batchDate" columnName="BATCH_DATE" type="DATETIME" description="配送时间"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="物料批号"/>
+    <property id="batchNumObj" columnName="BATCH_NUM_OBJ" type="LONG" description="物料批号"/>
+    <property id="batchSite" columnName="BATCH_SITE" type="SYSTEMCODE" description="配料方式"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="container" columnName="CONTAINER" type="TEXT" description="容器"/>
+    <property id="dataSourceID" columnName="DATA_SOURCEID" type="TEXT" description="配料系统的配料记录ID"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="doneNum" columnName="DONE_NUM" type="DECIMAL" scale="6" description="配料数量"/>
+    <property id="exeDate" columnName="EXE_DATE" type="DATETIME" description="配料时间"/>
+    <property id="exeStaff" columnName="EXE_STAFF" type="LONG" description="配料操作人"/>
+    <property id="factoryId" columnName="FACTORY_ID" type="LONG" description="工作单元"/>
+    <property id="headId" columnName="HEAD_ID" type="LONG" description="表头id"/>
+    <property id="lableCode" columnName="LABLE_CODE" type="TEXT" length="2000" description="标签编号"/>
+    <property id="needPartId" columnName="NEED_PART_ID" type="LONG" description="配料需求明细ID"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="offerOrder" columnName="OFFER_ORDER" type="INTEGER" description="配料顺序"/>
+    <property id="offerSystem" columnName="OFFER_SYSTEM" type="SYSTEMCODE" description="配料系统"/>
+    <property id="phaseID" columnName="PHASEID" type="TEXT" description="phaseID"/>
+    <property id="printCount" columnName="PRINT_COUNT" type="INTEGER" description="打印次数"/>
+    <property id="productId" columnName="PRODUCT_ID" type="LONG" description="物料编码"/>
+    <property id="putBatMateId" columnName="PUT_BAT_MATE_ID" type="LONG" description="投配料活动ID"/>
+    <property id="putinNum" columnName="PUTIN_NUM" type="DECIMAL" scale="6" description="已投数量"/>
+    <property id="receiveDate" columnName="RECEIVE_DATE" type="DATETIME" description="配料接收时间"/>
+    <property id="receiveStaff" columnName="RECEIVE_STAFF" type="LONG" description="配料接收人"/>
+    <property id="rejectNum" columnName="REJECT_NUM" type="DECIMAL" scale="6" description="退料数量"/>
+    <property id="rejectReason" columnName="REJECT_REASON" type="LONG" description="退料原因"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="state" columnName="STATE" type="SYSTEMCODE" description="状态"/>
+    <property id="storeID" columnName="STOREID" type="LONG" description="货位（源）"/>
+    <index name="IDX_BATCHINGMATER_TABLEINF" columns="tableInfoId"/>
+    <property id="taskActiveId" columnName="TASK_ACTIVE_ID" type="LONG" description="活动"/>
+    <property id="taskBatch" columnName="TASK_BATCH" type="TEXT" description="生产批号"/>
+    <property id="taskID" columnName="TASKID" type="LONG" description="生产指令单ID"/>
+    <property id="taskProcessId" columnName="TASK_PROCESS_ID" type="LONG" description="工序"/>
+    <property id="wareID" columnName="WAREID" type="LONG" description="仓库（源）"/>
+  </model>
+  <model id="BatchingRejectParts" tableName="WOM_BATCHING_REJECT_PARTS" extends="AbstractEcPartEntity" description="退料记录">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="batchingId" columnName="BATCHING_ID" type="LONG" description="配料指令ID"/>
+    <property id="batchingPartId" columnName="BATCHING_PART_ID" type="LONG" description="配料记录ID"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="生产批号"/>
+    <property id="isReceived" columnName="IS_RECEIVED" type="BOOLEAN" description="是否签收"/>
+    <property id="produceTaskId" columnName="PRODUCE_TASK_ID" type="LONG" description="生产指令单"/>
+    <property id="productBatchNum" columnName="PRODUCT_BATCH_NUM" type="TEXT" description="物料批号"/>
+    <property id="receiveDate" columnName="RECEIVE_DATE" type="DATETIME" description="接收时间"/>
+    <property id="rejectExeStaff" columnName="REJECT_EXE_STAFF" type="LONG" description="退料操作人"/>
+    <property id="rejectNum" columnName="REJECT_NUM" type="DECIMAL" scale="6" description="退料数量"/>
+    <property id="rejectProduct" columnName="REJECT_PRODUCT" type="LONG" description="退料物品"/>
+    <property id="rejectReasonId" columnName="REJECT_REASON_ID" type="LONG" description="退料原因"/>
+    <property id="rejectReceiveStaff" columnName="REJECT_RECEIVE_STAFF" type="LONG" description="接收人"/>
+    <property id="rejectTime" columnName="REJECT_TIME" type="DATETIME" description="退料时间"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="store" columnName="STORE" type="LONG" description="货位ID"/>
+    <property id="storeText" columnName="STORE_TEXT" type="TEXT" description="货位"/>
+    <index name="IDX_BATCHINGREJEC_TABLEINF" columns="tableInfoId"/>
+    <property id="ware" columnName="WARE" type="LONG" description="仓库ID"/>
+    <property id="wareText" columnName="WARE_TEXT" type="TEXT" description="仓库"/>
+  </model>
+  <model id="RejectReason" tableName="WOM_REJECT_REASONS" extends="AbstractEcFullEntity" description="退料原因">
+    <property id="demo" columnName="DEMO" type="TEXT" length="2000" description="备注"/>
+    <property id="isChangeNeed" columnName="IS_CHANGE_NEED" type="BOOLEAN" description="是否修改配料需求状态"/>
+    <property id="rejectReson" columnName="REJECT_RESON" type="TEXT" length="1000" description="退料原因"/>
+  </model>
+  <model id="RejectReasonDealInfo" tableName="WOM_REJECT_REASONS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_REJECTREASON_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="RejectReasonMneCode" tableName="WOM_REJECT_REASONS_MC" extends="IdEntity">
+    <property id="mneCode" columnName="MNE_CODE" type="TEXT" operateType="CREATE"/>
+    <property id="RejectReason" columnName="REJECT_REASON" type="LONG" operateType="CREATE"/>
+  </model>
+  <model id="BatchTrace" tableName="WOM_BATCH_TRACES" extends="AbstractEcFullEntity" description="批次追踪">
+    <property id="prodTaskId" columnName="PROD_TASK_ID" type="LONG" description="指令单ID"/>
+  </model>
+  <model id="BatchTraceDealInfo" tableName="WOM_BATCH_TRACES_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BATCHTRACE_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="AdjustOrTempHead" tableName="WOM_ADJUST_OR_TEMP_HEADS" extends="AbstractEcPartEntity" description="活动处理表">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="activeMissonType" columnName="ACTIVE_MISSON_TYPE" type="SYSTEMCODE" description="活动任务类型"/>
+    <property id="activeName" columnName="ACTIVE_NAME" type="TEXT" description="活动名称"/>
+    <property id="activeType" columnName="ACTIVE_TYPE" type="SYSTEMCODE" description="活动类型"/>
+    <property id="adjustHeadID" columnName="ADJUST_HEADID" type="LONG" description="指令单"/>
+    <property id="dataSource" columnName="DATA_SOURCE" type="SYSTEMCODE" description="活动来源"/>
+    <property id="formulaProcessActive" columnName="FORMULA_PROCESS_ACTIVE" type="LONG" description="配方工序活动"/>
+    <property id="isAdjust" columnName="IS_ADJUST" type="BOOLEAN" description="是否调整"/>
+    <property id="isAgile" columnName="IS_AGILE" type="BOOLEAN" description="灵活投料"/>
+    <property id="processActiveID" columnName="PROCESS_ACTIVEID" type="LONG" description="工序活动"/>
+    <property id="processId" columnName="PROCESS_ID" type="LONG" description="指令单工序"/>
+    <property id="product" columnName="PRODUCT" type="LONG" description="物品"/>
+    <property id="qualityStandard" columnName="QUALITY_STANDARD" type="LONG" description="质量标准"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <index name="IDX_ADJUSTORTEMPH_TABLEINF" columns="tableInfoId"/>
+  </model>
+  <model id="AdjustOrTempRecords" tableName="WOM_ADJUST_OR_TEMP_RECORDS" extends="AbstractEcPartEntity" description="活动处理记录表">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="acticeName" columnName="ACTICE_NAME" type="TEXT" description="活动名称"/>
+    <property id="activeRecordBatchState" columnName="ACTIVE_RECORD_BATCH_STATE" type="LONG" description="活动与批状态"/>
+    <property id="activeRecordState" columnName="ACTIVE_RECORD_STATE" type="SYSTEMCODE" description="活动状态"/>
+    <property id="activeType" columnName="ACTIVE_TYPE" type="SYSTEMCODE" description="活动类型"/>
+    <property id="actualUse" columnName="ACTUAL_USE" type="DECIMAL" scale="6" description="实际投料量"/>
+    <property id="endTime" columnName="END_TIME" type="DATETIME" description="结束时间"/>
+    <property id="finalInspection" columnName="FINAL_INSPECTION" type="BOOLEAN" description="是否完工检"/>
+    <property id="formularActive" columnName="FORMULAR_ACTIVE" type="LONG" description="配方活动"/>
+    <property id="headerID" columnName="HEADERID" type="LONG" description="指令单"/>
+    <property id="inspectRecordId" columnName="INSPECT_RECORD_ID" type="LONG" description="请检报告单ID"/>
+    <property id="inspectResult" columnName="INSPECT_RESULT" type="TEXT" description="检验结果"/>
+    <property id="missonType" columnName="MISSON_TYPE" type="SYSTEMCODE" description="任务类型"/>
+    <property id="planNum" columnName="PLAN_NUM" type="DECIMAL" scale="6" description="计划投料量"/>
+    <property id="processID" columnName="PROCESSID" type="LONG" description="工序ID"/>
+    <property id="processName" columnName="PROCESS_NAME" type="TEXT" description="工序名称"/>
+    <property id="recordDataSource" columnName="RECORD_DATA_SOURCE" type="SYSTEMCODE" description="活动来源"/>
+    <property id="recordIsAdjust" columnName="RECORD_IS_ADJUST" type="BOOLEAN" description="是否调整"/>
+    <property id="recordProduct" columnName="RECORD_PRODUCT" type="LONG" description="物品"/>
+    <property id="rejectsDeal" columnName="REJECTS_DEAL" type="LONG" description="不良品处理单"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <property id="startTime" columnName="START_TIME" type="DATETIME" description="开始时间"/>
+    <index name="IDX_ADJUSTORTEMPR_TABLEINF" columns="tableInfoId"/>
+  </model>
+  <model id="BatchChargeDetails" tableName="WOM_BATCH_CHARGE_DETAILS" extends="AbstractEcPartEntity" description="投料明细">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="actualUseNum" columnName="ACTUAL_USE_NUM" type="DECIMAL" scale="6" description="实际投料量"/>
+    <property id="batch" columnName="BATCH" type="TEXT" description="批号"/>
+    <property id="good" columnName="GOOD" type="LONG" description="物品"/>
+    <property id="placeSet" columnName="PLACE_SET" type="LONG" description="货位"/>
+    <property id="putinDate" columnName="PUTIN_DATE" type="DATETIME" description="投料时间"/>
+    <property id="putinEndDate" columnName="PUTIN_END_DATE" type="DATETIME" description="投料结束时间"/>
+    <property id="putinStaff" columnName="PUTIN_STAFF" type="LONG" description="投料人"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <index name="IDX_BATCHCHARGEDE_TABLEINF" columns="tableInfoId"/>
+    <property id="taskActiExelog" columnName="TASK_ACTI_EXELOG" type="LONG" description="活动执行记录"/>
+    <property id="taskObj" columnName="TASK_OBJ" type="LONG" description="指令单"/>
+    <property id="wareID" columnName="WAREID" type="LONG" description="仓库"/>
+  </model>
+  <model id="BatchPhaseExelog" tableName="WOM_BATCH_PHASE_EXELOGS" extends="AbstractEcPartEntity" description="phase执行记录">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="allowPutin" columnName="ALLOW_PUTIN" type="BOOLEAN" description="允许投料"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="生产批号"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="endTime" columnName="END_TIME" type="DATETIME" description="结束时间"/>
+    <property id="exeSystem" columnName="EXE_SYSTEM" type="SYSTEMCODE" description="执行系统"/>
+    <property id="factoryId" columnName="FACTORY_ID" type="LONG" description="工作单元"/>
+    <property id="isFinish" columnName="IS_FINISH" type="BOOLEAN" description="执行结束"/>
+    <property id="mobileTerminal" columnName="MOBILE_TERMINAL" type="BOOLEAN" description="移动端执行"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="operartionID" columnName="OPERARTIONID" type="TEXT" description="operartionID"/>
+    <property id="pdaCode" columnName="PDA_CODE" type="TEXT" description="PDA编码"/>
+    <property id="phaseID" columnName="PHASEID" type="TEXT" description="phaseID"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="startTime" columnName="START_TIME" type="DATETIME" description="开始时间"/>
+    <index name="IDX_BATCHPHASEEXE_TABLEINF" columns="tableInfoId"/>
+    <property id="taskID" columnName="TASKID" type="LONG" description="指令单ID"/>
+    <property id="taskProcessID" columnName="TASK_PROCESSID" type="LONG" description="工序ID"/>
+  </model>
+  <model id="ProdTaskActiExelog" tableName="WOM_PROD_TASK_ACTI_EXELOGS" extends="AbstractEcPartEntity" description="活动执行记录">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="activeBatchStateID" columnName="ACTIVE_BATCH_STATEID" type="LONG" description="活动与批状态"/>
+    <property id="activeName" columnName="ACTIVE_NAME" type="TEXT" description="活动名称"/>
+    <property id="activeSource" columnName="ACTIVE_SOURCE" type="SYSTEMCODE" description="活动来源"/>
+    <property id="activeType" columnName="ACTIVE_TYPE" type="SYSTEMCODE" description="活动类型"/>
+    <property id="actualNum" columnName="ACTUAL_NUM" type="DECIMAL" scale="6" description="实际投料数量"/>
+    <property id="adjustRecordID" columnName="ADJUST_RECORDID" type="LONG" description="调整单ID"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="生产批号"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="checkResult" columnName="CHECK_RESULT" type="TEXT" description="检验结论"/>
+    <property id="checkResultID" columnName="CHECK_RESULTID" type="LONG" description="检验报告单"/>
+    <property id="dataSource" columnName="DATA_SOURCE" type="SYSTEMCODE" description="数据来源"/>
+    <property id="dataType" columnName="DATA_TYPE" type="SYSTEMCODE" description="数据性质(废)"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="endTime" columnName="END_TIME" type="DATETIME" description="结束时间"/>
+    <property id="factoryID" columnName="FACTORYID" type="LONG" description="工作单元"/>
+    <property id="finalInspection" columnName="FINAL_INSPECTION" type="BOOLEAN" description="完工检验"/>
+    <property id="formularActice" columnName="FORMULAR_ACTICE" type="LONG" description="配方.活动"/>
+    <property id="isAdjust" columnName="IS_ADJUST" type="BOOLEAN" description="调整记录"/>
+    <property id="isAnaly" columnName="IS_ANALY" type="BOOLEAN" description="是否统计工艺"/>
+    <property id="isFinish" columnName="IS_FINISH" type="BOOLEAN" description="执行结束"/>
+    <property id="isPassCheck" columnName="IS_PASS_CHECK" type="BOOLEAN" description="放行检验"/>
+    <property id="isPDA" columnName="ISPDA" type="BOOLEAN" description="移动端执行"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="operartionID" columnName="OPERARTIONID" type="TEXT" description="operartionID"/>
+    <property id="phaseID" columnName="PHASEID" type="TEXT" description="phaseID"/>
+    <property id="planNum" columnName="PLAN_NUM" type="DECIMAL" scale="6" description="计划投料数量"/>
+    <property id="processExeLog" columnName="PROCESS_EXE_LOG" type="LONG" description="工序执行记录"/>
+    <property id="productID" columnName="PRODUCTID" type="LONG" description="物料"/>
+    <property id="productNum" columnName="PRODUCT_NUM" type="TEXT" description="物料批号"/>
+    <property id="rejectsDealID" columnName="REJECTS_DEALID" type="LONG" description="不良品处理单"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="staffID" columnName="STAFFID" type="LONG" description="操作人"/>
+    <property id="startTime" columnName="START_TIME" type="DATETIME" description="开始时间"/>
+    <property id="state" columnName="STATE" type="SYSTEMCODE" description="状态（作废）"/>
+    <property id="staticFlag" columnName="STATIC_FLAG" type="BOOLEAN" description="统计标识"/>
+    <index name="IDX_PRODTASKACTIE_TABLEINF" columns="tableInfoId"/>
+    <property id="taskActiveID" columnName="TASK_ACTIVEID" type="LONG" description="指令单.活动ID"/>
+    <property id="taskID" columnName="TASKID" type="LONG" description="指令单ID"/>
+    <property id="taskProcessID" columnName="TASK_PROCESSID" type="LONG" description="指令单.工序ID"/>
+    <property id="waitPutinRecordID" columnName="WAIT_PUTIN_RECORDID" type="LONG" description="待投料记录ID"/>
+  </model>
+  <model id="ProdTaskProcExelog" tableName="WOM_PROD_TASK_PROC_EXELOGS" extends="AbstractEcPartEntity" description="工序执行记录">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="生产批号"/>
+    <property id="batchUnitID" columnName="BATCH_UNITID" type="TEXT" description="批控.unit"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="endTime" columnName="END_TIME" type="DATETIME" description="结束时间"/>
+    <property id="factoryID" columnName="FACTORYID" type="LONG" description="工作单元(执行)"/>
+    <property id="formularProcess" columnName="FORMULAR_PROCESS" type="LONG" description="配方.工序"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="startTime" columnName="START_TIME" type="DATETIME" description="开始时间"/>
+    <property id="state" columnName="STATE" type="SYSTEMCODE" description="状态"/>
+    <index name="IDX_PRODTASKPROCE_TABLEINF" columns="tableInfoId"/>
+    <property id="taskID" columnName="TASKID" type="LONG" description="指令单ID"/>
+    <property id="taskProcessID" columnName="TASK_PROCESSID" type="LONG" description="指令单.工序ID"/>
+  </model>
+  <model id="ProduceMaterialSum" tableName="WOM_PRODUCE_MATERIAL_SUMS" extends="AbstractEcPartEntity" description="用料汇总">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="批号"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="headId" columnName="HEAD_ID" type="LONG" description="表头id"/>
+    <property id="isMixQuality" columnName="IS_MIX_QUALITY" type="BOOLEAN" description="固定数量"/>
+    <property id="maxQuality" columnName="MAX_QUALITY" type="DECIMAL" scale="6" description="区间上限"/>
+    <property id="minQuality" columnName="MIN_QUALITY" type="DECIMAL" scale="6" description="区间下限"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="planNum" columnName="PLAN_NUM" type="DECIMAL" scale="6" description="计划数量"/>
+    <property id="productId" columnName="PRODUCT_ID" type="LONG" description="物料"/>
+    <property id="property" columnName="PROPERTY" type="SYSTEMCODE" description="性质"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="standardNum" columnName="STANDARD_NUM" type="DECIMAL" scale="6" description="理论数量"/>
+    <index name="IDX_PRODUCEMATERI_TABLEINF" columns="tableInfoId"/>
+  </model>
+  <model id="ProduceTask" tableName="WOM_PRODUCE_TASKS" extends="AbstractEcFullEntity" description="生产指令单">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="actEndTime" columnName="ACT_END_TIME" type="DATETIME" description="实际完成时间"/>
+    <property id="actStartTime" columnName="ACT_START_TIME" type="DATETIME" description="实际开始时间"/>
+    <property id="advanceCharge" columnName="ADVANCE_CHARGE" type="BOOLEAN" description="通知放料"/>
+    <property id="autoReportOnFinish" columnName="AUTO_REPORT_ON_FINISH" type="SYSTEMCODE" description="完成后自动报工"/>
+    <property id="batchContral" columnName="BATCH_CONTRAL" type="BOOLEAN" description="批控"/>
+    <property id="batchNumRule" columnName="BATCH_NUM_RULE" type="LONG" description="批号规则"/>
+    <property id="batchProdTaskID" columnName="BATCH_PROD_TASKID" type="TEXT" description="批控控制配方ID"/>
+    <property id="batchProduceNum" columnName="BATCH_PRODUCE_NUM" type="DECIMAL" scale="6" description="制造数量, 保存批控反馈的产量"/>
+    <property id="batchTaskState" columnName="BATCH_TASK_STATE" type="SYSTEMCODE" description="批控状态"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="bulkBatchNum" columnName="BULK_BATCH_NUM" type="LONG" description="待包装批号"/>
+    <property id="bulkNum" columnName="BULK_NUM" type="DECIMAL" scale="6" description="待包装数量"/>
+    <property id="bulkProduct" columnName="BULK_PRODUCT" type="LONG" description="待包装产品"/>
+    <property id="changePackageForm" columnName="CHANGE_PACKAGE_FORM" type="TEXT" description="换包装审批单, 目前没有这个单子，后期需要更换为对象型"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="factoryId" columnName="FACTORY_ID" type="LONG" description="生产线"/>
+    <property id="finishNum" columnName="FINISH_NUM" type="DECIMAL" scale="6" description="完成数量"/>
+    <property id="formularId" columnName="FORMULAR_ID" type="LONG" description="配方编码"/>
+    <property id="interfaceUrl" columnName="INTERFACE_URL" type="TEXT" description="批控接口服务器地址"/>
+    <property id="isAnaly" columnName="IS_ANALY" type="BOOLEAN" description="是否统计工艺"/>
+    <property id="isHasMaterial" columnName="IS_HAS_MATERIAL" type="BOOLEAN" description="是否已配料"/>
+    <property id="lossRate" columnName="LOSS_RATE" type="DECIMAL" scale="6" description="损耗率"/>
+    <property id="manuOrderMain" columnName="MANU_ORDER_MAIN" type="LONG" description="生产订单"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="packageType" columnName="PACKAGE_TYPE" type="SYSTEMCODE" description="包装类型"/>
+    <property id="planEndTime" columnName="PLAN_END_TIME" type="DATETIME" description="计划结束时间"/>
+    <property id="planParId" columnName="PLAN_PAR_ID" type="LONG" description="计划"/>
+    <property id="planStartTime" columnName="PLAN_START_TIME" type="DATETIME" description="计划开始时间"/>
+    <property id="productBatchNum" columnName="PRODUCT_BATCH_NUM" type="BAPCODE" description="生产批号"/>
+    <property id="productId" columnName="PRODUCT_ID" type="LONG" description="产品"/>
+    <property id="productNum" columnName="PRODUCT_NUM" type="DECIMAL" scale="6" description="生产数量"/>
+    <property id="recycleTime" columnName="RECYCLE_TIME" type="INTEGER" description="回收次数"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="reWorkBatchNum" columnName="RE_WORK_BATCH_NUM" type="LONG" description="返工前批号"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="staticFlag" columnName="STATIC_FLAG" type="BOOLEAN" description="统计标识"/>
+    <property id="supportEbr" columnName="SUPPORT_EBR" type="BOOLEAN" description="支持EBR"/>
+    <index name="IDX_PRODUCETASK_TABLEINF" columns="tableInfoId"/>
+    <property id="tasksID" columnName="TASKSID" type="LONG" description="批量指令单明细ID"/>
+    <property id="taskState" columnName="TASK_STATE" type="SYSTEMCODE" description="执行状态"/>
+    <property id="taskType" columnName="TASK_TYPE" type="SYSTEMCODE" description="指令单类型"/>
+    <property id="team" columnName="TEAM" type="SYSTEMCODE" description="班组"/>
+    <property id="workCode" columnName="WORK_CODE" type="TEXT" description="APS工单号"/>
+    <property id="workType" columnName="WORK_TYPE" type="SYSTEMCODE" description="类型"/>
+  </model>
+  <model id="ProduceTaskDealInfo" tableName="WOM_PRODUCE_TASKS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PRODUCETASK_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="ProduceTaskSupervision" tableName="WOM_PRODUCE_TASKS_SV" extends="AbstractSupervisionEntity">
+    <property id="valid" columnName="VALID" type="BOOLEAN" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PRODUCETASK_SuTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="ProduceTaskActive" tableName="WOM_PRODUCE_TASK_ACTIVES" extends="AbstractEcPartEntity" description="用料活动">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="activeBatchState" columnName="ACTIVE_BATCH_STATE" type="LONG" description="活动与批状态"/>
+    <property id="activeId" columnName="ACTIVE_ID" type="LONG" description="活动ID"/>
+    <property id="activeSource" columnName="ACTIVE_SOURCE" type="SYSTEMCODE" description="活动来源"/>
+    <property id="activeState" columnName="ACTIVE_STATE" type="SYSTEMCODE" description="活动状态"/>
+    <property id="activeType" columnName="ACTIVE_TYPE" type="SYSTEMCODE" description="活动类型"/>
+    <property id="actOrder" columnName="ACT_ORDER" type="INTEGER" description="投料顺序"/>
+    <property id="actualNum" columnName="ACTUAL_NUM" type="DECIMAL" scale="6" description="实际投料量"/>
+    <property id="batchNumObj" columnName="BATCH_NUM_OBJ" type="LONG" description="物料批号"/>
+    <property id="batchPhaseID" columnName="BATCH_PHASEID" type="TEXT" description="批控PhaseID"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="endTime" columnName="END_TIME" type="DATETIME" description="活动结束时间"/>
+    <property id="execSort" columnName="EXEC_SORT" type="TEXT" description="执行顺序"/>
+    <property id="exeOrder" columnName="EXE_ORDER" type="INTEGER" description="执行顺序"/>
+    <property id="exeSystem" columnName="EXE_SYSTEM" type="SYSTEMCODE" description="执行系统"/>
+    <property id="factoryId" columnName="FACTORY_ID" type="LONG" description="工作单元"/>
+    <property id="finalInspection" columnName="FINAL_INSPECTION" type="BOOLEAN" description="完工检验"/>
+    <property id="formulaBom" columnName="FORMULA_BOM" type="LONG" description="配方Bom"/>
+    <property id="formulaId" columnName="FORMULA_ID" type="LONG" description="配方ID"/>
+    <property id="headID" columnName="HEADID" type="LONG" description="表头ID"/>
+    <property id="inspectResult" columnName="INSPECT_RESULT" type="TEXT" description="替代料"/>
+    <property id="isBackMix" columnName="IS_BACK_MIX" type="BOOLEAN" description="是否回掺活动"/>
+    <property id="isBatchAna" columnName="IS_BATCH_ANA" type="BOOLEAN" description="工艺监测"/>
+    <property id="isMixQuality" columnName="IS_MIX_QUALITY" type="BOOLEAN" description="固定数量"/>
+    <property id="isOtherActive" columnName="IS_OTHER_ACTIVE" type="BOOLEAN" description="配方外活动(废)"/>
+    <property id="isReplace" columnName="IS_REPLACE" type="BOOLEAN" description="替代料"/>
+    <property id="lossRate" columnName="LOSS_RATE" type="DECIMAL" scale="6" description="损耗率(%)"/>
+    <property id="maxQuality" columnName="MAX_QUALITY" type="DECIMAL" scale="6" description="区间上限"/>
+    <property id="minQuality" columnName="MIN_QUALITY" type="DECIMAL" scale="6" description="区间下限"/>
+    <property id="mobileTerminal" columnName="MOBILE_TERMINAL" type="BOOLEAN" description="移动端执行"/>
+    <property id="name" columnName="NAME" type="TEXT" description="活动名称"/>
+    <property id="needWeigh" columnName="NEED_WEIGH" type="BOOLEAN" description="需要称重"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="offerOrder" columnName="OFFER_ORDER" type="INTEGER" description="配料顺序"/>
+    <property id="operartionID" columnName="OPERARTIONID" type="TEXT" description="operartionID"/>
+    <property id="oprate" columnName="OPRATE" type="TEXT" description="操作"/>
+    <property id="orderProcessId" columnName="ORDER_PROCESS_ID" type="LONG" description="指令单工序"/>
+    <property id="outputNum" columnName="OUTPUT_NUM" type="DECIMAL" scale="6" description="产出量"/>
+    <property id="parentActive" columnName="PARENT_ACTIVE" type="BOOLEAN" description="父活动"/>
+    <property id="parentActiveId" columnName="PARENT_ACTIVE_ID" type="LONG" description="父活动ID"/>
+    <property id="phase" columnName="PHASE" type="INTEGER" description="阶段"/>
+    <property id="planNum" columnName="PLAN_NUM" type="DECIMAL" scale="6" description="计划数量"/>
+    <property id="processId" columnName="PROCESS_ID" type="LONG" description="工序ID"/>
+    <property id="productId" columnName="PRODUCT_ID" type="LONG" description="物料"/>
+    <property id="property" columnName="PROPERTY" type="SYSTEMCODE" description="性质"/>
+    <property id="putBatMateId" columnName="PUT_BAT_MATE_ID" type="LONG" description="投配料活动ID"/>
+    <property id="rejectsDeal" columnName="REJECTS_DEAL" type="LONG" description="不良品处理单"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="sequence" columnName="SEQUENCE" type="INTEGER" description="次序"/>
+    <property id="standardNum" columnName="STANDARD_NUM" type="DECIMAL" scale="6" description="理论数量"/>
+    <property id="startTime" columnName="START_TIME" type="DATETIME" description="活动开始时间"/>
+    <index name="IDX_PRODUCETASKAC_TABLEINF" columns="tableInfoId"/>
+  </model>
+  <model id="ProduceTaskProcess" tableName="WOM_PRODUCE_TASK_PROCESSES" extends="AbstractEcPartEntity" description="指令单工序">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="afterRatio" columnName="AFTER_RATIO" type="DECIMAL" scale="6" description="投料比例(%)"/>
+    <property id="batchUnitID" columnName="BATCH_UNITID" type="TEXT" description="批控UnitID"/>
+    <property id="beforeRatio" columnName="BEFORE_RATIO" type="DECIMAL" scale="6" description="前投料比例(%)"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="endTime" columnName="END_TIME" type="DATETIME" description="结束时间"/>
+    <property id="exeOrder" columnName="EXE_ORDER" type="INTEGER" description="执行顺序"/>
+    <property id="factoryId" columnName="FACTORY_ID" type="LONG" description="工作单元"/>
+    <property id="formulaId" columnName="FORMULA_ID" type="LONG" description="配方ID"/>
+    <property id="formularProcess" columnName="FORMULAR_PROCESS" type="LONG" description="配方工序"/>
+    <property id="headId" columnName="HEAD_ID" type="LONG" description="表头ID"/>
+    <property id="isFirstProcess" columnName="IS_FIRST_PROCESS" type="BOOLEAN" description="首道工序"/>
+    <property id="isLastProcess" columnName="IS_LAST_PROCESS" type="BOOLEAN" description="末道工序"/>
+    <property id="longTime" columnName="LONG_TIME" type="DECIMAL" scale="6" description="标准时长"/>
+    <property id="name" columnName="NAME" type="TEXT" description="工序名称"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="processState" columnName="PROCESS_STATE" type="SYSTEMCODE" description="工序状态"/>
+    <property id="processType" columnName="PROCESS_TYPE" type="LONG" description="工序类型"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="startTime" columnName="START_TIME" type="DATETIME" description="开始时间"/>
+    <index name="IDX_PRODUCETASKPR_TABLEINF" columns="tableInfoId"/>
+  </model>
+  <model id="ProductNumIndex" tableName="WOM_PRODUCT_NUM_INDICES" extends="AbstractEcPartEntity" description="批号索引">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <index name="IDX_PRODUCTNUMIND_TABLEINF" columns="tableInfoId"/>
+  </model>
+  <model id="WaitPutinRecords" tableName="WOM_WAIT_PUTIN_RECORDS" extends="AbstractEcPartEntity" description="待投料记录">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="activeSource" columnName="ACTIVE_SOURCE" type="SYSTEMCODE" description="活动来源"/>
+    <property id="activeType" columnName="ACTIVE_TYPE" type="SYSTEMCODE" description="活动类型"/>
+    <property id="actOrder" columnName="ACT_ORDER" type="INTEGER" description="投料顺序"/>
+    <property id="actTime" columnName="ACT_TIME" type="DATETIME" description="操作时间"/>
+    <property id="actualNum" columnName="ACTUAL_NUM" type="DECIMAL" scale="6" description="实际投料数量"/>
+    <property id="batchMaterialID" columnName="BATCH_MATERIALID" type="LONG" description="配料记录ID"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="生产批号"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="isFinish" columnName="IS_FINISH" type="BOOLEAN" description="已执行"/>
+    <property id="lableCode" columnName="LABLE_CODE" type="LONGTEXT" description="标签编号"/>
+    <property id="materialNum" columnName="MATERIAL_NUM" type="DECIMAL" scale="6" description="计划投料数量"/>
+    <property id="mobileTerminal" columnName="MOBILE_TERMINAL" type="BOOLEAN" description="移动端执行"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="phaseID" columnName="PHASEID" type="TEXT" description="phaseID"/>
+    <property id="productID" columnName="PRODUCTID" type="LONG" description="物料"/>
+    <property id="productNum" columnName="PRODUCT_NUM" type="TEXT" description="物料批号"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scanMaterial" columnName="SCAN_MATERIAL" type="BOOLEAN" description="扫码投料"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="staffID" columnName="STAFFID" type="LONG" description="操作人"/>
+    <index name="IDX_WAITPUTINRECO_TABLEINF" columns="tableInfoId"/>
+    <property id="taskActiveID" columnName="TASK_ACTIVEID" type="LONG" description="活动ID"/>
+    <property id="taskID" columnName="TASKID" type="LONG" description="指令单ID"/>
+    <property id="taskProcessID" columnName="TASK_PROCESSID" type="LONG" description="工序ID"/>
+  </model>
+  <model id="PrepareMaterial" tableName="WOM_PREPARE_MATERIALS" extends="AbstractEcFullEntity" description="生产备料单">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="applyDate" columnName="APPLY_DATE" type="DATETIME" description="申请时间"/>
+    <property id="applyStaff" columnName="APPLY_STAFF" type="LONG" description="备料申请人"/>
+    <property id="backFlag" columnName="BACK_FLAG" type="BOOLEAN" description="退料标记"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="incode" columnName="INCODE" type="TEXT" description="内部编码"/>
+    <property id="manulOrderMain" columnName="MANUL_ORDER_MAIN" type="LONG" description="生产订单"/>
+    <property id="manulOrderMaterial" columnName="MANUL_ORDER_MATERIAL" type="LONG" description="生产订单"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="outCode" columnName="OUT_CODE" type="TEXT" description="出库单号"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <index name="IDX_PREPAREMATERI_TABLEINF" columns="tableInfoId"/>
+    <property id="wareID" columnName="WAREID" type="LONG" description="仓库"/>
+  </model>
+  <model id="PrepareMaterialDealInfo" tableName="WOM_PREPARE_MATERIALS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PREPAREMATERI_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="PrepareMaterialSupervision" tableName="WOM_PREPARE_MATERIALS_SV" extends="AbstractSupervisionEntity">
+    <property id="valid" columnName="VALID" type="BOOLEAN" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PREPAREMATERI_SuTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="PrepareMaterialPart" tableName="WOM_PREPARE_MATERIAL_PARTS" extends="AbstractEcPartEntity" description="备料明细">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="物料批号"/>
+    <property id="batchNumObj" columnName="BATCH_NUM_OBJ" type="LONG" description="现存量"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="code" columnName="CODE" type="TEXT" description="物料编码"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="edition" columnName="EDITION" type="TEXT" description="特殊库存标志"/>
+    <property id="formulaId" columnName="FORMULA_ID" type="LONG" description="表头"/>
+    <property id="hasDoneNum" columnName="HAS_DONE_NUM" type="DECIMAL" scale="6" description="已备数量"/>
+    <property id="manuOrder" columnName="MANU_ORDER" type="LONG" description="生产订单"/>
+    <property id="materialBatchNum" columnName="MATERIAL_BATCH_NUM" type="TEXT" length="200" description="原料批号（文本）"/>
+    <property id="name" columnName="NAME" type="TEXT" description="物料名称"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="prepareNum" columnName="PREPARE_NUM" type="DECIMAL" scale="6" description="数量"/>
+    <property id="productId" columnName="PRODUCT_ID" type="LONG" description="物料"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="rsnum" columnName="RSNUM" type="TEXT" description="预留号"/>
+    <property id="rspos" columnName="RSPOS" type="TEXT" description="预留行项目"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="storeID" columnName="STOREID" type="LONG" description="货位"/>
+    <index name="IDX_PREPAREMATERI_TABLEINF" columns="tableInfoId"/>
+    <property id="unit" columnName="UNIT" type="LONG" description="单位"/>
+    <property id="useNeed" columnName="USE_NEED" type="DECIMAL" scale="6" description="现存量"/>
+    <property id="useNeedRef" columnName="USE_NEED_REF" type="LONG" description="现存量参照"/>
+    <property id="useNum" columnName="USE_NUM" type="DECIMAL" scale="6" description="使用量"/>
+    <property id="ware" columnName="WARE" type="LONG" description="仓库"/>
+    <property id="wareCode" columnName="WARE_CODE" type="TEXT" length="200" description="仓库编码（文本）"/>
+    <property id="wareId" columnName="WARE_ID" type="LONG" description="仓库"/>
+  </model>
+  <model id="PutMaterialException" tableName="WOM_PUT_MATERIAL_EXCEPTIONS" extends="AbstractEcFullEntity" description="投料异常处理单">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="batchNumObj" columnName="BATCH_NUM_OBJ" type="LONG" description="实际物料批号"/>
+    <property id="batchNumStr" columnName="BATCH_NUM_STR" type="TEXT" length="200" description="实际物料批号"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="lossNum" columnName="LOSS_NUM" type="DECIMAL" scale="6" description="实际损耗数量"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="oldBatchNumStr" columnName="OLD_BATCH_NUM_STR" type="TEXT" length="200" description="物料批号"/>
+    <property id="oldLossNum" columnName="OLD_LOSS_NUM" type="TEXT" length="20" description="损耗数量"/>
+    <property id="oldplaceSetCode" columnName="OLDPLACE_SET_CODE" type="TEXT" description="货位编码"/>
+    <property id="oldplaceSetName" columnName="OLDPLACE_SET_NAME" type="TEXT" description="货位名称"/>
+    <property id="oldUseNum" columnName="OLD_USE_NUM" type="TEXT" length="20" description="投料数量"/>
+    <property id="putinID" columnName="PUTINID" type="LONG" description="投料单"/>
+    <property id="putinPartID" columnName="PUTIN_PARTID" type="LONG" description="投料明细"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <index name="IDX_PUTMATERIALEX_TABLEINF" columns="tableInfoId"/>
+    <property id="useNum" columnName="USE_NUM" type="DECIMAL" scale="6" description="实际投料数量"/>
+  </model>
+  <model id="PutMaterialExceptionDealInfo" tableName="WOM_PUT_MATERIAL_EXCEPTIONS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PUTMATERIALEX_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="PutMaterialExceptionSupervision" tableName="WOM_PUT_MATERIAL_EXCEPTIONS_SV" extends="AbstractSupervisionEntity">
+    <property id="valid" columnName="VALID" type="BOOLEAN" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PUTMATERIALEX_SuTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BatchNumRule" tableName="WOM_BATCH_NUM_RULES" extends="AbstractEcFullEntity" description="批号规则">
+    <property id="code" columnName="CODE" type="TEXT" description="编码"/>
+    <property id="isAccountPeriod" columnName="IS_ACCOUNT_PERIOD" type="BOOLEAN" description="会计期"/>
+    <property id="menu" columnName="MENU" type="TEXT" length="2000" description="备注"/>
+    <property id="name" columnName="NAME" type="TEXT" description="名称"/>
+    <property id="ruleDetail" columnName="RULE_DETAIL" type="TEXT" length="2000" description="规则"/>
+    <property id="ruleType" columnName="RULE_TYPE" type="SYSTEMCODE" description="规则类型"/>
+  </model>
+  <model id="BatchNumRuleDealInfo" tableName="WOM_BATCH_NUM_RULES_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BATCHNUMRULE_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BatchingMaterialNeed" tableName="WOM_BATCHING_MATERIAL_NEEDS" extends="AbstractEcFullEntity" description="配料需求">
+    <property id="activeType" columnName="ACTIVE_TYPE" type="SYSTEMCODE" description="活动类型"/>
+    <property id="actOrder" columnName="ACT_ORDER" type="INTEGER" description="投料顺序"/>
+    <property id="actualNum" columnName="ACTUAL_NUM" type="DECIMAL" scale="6" description="实际投料量"/>
+    <property id="batchSite" columnName="BATCH_SITE" type="SYSTEMCODE" description="配料方式"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="container" columnName="CONTAINER" type="TEXT" description="容器"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="factoryId" columnName="FACTORY_ID" type="LONG" description="工作单元"/>
+    <property id="hasOrderNum" columnName="HAS_ORDER_NUM" type="DECIMAL" scale="6" description="已下达指令数量"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="offerOrder" columnName="OFFER_ORDER" type="INTEGER" description="配料顺序"/>
+    <property id="offerSystem" columnName="OFFER_SYSTEM" type="SYSTEMCODE" description="配料系统"/>
+    <property id="phaseID" columnName="PHASEID" type="TEXT" description="phaseID"/>
+    <property id="planNum" columnName="PLAN_NUM" type="DECIMAL" scale="6" description="计划数量"/>
+    <property id="productId" columnName="PRODUCT_ID" type="LONG" description="物料"/>
+    <property id="putBatMateId" columnName="PUT_BAT_MATE_ID" type="LONG" description="投配料活动ID"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="state" columnName="STATE" type="SYSTEMCODE" description="状态"/>
+    <property id="taskActive" columnName="TASK_ACTIVE" type="LONG" description="指令活动ID"/>
+    <property id="taskID" columnName="TASKID" type="LONG" description="生产指令单"/>
+    <property id="taskProcess" columnName="TASK_PROCESS" type="LONG" description="指令工序ID"/>
+    <property id="useNum" columnName="USE_NUM" type="DECIMAL" scale="6" description="已配数量"/>
+  </model>
+  <model id="BatchingMaterialNeedDealInfo" tableName="WOM_BATCHING_MATERIAL_NEEDS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BATCHINGMATER_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="MakeBatOrderHead" tableName="WOM_MAKE_BAT_ORDER_HEADS" extends="AbstractEcPartEntity" description="创建配料指令表头">
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="doneStaff" columnName="DONE_STAFF" type="LONG" description="配料负责人"/>
+    <property id="makeStaff" columnName="MAKE_STAFF" type="LONG" description="指令创建人"/>
+    <property id="needDate" columnName="NEED_DATE" type="DATETIME" description="需送达时间"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+  </model>
+  <model id="MakeBatOrderPart" tableName="WOM_MAKE_BAT_ORDER_PARTS" extends="AbstractEcPartEntity" description="创建配料指令表体">
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="headID" columnName="HEADID" type="LONG" description="表头ID"/>
+    <property id="needID" columnName="NEEDID" type="LONG" description="配料需求ID"/>
+    <property id="num" columnName="NUM" type="DECIMAL" scale="6" description="配料数量"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+  </model>
+  <model id="PutInMaterial" tableName="WOM_PUT_IN_MATERIALS" extends="AbstractEcFullEntity" description="投料单">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="putinStaff" columnName="PUTIN_STAFF" type="LONG" description="投料人"/>
+    <property id="putinType" columnName="PUTIN_TYPE" type="SYSTEMCODE" description="投料方式"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <index name="IDX_PUTINMATERIAL_TABLEINF" columns="tableInfoId"/>
+    <property id="taskID" columnName="TASKID" type="LONG" description="生产指令单"/>
+  </model>
+  <model id="PutInMaterialDealInfo" tableName="WOM_PUT_IN_MATERIALS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PUTINMATERIAL_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="PutInMaterialSupervision" tableName="WOM_PUT_IN_MATERIALS_SV" extends="AbstractSupervisionEntity">
+    <property id="valid" columnName="VALID" type="BOOLEAN" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_PUTINMATERIAL_SuTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="PutInMaterialPart" tableName="WOM_PUT_IN_MATERIAL_PARTS" extends="AbstractEcPartEntity" description="投料记录">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="adjustActive" columnName="ADJUST_ACTIVE" type="LONG" description="调整/机动活动"/>
+    <property id="batchNum" columnName="BATCH_NUM" type="TEXT" description="物料批号"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="factoryId" columnName="FACTORY_ID" type="LONG" description="工作单元"/>
+    <property id="formluActive" columnName="FORMLU_ACTIVE" type="LONG" description="配方工序活动"/>
+    <property id="headId" columnName="HEAD_ID" type="LONG" description="表头id"/>
+    <property id="lossNum" columnName="LOSS_NUM" type="DECIMAL" scale="6" description="损耗数量"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="proBatch" columnName="PRO_BATCH" type="LONG" description="物料批号"/>
+    <property id="productCode" columnName="PRODUCT_CODE" type="TEXT" description="物料编码"/>
+    <property id="productId" columnName="PRODUCT_ID" type="LONG" description="物料"/>
+    <property id="putinDate" columnName="PUTIN_DATE" type="DATETIME" description="投料时间"/>
+    <property id="putinEndDate" columnName="PUTIN_END_DATE" type="DATETIME" description="投料结束时间"/>
+    <property id="putinStaff" columnName="PUTIN_STAFF" type="LONG" description="投料人"/>
+    <property id="putinType" columnName="PUTIN_TYPE" type="SYSTEMCODE" description="投料方式"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="storeID" columnName="STOREID" type="LONG" description="出库货位"/>
+    <index name="IDX_PUTINMATERIAL_TABLEINF" columns="tableInfoId"/>
+    <property id="takeTime" columnName="TAKE_TIME" type="INTEGER" description="耗时（分钟）"/>
+    <property id="taskActiveId" columnName="TASK_ACTIVE_ID" type="LONG" description="指令活动"/>
+    <property id="taskID" columnName="TASKID" type="LONG" description="生产指令单"/>
+    <property id="taskProcessId" columnName="TASK_PROCESS_ID" type="LONG" description="指令工序"/>
+    <property id="useNum" columnName="USE_NUM" type="DECIMAL" scale="6" description="投料数量"/>
+    <property id="wareID" columnName="WAREID" type="LONG" description="出库仓库"/>
+  </model>
+  <model id="ManulOrderMain" tableName="WOM_MENUL_ORDER_MAIN" extends="AbstractEcFullEntity" description="生产订单表">
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="bigintparamc" columnName="BIGINTPARAMC" type="INTEGER" description="自定义字段IPC"/>
+    <property id="bigintparamd" columnName="BIGINTPARAMD" type="INTEGER" description="自定义字段IPD"/>
+    <property id="bigintparame" columnName="BIGINTPARAME" type="INTEGER" description="自定义字段IPE"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="charparamc" columnName="CHARPARAMC" type="TEXT" length="2000" description="自定义字段CPC"/>
+    <property id="charparamd" columnName="CHARPARAMD" type="TEXT" length="2000" description="自定义字段CPD"/>
+    <property id="charparame" columnName="CHARPARAME" type="TEXT" length="2000" description="自定义字段CPE"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="dateparamc" columnName="DATEPARAMC" type="DATETIME" description="自定义字段DPC"/>
+    <property id="edition" columnName="EDITION" type="TEXT" description="生产版本"/>
+    <property id="factory" columnName="FACTORY" type="LONG" description="工厂代码"/>
+    <property id="hasManualNumber" columnName="HAS_MANUAL_NUMBER" type="DECIMAL" scale="2" description="已生产数量"/>
+    <property id="isFinshed" columnName="IS_FINSHED" type="BOOLEAN" description="完成状态"/>
+    <property id="manulOrderNum" columnName="MANUL_ORDER_NUM" type="TEXT" description="生产订单号"/>
+    <property id="manulStaff" columnName="MANUL_STAFF" type="LONG" description="生产管理员"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="numberparamc" columnName="NUMBERPARAMC" type="DECIMAL" scale="6" description="自定义字段FPC"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="objparamc" columnName="OBJPARAMC" type="LONG" description="自定义字段OPC"/>
+    <property id="orderNumber" columnName="ORDER_NUMBER" type="DECIMAL" scale="2" description="订单数量"/>
+    <property id="orderTyep" columnName="ORDER_TYEP" type="TEXT" description="订单类型"/>
+    <property id="planEndTime" columnName="PLAN_END_TIME" type="DATETIME" description="基本结束时间"/>
+    <property id="planStartTime" columnName="PLAN_START_TIME" type="DATETIME" description="基本开始时间"/>
+    <property id="product" columnName="PRODUCT" type="LONG" description="物品"/>
+    <property id="remarks" columnName="REMARKS" type="TEXT" description="备注"/>
+    <property id="saleOrderNum" columnName="SALE_ORDER_NUM" type="TEXT" description="销售订单号"/>
+    <property id="saleOrderProject" columnName="SALE_ORDER_PROJECT" type="TEXT" description="销售订单项目"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="unit" columnName="UNIT" type="LONG" description="单位"/>
+    <property id="ware" columnName="WARE" type="LONG" description="仓库"/>
+  </model>
+  <model id="ManulOrderMainDealInfo" tableName="WOM_MENUL_ORDER_MAIN_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_MANULORDERMAIN_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="ManulOrderMaterial" tableName="WOM_MENUL_ORDER_MATERIAL" extends="AbstractEcPartEntity" description="生产订单物料">
+    <property id="ablePass" columnName="ABLE_PASS" type="BOOLEAN" description="允许发料"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="bigintparamc" columnName="BIGINTPARAMC" type="INTEGER" description="自定义字段IPC"/>
+    <property id="bomDelFlag" columnName="BOM_DEL_FLAG" type="BOOLEAN" description="物料删除标记"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="charparamc" columnName="CHARPARAMC" type="TEXT" length="2000" description="自定义字段CPC"/>
+    <property id="coOperation" columnName="CO_OPERATION" type="BOOLEAN" description="是否联副产品"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="dateparamc" columnName="DATEPARAMC" type="DATETIME" description="自定义字段DPC"/>
+    <property id="edition" columnName="EDITION" type="TEXT" description="特殊库存标志"/>
+    <property id="manulOrderId" columnName="MANUL_ORDER_ID" type="LONG" description="生产订单"/>
+    <property id="material" columnName="MATERIAL" type="LONG" description="原料"/>
+    <property id="materialBatchNum" columnName="MATERIAL_BATCH_NUM" type="TEXT" description="原料批次"/>
+    <property id="needNumber" columnName="NEED_NUMBER" type="DECIMAL" scale="6" description="需求数量"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="numberparamc" columnName="NUMBERPARAMC" type="DECIMAL" scale="6" description="自定义字段FPC"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="objparamc" columnName="OBJPARAMC" type="LONG" description="自定义字段OPC"/>
+    <property id="objparamd" columnName="OBJPARAMD" type="LONG" description="自定义字段OPD"/>
+    <property id="planEndTime" columnName="PLAN_END_TIME" type="DATETIME" description="基本结束时间"/>
+    <property id="planStartTime" columnName="PLAN_START_TIME" type="DATETIME" description="基本开始时间"/>
+    <property id="reNum" columnName="RE_NUM" type="TEXT" description="预留号"/>
+    <property id="rsNUM" columnName="RSNUM" type="TEXT" description="预留号"/>
+    <property id="rsPOS" columnName="RSPOS" type="TEXT" description="预留行项目"/>
+    <property id="saleOrderNum" columnName="SALE_ORDER_NUM" type="TEXT" description="销售订单号"/>
+    <property id="saleOrderProject" columnName="SALE_ORDER_PROJECT" type="TEXT" description="销售订单项目"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="scparamc" columnName="SCPARAMC" type="TEXT" length="2000" description="自定义字段SCPC"/>
+    <property id="scparamd" columnName="SCPARAMD" type="TEXT" length="2000" description="自定义字段SCPD"/>
+    <property id="unit" columnName="UNIT" type="LONG" description="基本计量单位"/>
+    <property id="ware" columnName="WARE" type="LONG" description="原料仓库"/>
+  </model>
+  <model id="ActiveExelog" tableName="WOM_ACTIVE_EXELOGS" extends="AbstractEcFullEntity" description="指令单活动执行记录">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="actualNum" columnName="ACTUAL_NUM" type="DECIMAL" scale="6" description="实际投料数量"/>
+    <property id="batchPhaseID" columnName="BATCH_PHASEID" type="TEXT" description="批控.phase"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="endTime" columnName="END_TIME" type="DATETIME" description="结束时间"/>
+    <property id="exeState" columnName="EXE_STATE" type="SYSTEMCODE" description="执行状态"/>
+    <property id="factoryId" columnName="FACTORY_ID" type="LONG" description="执行单元"/>
+    <property id="materialBatchNum" columnName="MATERIAL_BATCH_NUM" type="TEXT" description="物料批号"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="planNum" columnName="PLAN_NUM" type="DECIMAL" scale="6" description="计划投料数量"/>
+    <property id="productID" columnName="PRODUCTID" type="LONG" description="物料"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="staffID" columnName="STAFFID" type="LONG" description="操作人"/>
+    <property id="startTime" columnName="START_TIME" type="DATETIME" description="开始时间"/>
+    <index name="IDX_ACTIVEEXELOG_TABLEINF" columns="tableInfoId"/>
+    <property id="taskActiveID" columnName="TASK_ACTIVEID" type="LONG" description="指令单.活动ID"/>
+    <property id="taskBatchNum" columnName="TASK_BATCH_NUM" type="TEXT" description="生产批号"/>
+    <property id="taskID" columnName="TASKID" type="LONG" description="指令单ID"/>
+    <property id="taskProcessID" columnName="TASK_PROCESSID" type="LONG" description="指令单.工序ID"/>
+  </model>
+  <model id="ActiveExelogDealInfo" tableName="WOM_ACTIVE_EXELOGS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_ACTIVEEXELOG_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="ActiveExelogSupervision" tableName="WOM_ACTIVE_EXELOGS_SV" extends="AbstractSupervisionEntity">
+    <property id="valid" columnName="VALID" type="BOOLEAN" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_ACTIVEEXELOG_SuTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BatchProdTaskPart" tableName="WOM_BATCH_PROD_TASK_PARTS" extends="AbstractEcPartEntity" description="批量明细">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="amount" columnName="AMOUNT" type="INTEGER" description="设置数量"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="bulkBatchNum" columnName="BULK_BATCH_NUM" type="LONG" description="待包装批号"/>
+    <property id="bulkNum" columnName="BULK_NUM" type="DECIMAL" scale="6" description="待包装数量"/>
+    <property id="bulkProduct" columnName="BULK_PRODUCT" type="LONG" description="待包装产品"/>
+    <property id="bulkType" columnName="BULK_TYPE" type="SYSTEMCODE" description="包装类型"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="factoryId" columnName="FACTORY_ID" type="LONG" description="生产线"/>
+    <property id="formularId" columnName="FORMULAR_ID" type="LONG" description="配方"/>
+    <property id="headId" columnName="HEAD_ID" type="LONG" description="表头ID"/>
+    <property id="isAddTask" columnName="IS_ADD_TASK" type="BOOLEAN" description="已生成指令"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="orderType" columnName="ORDER_TYPE" type="SYSTEMCODE" description="类型"/>
+    <property id="planEndTime" columnName="PLAN_END_TIME" type="DATETIME" description="计划结束时间"/>
+    <property id="planStartTime" columnName="PLAN_START_TIME" type="DATETIME" description="计划开始时间"/>
+    <property id="productBatchNum" columnName="PRODUCT_BATCH_NUM" type="BAPCODE" description="生产批号"/>
+    <property id="productId" columnName="PRODUCT_ID" type="LONG" description="产品"/>
+    <property id="productNum" columnName="PRODUCT_NUM" type="DECIMAL" scale="6" description="生产数量"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <index name="IDX_BATCHPRODTASK_TABLEINF" columns="tableInfoId"/>
+    <property id="taskType" columnName="TASK_TYPE" type="SYSTEMCODE" description="指令单类型"/>
+  </model>
+  <model id="BatchProduceTask" tableName="WOM_BATCH_PRODUCE_TASKS" extends="AbstractEcFullEntity" description="指令批量">
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" description="表单ID"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="makeTime" columnName="MAKE_TIME" type="DATETIME" description="制单时间"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="orderType" columnName="ORDER_TYPE" type="SYSTEMCODE" description="生产性质"/>
+    <property id="remark" columnName="REMARK" type="TEXT" length="2000" description="备注"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="staffID" columnName="STAFFID" type="LONG" description="制单人"/>
+    <index name="IDX_BATCHPRODUCET_TABLEINF" columns="tableInfoId"/>
+    <property id="taskType" columnName="TASK_TYPE" type="SYSTEMCODE" description="指令单类型"/>
+  </model>
+  <model id="BatchProduceTaskDealInfo" tableName="WOM_BATCH_PRODUCE_TASKS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BATCHPRODUCET_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="BatchProduceTaskSupervision" tableName="WOM_BATCH_PRODUCE_TASKS_SV" extends="AbstractSupervisionEntity">
+    <property id="valid" columnName="VALID" type="BOOLEAN" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_BATCHPRODUCET_SuTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+  <model id="InventoryDetail" tableName="WOM_INVENTORY_DETAILS" extends="AbstractEcPartEntity" description="盘库记录表体">
+    <property id="applyStaff" columnName="APPLY_STAFF" type="LONG" description="领用人员"/>
+    <property id="batchText" columnName="BATCH_TEXT" type="TEXT" description="物料批号"/>
+    <property id="edition" columnName="EDITION" type="TEXT" description="特殊库存标志"/>
+    <property id="head" columnName="HEAD" type="LONG" description="盘库记录表头"/>
+    <property id="inCode" columnName="IN_CODE" type="TEXT" description="内部编码"/>
+    <property id="manulOrder" columnName="MANUL_ORDER" type="LONG" description="生产订单"/>
+    <property id="material" columnName="MATERIAL" type="LONG" description="物料"/>
+    <property id="onhand" columnName="ONHAND" type="DECIMAL" scale="6" description="现存量"/>
+    <property id="outCode" columnName="OUT_CODE" type="TEXT" description="出库单号"/>
+    <property id="wareID" columnName="WAREID" type="LONG" description="仓库"/>
+  </model>
+  <model id="InventoryRecord" tableName="WOM_INVENTORY_RECORDS" extends="AbstractEcFullEntity" description="盘库记录表头">
+    <property id="inFlag" columnName="IN_FLAG" type="BOOLEAN" description="入库标志"/>
+    <property id="inventoryDate" columnName="INVENTORY_DATE" type="DATE" description="盘库日期"/>
+    <property id="outFlag" columnName="OUT_FLAG" type="BOOLEAN" description="出库标志"/>
+  </model>
+  <model id="InventoryRecordDealInfo" tableName="WOM_INVENTORY_RECORDS_DI" extends="AbstractDealInfoEntity">
+    <property id="sort" columnName="SORT" type="INTEGER" operateType="CREATE"/>
+    <property id="mainObj" columnName="MAIN_OBJ" type="LONG" operateType="CREATE"/>
+    <property id="staff" columnName="STAFF" type="LONG" operateType="CREATE"/>
+    <property id="recalledFlag" columnName="RECALLED_FLAG" type="BOOLEAN" operateType="CREATE"/>
+    <property id="userAgent" columnName="USER_AGENT" type="TEXT" operateType="CREATE"/>
+    <property id="tableInfoId" columnName="TABLE_INFO_ID" type="LONG" operateType="CREATE"/>
+    <index name="IDX_INVENTORYRECO_DiTABLEID" columns="tableInfoId" operateType="CREATE"/>
+  </model>
+</Models>

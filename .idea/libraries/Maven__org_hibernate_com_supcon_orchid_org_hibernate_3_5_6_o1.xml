@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.hibernate:com.supcon.orchid.org.hibernate:3.5.6.o1">
+    <CLASSES>
+      <root url="jar://D:/maven178/org/hibernate/com.supcon.orchid.org.hibernate/3.5.6.o1/com.supcon.orchid.org.hibernate-3.5.6.o1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/maven178/org/hibernate/com.supcon.orchid.org.hibernate/3.5.6.o1/com.supcon.orchid.org.hibernate-3.5.6.o1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/maven178/org/hibernate/com.supcon.orchid.org.hibernate/3.5.6.o1/com.supcon.orchid.org.hibernate-3.5.6.o1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

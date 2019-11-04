@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="accountPeriod.year.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"X6Basic.propertydisplayName.radion1400468158682"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="_complex_complex_datagrid_1400468523203">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {""})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+	<field name="dg1400468411626List">  
+        <field-validator type="bapVisitor">  
+            <param name="context">dg1400468411626</param>     
+            <param name="appendPrefix">true</param>  
+            <message>${getText("X6Basic.modelname.radion1400468245576")}${getText("ec.common.validate.colon")}</message>  
+        </field-validator>  
+    </field>
+
+</validators>

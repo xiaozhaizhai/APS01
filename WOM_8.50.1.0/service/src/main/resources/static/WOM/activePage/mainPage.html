@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calender | UI/UX</title>
+    <link rel="stylesheet" href="css/mainPage.css">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/bootstrap-datetimepicker.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+<!-- Design Credits: Dmitriy Kharaberyush-->
+<!-- https://dribbble.com/shots/3808732-Daily-Calendar-Events-->
+<html>
+<head>
+    <!--<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet"/>-->
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <div id="logo">Calendar
+            <!--<svg id="logoSVG" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100">-->
+            <!--<path d="M79.514,28C69.118,28,57.723,33.792,50,42.577C42.275,33.792,30.881,28,20.486,28 C10.582,28,0,33.779,0,50s10.582,21.999,20.486,22l0,0C30.883,72,42.275,66.209,50,57.426C57.723,66.209,69.117,72,79.512,72 C89.418,72,100,66.221,100,50S89.418,28,79.514,28z M20.486,63.201C12.926,63.201,9.09,58.76,9.09,50 c0-8.757,3.836-13.2,11.396-13.2c8.361,0,18.07,5.427,24.031,13.2C38.557,57.773,28.85,63.201,20.486,63.201z M79.512,63.201 c-8.361,0-18.07-5.428-24.029-13.201c5.959-7.773,15.67-13.2,24.031-13.2c7.562,0,11.396,4.442,11.396,13.2 C90.908,58.76,87.074,63.201,79.512,63.201z"></path>-->
+            <!--</svg>-->
+        </div>
+        <div id="menu">
+            <ul>
+                <li id="today">物料信息</li>
+                <li id="planning">供应商信息</li>
+                <li class="active" id="events">事件追踪</li>
+            </ul>
+        </div>
+    </div>
+    <div id="body">
+        <div id="wrapper">
+            <div id="content">
+                <div id="page1">
+                    <div class="line1">
+                        <p>纯碱</p>
+                    </div>
+                    <div class="pageContent">
+                        <div class="leftContent" remarks="备注："></div>
+                        <div class="rightContent">
+                            <div id="row1"></div>
+                            <div id="row2"></div>
+                            <div id="row3"></div>
+                            <div id="row4"></div>
+                            <div id="row5"></div>
+                            <div id="row6"></div>
+                            <div id="row7"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="line1">
+                        <p>供应商信息</p>
+                    </div>
+                    <div class="pageContent" id="wrap">
+                        <div id="box1"></div>
+                        <div id="box2"></div>
+                        <div id="box3"></div>
+                        <div id="box4"></div>
+                        <div id="box5"></div>
+                        <div id="box6"></div>
+                        <div id="box7"></div>
+                        <div id="box8"></div>
+                        <div id="box9"></div>
+                        <div id="box10"></div>
+                        <div id="box11"></div>
+                        <div id="box12"></div>
+                        <div id="box13"></div>
+                        <div id="box14"></div>
+                        <div id="box15"></div>
+                    </div>
+                </div>
+                <div id="page4">
+                    <div class="line1">
+                        <p>已发生事件</p>
+                        <div id="time">
+                            <div class="input-group date form_date" data-date-format="yyyy-mm" data-link-format="yyyy-mm-dd" style="display: block;">
+                                <input class="form-control" size="16" type="text" value="" style="cursor:pointer;width: 100px;border: 0;height: 18px;" readonly/>
+                                <span class="input-group-addon" style="border: 0;height: 18px;"><span class="fa fa-calendar"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line2">
+                        <div class="cardEvent">
+                            <div class="circle" id="green"></div>
+                            <p>已完成</p>
+                            <p>22 Events</p>
+                        </div>
+                        <div class="cardEvent">
+                            <div class="circle" id="red"></div>
+                            <p>待执行</p>
+                            <p>30 Events</p>
+                        </div>
+                        <div class="cardEvent">
+                            <div class="circle" id="blue"></div>
+                            <p>正在执行</p>
+                            <p>46 Events</p>
+                        </div>
+
+                        <!--<div class="cardEvent">-->
+                        <!--<div class="circle" id="orange"></div>-->
+                        <!--<p>Entertainment Events</p>-->
+                        <!--<p>88 Events</p>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="move-btn move-right" style="cursor: pointer; color: #dce2e6;line-height: 620px;position: absolute;z-index: 999">
+                        <i class="fa fa-angle-double-left move-right"></i>
+                    </div>
+                    <div class="line3" id="line3">
+
+                        <!--<div class="cardSpecific">-->
+                        <!--<div class="date">-->
+                        <!--<div class="left">12</div>-->
+                        <!--<div class="right">-->
+                        <!--<p>saturday</p>-->
+                        <!--<p>december 2018</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="bottom">-->
+                        <!--<div class="desc">-->
+                        <!--<p>Dribbble Meetup</p>-->
+                        <!--<p>Starts at 6:30 P.M.</p>-->
+                        <!--</div>-->
+                        <!--<div class="attendees">-->
+                        <!--<div class="pic" id="a1"></div>-->
+                        <!--<div class="pic" id="a2"></div>-->
+                        <!--<div class="pic" id="a3"></div>-->
+                        <!--<div class="pic" id="a4"></div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="back">-->
+                        <!--<p>Meetups</p>-->
+                        <!--<p>Dribbble Meetups are a chance for designers to socialize, talk shop, and foster their local design communities.</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="cardSpecific">-->
+                        <!--<div class="date">-->
+                        <!--<div class="left">15</div>-->
+                        <!--<div class="right">-->
+                        <!--<p>tuesday</p>-->
+                        <!--<p>december 2018</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="bottom">-->
+                        <!--<div class="desc">-->
+                        <!--<p>Mercedes Benz Fashion Week 17-18</p>-->
+                        <!--<p>Starts at 8:30 P.M.</p>-->
+                        <!--</div>-->
+                        <!--<div class="attendees">-->
+                        <!--<div class="pic" id="a5"></div>-->
+                        <!--<div class="pic" id="a6"></div>-->
+                        <!--<div class="pic" id="a7"></div>-->
+                        <!--<div class="pic" id="a8"></div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="back">-->
+                        <!--<p>Fashion Week</p>-->
+                        <!--<p>Mercedes-Benz Fashion Week was a series of international fashion weeks sponsored by Mercedes-Benz and produced by IMG.</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="cardSpecific">-->
+                        <!--<div class="date">-->
+                        <!--<div class="left">18</div>-->
+                        <!--<div class="right">-->
+                        <!--<p>friday</p>-->
+                        <!--<p>december 2018</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="bottom">-->
+                        <!--<div class="desc">-->
+                        <!--<p>Apple Special Keynote</p>-->
+                        <!--<p>Starts at 9:30 A.M.</p>-->
+                        <!--</div>-->
+                        <!--<div class="attendees">-->
+                        <!--<div class="pic" id="a9"></div>-->
+                        <!--<div class="pic" id="a10"></div>-->
+                        <!--<div class="pic" id="a11"></div>-->
+                        <!--<div class="pic" id="a12"></div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="back">-->
+                        <!--<p>Apple Special Event</p>-->
+                        <!--<p>Announcements included a new generation of iPhone, Apple Watch with cellular connectivity, Apple TV 4K, and much more.</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="cardSpecific">-->
+                        <!--<div class="date">-->
+                        <!--<div class="left">21</div>-->
+                        <!--<div class="right">-->
+                        <!--<p>monday</p>-->
+                        <!--<p>december 2018</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="bottom">-->
+                        <!--<div class="desc">-->
+                        <!--<p>Dribbble Meetup</p>-->
+                        <!--<p>Starts at 6:30 P.M.</p>-->
+                        <!--</div>-->
+                        <!--<div class="attendees">-->
+                        <!--<div class="pic" id="a13"></div>-->
+                        <!--<div class="pic" id="a14"></div>-->
+                        <!--<div class="pic" id="a15"></div>-->
+                        <!--<div class="pic" id="a16"></div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="back">-->
+                        <!--<p>Meetups</p>-->
+                        <!--<p>Dribbble Meetups are a chance for designers to socialize, talk shop, and foster their local design communities.</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="cardSpecific">-->
+                        <!--<div class="date">-->
+                        <!--<div class="left">224</div>-->
+                        <!--<div class="right">-->
+                        <!--<p>monday</p>-->
+                        <!--<p>december 2018</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="bottom">-->
+                        <!--<div class="desc">-->
+                        <!--<p>Dribbble Meetup</p>-->
+                        <!--<p>Starts at 6:30 P.M.</p>-->
+                        <!--</div>-->
+                        <!--<div class="attendees">-->
+                        <!--<div class="pic" id="a117"></div>-->
+                        <!--<div class="pic" id="a118"></div>-->
+                        <!--<div class="pic" id="a119"></div>-->
+                        <!--<div class="pic" id="a1100"></div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="back">-->
+                        <!--<p>Meetups</p>-->
+                        <!--<p>Dribbble Meetups are a chance for designers to socialize, talk shop, and foster their local design communities.</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="move-btn move-left" style="cursor: pointer; color: #979898;line-height: 620px;position: absolute;right: 0;">
+                        <i class="fa fa-angle-double-right move-left"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/plugins/datetimepicker.js"></script>
+<script>
+
+    function GetRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            var strs = str.split("&");
+            for(var i = 0; i < strs.length; i ++) {
+                theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+
+    $(document).ready(function() {
+        var cardHtml = `<div class="cardSpecific">
+                  <div class="date">
+                    <div class="left"></div>
+                    <div class="right">
+                      <p></p>
+                      <p></p>
+                    </div>
+                  </div>
+                  <div class="bottom">
+                    <div class="desc">
+                      <p></p>
+                      <p></p>
+                    </div>
+                    <div class="attendees">
+                      <div class="pic" id="a1"></div>
+                      <div class="pic" id="a2"></div>
+                      <div class="pic" id="a3"></div>
+                      <div class="pic" id="a4"></div>
+                    </div>
+                  </div>
+                  <div class="back">
+                    <p></p>
+                    <p></p>
+                  </div>
+                </div>`,
+        cardData = [],$cardHtml = $(cardHtml),batchCode = GetRequest()["batch"];
+        $.ajax({
+            url : "/WOM/produceTask/produceTask/getBatchInfo.action",
+            type : 'post',
+            async : false,
+            data:{
+                "batchNum":batchCode.trim()
+            },
+            success : function(data) {
+                if (data.batchInfo.product != undefined) {
+                    $("#page1 .line1 p").html(data.batchInfo.product.productName)
+                    document.getElementById("row1").innerHTML = "产品编码 ：" +  data.batchInfo.product.productCode;
+                    document.getElementById("row2").innerHTML = "产品名称 ：" +  data.batchInfo.product.productName;
+                    document.getElementById("row3").innerHTML = "产品规格 ：" +   data.batchInfo.product.productSpecif || "";
+                    document.getElementById("row4").innerHTML = "单位 ：" +   data.batchInfo.product.unitGroup.name || "";
+                }
+                $.each(data.batchInfo.events,function () {
+                    if (this.QM_BUSINESS_TYPE != '') {
+                        cardData.push({
+                            'title' : this.QM_BUSINESS_TYPE == "QMbusiTypeManu/process" ? "过程检验" : "产品检验",
+                            'desc' : '请检部门 : ' + this.DEPARTMENT_NAME + ',请检人 : ' + this.STAFF_NAME,
+                            'time' : this.INSPECT_DATE,
+                            'status' : 'green',
+                            'back' : {
+                                'title' : '备注',
+                                'content' : this.REMARK
+                            }
+                        });
+                    }else {
+
+                    }
+                })
+                //创建日期
+                var myDate = new Date(),
+                    //当前年份
+                    year = myDate.getFullYear(),
+                    //当前月份
+                    month = myDate.getMonth() + 1,
+                    monthSel;
+                if (month < 10) {
+                    month = '0' + month;
+                }
+                monthSel = year + '-' + month;                      // 当前年月,格式如：2016-09
+                $('.form-control').val(monthSel);
+                selectMonth ();
+
+                $('.form_date').datetimepicker({
+                    weekStart: 1,
+                    todayBtn: 1,
+                    autoclose: 1,
+                    todayHighlight: 1,
+                    startView: 3,
+                    minView: 3,
+                    forceParse: 0
+                }).on('changeDate', function () {
+                    console.log($('.form-control').val());
+                    $('#line3').html();
+                    selectMonth ();
+                });
+            }
+        });
+
+
+        $("#today").click(function () {
+            $("ul").removeClass().addClass("l1");
+            $("#content").removeClass().addClass("m1");
+        });
+
+        $("#planning").click(function () {
+            $("ul").removeClass().addClass("l2");
+            $("#content").removeClass().addClass("m2");
+        });
+
+        $("#events").click(function () {
+            $("ul").removeClass().addClass("l4");
+            $("#content").removeClass().addClass("m4");
+        });
+
+        $("li").click(function () {
+            $(this).addClass("active").siblings().removeClass('active')
+        });
+
+        //-------------------------------------------------------------//
+        // green:已完成，red:待执行，blue:正在执行
+
+        //     [
+        //     {title:'卡片2019-01-01',desc : '测试数据123',time:'1546300800000',status:'green',back:{title:'卡片1背后',content:'卡片1背后11111111'}},
+        //     {title:'卡片2019-01-02',desc : '测试数据123',time:'1546387200000',status:'green',back:{title:'卡片2背后',content:'卡片2背后2'}},
+        //     {title:'卡片2019-01-03',desc : '测试数据123',time:'1546473600000',status:'blue',back:{title:'卡片3背后',content:'卡片3背后3'}},
+        //     {title:'卡片2019-01-04',desc : '测试数据123',time:'1546560000000',status:'green',back:{title:'卡片4背后',content:'卡片4背后4'}},
+        //     {title:'卡片2019-01-05',desc : '测试数据123',time:'1546646400000',status:'red',back:{title:'卡片5背后',content:'卡片5背后5'}},
+        //     {title:'卡片2018-12-02',desc : '测试数据123',time:'1543708800000',status:'green',back:{title:'卡片6背后',content:'卡片6背后6'}},
+        //     {title:'卡片2018-12-07',desc : '测试数据123',time:'1546819200000',status:'blue',back:{title:'卡片7背后',content:'卡片7背后7'}},
+        //     {title:'卡片2018-12-22',desc : '测试数据123',time:'1545436800000',status:'red',back:{title:'卡片8背后',content:'卡片8背后8'}},
+        //     {title:'卡片2019-01-21',desc : '测试数据123',time:'1548028800000',status:'green',back:{title:'卡片10背后',content:'卡片10背后10'}}
+        // ];
+
+
+        function selectMonth (){
+            for(var i=0;i<cardData.length;i++){
+                var thisCard = cardData[i];
+                // 时间转换
+                var thisDate = new Date(Number(thisCard.time)),  //当前年份
+                    thisYear = thisDate.getFullYear(),        //当前月份
+                    thisMonth = thisDate.getMonth() + 1,
+                    thisDay = thisDate.getDate(),             //当前日
+                    monthCh = ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+                    thisMonthCh = monthCh[thisDate.getMonth()], //获取月份
+                    weekDay = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+                    thisWeekDay = weekDay[thisDate.getDay()],   //获取星期几
+                    yearAndMonth;
+                if (thisDay < 10) {
+                    thisDay = '0' + thisDay;
+                }
+                if (thisMonth < 10) {
+                    thisMonth = '0' + thisMonth;
+                }
+                yearAndMonth = thisYear + '-' + thisMonth;     // 年月,格式如：2016-09
+                if($('.form-control').val() == yearAndMonth){
+                    $cardHtml.find('.left').html(thisDay);
+                    $cardHtml.find('.right p:first-child').html(thisWeekDay);
+                    $cardHtml.find('.right p:last-child').html(thisMonthCh + ' ' + thisYear);
+                    $cardHtml.find('.desc p:first-child').html(thisCard.title);
+                    $cardHtml.find('.desc p:last-child').html(thisCard.desc);
+                    $cardHtml.find('.back p:first-child').html(thisCard.back.title);
+                    $cardHtml.find('.back p:last-child').html(thisCard.back.content);
+                    $('#line3').append($cardHtml);
+                    $cardHtml = $(cardHtml);
+                }else {
+                    $(".cardSpecific").remove()
+                }
+            }
+            // 卡片旋转
+            $(".cardSpecific").click(function () {
+                $(this).toggleClass("rotate");
+                $(this).children('.back').toggleClass("showBack");
+            });
+
+            var rightStep = 1;
+            var leftStep = 1;
+            var left = parseFloat($('#line3').css('left'));
+            var cardWidth = $('#line3>.cardSpecific').width()+15;  //单个卡片宽度
+            var moveBoxWidth = parseFloat($('#page4').width());
+            var totalCardWidth = parseFloat($('#line3').width())-30;  //整个卡片集合高度
+            var maxStep = Math.ceil((totalCardWidth - moveBoxWidth) / cardWidth); //最大步数
+            if(totalCardWidth>moveBoxWidth){
+                $('.move-btn').css('display','block');
+                $('.move-btn').click(function (e) {
+                    if ($(e.target).attr('disabled') != 'disabled') {
+                        if ($(e.target).hasClass('move-left')) {          // 左边箭头内容往右滚
+                            if (leftStep <= maxStep && leftStep >= 1) {
+                                var aimleft = left - cardWidth - 15;
+                                leftStep++;
+                                rightStep--;
+                                var timer1 = setInterval(function () {
+                                    left = left - 1;
+                                    $('#line3').css({left: left + 'px'});
+                                    if (left <= aimleft) {
+                                        clearInterval(timer1);
+                                        $('#line3').css({left: aimleft + 'px'});
+                                    }
+                                }, 10);
+                            }
+                        } else if ($(e.target).hasClass('move-right')) {      // 右边箭头内容往左滚
+                            if (rightStep >= 1-maxStep && rightStep < 1) {
+                                var aimleft = left + cardWidth + 15;
+                                rightStep++;
+                                leftStep--;
+                                var timer2 = setInterval(function () {
+                                    left = left + 1;
+                                    $('#line3').css({left: left + 'px'});
+                                    if (left >= aimleft) {
+                                        clearInterval(timer2);
+                                        $('#line3').css({left: aimleft + 'px'});
+                                    }
+                                }, 10);
+                            }
+                        }
+                    }
+
+                    if (leftStep == maxStep + 1) {
+                        $('.move-left').attr('disabled', 'disabled');
+                        $('.move-left').css('color', '#dce2e6');
+                        $('.move-right').css('color', '#979898');
+                        $('.move-right').removeAttr('disabled');
+                    } else if (rightStep == 1) {
+                        $('.move-right').attr('disabled', 'disabled');
+                        $('.move-right').css('color', '#dce2e6');
+                        $('.move-left').css('color', '#979898');
+                        $('.move-left').removeAttr('disabled');
+                    } else {
+                        $('.move-right').css('color', '#979898');
+                        $('.move-right').removeAttr('disabled');
+                        $('.move-left').css('color', '#979898');
+                        $('.move-left').removeAttr('disabled');
+                    }
+                })
+            }else {
+                $('.move-btn').css('display','none');
+            }
+        }
+
+
+    });
+</script>
+
+</body>
+
+</html>

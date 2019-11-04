@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedulerJobList>
+		<SchedulerJob>
+			<moduleCode>WOM_7.5.0.0</moduleCode>
+			<code>WOM_7.5.0.0_generateInRecords</code>
+			<shortCode>generateInRecords</shortCode>
+			<name>WOM.schedulerJobname.randon1566984916741</name>
+			<isScheduleImm>true</isScheduleImm>
+			<description><![CDATA[根据当月领用记录生成平库记录，并调用SAP接口入库      ]]></description>
+			<jobType>1</jobType>
+			<jobContent>/WOM/inventoryRecords/inventoryRecord/generateInRecords.action</jobContent>
+			<startTime></startTime>
+			<endTime></endTime>
+			<triggerType>CRON</triggerType>
+			<repeatCount></repeatCount>
+			<intervalNum></intervalNum>
+			<intervalUnit>SECOND</intervalUnit>
+			<cron><![CDATA[0 55 23 L * ? *]]></cron>
+			<datasouceCode></datasouceCode>
+			<procedureName></procedureName>
+			<status>UNSCHEDULED</status>
+			<hasRunTimes>0</hasRunTimes>
+			<nextRunTime></nextRunTime>
+			<errorMsg></errorMsg>
+			<inheritFlag>false</inheritFlag>
+		</SchedulerJob>
+	<SchedulerJob>
+			<moduleCode>WOM_7.5.0.0</moduleCode>
+			<code>WOM_7.5.0.0_generateOutRecords</code>
+			<shortCode>generateOutRecords</shortCode>
+			<name>WOM.schedulerJobname.randon1566985293782</name>
+			<isScheduleImm>true</isScheduleImm>
+			<description><![CDATA[获取上个月平库记录，调用SAP接口出库（领料）      ]]></description>
+			<jobType>1</jobType>
+			<jobContent>/WOM/inventoryRecords/inventoryRecord/generateOutRecords.action</jobContent>
+			<startTime></startTime>
+			<endTime></endTime>
+			<triggerType>CRON</triggerType>
+			<repeatCount></repeatCount>
+			<intervalNum></intervalNum>
+			<intervalUnit>SECOND</intervalUnit>
+			<cron><![CDATA[0 5 0 1 * ?]]></cron>
+			<datasouceCode></datasouceCode>
+			<procedureName></procedureName>
+			<status>UNSCHEDULED</status>
+			<hasRunTimes>0</hasRunTimes>
+			<nextRunTime></nextRunTime>
+			<errorMsg></errorMsg>
+			<inheritFlag>false</inheritFlag>
+		</SchedulerJob>
+	<SchedulerJob>
+			<moduleCode>WOM_7.5.0.0</moduleCode>
+			<code>WOM_7.5.0.0_scheduleInventory2</code>
+			<shortCode>scheduleInventory2</shortCode>
+			<name>WOM.schedulerJobname.randon1565313270903</name>
+			<isScheduleImm>false</isScheduleImm>
+			<description><![CDATA[查询createTime为当月的备料单的备料明细，如果使用量小于备料量，差值调用sap领料出库接口平账         ]]></description>
+			<jobType>1</jobType>
+			<jobContent>/WOM/prepareMaterial/prepareMaterial/scheduleInventory.action</jobContent>
+			<startTime></startTime>
+			<endTime></endTime>
+			<triggerType>CRON</triggerType>
+			<repeatCount></repeatCount>
+			<intervalNum></intervalNum>
+			<intervalUnit>SECOND</intervalUnit>
+			<cron><![CDATA[0 0 0 1 * ?]]></cron>
+			<datasouceCode></datasouceCode>
+			<procedureName></procedureName>
+			<status>UNSCHEDULED</status>
+			<hasRunTimes>0</hasRunTimes>
+			<nextRunTime></nextRunTime>
+			<errorMsg></errorMsg>
+			<inheritFlag>false</inheritFlag>
+		</SchedulerJob>
+</schedulerJobList>	

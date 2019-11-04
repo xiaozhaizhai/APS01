@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models> 
+  <model id="ProductManage" operateType="ALTER" orgTableName="X6BASIC_PRODUCT_MENAGE" tableName="S2BASE_PRODUCT"> 
+    <property id="code" operateType="ALTER" orgColumnName="CODE" columnName="PRODUCT_CODE" type="TEXT" length="256"> 
+      <index name="IDX_PRODUCTMANAGE_CODE" columns="code" operateType="CREATE"/> 
+    </property>  
+    <property id="id" operateType="ALTER" orgColumnName="ID" columnName="PRODUCT_ID" isPk="true" type="LONG"/>  
+    <property id="name" operateType="ALTER" orgColumnName="NAME" columnName="PRODUCT_NAME" type="TEXT" length="256"/>  
+    <property id="models" operateType="ALTER" orgColumnName="MODELS" columnName="PRODUCT_MODEL" type="TEXT" length="256"/>  
+    <property id="prodMemo" operateType="ALTER" orgColumnName="PROD_MEMO" columnName="PRODUCT_MEMO" type="TEXT" length="2000"/>  
+    <property id="specific" operateType="ALTER" orgColumnName="SPECIFIC" columnName="PRODUCT_SPECIF" type="TEXT" length="256"/>  
+    <property id="unit" operateType="ALTER" orgColumnName="UNIT" columnName="PRODUCT_BASEUNIT" type="TEXT" length="256"/>
+  </model>  
+  <model id="ProductManageDealInfo" tableName="S2BASE_PRODUCT_DI" orgTableName="X6BASIC_PRODUCT_MENAGE_DI"/> 
+</Models>

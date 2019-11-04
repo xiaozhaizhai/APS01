@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<code>RM_7.5.0.0</code>
+	<ecEnv>product</ecEnv>
+	<name>RM.modulename.randon1487074191704</name>
+	<zhCnValue></zhCnValue>
+	<category>配方管理</category>
+	<artifact>RM</artifact>
+	<projectVersion>8.3.0.0</projectVersion>
+	<orgVersion></orgVersion>
+	<description><![CDATA[]]></description>
+	<isInherentedBase>false</isInherentedBase>
+	<isNewGenerate>false</isNewGenerate>
+	<projFlag></projFlag>
+	<relations>MESBasic_1,X6Basic_1.0,</relations>
+	<relationsInternation>MESBasic.modulename.radion1414977652983,X6Basic.modulename.radion1366790851615,</relationsInternation>
+	<i10Properties>
+		<package_zh_TW>RM.modulename.randon1487074191704=RM.modulename.randon1487074191704,MESBasic.modulename.radion1414977652983=MESBasic.modulename.radion1414977652983,X6Basic.modulename.radion1366790851615=X6Basic.modulename.radion1366790851615</package_zh_TW>
+		<package_zh_CN>RM.modulename.randon1487074191704=配方管理,MESBasic.modulename.radion1414977652983=MES基础,X6Basic.modulename.radion1366790851615=X6基础</package_zh_CN>
+		<package_en_US>RM.modulename.randon1487074191704=RM.modulename.randon1487074191704,MESBasic.modulename.radion1414977652983=MES Basic,X6Basic.modulename.radion1366790851615=X6Basic.modulename.radion1366790851615</package_en_US>
+	</i10Properties>
+</module>

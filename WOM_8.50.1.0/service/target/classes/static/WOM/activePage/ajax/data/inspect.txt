@@ -1,0 +1,14 @@
+{
+    "data": [
+        {
+            "QM_BUSINESS_TYPE": "QMbusiTypeManu/process",
+            "PRODUCT_NAME": "百草枯",
+            "INSPECT_DATE": "2018-12-12 15:04:18.0",
+            "DEPARTMENT_NAME": "总经办",
+            "STAFF_NAME": "dingding",
+            "PRODUCT_CODE": "2018AS0904001",
+            "REMARK": "指令单：produceTask_20181212_003; 工序：精馏塔; 活动：质检1; 来源于：生产配方",
+            "BATCH_NUM": "2018AS09040011212001"
+        }
+    ]
+}

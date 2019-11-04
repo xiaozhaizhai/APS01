@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="objPos.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"foundation.position.name"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>

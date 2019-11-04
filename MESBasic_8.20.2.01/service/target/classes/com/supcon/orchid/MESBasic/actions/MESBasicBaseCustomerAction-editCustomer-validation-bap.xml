@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="baseCustomer.customerCCCode.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.randon1449628587988.Cust1"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerCode">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.randon1449640688865"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">20</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449640688865", "20"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerShortName">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.randon1449647160005"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449647160005", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerName">
+		<field-validator type="requiredstring">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.propertydisplayName.randon1449646749348"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449646749348", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.ownerStaff.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"MESBasic.foundation.staff.dimissionStaff_xls.staffName.Cust1"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	<field name="baseCustomer.customerCorporation">
+		<field-validator type="stringlength">
+			<param name="maxLength">60</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449640744323", "60"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerRegFund">
+		<field-validator type="stringlength">
+			<param name="maxLength">50</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449647144243", "50"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	
+
+	
+
+	
+
+	<field name="baseCustomer.customerIntroduce">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449641563714", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerMemo">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449646510277", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerWeb">
+		<field-validator type="stringlength">
+			<param name="maxLength">50</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449648100431", "50"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerEmail">
+		<field-validator type="email">
+		<message>${getText("ec.common.validate.email.error", {"MESBasic.propertydisplayName.randon1449641393530"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">30</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449641393530", "30"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerPhone">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449646994311", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerFax">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449641415870", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerMobile">
+		<field-validator type="mobile">
+		<message>${getText("ec.common.validate.mobile.error", {"MESBasic.propertydisplayName.randon1449646729289"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449646729289", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerPostCode">
+		<field-validator type="post">
+		<message>${getText("ec.common.validate.post.error", {"MESBasic.propertydisplayName.randon1449647011453"})}</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449647011453", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerAddress">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449640328893", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerBank">
+		<field-validator type="stringlength">
+			<param name="maxLength">100</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449640406435", "100"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerAccount">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449640114058", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerTradeCode">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449647230032", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="baseCustomer.customerTaxCode">
+		<field-validator type="stringlength">
+			<param name="maxLength">200</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449647178065", "200"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="baseCustomer.customerPayCondition">
+		<field-validator type="stringlength">
+			<param name="maxLength">100</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449646771786", "100"})}</message>
+		</field-validator>
+	</field>
+	
+
+	
+
+	<field name="baseCustomer.customerInvoiceAddress">
+		<field-validator type="stringlength">
+			<param name="maxLength">600</param>
+			<message>${getText("ec.common.validate.content.toolong", {"MESBasic.propertydisplayName.randon1449641621667", "600"})}</message>
+		</field-validator>
+	</field>
+	
+<field name="workFlowVar.comment">
+	<field-validator type="stringlength">
+		<param name="maxLength">2000</param>
+		<message>${getText("ec.common.validate.content.toolong.prefix")}&lt;b&gt;${getText("ec.view.dealadvice")}&lt;/b&gt;${getText("ec.common.validate.content.toolong.maxlength.is")} &lt;b&gt;2000&lt;/b&gt;</message>
+
+	</field-validator>
+</field>
+
+</validators>

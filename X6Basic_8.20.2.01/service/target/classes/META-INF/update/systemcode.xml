@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bapSystemCode> 
+  <systementity code="timeUnit" moduleCode="X6Basic_1.0" name="X6Basic.systemEntityname.randon1459214664302" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0"> 
+    <systemcode id="timeUnit/01" code="01" value="X6Basic.systemCodevalue.randon1459214690904" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2028" seqId="2028" fullPathName="年"/>  
+    <systemcode id="timeUnit/02" code="02" value="X6Basic.systemCodevalue.randon1459214715139" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2029" seqId="2029" fullPathName="季度"/>  
+    <systemcode id="timeUnit/03" code="03" value="X6Basic.systemCodevalue.randon1459214725411" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2030" seqId="2030" fullPathName="月"/>  
+    <systemcode id="timeUnit/04" code="04" value="X6Basic.systemCodevalue.randon1459214738685" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2031" seqId="2031" fullPathName="周"/> 
+  </systementity>  
+  <systementity code="entityType" moduleCode="X6Basic_1.0" name="X6Basic.systemEntityname.randon1459214764560" sysDefault="false" listType="LIST" multiFlag="true" memo="" valid="true" version="1"> 
+    <systemcode id="entityType/03" code="03" value="X6Basic.systemCodevalue.randon1459214795113" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2032" seqId="2032" fullPathName="维修年计划"/>  
+    <systemcode id="entityType/04" code="04" value="X6Basic.systemCodevalue.randon1459214810635" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2033" seqId="2033" fullPathName="维修月计划"/>  
+    <systemcode id="entityType/lubricatePlan" code="lubricatePlan" value="X6Basic.systemCodevalue.randon1459214825302" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2034" seqId="2034" fullPathName="润滑计划"/>  
+    <systemcode id="entityType/maintainPlan" code="maintainPlan" value="X6Basic.systemCodevalue.randon1459214840823" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2035" seqId="2035" fullPathName="保养计划"/>  
+    <systemcode id="entityType/pointPlan" code="pointPlan" value="X6Basic.systemCodevalue.randon1459214859966" attribute="false" memo="" sort="" valid="true" version="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2036" seqId="2036" fullPathName="点检计划"/> 
+  </systementity>  
+  <systementity code="2" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1397791895293" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="PlanRes/2" value="EMS.systemCodevalue.randon1397791957931" attribute="false" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1653" seqId="1653" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="ZDGSRATE" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1397702151181" sysDefault="false" listType="LIST" multiFlag="false" memo="记录值与本班计算公式值比较算出差值，再根据合格标准参数判定后，计算出本班合格比例。" valid="true" version="3" id="CalcType/ZDGSRATE" value="EMS.systemCodevalue.randon1397702380018" attribute="false" sort="7" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1659" seqId="1659" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="year" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1398667716560" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="1" id="planTime/year" value="EMS.systemCodevalue.randon1398667745602" attribute="false" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1663" seqId="1663" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="3" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1399261180288" sysDefault="false" listType="LIST" multiFlag="false" memo="平均分摊" valid="true" version="1" id="BalancePlan/3" value="EMS.systemCodevalue.randon1399261338760" attribute="false" sort="2" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1666" seqId="1666" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="manual" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1401071663327" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="1" id="accType/manual" value="EMS.systemCodevalue.randon1401071683953" attribute="false" sort="1" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1668" seqId="1668" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="3" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1398242330211" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="ItemRole/3" value="EMS.systemCodevalue.randon1398242387844" attribute="false" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1671" seqId="1671" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="7" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1398242514061" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="1" id="projectType/7" value="EMS.systemCodevalue.randon1398242617397" attribute="false" sort="6" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1678" seqId="1678" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="04" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1398242776684" sysDefault="false" listType="TREE" multiFlag="false" memo="" valid="true" version="0" id="ItemClass/04" value="其他能源" attribute="false" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1683" seqId="1683" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="3" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1397542545888" sysDefault="false" listType="LIST" multiFlag="false" memo="指从质量检验模块中抽取的生产质检数据" valid="true" version="1" id="PickType/3" value="EMS.systemCodevalue.randon1397542594368" attribute="false" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1686" seqId="1686" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="3" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1397542610809" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="DataType/3" value="EMS.systemCodevalue.randon1397542653555" attribute="false" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1687" seqId="1687" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="60" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1397542766767" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="3" id="Frequency/60" value="EMS.systemCodevalue.randon1397542789446" attribute="false" sort="4" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1694" seqId="1694" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="2" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1397700800527" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="GatherLvl/2" value="EMS.systemCodevalue.randon1397700871567" attribute="false" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1697" seqId="1697" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="Dept" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1397706991572" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="BalanceLvl/Dept" value="EMS.systemCodevalue.randon1397707042266" attribute="false" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1699" seqId="1699" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="Efficiency" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1397714963255" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="1" id="QuotaNature/Efficiency" value="EMS.systemCodevalue.randon1397715059723" attribute="false" sort="2" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1700" seqId="1700" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="Depart" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1397791152748" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="0" id="PlanLvl/Depart" value="EMS.systemCodevalue.randon1397791194365" attribute="false" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1704" seqId="1704" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="Company" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1397713548613" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="1" id="QuotaSys/Company" value="EMS.systemCodevalue.randon1397713616549" attribute="false" sort="1" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1705" seqId="1705" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="Manual" moduleCode="X6Basic_1.0" name="EMS.systemEntityname.randon1397716749419" sysDefault="false" listType="LIST" multiFlag="false" memo="" valid="true" version="1" id="DataRes/Manual" value="EMS.systemCodevalue.randon1397716941184" attribute="false" sort="4" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="1708" seqId="1708" fullPathName=""> 
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/>  
+    <systemcode/> 
+  </systementity>  
+  <systementity code="1" moduleCode="X6Basic_1.0" version="1" valid="true" sysDefault="false" id="PlanRes/1" value="X6Basic.systemCodevalue.randon1397791929408" attribute="false" memo="" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="2044" seqId="2044" fullPathName="">
+    <systemcode/>
+  </systementity>
+  <systementity code="ZDGSRATE" moduleCode="X6Basic_1.0" version="4" valid="true" sysDefault="false" id="CalcType/ZDGSRATE" value="X6Basic.systemCodevalue.randon1397702380018" attribute="false" memo="记录值与本班计算公式值比较算出差值，再根据合格标准参数判定后，计算出本班合格比例。" sort="7" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="2051" seqId="2051" fullPathName="">
+    <systemcode/>
+    <systemcode/>
+    <systemcode/>
+  </systementity>
+  <systementity code="month" moduleCode="X6Basic_1.0" version="2" valid="true" sysDefault="false" id="planTime/month" value="X6Basic.systemCodevalue.randon1398667777688" attribute="false" memo="" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="2054" seqId="2054" fullPathName="">
+    <systemcode/>
+  </systementity>
+  <systementity code="manual" moduleCode="X6Basic_1.0" version="2" valid="true" sysDefault="false" id="accType/manual" value="X6Basic.systemCodevalue.randon1401071683953" attribute="false" memo="" sort="1" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="2060" seqId="2060" fullPathName="">
+    <systemcode/>
+    <systemcode/>
+  </systementity>
+  <systementity code="4" moduleCode="X6Basic_1.0" version="2" valid="true" sysDefault="false" id="projectType/4" value="X6Basic.systemCodevalue.randon1398242583608" attribute="false" memo="" sort="3" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="2067" seqId="2067" fullPathName="">
+    <systemcode/>
+    <systemcode/>
+  </systementity>
+  <systementity code="1" moduleCode="X6Basic_1.0" version="2" valid="true" sysDefault="false" id="PickType/1" value="X6Basic.systemCodevalue.randon1397542568320" attribute="false" memo="指生产环境中具体的数据采集地点" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="2076" seqId="2076" fullPathName="">
+    <systemcode/>
+  </systementity>
+  <systementity code="3" moduleCode="X6Basic_1.0" version="1" valid="true" sysDefault="false" id="DataType/3" value="X6Basic.systemCodevalue.randon1397542653555" attribute="false" memo="" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="2081" seqId="2081" fullPathName="">
+    <systemcode/>
+    <systemcode/>
+  </systementity>
+  <systementity code="30" moduleCode="X6Basic_1.0" version="3" valid="true" sysDefault="false" id="Frequency/30" value="X6Basic.systemCodevalue.randon1397542837833" attribute="false" memo="" sort="3" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="2084" seqId="2084" fullPathName="">
+    <systemcode/>
+  </systementity>
+  <systementity code="Company" moduleCode="X6Basic_1.0" version="1" valid="true" sysDefault="false" id="BalanceLvl/Company" value="X6Basic.systemCodevalue.randon1397707016269" attribute="false" memo="" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="2090" seqId="2090" fullPathName="">
+    <systemcode/>
+  </systementity>
+  <systementity code="Depart" moduleCode="X6Basic_1.0" version="1" valid="true" sysDefault="false" id="PlanLvl/Depart" value="X6Basic.systemCodevalue.randon1397791194365" attribute="false" memo="" sort="" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="2096" seqId="2096" fullPathName="">
+    <systemcode/>
+  </systementity>
+  <systementity code="Country" moduleCode="X6Basic_1.0" version="3" valid="true" sysDefault="false" id="QuotaSys/Country" value="X6Basic.systemCodevalue.randon1397713575091" attribute="false" memo="" sort="0" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="2098" seqId="2098" fullPathName="">
+    <systemcode/>
+  </systementity>
+  <systementity code="other" moduleCode="X6Basic_1.0" version="2" valid="true" sysDefault="false" id="DataRes/other" value="X6Basic.systemCodevalue.randon1397716818416" attribute="false" memo="" sort="3" parentId="" leaf="false" defaultFlag="false" layNo="1" layRec="2101" seqId="2101" fullPathName="">
+    <systemcode/>
+    <systemcode/>
+    <systemcode/>
+  </systementity>
+  <systementity code="lessTen" moduleCode="X6Basic_1.0" version="4" valid="true" sysDefault="false" id="meetingSize/lessTen" value="X6Basic.systemCodevalue.radion1364448895327" attribute="false" memo="" sort="0" parentId="" leaf="true" defaultFlag="false" layNo="1" layRec="2151" seqId="2151" fullPathName="">
+    <systemcode/>
+  </systementity>
+</bapSystemCode>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validators>
+
+	<field name="processId.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1487295011793"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="unitId.id">
+		<field-validator type="required">
+			<message>${getText("ec.common.validate.asert.notnull", {"RM.propertydisplayName.randon1487986562993"})}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="pmemo">
+		<field-validator type="stringlength">
+			<param name="maxLength">2000</param>
+			<message>${getText("ec.common.validate.content.toolong", {"RM.propertydisplayName.randon1487928399064", "2000"})}</message>
+		</field-validator>
+	</field>
+	
+</validators>
