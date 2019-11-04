@@ -22,7 +22,7 @@ public interface APSWSService {
 
 
 	/**
-	 * 获取MES物品接口
+	 * 1.获取MES物品接口
 	 * @param json
 	 * @return json
 	 */
@@ -31,7 +31,7 @@ public interface APSWSService {
 	JWSResultDTO getProduct(@WebParam(name = "json") String json);
 
 	/**
-	 * 获取配方接口
+	 * 2. 获取配方接口
 	 * @param json
 	 * @return json
 	 */
@@ -40,7 +40,7 @@ public interface APSWSService {
 	JWSResultDTO getFormula(@WebParam(name = "json") String json);
 
 	/**
-	 * 获取工序接口
+	 * 3. 获取工序接口
 	 * @param json
 	 * @return json
 	 */
@@ -64,6 +64,13 @@ public interface APSWSService {
 	@WebMethod
 	@WebResult(name = "jwsResult")
 	JWSResultDTO getResourceInfo(@WebParam(name = "json") String json);
-  
 
+	/**
+	 * 4. 获取报工接口
+	 * @param json
+	 * @return json
+	 */
+	@WebMethod
+	@WebResult(name = "jwsResult")
+	JWSResultDTO getTaskReporting(@WebParam(name = "json") String json);
 }

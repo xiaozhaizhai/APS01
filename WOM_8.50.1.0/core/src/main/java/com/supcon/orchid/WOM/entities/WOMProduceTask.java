@@ -168,9 +168,17 @@ public class WOMProduceTask extends com.supcon.orchid.orm.entities.AbstractEcFul
 
 
 		private String interfaceUrl ; // 批控接口服务器地址
+	private String planCode;
 
+	public String getPlanCode() {
+		return planCode;
+	}
 
-		private Boolean isAnaly = false; // 是否统计工艺
+	public void setPlanCode(String planCode) {
+		this.planCode = planCode;
+	}
+
+	private Boolean isAnaly = false; // 是否统计工艺
 
 
 		private Boolean isHasMaterial = false; // 是否已配料
