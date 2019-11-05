@@ -1,7 +1,6 @@
 package com.supcon.orchid.APSWServic.services.impl;
 
 import java.util.*;
-import javax.annotation.Resource;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.math.BigDecimal;
@@ -27,7 +26,6 @@ import com.supcon.orchid.i18n.InternationalResource;
 import com.supcon.orchid.orm.entities.IRole;
 import com.supcon.orchid.orm.entities.IStaff;
 import com.supcon.orchid.security.OrchidAuthenticationToken;
-import com.supcon.orchid.services.BAPException;
 import com.supcon.orchid.utils.DateUtils;
 import com.supcon.orchid.utils.JsonUtils;
 import com.supcon.orchid.workflow.engine.services.ProcessService;
@@ -40,7 +38,6 @@ import com.supcon.orchid.MESBasic.entities.MESBasicFactoryModel;
 import com.supcon.orchid.MESBasic.services.MESBasicFactoryModelService;
 import com.supcon.orchid.WOM.entities.WOMProduceTask;
 import com.supcon.orchid.WOM.services.WOMProduceTaskService;
-import org.apache.commons.lang.StringUtils;
 import com.supcon.orchid.services.ConsulService;
 import com.supcon.orchid.foundation.entities.Staff;
 import com.supcon.orchid.foundation.services.StaffService;
@@ -53,7 +50,6 @@ import com.supcon.orchid.foundation.services.CompanyService;
 import com.supcon.orchid.workflow.engine.entities.WorkFlowVar;
 import com.supcon.orchid.RM.services.RMProcessTypeService;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import com.supcon.orchid.foundation.entities.SystemCode;
 
 @WebService(targetNamespace = "http://ws.supcon.com")
@@ -93,7 +89,7 @@ public class APSWSServiceImpl implements APSWSService {
     @Autowired
     WOMTaskReportingService taskReportingService;
     @Autowired
-    RMProcessUnitService processUnitService;
+    RMProcessUnitService rmProcessUnitService;
 
     @Override
     @WebMethod
@@ -134,7 +130,7 @@ public class APSWSServiceImpl implements APSWSService {
                     wp.setName((mbp.getProductName() == null) ? "" : mbp.getProductName());
                     wp.setProductType((mbp.getProdType() == null) ? "" : mbp.getProdType());
                     if (mbp.getFactory() != null) {
-                        wp.setMakmac(mbp.getFactory().getCode() == null ? "" : mbp.getFactory().getCode());                 
+                        wp.setMakmac(mbp.getFactory().getCode() == null ? "" : mbp.getFactory().getCode());
                     }
                   	wp.setClassify(mbp.getProductAllas());
                     wp.setCad((mbp.getCad() == null ? "" : mbp.getCad()));
@@ -272,13 +268,13 @@ public class APSWSServiceImpl implements APSWSService {
             m.put("Error_code", "0");
         } catch (Exception e) {
             m.put("Error_code", "1");
-        	logger.info(e.toString());
+            logger.info("exception: ", e);
             m.put("Error_message", e.toString());
             return set500Error(result, JsonUtils.mapToJson(m));
         }
         String formulaJson = JsonUtils.mapToJson(m);
         return setSuccessResult(result, formulaJson);
-    
+
     }
 
     /**
@@ -292,39 +288,50 @@ public class APSWSServiceImpl implements APSWSService {
         JWSResultDTO result = new JWSResultDTO();
         Map<String, Object> m = new HashMap<>();
         List<APSWSTaskReporting> list = new ArrayList<>();
-        String sql = "valid = 1";
+        String sql = "this_.valid = 1";
         List<Object> param = new ArrayList<>();
         try {
             if (m.containsKey("APS_DISPATCH_CODE") && m.get("APS_DISPATCH_CODE") != null) {
-                sql = sql + " and WORK_CODE = ?";
+                sql = sql + " and this_.WORK_CODE = ?";
                 param.add(m.get("APS_DISPATCH_CODE"));
             }
             List<WOMProduceTask> produceTasks = produceTaskService.findProduceTasksBySql(sql, param);
             for (WOMProduceTask s : produceTasks) {
                 APSWSTaskReporting taskReporting = new APSWSTaskReporting();
                 taskReporting.setApsDispatchCode(s.getWorkCode());
-                taskReporting.setWorkCode(s.getPlanCode());
-                taskReporting.setMaterialCode(s.getProductId().getProductCode());
-                taskReporting.setConfQty(s.getProductNum().toString());
-                taskReporting.setStartDate(DateUtils.format(s.getPlanStartTime(), "yyyy-MM--dd HH:mm:ss"));
-                taskReporting.setEndDate(DateUtils.format(s.getPlanEndTime(), "yyyy-MM--dd HH:mm:ss"));
+                taskReporting.setWorkCode(s.getPlanCode()== null ? "" : s.getPlanCode());
+                taskReporting.setMaterialCode(s.getProductId() == null ? "" : s.getProductId().getProductCode());
+                taskReporting.setConfQty(s.getProductNum() == null ? "" : s.getProductNum().toString());
+
+                taskReporting.setStartDate(s.getPlanStartTime() == null ? "" : DateUtils.format(s.getPlanStartTime(), "yyyy-MM--dd HH:mm:ss"));
+                taskReporting.setEndDate(s.getPlanEndTime() == null ? "" : DateUtils.format(s.getPlanEndTime(), "yyyy-MM--dd HH:mm:ss"));
 
                 param.clear();
                 param.add(s.getId());
-                List<WOMTaskReporting> taskReportings = taskReportingService.findTaskReportingsBySql("valid = 1 and TASKID = ?", param);
+                List<WOMTaskReporting> taskReportings = taskReportingService.findTaskReportingsBySql("this_.valid = 1 and this_.TASKID = ?", param);
                 if(taskReportings != null && taskReportings.size() > 0){
-                    taskReporting.setReportDate(DateUtils.format(taskReportings.get(0).getReportDate(), "yyyy-MM--dd HH:mm:ss"));
+                    taskReporting.setReportDate(taskReportings.get(0).getReportDate() == null ? "" : DateUtils.format(taskReportings.get(0).getReportDate(), "yyyy-MM--dd HH:mm:ss"));
                 }
 
                 param.clear();
-                param.add(s.getFormularId().getId());
-                List<RMFormulaProcess> formulaProcesss = rmFormulaProcessService.findFormulaProcesssBySql(" valid = 1 and FORMULA_ID = ?", param);
-                taskReporting.setOpCode(formulaProcesss.get(0).getProcessCode());
+                if(s.getFormularId() != null){
+                    param.add(s.getFormularId().getId());
+                    List<RMFormulaProcess> formulaProcesss = rmFormulaProcessService.findFormulaProcesssBySql("this_.valid = 1 and this_.FORMULA_ID = ?", param);
+                    if(formulaProcesss != null && formulaProcesss.size() > 0){
+                        taskReporting.setOpCode(formulaProcesss.get(0).getProcessCode());
+                    }
+                }
 
                 param.clear();
-                param.add(s.getFormularId().getId());
-                List<RMProcessUnit> processUnits = processUnitService.findProcessUnitsBySql("valid = 1 and FORMULA_ID = ?", param);
-                taskReporting.setReportRes(processUnits.get(0).getUnitId().getCode());
+                if(s.getFormularId() != null){
+                    param.add(s.getFormularId().getId());
+                    List<RMProcessUnit> processUnits = rmProcessUnitService.findProcessUnitsBySql("this_.valid = 1 and this_.FORMULA_ID = ?", param);
+                    if(processUnits != null && processUnits.size() > 0) {
+                        if(processUnits.get(0).getUnitId() != null){
+                            taskReporting.setReportRes(processUnits.get(0).getUnitId().getCode());
+                        }
+                    }
+                }
 
                 list.add(taskReporting);
             }
@@ -333,7 +340,7 @@ public class APSWSServiceImpl implements APSWSService {
             m.put("Error_code", "0");
         } catch (Exception e) {
             m.put("Error_code", "1");
-            logger.info(e.toString());
+            logger.info("exception: ", e);
             m.put("Error_message", e.toString());
             return set500Error(result, JsonUtils.mapToJson(m));
         }
@@ -584,3 +591,4 @@ public class APSWSServiceImpl implements APSWSService {
         securityContext.setAuthentication(authentication);
     }
 }
+

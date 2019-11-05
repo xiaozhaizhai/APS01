@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55a82b21-9a97-44d7-bd99-695d3bce4fb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/supcon/orchid/APSWServic/entities/APSWSTaskReporting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/supcon/orchid/APSWServic/services/APSWSService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/supcon/orchid/APSWServic/services/APSWSService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/com/supcon/orchid/APSWServic/services/impl/APSWSServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/supcon/orchid/APSWServic/services/impl/APSWSServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WOM_8.50.1.0/core/src/main/java/com/supcon/orchid/WOM/entities/WOMProduceTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../WOM_8.50.1.0/core/src/main/java/com/supcon/orchid/WOM/entities/WOMProduceTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/resources/META-INF/spring/osgi-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/resources/META-INF/spring/osgi-context.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/service/target/" />
@@ -36,12 +33,12 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/src/main/java/com/supcon/orchid/APSWServic/services/impl/APSWSServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="326" column="86" selection-start-line="326" selection-start-column="86" selection-end-line="326" selection-end-column="86" />
+            <state relative-caret-position="115">
+              <caret line="286" column="3" lean-forward="true" selection-start-line="286" selection-start-column="3" selection-end-line="286" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,10 +47,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../RM_8.3.0.0/core/src/main/java/com/supcon/orchid/RM/services/RMFormulaProcessService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="284" column="48" lean-forward="true" selection-start-line="284" selection-start-column="48" selection-end-line="284" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../RM_8.3.0.0/service/src/main/java/com/supcon/orchid/RM/services/impl/RMFormulaProcessServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="474">
+              <caret line="2695" column="63" selection-start-line="2695" selection-start-column="63" selection-end-line="2695" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../RM_8.3.0.0/core/src/main/java/com/supcon/orchid/RM/entities/RMForProcessUnit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../RM_8.3.0.0/core/src/main/java/com/supcon/orchid/RM/services/RMProcessUnitService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4620">
+              <caret line="284" column="31" selection-start-line="284" selection-start-column="31" selection-end-line="284" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../WOM_8.50.1.0/core/src/main/java/com/supcon/orchid/WOM/entities/WOMProduceTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="174" column="5" lean-forward="true" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
+            <state relative-caret-position="1900">
+              <caret line="174" column="5" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
               <folding>
                 <element signature="e#7804#7805#0" expanded="true" />
                 <element signature="e#7826#7827#0" expanded="true" />
@@ -76,9 +109,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/com/supcon/orchid/APSWServic/entities/APSWSTaskReporting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+            <state>
+              <caret column="45" selection-start-column="8" selection-end-column="45" />
               <folding>
+                <element signature="e#490#491#0" expanded="true" />
                 <element signature="e#528#529#0" expanded="true" />
                 <element signature="e#590#591#0" expanded="true" />
                 <element signature="e#644#645#0" expanded="true" />
@@ -122,17 +156,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/com/supcon/orchid/APSWServic/services/APSWSService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="68" column="6" lean-forward="true" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="6" />
+            <state relative-caret-position="1040">
+              <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/maven178/com/supcon/orchid/RM/com.supcon.orchid.RM.core/8.3.0.0/com.supcon.orchid.RM.core-8.3.0.0.jar!/com/supcon/orchid/RM/entities/RMFormulaProcess.class">
+        <entry file="file://$PROJECT_DIR$/service/src/main/resources/META-INF/spring/osgi-context.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1329">
-              <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+            <state relative-caret-position="1520">
+              <caret line="76" column="106" selection-start-line="75" selection-start-column="4" selection-end-line="76" selection-end-column="106" />
             </state>
           </provider>
         </entry>
@@ -142,6 +176,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>produceTaskService</find>
+      <find>APSWSTaskReporting</find>
+      <find>WOMTaskReporting</find>
+      <find>RMForProcessUnitService</find>
+      <find>processUnitService</find>
+      <find>rmProcessUnitService</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,6 +192,7 @@
         <option value="$PROJECT_DIR$/core/src/main/java/com/supcon/orchid/APSWServic/services/APSWSService.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/supcon/orchid/APSWServic/entities/APSWSTaskReporting.java" />
         <option value="$PROJECT_DIR$/../WOM_8.50.1.0/core/src/main/java/com/supcon/orchid/WOM/entities/WOMProduceTask.java" />
+        <option value="$PROJECT_DIR$/service/src/main/resources/META-INF/spring/osgi-context.xml" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/supcon/orchid/APSWServic/services/impl/APSWSServiceImpl.java" />
       </list>
     </option>
@@ -170,9 +210,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="21" />
-    <option name="y" value="74" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="418" />
+    <option name="y" value="78" />
     <option name="width" value="1940" />
     <option name="height" value="1000" />
   </component>
@@ -182,6 +222,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -380,6 +421,226 @@
             </path>
             <path>
               <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="APSWServic_8.50.1.0" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="APSWServic_8.50.1.0" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="APSWServic_8.50.1.0" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supcon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supcon" type="462c0819:PsiDirectoryNode" />
+              <item name="orchid" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supcon" type="462c0819:PsiDirectoryNode" />
+              <item name="orchid" type="462c0819:PsiDirectoryNode" />
+              <item name="RM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supcon" type="462c0819:PsiDirectoryNode" />
+              <item name="orchid" type="462c0819:PsiDirectoryNode" />
+              <item name="RM" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supcon" type="462c0819:PsiDirectoryNode" />
+              <item name="orchid" type="462c0819:PsiDirectoryNode" />
+              <item name="RM" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supcon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supcon" type="462c0819:PsiDirectoryNode" />
+              <item name="orchid" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supcon" type="462c0819:PsiDirectoryNode" />
+              <item name="orchid" type="462c0819:PsiDirectoryNode" />
+              <item name="RM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supcon" type="462c0819:PsiDirectoryNode" />
+              <item name="orchid" type="462c0819:PsiDirectoryNode" />
+              <item name="RM" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RM_8.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supcon" type="462c0819:PsiDirectoryNode" />
+              <item name="orchid" type="462c0819:PsiDirectoryNode" />
+              <item name="RM" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APSWServic" type="b2602c69:ProjectViewProjectNode" />
               <item name="WOM_8.50.1.0" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -471,13 +732,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../APSWServic_8.50.1.0" />
+    <property name="last_opened_file_path" value="F:/test" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
@@ -508,23 +768,27 @@
       <option name="presentableId" value="Default" />
       <updated>1572844921703</updated>
     </task>
+    <task id="LOCAL-00001" summary="接口4">
+      <created>1572853072732</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572853072732</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="21" y="74" width="1940" height="1000" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17340426" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16204691" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" visible="true" weight="0.035629455" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -532,28 +796,56 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" weight="0.32995737" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" visible="true" weight="0.17594655" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.32995737" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="接口4" />
+    <option name="LAST_COMMIT_MESSAGE" value="接口4" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://D:/maven178/com/supcon/orchid/RM/com.supcon.orchid.RM.core/8.3.0.0/com.supcon.orchid.RM.core-8.3.0.0.jar!/com/supcon/orchid/RM/entities/RMFormulaProcess.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1329">
-          <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+        <state relative-caret-position="731">
+          <caret line="173" column="54" lean-forward="true" selection-end-line="738" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/supcon/orchid/APSWServic/services/APSWSService.java">
+    <entry file="file://$PROJECT_DIR$/../RM_8.3.0.0/core/src/main/java/com/supcon/orchid/RM/entities/RMForProcessUnit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="68" column="6" lean-forward="true" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="6" />
+        <state relative-caret-position="500">
+          <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../RM_8.3.0.0/core/src/main/java/com/supcon/orchid/RM/services/RMProcessUnitService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4620">
+          <caret line="284" column="31" selection-start-line="284" selection-start-column="31" selection-end-line="284" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../WOM_8.50.1.0/core/src/main/java/com/supcon/orchid/WOM/entities/WOMProduceTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1900">
+          <caret line="174" column="5" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
+          <folding>
+            <element signature="e#7804#7805#0" expanded="true" />
+            <element signature="e#7826#7827#0" expanded="true" />
+            <element signature="e#7871#7872#0" expanded="true" />
+            <element signature="e#7902#7903#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -566,9 +858,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/com/supcon/orchid/APSWServic/entities/APSWSTaskReporting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+        <state>
+          <caret column="45" selection-start-column="8" selection-end-column="45" />
           <folding>
+            <element signature="e#490#491#0" expanded="true" />
             <element signature="e#528#529#0" expanded="true" />
             <element signature="e#590#591#0" expanded="true" />
             <element signature="e#644#645#0" expanded="true" />
@@ -608,23 +901,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../WOM_8.50.1.0/core/src/main/java/com/supcon/orchid/WOM/entities/WOMProduceTask.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/supcon/orchid/APSWServic/services/APSWSService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="174" column="5" lean-forward="true" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
-          <folding>
-            <element signature="e#7804#7805#0" expanded="true" />
-            <element signature="e#7826#7827#0" expanded="true" />
-            <element signature="e#7871#7872#0" expanded="true" />
-            <element signature="e#7902#7903#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1040">
+          <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/resources/META-INF/spring/osgi-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1520">
+          <caret line="76" column="106" selection-start-line="75" selection-start-column="4" selection-end-line="76" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../RM_8.3.0.0/core/src/main/java/com/supcon/orchid/RM/services/RMFormulaProcessService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="284" column="48" lean-forward="true" selection-start-line="284" selection-start-column="48" selection-end-line="284" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../RM_8.3.0.0/service/src/main/java/com/supcon/orchid/RM/services/impl/RMFormulaProcessServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="2695" column="63" selection-start-line="2695" selection-start-column="63" selection-end-line="2695" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/supcon/orchid/APSWServic/services/impl/APSWSServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="326" column="86" selection-start-line="326" selection-start-column="86" selection-end-line="326" selection-end-column="86" />
+        <state relative-caret-position="115">
+          <caret line="286" column="3" lean-forward="true" selection-start-line="286" selection-start-column="3" selection-end-line="286" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
