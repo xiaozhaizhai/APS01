@@ -494,6 +494,7 @@ public class APSWSServiceImpl implements APSWSService {
         return setSuccessResult(result, JsonUtils.mapToJson(resultMap));
     }
 
+
     /**
      * 获取资源接口
      * @param json

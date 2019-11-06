@@ -73,5 +73,9 @@
     <reference id="wOMBatchProduceTaskService" interface="com.supcon.orchid.WOM.services.WOMProduceTaskService" />
     <reference id="userDetailsService" interface="org.springframework.security.core.userdetails.UserDetailsService" />
     <reference id="rMProcessTypeService" interface="com.supcon.orchid.RM.services.RMProcessTypeService" />
+    <reference id="rMForProcessUnitService" interface="com.supcon.orchid.RM.services.RMForProcessUnitService" />
+    <reference id="wOMTaskReportingService" interface="com.supcon.orchid.WOM.services.WOMTaskReportingService" />
+	<reference id="rMForProcessUnitChoiceService" interface="com.supcon.orchid.RM.services.RMForProcessUnitChoiceService" />
+      <reference id="rMProcessUnitService" interface="com.supcon.orchid.RM.services.RMProcessUnitService" />
 <!-- CUSTOM CODE END -->
 </b:beans>
